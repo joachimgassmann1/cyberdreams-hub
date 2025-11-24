@@ -57,3 +57,7 @@
 - [x] Browser-Tests durchführen
 - [x] Performance optimieren
 - [x] Checkpoint erstellen
+
+## Video-Updates
+- [x] Echte Video-IDs von YouTube-Kanälen sammeln
+- [x] FeaturedVideos-Komponente mit korrekten Video-IDs aktualisieren
