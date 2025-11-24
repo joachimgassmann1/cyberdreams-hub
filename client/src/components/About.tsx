@@ -1,0 +1,90 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Brain, Headphones, Heart, Sparkles } from "lucide-react";
+
+const features = [
+  {
+    icon: Brain,
+    title: "Deep Focus",
+    description: "Scientifically crafted soundscapes designed to enhance concentration and cognitive performance during work and study sessions.",
+  },
+  {
+    icon: Heart,
+    title: "Relaxation",
+    description: "Soothing ambient music that helps reduce stress, promote calmness, and create peaceful environments for unwinding.",
+  },
+  {
+    icon: Headphones,
+    title: "Study Enhancement",
+    description: "Carefully curated playlists that support memory retention, learning efficiency, and sustained mental clarity.",
+  },
+  {
+    icon: Sparkles,
+    title: "Ambient Atmospheres",
+    description: "Immersive sonic environments spanning from futuristic cyberpunk to serene natural soundscapes and smooth jazz.",
+  },
+];
+
+export default function About() {
+  return (
+    <section id="about" className="py-20 md:py-32 bg-gradient-to-b from-background to-card/30">
+      <div className="container">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            About{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Sphere Music Hub
+            </span>
+          </h2>
+          <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
+            We create immersive audio experiences that transform your daily activities into moments of clarity, creativity, and calm. Our collection of specialized music channels serves as your sonic companion for work, study, relaxation, and everything in between.
+          </p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-16">
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <Card
+                key={index}
+                className="bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 group"
+              >
+                <CardContent className="p-6 md:p-8">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                        {feature.title}
+                      </h3>
+                      <p className="text-foreground/70 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+
+        {/* Mission Statement */}
+        <div className="max-w-4xl mx-auto">
+          <Card className="bg-gradient-to-br from-card to-card/50 border-primary/20">
+            <CardContent className="p-8 md:p-12 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6">Our Mission</h3>
+              <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+                At Sphere Music Hub, we believe that the right soundtrack can fundamentally transform how you work, learn, and live. Every composition is meticulously crafted to support your mental state, whether you need laser-focused concentration for complex tasks, a peaceful atmosphere for creative thinking, or simply a moment of tranquility in a busy day.
+              </p>
+              <p className="text-lg text-foreground/80 leading-relaxed">
+                Our diverse family of channels ensures that no matter your mood or activity, there is always a perfect sonic environment waiting for you. From the productivity-enhancing rhythms of Deep Focus Sphere to the sunset vibes of Chillout Sphere, we are here to elevate your everyday experiences through the power of music.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+}

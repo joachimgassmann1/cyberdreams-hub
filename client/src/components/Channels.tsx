@@ -1,0 +1,149 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves } from "lucide-react";
+
+const channels = [
+  {
+    id: "deep-focus",
+    name: "Deep Focus Sphere",
+    handle: "@DeepFocusSphere67",
+    description: "Focus, Relax & Study Music designed to help you work better, study longer and stay calm while staying productive.",
+    subscribers: "2.74K",
+    image: "/channel-deep-focus.jpg",
+    url: "https://www.youtube.com/@deepfocussphere67",
+    icon: Music2,
+    color: "from-primary to-primary/70",
+  },
+  {
+    id: "chillout",
+    name: "Chillout Sphere",
+    handle: "@ChilloutSphere67",
+    description: "Chillout Lounge & Relaxing Music for peaceful moments, beach vibes, and sunset relaxation.",
+    subscribers: "21",
+    image: "/channel-chillout.jpg",
+    url: "https://www.youtube.com/@ChilloutSphere67",
+    icon: Waves,
+    color: "from-accent to-accent/70",
+  },
+  {
+    id: "cyber-dreams",
+    name: "Cyber Dreams",
+    handle: "@CyberDreams-x9p",
+    description: "Ambient Music & Futuristic Sounds for a journey into cyberpunk atmospheres and electronic soundscapes.",
+    subscribers: "173",
+    image: "/channel-cyber.jpg",
+    url: "https://www.youtube.com/@CyberDreams-x9p",
+    icon: Sparkles,
+    color: "from-chart-2 to-chart-2/70",
+  },
+  {
+    id: "jazz-sphere",
+    name: "JazzSphere Radio",
+    handle: "@JazzSphereRadio",
+    description: "World of Smooth Jazz featuring elegant melodies and sophisticated rhythms for refined listening.",
+    subscribers: "1.16K",
+    image: "/channel-chillout.jpg",
+    url: "https://www.youtube.com/@JazzSphereRadio",
+    icon: Radio,
+    color: "from-chart-3 to-chart-3/70",
+  },
+  {
+    id: "guitar-sphere",
+    name: "Guitarsphere Radio",
+    handle: "@GuitarsphereRadio",
+    description: "The Sound of Guitar celebrating acoustic and electric guitar music across all genres.",
+    subscribers: "Coming Soon",
+    image: "/channel-deep-focus.jpg",
+    url: "https://www.youtube.com/@GuitarsphereRadio",
+    icon: Guitar,
+    color: "from-primary to-accent",
+  },
+  {
+    id: "piano-sphere",
+    name: "Pianosphere Radio",
+    handle: "@PianosphereRadio",
+    description: "Beautiful piano compositions and ambient piano music for relaxation and contemplation.",
+    subscribers: "2",
+    image: "/channel-cyber.jpg",
+    url: "https://www.youtube.com/@PianosphereRadio",
+    icon: Piano,
+    color: "from-chart-4 to-chart-4/70",
+  },
+];
+
+export default function Channels() {
+  return (
+    <section id="channels" className="py-20 md:py-32 bg-gradient-to-b from-background to-card/30">
+      <div className="container">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Explore Our{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Music Channels
+            </span>
+          </h2>
+          <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
+            Each channel offers a unique sonic experience tailored to different moods, activities, and atmospheres.
+          </p>
+        </div>
+
+        {/* Channels Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {channels.map((channel) => {
+            const Icon = channel.icon;
+            return (
+              <Card
+                key={channel.id}
+                className="group overflow-hidden bg-card hover:bg-card/80 border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+              >
+                {/* Channel Image */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={channel.image}
+                    alt={channel.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"></div>
+                  
+                  {/* Icon Overlay */}
+                  <div className={`absolute top-4 right-4 p-3 rounded-full bg-gradient-to-br ${channel.color} shadow-lg`}>
+                    <Icon className="w-6 h-6 text-background" />
+                  </div>
+                </div>
+
+                <CardHeader>
+                  <CardTitle className="text-xl font-bold group-hover:text-primary transition-colors">
+                    {channel.name}
+                  </CardTitle>
+                  <CardDescription className="text-sm text-foreground/60">
+                    {channel.handle} • {channel.subscribers} subscribers
+                  </CardDescription>
+                </CardHeader>
+
+                <CardContent>
+                  <p className="text-sm text-foreground/70 line-clamp-3">
+                    {channel.description}
+                  </p>
+                </CardContent>
+
+                <CardFooter>
+                  <Button
+                    variant="outline"
+                    className="w-full border-primary/30 hover:bg-primary/10 hover:border-primary group"
+                    asChild
+                  >
+                    <a href={channel.url} target="_blank" rel="noopener noreferrer">
+                      Visit Channel
+                      <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
