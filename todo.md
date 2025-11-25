@@ -70,3 +70,7 @@
 - [x] Statistiken (6+, 100+, 4K+) einfarbig gestalten
 - [x] Neue thematisch passende Kanal-Bilder generieren
 - [x] Kanal-Bilder in Website integrieren
+
+## Featured Videos Update
+- [x] Aktuelle View-Zahlen von YouTube abrufen
+- [x] View-Zahlen in FeaturedVideos-Komponente aktualisieren

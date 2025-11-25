@@ -5,22 +5,22 @@ const featuredVideos = [
   {
     id: "1",
     title: "Unlock Deep Focus | Ambient Sounds for Nighttime Study & Intense Work",
-    videoId: "jBkCFxaKxGw",
-    views: "5.2K",
+    videoId: "bsUsjirLjG4",
+    views: "163",
     channel: "Deep Focus Sphere",
   },
   {
     id: "2",
     title: "Velvet Night Lounge | Smooth Chillout & Relaxing Music",
     videoId: "B2g2msoQsHA",
-    views: "1.2K",
+    views: "3",
     channel: "Chillout Sphere",
   },
   {
     id: "3",
     title: "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
     videoId: "Q2NIq7Qwogc",
-    views: "850",
+    views: "29",
     channel: "Cyber Dreams",
   },
 ];
