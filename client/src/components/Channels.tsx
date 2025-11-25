@@ -20,7 +20,7 @@ const channels = [
     id: "chillout",
     name: "Chillout Sphere",
     handle: "@ChilloutSphere67",
-    channelId: "", // Will be fetched dynamically
+    channelId: "UCz1te_MlsOdFvo86vJv16_A",
     description: "Chillout Lounge & Relaxing Music for peaceful moments, beach vibes, and sunset relaxation.",
     image: "/channel-chillout-new.jpg",
     url: "https://www.youtube.com/@ChilloutSphere67",
@@ -31,7 +31,7 @@ const channels = [
     id: "cyber-dreams",
     name: "Cyber Dreams",
     handle: "@CyberDreams-x9p",
-    channelId: "", // Will be fetched dynamically
+    channelId: "UCaSZ-ibhaSzxB-_PnfCVxFA",
     description: "Ambient Music & Futuristic Sounds for a journey into cyberpunk atmospheres and electronic soundscapes.",
     image: "/channel-cyber-new.jpg",
     url: "https://www.youtube.com/@CyberDreams-x9p",
@@ -42,7 +42,7 @@ const channels = [
     id: "jazz-sphere",
     name: "JazzSphere Radio",
     handle: "@JazzSphereRadio",
-    channelId: "", // Will be fetched dynamically
+    channelId: "UCBKfJNITtV3Ubf_6uZb527w",
     description: "World of Smooth Jazz featuring elegant melodies and sophisticated rhythms for refined listening.",
     image: "/channel-jazz-new.jpg",
     url: "https://www.youtube.com/@JazzSphereRadio",
@@ -53,7 +53,7 @@ const channels = [
     id: "guitar-sphere",
     name: "Guitarsphere Radio",
     handle: "@GuitarsphereRadio",
-    channelId: "", // Will be fetched dynamically
+    channelId: "UCrzRTjTXIcfNJUHPs9nzJzw",
     description: "The Sound of Guitar celebrating acoustic and electric guitar music across all genres.",
     image: "/channel-guitar-new.jpg",
     url: "https://www.youtube.com/@GuitarsphereRadio",
@@ -64,7 +64,7 @@ const channels = [
     id: "piano-sphere",
     name: "Pianosphere Radio",
     handle: "@PianosphereRadio",
-    channelId: "", // Will be fetched dynamically
+    channelId: "UCeYqdPkQ6ZMZHLlbfkZ5qNw",
     description: "Beautiful piano compositions and ambient piano music for relaxation and contemplation.",
     image: "/channel-piano-new.jpg",
     url: "https://www.youtube.com/@PianosphereRadio",

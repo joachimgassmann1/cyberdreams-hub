@@ -85,3 +85,10 @@
 - [x] Frontend-Komponenten für dynamische Daten anpassen
 - [x] YouTube API Helper-Funktionen erstellen
 - [x] Dynamische Daten-Integration testen
+
+## Channel-ID Fixes
+- [x] Channel-IDs für alle Kanäle ermitteln
+- [x] Channels-Komponente mit festen Channel-IDs aktualisieren
+
+## Navigation Fix
+- [x] Verschachtelte Links in Navigation beheben

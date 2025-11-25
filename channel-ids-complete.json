@@ -1,0 +1,26 @@
+{
+  "deepFocusSphere": {
+    "handle": "@DeepFocusSphere67",
+    "channelId": "UCNc7m60KRRtsFugFEPwgL4Q"
+  },
+  "chilloutSphere": {
+    "handle": "@ChilloutSphere67",
+    "channelId": "UCz1te_MlsOdFvo86vJv16_A"
+  },
+  "cyberDreams": {
+    "handle": "@CyberDreams-x9p",
+    "channelId": "UCaSZ-ibhaSzxB-_PnfCVxFA"
+  },
+  "jazzSphereRadio": {
+    "handle": "@JazzSphereRadio",
+    "channelId": "UCBKfJNITtV3Ubf_6uZb527w"
+  },
+  "guitarsphereRadio": {
+    "handle": "@GuitarsphereRadio",
+    "channelId": "UCrzRTjTXIcfNJUHPs9nzJzw"
+  },
+  "pianosphereRadio": {
+    "handle": "@PianosphereRadio",
+    "channelId": "UCeYqdPkQ6ZMZHLlbfkZ5qNw"
+  }
+}

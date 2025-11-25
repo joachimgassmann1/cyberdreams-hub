@@ -30,13 +30,11 @@ export default function Navigation() {
       <div className="container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/">
-            <a className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img src={APP_LOGO} alt="Sphere Music Hub" className="h-10 w-10 md:h-12 md:w-12" />
-              <span className="font-bold text-lg md:text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Sphere Music Hub
-              </span>
-            </a>
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <img src={APP_LOGO} alt="Sphere Music Hub" className="h-10 w-10 md:h-12 md:w-12" />
+            <span className="font-bold text-lg md:text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Sphere Music Hub
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
