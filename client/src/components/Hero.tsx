@@ -73,12 +73,12 @@ export default function Hero() {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
-            Your Space for Focus, Relax & Study
+            Your Space for Jazz, Chillout & Deep Focus
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Discover curated ambient soundscapes, deep focus music, and chillout beats designed to help you work better, study longer, and stay calm while staying productive.
+            Discover curated jazz sessions, soothing chillout beats, and deep focus ambient soundscapes designed to help you work smarter, study longer, and stay productive with calm.
           </p>
 
           {/* CTA Buttons */}

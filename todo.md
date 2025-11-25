@@ -154,3 +154,4 @@
 - [x] Von Static Site auf Web Service mit Express-Server upgraden
 - [x] Express-Server für SPA-Routing implementieren
 - [x] Render.yaml für Web Service anpassen
+- [x] Hero-Überschrift und Beschreibung optimieren (Jazz, Chillout, Deep Focus erwähnen)
