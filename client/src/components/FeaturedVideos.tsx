@@ -1,48 +1,86 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
 import { useEffect, useState } from "react";
-import { getVideoStatistics, formatCount } from "@/lib/youtube";
+import { getLatestVideosFromDifferentChannels, getVideoStatistics, formatCount } from "@/lib/youtube";
 
-const featuredVideos = [
+// Channel IDs for all Sphere Music channels
+const CHANNEL_IDS = [
+  "UCNc7m60KRRtsFugFEPwgL4Q", // Deep Focus Sphere
+  "UCz1te_MlsOdFvo86vJv16_A", // Chillout Sphere
+  "UCaSZ-ibhaSzxB-_PnfCVxFA", // Cyber Dreams
+  "UCBKfJNITtV3Ubf_6uZb527w", // JazzSphere Radio
+  "UCrzRTjTXIcfNJUHPs9nzJzw", // Guitarsphere Radio
+  "UCeYqdPkQ6ZMZHLlbfkZ5qNw", // Pianosphere Radio
+];
+
+// Fallback videos when API is not available
+const FALLBACK_VIDEOS = [
   {
-    id: "1",
+    id: "bsUsjirLjG4",
     title: "Unlock Deep Focus | Ambient Sounds for Nighttime Study & Intense Work",
-    videoId: "bsUsjirLjG4",
-    channel: "Deep Focus Sphere",
+    channelTitle: "Deep Focus Sphere",
+    viewCount: "163",
   },
   {
-    id: "2",
+    id: "B2g2msoQsHA",
     title: "Velvet Night Lounge | Smooth Chillout & Relaxing Music",
-    videoId: "B2g2msoQsHA",
-    channel: "Chillout Sphere",
+    channelTitle: "Chillout Sphere",
+    viewCount: "3",
   },
   {
-    id: "3",
+    id: "Q2NIq7Qwogc",
     title: "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
-    videoId: "Q2NIq7Qwogc",
-    channel: "Cyber Dreams",
+    channelTitle: "Cyber Dreams",
+    viewCount: "29",
   },
 ];
 
+interface FeaturedVideo {
+  id: string;
+  title: string;
+  channelTitle: string;
+  viewCount: string;
+}
+
 export default function FeaturedVideos() {
-  const [viewCounts, setViewCounts] = useState<Record<string, string>>({});
+  const [videos, setVideos] = useState<FeaturedVideo[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch view counts for all featured videos
-    const fetchViewCounts = async () => {
-      const counts: Record<string, string> = {};
-      
-      for (const video of featuredVideos) {
-        const stats = await getVideoStatistics(video.videoId);
-        if (stats) {
-          counts[video.id] = formatCount(stats.statistics.viewCount);
+    const fetchLatestVideos = async () => {
+      try {
+        // Get latest videos from different channels
+        const latestVideos = await getLatestVideosFromDifferentChannels(CHANNEL_IDS);
+        
+        // If API returned videos, fetch their stats
+        if (latestVideos && latestVideos.length > 0) {
+          const videosWithStats = await Promise.all(
+            latestVideos.map(async (video: any) => {
+              const stats = await getVideoStatistics(video.id);
+              return {
+                id: video.id,
+                title: video.title,
+                channelTitle: video.channelTitle,
+                viewCount: stats ? formatCount(stats.statistics.viewCount) : "...",
+              };
+            })
+          );
+          
+          setVideos(videosWithStats);
+        } else {
+          // Fallback to default videos if API fails
+          setVideos(FALLBACK_VIDEOS);
         }
+      } catch (error) {
+        console.error('Error fetching latest videos, using fallback:', error);
+        // Use fallback videos when API is not available
+        setVideos(FALLBACK_VIDEOS);
+      } finally {
+        setLoading(false);
       }
-      
-      setViewCounts(counts);
     };
 
-    fetchViewCounts();
+    fetchLatestVideos();
   }, []);
 
   return (
@@ -63,10 +101,21 @@ export default function FeaturedVideos() {
 
         {/* Videos Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {featuredVideos.map((video) => {
-            const views = viewCounts[video.id] || "...";
-            
-            return (
+          {loading ? (
+            // Loading skeleton
+            [1, 2, 3].map((i) => (
+              <Card key={i} className="overflow-hidden bg-card border-border">
+                <CardContent className="p-0">
+                  <div className="aspect-video bg-muted animate-pulse"></div>
+                  <div className="p-4 space-y-2">
+                    <div className="h-4 bg-muted rounded animate-pulse"></div>
+                    <div className="h-3 bg-muted rounded w-2/3 animate-pulse"></div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))
+          ) : (
+            videos.map((video) => (
               <Card
                 key={video.id}
                 className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
@@ -74,19 +123,19 @@ export default function FeaturedVideos() {
                 <CardContent className="p-0">
                   {/* Video Thumbnail */}
                   <a
-                    href={`https://www.youtube.com/watch?v=${video.videoId}`}
+                    href={`https://www.youtube.com/watch?v=${video.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block relative"
                   >
                     <div className="relative aspect-video bg-muted overflow-hidden">
                       <img
-                        src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`}
+                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
                         alt={video.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
-                          target.src = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
+                          target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
                         }}
                       />
                       
@@ -104,15 +153,15 @@ export default function FeaturedVideos() {
                         {video.title}
                       </h3>
                       <div className="flex items-center justify-between text-sm text-foreground/60">
-                        <span>{video.channel}</span>
-                        <span>{views} views</span>
+                        <span>{video.channelTitle}</span>
+                        <span>{video.viewCount} views</span>
                       </div>
                     </div>
                   </a>
                 </CardContent>
               </Card>
-            );
-          })}
+            ))
+          )}
         </div>
 
         {/* View More Button */}

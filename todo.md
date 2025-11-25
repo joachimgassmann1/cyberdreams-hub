@@ -121,3 +121,15 @@
 
 ## Hero-Hintergrundbild Optimierung
 - [x] Hero-Overlay weiter reduzieren für bessere Sichtbarkeit des Hintergrundbildes
+
+## Dynamische Featured Videos
+- [x] YouTube API-Funktion erstellen um neueste Videos von allen Kanälen abzurufen
+- [x] Logik implementieren um 3 Videos von 3 unterschiedlichen Kanälen auszuwählen
+- [x] FeaturedVideos-Komponente auf dynamische Auswahl umstellen
+
+## Fallback für Featured Videos
+- [x] Fallback-Videos definieren für den Fall dass API nicht erreichbar ist
+- [x] FeaturedVideos-Komponente mit Fallback-Logik erweitern
+
+## Kontakt E-Mail Update
+- [x] E-Mail-Adresse im Footer auf stillcybervisions@gmail.com aktualisieren

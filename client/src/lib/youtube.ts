@@ -198,3 +198,58 @@ export async function getAggregatedStats(channelIds: string[]) {
     };
   }
 }
+
+/**
+ * Fetch latest videos from multiple channels and select 3 from different channels
+ */
+export async function getLatestVideosFromDifferentChannels(channelIds: string[]) {
+  const cacheKey = 'yt_latest_videos_mixed';
+  
+  // Check cache first
+  const cached = Cache.get<any[]>(cacheKey);
+  if (cached) return cached;
+  
+  try {
+    // Fetch latest video from each channel
+    const videoPromises = channelIds.map(async (channelId) => {
+      const response = await fetch(
+        `${BASE_URL}/search?part=snippet&channelId=${channelId}&order=date&maxResults=1&type=video&key=${API_KEY}`
+      );
+      
+      if (!response.ok) return null;
+      
+      const data = await response.json();
+      const video = data.items?.[0];
+      
+      if (!video) return null;
+      
+      return {
+        id: video.id.videoId,
+        title: video.snippet.title,
+        channelId: channelId,
+        channelTitle: video.snippet.channelTitle,
+        publishedAt: video.snippet.publishedAt,
+      };
+    });
+    
+    const videos = await Promise.all(videoPromises);
+    const validVideos = videos.filter(v => v !== null);
+    
+    // Sort by publish date and take 3 most recent from different channels
+    const sortedVideos = validVideos.sort((a, b) => 
+      new Date(b!.publishedAt).getTime() - new Date(a!.publishedAt).getTime()
+    );
+    
+    const selectedVideos = sortedVideos.slice(0, 3);
+    
+    // Cache the result
+    if (selectedVideos.length > 0) {
+      Cache.set(cacheKey, selectedVideos, CACHE_TTL);
+    }
+    
+    return selectedVideos;
+  } catch (error) {
+    console.error('Error fetching latest videos:', error);
+    return [];
+  }
+}
