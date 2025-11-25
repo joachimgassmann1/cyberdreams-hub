@@ -58,7 +58,7 @@ export default function Hero() {
           alt="Hero Background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/50 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/30 to-background/90"></div>
       </div>
 
       {/* Content */}

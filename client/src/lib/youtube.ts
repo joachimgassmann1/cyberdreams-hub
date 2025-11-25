@@ -1,5 +1,8 @@
+import { Cache } from './cache';
+
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 const BASE_URL = 'https://www.googleapis.com/youtube/v3';
+const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
 
 export interface VideoStatistics {
   viewCount: string;
@@ -28,10 +31,16 @@ export interface ChannelData {
 /**
  * Fetch video statistics from YouTube Data API
  */
-export async function getVideoStatistics(videoId: string): Promise<VideoData | null> {
+export async function getVideoStatistics(videoId: string) {
+  const cacheKey = `yt_video_${videoId}`;
+  
+  // Check cache first
+  const cached = Cache.get<any>(cacheKey);
+  if (cached) return cached;
+  
   try {
     const response = await fetch(
-      `${BASE_URL}/videos?part=snippet,statistics&id=${videoId}&key=${API_KEY}`
+      `${BASE_URL}/videos?part=statistics&id=${videoId}&key=${API_KEY}`
     );
     
     if (!response.ok) {
@@ -40,18 +49,14 @@ export async function getVideoStatistics(videoId: string): Promise<VideoData | n
     }
     
     const data = await response.json();
+    const result = data.items?.[0] || null;
     
-    if (!data.items || data.items.length === 0) {
-      console.error('No video found with ID:', videoId);
-      return null;
+    // Cache the result
+    if (result) {
+      Cache.set(cacheKey, result, CACHE_TTL);
     }
     
-    const video = data.items[0];
-    return {
-      id: video.id,
-      title: video.snippet.title,
-      statistics: video.statistics,
-    };
+    return result;
   } catch (error) {
     console.error('Error fetching video statistics:', error);
     return null;
@@ -61,10 +66,16 @@ export async function getVideoStatistics(videoId: string): Promise<VideoData | n
 /**
  * Fetch channel statistics from YouTube Data API
  */
-export async function getChannelStatistics(channelId: string): Promise<ChannelData | null> {
+export async function getChannelStatistics(channelId: string) {
+  const cacheKey = `yt_channel_${channelId}`;
+  
+  // Check cache first
+  const cached = Cache.get<any>(cacheKey);
+  if (cached) return cached;
+  
   try {
     const response = await fetch(
-      `${BASE_URL}/channels?part=snippet,statistics&id=${channelId}&key=${API_KEY}`
+      `${BASE_URL}/channels?part=statistics&id=${channelId}&key=${API_KEY}`
     );
     
     if (!response.ok) {
@@ -73,18 +84,14 @@ export async function getChannelStatistics(channelId: string): Promise<ChannelDa
     }
     
     const data = await response.json();
+    const result = data.items?.[0] || null;
     
-    if (!data.items || data.items.length === 0) {
-      console.error('No channel found with ID:', channelId);
-      return null;
+    // Cache the result
+    if (result) {
+      Cache.set(cacheKey, result, CACHE_TTL);
     }
     
-    const channel = data.items[0];
-    return {
-      id: channel.id,
-      title: channel.snippet.title,
-      statistics: channel.statistics,
-    };
+    return result;
   } catch (error) {
     console.error('Error fetching channel statistics:', error);
     return null;
@@ -111,118 +118,6 @@ export function formatCount(count: string | number): string {
 }
 
 /**
- * Get channel ID from handle/username using search API
- */
-export async function getChannelIdFromHandle(handle: string): Promise<string | null> {
-  try {
-    const response = await fetch(
-      `${BASE_URL}/search?part=snippet&type=channel&q=${encodeURIComponent(handle)}&key=${API_KEY}`
-    );
-    
-    if (!response.ok) {
-      console.error('Failed to search for channel:', response.statusText);
-      return null;
-    }
-    
-    const data = await response.json();
-    
-    if (!data.items || data.items.length === 0) {
-      console.error('No channel found with handle:', handle);
-      return null;
-    }
-    
-    return data.items[0].id.channelId;
-  } catch (error) {
-    console.error('Error searching for channel:', error);
-    return null;
-  }
-}
-
-/**
- * Get all videos from a channel
- */
-export async function getChannelVideos(channelId: string, maxResults: number = 50): Promise<string[]> {
-  try {
-    const response = await fetch(
-      `${BASE_URL}/search?part=id&channelId=${channelId}&type=video&maxResults=${maxResults}&key=${API_KEY}`
-    );
-    
-    if (!response.ok) {
-      console.error('Failed to fetch channel videos:', response.statusText);
-      return [];
-    }
-    
-    const data = await response.json();
-    
-    if (!data.items || data.items.length === 0) {
-      return [];
-    }
-    
-    return data.items.map((item: any) => item.id.videoId);
-  } catch (error) {
-    console.error('Error fetching channel videos:', error);
-    return [];
-  }
-}
-
-/**
- * Get total duration of videos in seconds
- */
-export async function getVideosDuration(videoIds: string[]): Promise<number> {
-  if (videoIds.length === 0) return 0;
-  
-  try {
-    // YouTube API allows up to 50 video IDs per request
-    const chunks = [];
-    for (let i = 0; i < videoIds.length; i += 50) {
-      chunks.push(videoIds.slice(i, i + 50));
-    }
-    
-    let totalSeconds = 0;
-    
-    for (const chunk of chunks) {
-      const response = await fetch(
-        `${BASE_URL}/videos?part=contentDetails&id=${chunk.join(',')}&key=${API_KEY}`
-      );
-      
-      if (!response.ok) {
-        console.error('Failed to fetch video durations:', response.statusText);
-        continue;
-      }
-      
-      const data = await response.json();
-      
-      if (data.items) {
-        for (const video of data.items) {
-          const duration = video.contentDetails.duration;
-          totalSeconds += parseDuration(duration);
-        }
-      }
-    }
-    
-    return totalSeconds;
-  } catch (error) {
-    console.error('Error fetching video durations:', error);
-    return 0;
-  }
-}
-
-/**
- * Parse ISO 8601 duration to seconds
- * Example: PT1H2M10S = 1 hour, 2 minutes, 10 seconds = 3730 seconds
- */
-function parseDuration(duration: string): number {
-  const match = duration.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
-  if (!match) return 0;
-  
-  const hours = parseInt(match[1] || '0', 10);
-  const minutes = parseInt(match[2] || '0', 10);
-  const seconds = parseInt(match[3] || '0', 10);
-  
-  return hours * 3600 + minutes * 60 + seconds;
-}
-
-/**
  * Format seconds to hours
  */
 export function formatHours(seconds: number): string {
@@ -240,6 +135,12 @@ export function formatHours(seconds: number): string {
  * Optimized to only fetch subscriber counts, not video durations
  */
 export async function getAggregatedStats(channelIds: string[]) {
+  const cacheKey = `yt_aggregated_${channelIds.join('_')}`;
+  
+  // Check cache first
+  const cached = Cache.get<any>(cacheKey);
+  if (cached) return cached;
+  
   let totalSubscribers = 0;
   let totalVideoCount = 0;
   
@@ -275,12 +176,17 @@ export async function getAggregatedStats(channelIds: string[]) {
     // Estimate hours based on average video length (assume 30 min per video)
     const estimatedHours = Math.floor((totalVideoCount * 30) / 60);
     
-    return {
+    const result = {
       totalChannels: channelIds.length,
       totalSubscribers,
       totalHours: estimatedHours,
       totalViews,
     };
+    
+    // Cache the result
+    Cache.set(cacheKey, result, CACHE_TTL);
+    
+    return result;
   } catch (error) {
     console.error('Error fetching aggregated stats:', error);
     // Return fallback values

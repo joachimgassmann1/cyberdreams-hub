@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves } from "lucide-react";
 import { useEffect, useState } from "react";
-import { getChannelIdFromHandle, getChannelStatistics, formatCount } from "@/lib/youtube";
+import { getChannelStatistics, formatCount } from "@/lib/youtube";
 
 const channels = [
   {
@@ -83,11 +83,6 @@ export default function Channels() {
       
       for (const channel of channels) {
         let channelId = channel.channelId;
-        
-        // If channelId is not provided, fetch it from handle
-        if (!channelId) {
-          channelId = await getChannelIdFromHandle(channel.handle) || "";
-        }
         
         if (channelId) {
           const stats = await getChannelStatistics(channelId);

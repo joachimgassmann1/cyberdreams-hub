@@ -108,3 +108,16 @@
 - [x] YouTube API um Total Views erweitern
 - [x] Hero-Komponente mit 4-Spalten-Grid aktualisieren
 - [x] Total Views als vierte Statistik anzeigen
+
+## API 403-Fehler Behebung
+- [ ] LocalStorage-Caching für YouTube-Daten implementieren (10 Minuten TTL)
+- [ ] API-Aufrufe konsolidieren und Batch-Requests nutzen
+- [ ] Parallele API-Aufrufe reduzieren
+- [ ] Fehlerbehandlung mit Fallback-Werten verbessern
+
+## API-Schlüssel Update
+- [ ] Neuen YouTube API-Schlüssel in Secrets aktualisieren
+- [ ] API-Funktionalität mit neuem Schlüssel testen
+
+## Hero-Hintergrundbild Optimierung
+- [x] Hero-Overlay weiter reduzieren für bessere Sichtbarkeit des Hintergrundbildes
