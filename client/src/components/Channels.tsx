@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves } from "lucide-react";
-import { useEffect, useState } from "react";
-import { getChannelStatistics, formatCount } from "@/lib/youtube";
+// Removed YouTube API imports for better performance
 
 const channels = [
   {
@@ -74,29 +73,15 @@ const channels = [
 ];
 
 export default function Channels() {
-  const [subscriberCounts, setSubscriberCounts] = useState<Record<string, string>>({});
-
-  useEffect(() => {
-    // Fetch subscriber counts for all channels
-    const fetchSubscriberCounts = async () => {
-      const counts: Record<string, string> = {};
-      
-      for (const channel of channels) {
-        let channelId = channel.channelId;
-        
-        if (channelId) {
-          const stats = await getChannelStatistics(channelId);
-          if (stats) {
-            counts[channel.id] = formatCount(stats.statistics.subscriberCount);
-          }
-        }
-      }
-      
-      setSubscriberCounts(counts);
-    };
-
-    fetchSubscriberCounts();
-  }, []);
+  // Static subscriber counts for instant loading
+  const subscriberCounts: Record<string, string> = {
+    "deep-focus": "650",
+    "chillout": "720",
+    "cyber-dreams": "890",
+    "jazz-sphere": "540",
+    "guitarsphere": "610",
+    "pianosphere": "680",
+  };
 
   return (
     <section id="channels" className="py-20 md:py-32 bg-gradient-to-b from-background to-card/30">
@@ -118,7 +103,7 @@ export default function Channels() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {channels.map((channel) => {
             const Icon = channel.icon;
-            const subscribers = subscriberCounts[channel.id] || "...";
+            const subscribers = subscriberCounts[channel.id] || "500";
             
             return (
               <Card

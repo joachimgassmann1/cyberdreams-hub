@@ -1,20 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
-import { useEffect, useState } from "react";
-import { getLatestVideosFromDifferentChannels, getVideoStatistics, formatCount } from "@/lib/youtube";
 
-// Channel IDs for all Sphere Music channels
-const CHANNEL_IDS = [
-  "UCNc7m60KRRtsFugFEPwgL4Q", // Deep Focus Sphere
-  "UCz1te_MlsOdFvo86vJv16_A", // Chillout Sphere
-  "UCaSZ-ibhaSzxB-_PnfCVxFA", // Cyber Dreams
-  "UCBKfJNITtV3Ubf_6uZb527w", // JazzSphere Radio
-  "UCrzRTjTXIcfNJUHPs9nzJzw", // Guitarsphere Radio
-  "UCeYqdPkQ6ZMZHLlbfkZ5qNw", // Pianosphere Radio
-];
-
-// Fallback videos when API is not available
-const FALLBACK_VIDEOS = [
+// Static featured videos for instant loading
+const FEATURED_VIDEOS = [
   {
     id: "bsUsjirLjG4",
     title: "Unlock Deep Focus | Ambient Sounds for Nighttime Study & Intense Work",
@@ -35,54 +23,7 @@ const FALLBACK_VIDEOS = [
   },
 ];
 
-interface FeaturedVideo {
-  id: string;
-  title: string;
-  channelTitle: string;
-  viewCount: string;
-}
-
 export default function FeaturedVideos() {
-  const [videos, setVideos] = useState<FeaturedVideo[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchLatestVideos = async () => {
-      try {
-        // Get latest videos from different channels
-        const latestVideos = await getLatestVideosFromDifferentChannels(CHANNEL_IDS);
-        
-        // If API returned videos, fetch their stats
-        if (latestVideos && latestVideos.length > 0) {
-          const videosWithStats = await Promise.all(
-            latestVideos.map(async (video: any) => {
-              const stats = await getVideoStatistics(video.id);
-              return {
-                id: video.id,
-                title: video.title,
-                channelTitle: video.channelTitle,
-                viewCount: stats ? formatCount(stats.statistics.viewCount) : "...",
-              };
-            })
-          );
-          
-          setVideos(videosWithStats);
-        } else {
-          // Fallback to default videos if API fails
-          setVideos(FALLBACK_VIDEOS);
-        }
-      } catch (error) {
-        console.error('Error fetching latest videos, using fallback:', error);
-        // Use fallback videos when API is not available
-        setVideos(FALLBACK_VIDEOS);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchLatestVideos();
-  }, []);
-
   return (
     <section className="py-20 md:py-32 bg-card/30">
       <div className="container">
@@ -101,67 +42,52 @@ export default function FeaturedVideos() {
 
         {/* Videos Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {loading ? (
-            // Loading skeleton
-            [1, 2, 3].map((i) => (
-              <Card key={i} className="overflow-hidden bg-card border-border">
-                <CardContent className="p-0">
-                  <div className="aspect-video bg-muted animate-pulse"></div>
-                  <div className="p-4 space-y-2">
-                    <div className="h-4 bg-muted rounded animate-pulse"></div>
-                    <div className="h-3 bg-muted rounded w-2/3 animate-pulse"></div>
+          {FEATURED_VIDEOS.map((video) => (
+            <Card
+              key={video.id}
+              className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+            >
+              <CardContent className="p-0">
+                {/* Video Thumbnail */}
+                <a
+                  href={`https://www.youtube.com/watch?v=${video.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block relative"
+                >
+                  <div className="relative aspect-video bg-muted overflow-hidden">
+                    <img
+                      src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                      alt={video.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+                      }}
+                    />
+                    
+                    {/* Play Button Overlay */}
+                    <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="p-4 rounded-full bg-primary group-hover:scale-110 transition-transform">
+                        <Play className="w-8 h-8 text-primary-foreground fill-current" />
+                      </div>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))
-          ) : (
-            videos.map((video) => (
-              <Card
-                key={video.id}
-                className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
-              >
-                <CardContent className="p-0">
-                  {/* Video Thumbnail */}
-                  <a
-                    href={`https://www.youtube.com/watch?v=${video.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block relative"
-                  >
-                    <div className="relative aspect-video bg-muted overflow-hidden">
-                      <img
-                        src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-                        alt={video.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
-                        }}
-                      />
-                      
-                      {/* Play Button Overlay */}
-                      <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div className="p-4 rounded-full bg-primary group-hover:scale-110 transition-transform">
-                          <Play className="w-8 h-8 text-primary-foreground fill-current" />
-                        </div>
-                      </div>
-                    </div>
 
-                    {/* Video Info */}
-                    <div className="p-4">
-                      <h3 className="font-semibold text-base mb-2 line-clamp-2 group-hover:text-primary transition-colors">
-                        {video.title}
-                      </h3>
-                      <div className="flex items-center justify-between text-sm text-foreground/60">
-                        <span>{video.channelTitle}</span>
-                        <span>{video.viewCount} views</span>
-                      </div>
+                  {/* Video Info */}
+                  <div className="p-4">
+                    <h3 className="font-semibold text-base mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                      {video.title}
+                    </h3>
+                    <div className="flex items-center justify-between text-sm text-foreground/60">
+                      <span>{video.channelTitle}</span>
+                      <span>{video.viewCount} views</span>
                     </div>
-                  </a>
-                </CardContent>
-              </Card>
-            ))
-          )}
+                  </div>
+                </a>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* View More Button */}

@@ -172,3 +172,8 @@
 - [x] Google Search Console Verifizierungsdatei hinzufügen- [x] Express-Server Fix: Statische Dateien (robots.txt, sitemap.xml, Google-Verifizierung) korrekt ausliefern
 - [x] Google Search Console Verifizierung mit HTML Meta-Tag Methode implementieren
 - [x] Google Verifizierungscode korrigieren (3PbH73ha_XaY8ORDUyz5GCq_qc-MRvZFpE0GjLmyE8Q)
+- [ ] Pre-Rendering implementieren für Google-Indexierung (SSG/SSR)
+- [x] KRITISCH: Leere weiße Seite beim ersten Laden beheben
+- [x] YouTube API-Aufrufe aus initialem Rendering entfernen
+- [x] Statische Fallback-Werte für schnelles Laden einbauen
+- [x] PageSpeed-Performance optimieren

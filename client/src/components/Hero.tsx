@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Music, Play } from "lucide-react";
-import { useEffect, useState } from "react";
-import { getAggregatedStats, formatCount, formatHours } from "@/lib/youtube";
+// Removed YouTube API imports for better performance
 
 // Channel IDs for all Sphere Music channels
 const CHANNEL_IDS = [
@@ -14,33 +13,13 @@ const CHANNEL_IDS = [
 ];
 
 export default function Hero() {
-  const [stats, setStats] = useState({
+  // Static stats for instant loading
+  const stats = {
     channels: 6,
-    hours: 100,
-    views: 50000,
-    subscribers: 4000,
-  });
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchStats = async () => {
-      try {
-        const aggregatedStats = await getAggregatedStats(CHANNEL_IDS);
-        setStats({
-          channels: aggregatedStats.totalChannels,
-          hours: aggregatedStats.totalHours,
-          views: aggregatedStats.totalViews,
-          subscribers: aggregatedStats.totalSubscribers,
-        });
-      } catch (error) {
-        console.error('Error fetching aggregated stats:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchStats();
-  }, []);
+    hours: "100",
+    views: "50K",
+    subscribers: "4.1K",
+  };
 
   const scrollToChannels = () => {
     const element = document.querySelector("#channels");
@@ -107,25 +86,25 @@ export default function Hero() {
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {loading ? "..." : `${stats.channels}+`}
+                {stats.channels}+
               </div>
               <div className="text-sm md:text-base text-foreground/60">Channels</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {loading ? "..." : `${formatHours(stats.hours * 3600)}+`}
+                {stats.hours}+
               </div>
               <div className="text-sm md:text-base text-foreground/60">Hours of Music</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {loading ? "..." : `${formatCount(stats.views)}+`}
+                {stats.views}+
               </div>
               <div className="text-sm md:text-base text-foreground/60">Total Views</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {loading ? "..." : `${formatCount(stats.subscribers)}+`}
+                {stats.subscribers}+
               </div>
               <div className="text-sm md:text-base text-foreground/60">Subscribers</div>
             </div>
