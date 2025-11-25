@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves } from "lucide-react";
+import { useEffect, useState } from "react";
+import { getChannelIdFromHandle, getChannelStatistics, formatCount } from "@/lib/youtube";
 
 const channels = [
   {
     id: "deep-focus",
     name: "Deep Focus Sphere",
     handle: "@DeepFocusSphere67",
+    channelId: "UCNc7m60KRRtsFugFEPwgL4Q",
     description: "Focus, Relax & Study Music designed to help you work better, study longer and stay calm while staying productive.",
-    subscribers: "2.74K",
     image: "/channel-deep-focus-new.jpg",
     url: "https://www.youtube.com/@deepfocussphere67",
     icon: Music2,
@@ -18,8 +20,8 @@ const channels = [
     id: "chillout",
     name: "Chillout Sphere",
     handle: "@ChilloutSphere67",
+    channelId: "", // Will be fetched dynamically
     description: "Chillout Lounge & Relaxing Music for peaceful moments, beach vibes, and sunset relaxation.",
-    subscribers: "21",
     image: "/channel-chillout-new.jpg",
     url: "https://www.youtube.com/@ChilloutSphere67",
     icon: Waves,
@@ -29,8 +31,8 @@ const channels = [
     id: "cyber-dreams",
     name: "Cyber Dreams",
     handle: "@CyberDreams-x9p",
+    channelId: "", // Will be fetched dynamically
     description: "Ambient Music & Futuristic Sounds for a journey into cyberpunk atmospheres and electronic soundscapes.",
-    subscribers: "173",
     image: "/channel-cyber-new.jpg",
     url: "https://www.youtube.com/@CyberDreams-x9p",
     icon: Sparkles,
@@ -40,8 +42,8 @@ const channels = [
     id: "jazz-sphere",
     name: "JazzSphere Radio",
     handle: "@JazzSphereRadio",
+    channelId: "", // Will be fetched dynamically
     description: "World of Smooth Jazz featuring elegant melodies and sophisticated rhythms for refined listening.",
-    subscribers: "1.16K",
     image: "/channel-jazz-new.jpg",
     url: "https://www.youtube.com/@JazzSphereRadio",
     icon: Radio,
@@ -51,8 +53,8 @@ const channels = [
     id: "guitar-sphere",
     name: "Guitarsphere Radio",
     handle: "@GuitarsphereRadio",
+    channelId: "", // Will be fetched dynamically
     description: "The Sound of Guitar celebrating acoustic and electric guitar music across all genres.",
-    subscribers: "Coming Soon",
     image: "/channel-guitar-new.jpg",
     url: "https://www.youtube.com/@GuitarsphereRadio",
     icon: Guitar,
@@ -62,8 +64,8 @@ const channels = [
     id: "piano-sphere",
     name: "Pianosphere Radio",
     handle: "@PianosphereRadio",
+    channelId: "", // Will be fetched dynamically
     description: "Beautiful piano compositions and ambient piano music for relaxation and contemplation.",
-    subscribers: "2",
     image: "/channel-piano-new.jpg",
     url: "https://www.youtube.com/@PianosphereRadio",
     icon: Piano,
@@ -72,6 +74,35 @@ const channels = [
 ];
 
 export default function Channels() {
+  const [subscriberCounts, setSubscriberCounts] = useState<Record<string, string>>({});
+
+  useEffect(() => {
+    // Fetch subscriber counts for all channels
+    const fetchSubscriberCounts = async () => {
+      const counts: Record<string, string> = {};
+      
+      for (const channel of channels) {
+        let channelId = channel.channelId;
+        
+        // If channelId is not provided, fetch it from handle
+        if (!channelId) {
+          channelId = await getChannelIdFromHandle(channel.handle) || "";
+        }
+        
+        if (channelId) {
+          const stats = await getChannelStatistics(channelId);
+          if (stats) {
+            counts[channel.id] = formatCount(stats.statistics.subscriberCount);
+          }
+        }
+      }
+      
+      setSubscriberCounts(counts);
+    };
+
+    fetchSubscriberCounts();
+  }, []);
+
   return (
     <section id="channels" className="py-20 md:py-32 bg-gradient-to-b from-background to-card/30">
       <div className="container">
@@ -92,6 +123,8 @@ export default function Channels() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {channels.map((channel) => {
             const Icon = channel.icon;
+            const subscribers = subscriberCounts[channel.id] || "...";
+            
             return (
               <Card
                 key={channel.id}
@@ -117,7 +150,7 @@ export default function Channels() {
                     {channel.name}
                   </CardTitle>
                   <CardDescription className="text-sm text-foreground/60">
-                    {channel.handle} • {channel.subscribers} subscribers
+                    {channel.handle} • {subscribers} subscribers
                   </CardDescription>
                 </CardHeader>
 

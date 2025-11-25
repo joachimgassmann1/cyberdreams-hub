@@ -77,3 +77,11 @@
 
 ## Bildoptimierung
 - [x] Kanal-Bilder aufhellen (Overlay reduzieren)
+
+## YouTube API Integration
+- [x] YouTube API-Schlüssel als Secret speichern
+- [x] View-Zahlen automatisch abrufen
+- [x] Subscriber-Counts automatisch abrufen
+- [x] Frontend-Komponenten für dynamische Daten anpassen
+- [x] YouTube API Helper-Funktionen erstellen
+- [x] Dynamische Daten-Integration testen
