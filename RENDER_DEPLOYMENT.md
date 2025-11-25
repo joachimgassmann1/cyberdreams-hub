@@ -29,12 +29,12 @@ Falls Sie noch keinen Render.com Account haben:
 
 ---
 
-## Schritt 2: Neuen Static Site Service erstellen
+## Schritt 2: Neuen Web Service erstellen
 
 Nach dem Login in Ihrem Render Dashboard:
 
 1. Klicken Sie auf **"New +"** in der oberen rechten Ecke
-2. Wählen Sie **"Static Site"** aus dem Dropdown-Menü
+2. Wählen Sie **"Web Service"** aus dem Dropdown-Menü
 3. Sie werden zur Repository-Auswahl weitergeleitet
 
 ---
@@ -77,9 +77,9 @@ Nachdem Sie das Repository verbunden haben, konfigurieren Sie die folgenden Eins
 | Feld | Wert |
 |------|------|
 | **Build Command** | `pnpm install && pnpm run build` |
-| **Publish Directory** | `dist/public` |
+| **Start Command** | `pnpm run start` |
 
-**Wichtig**: Stellen Sie sicher, dass die Build Command und das Publish Directory exakt wie oben angegeben eingetragen werden.
+**Wichtig**: Stellen Sie sicher, dass die Build Command und Start Command exakt wie oben angegeben eingetragen werden. Die Website wird als **Web Service** mit Express-Server deployed, nicht als Static Site.
 
 ---
 
@@ -230,15 +230,15 @@ Falls das Problem weiterhin besteht:
 
 ## Kosten
 
-Render.com bietet einen **kostenlosen Plan** für Static Sites mit folgenden Features:
+Render.com bietet einen **kostenlosen Plan** für Web Services mit folgenden Features:
 
-- ✅ Unbegrenzte Bandbreite
+- ✅ 750 Stunden pro Monat (ausreichend für 24/7 Betrieb)
 - ✅ Automatische SSL-Zertifikate
 - ✅ Automatische Deployments von GitHub
 - ✅ Custom Domains
-- ✅ 100 GB Bandbreite pro Monat (danach gedrosselt, nicht gesperrt)
+- ⚠️ Service schläft nach 15 Minuten Inaktivität (erste Anfrage danach dauert ~30 Sekunden)
 
-Für höhere Anforderungen gibt es kostenpflichtige Pläne ab $7/Monat.
+Für permanente Verfügbarkeit ohne Sleep gibt es kostenpflichtige Pläne ab $7/Monat.
 
 ---
 
