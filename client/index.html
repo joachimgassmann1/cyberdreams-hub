@@ -35,6 +35,60 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://sphere-music-hub.de/" />
+    
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://sphere-music-hub.de/#organization",
+          "name": "Sphere Music Hub",
+          "url": "https://sphere-music-hub.de/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sphere-music-hub.de/logo.png"
+          },
+          "description": "Relaxing music, chill music, ambient soundscapes and deep focus music for work, study and relaxation.",
+          "email": "stillcybervisions@gmail.com",
+          "sameAs": [
+            "https://www.youtube.com/@DeepFocusSphere",
+            "https://www.youtube.com/@ChilloutSphere",
+            "https://www.youtube.com/@CyberDreams_",
+            "https://www.youtube.com/@JazzSphereRadio",
+            "https://www.youtube.com/@GuitarsphereRadio",
+            "https://www.youtube.com/@PianosphereRadio"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://sphere-music-hub.de/#website",
+          "url": "https://sphere-music-hub.de/",
+          "name": "Sphere Music Hub",
+          "description": "Relaxing music, chill music, ambient soundscapes and deep focus music for work, study and relaxation.",
+          "publisher": {
+            "@id": "https://sphere-music-hub.de/#organization"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://sphere-music-hub.de/#webpage",
+          "url": "https://sphere-music-hub.de/",
+          "name": "Sphere Music Hub | Relaxing, Chill, Ambient & Focus Music",
+          "isPartOf": {
+            "@id": "https://sphere-music-hub.de/#website"
+          },
+          "about": {
+            "@id": "https://sphere-music-hub.de/#organization"
+          },
+          "description": "Relaxing music, chill music, ambient soundscapes and deep focus music for work, study and relaxation. Discover calming playlists and focus environments at Sphere Music Hub.",
+          "inLanguage": "en-US"
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />

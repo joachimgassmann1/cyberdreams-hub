@@ -1,0 +1,11 @@
+# robots.txt for Sphere Music Hub
+# https://sphere-music-hub.de
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://sphere-music-hub.de/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1

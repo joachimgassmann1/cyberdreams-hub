@@ -166,3 +166,6 @@
 - [x] Our Mission Text mit SEO-optimiertem Text ersetzen (focus music, chill music, ambient music)
 - [x] SEO Meta-Tags implementieren (Meta Description, Open Graph, Twitter Cards)
 - [x] OG Image für Social Media Sharing erstellen
+- [x] robots.txt erstellen
+- [x] sitemap.xml generieren
+- [x] Schema.org JSON-LD Markup implementieren (Organization, WebSite, MusicGroup)
