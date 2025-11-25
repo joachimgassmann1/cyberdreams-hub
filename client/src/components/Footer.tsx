@@ -129,11 +129,11 @@ export default function Footer() {
               © {currentYear} Sphere Music Hub. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-primary transition-colors">
-                Privacy Policy
+              <a href="/impressum" className="hover:text-primary transition-colors">
+                Impressum
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
-                Terms of Service
+              <a href="/datenschutz" className="hover:text-primary transition-colors">
+                Datenschutz
               </a>
             </div>
           </div>

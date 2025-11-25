@@ -133,3 +133,10 @@
 
 ## Kontakt E-Mail Update
 - [x] E-Mail-Adresse im Footer auf stillcybervisions@gmail.com aktualisieren
+
+## Impressum und Datenschutz
+- [x] Gewerbeanmeldung lesen und Daten extrahieren
+- [x] Impressums-Seite erstellen
+- [x] Impressum in Navigation und Footer verlinken
+- [x] Datenschutz-Seite erstellen
+- [x] Datenschutz in Footer verlinken
