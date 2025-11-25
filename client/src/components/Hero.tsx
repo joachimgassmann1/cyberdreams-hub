@@ -73,7 +73,7 @@ export default function Hero() {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
-            Your Space for Jazz, Chillout & Deep Focus
+            Sphere Music Hub – Focus, Chill & Ambient Vibes
           </h1>
 
           {/* Subheading */}
