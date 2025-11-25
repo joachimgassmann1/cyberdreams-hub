@@ -160,3 +160,4 @@
 - [ ] Facebook-Logo wird immer noch angezeigt - komplett aus Projekt entfernen
 - [x] Hero-Titel zu "Sphere Music Hub – Focus, Chill & Ambient Music Vibes" ändern (Music vor Vibes)
 - [x] Hero-Untertitel ändern zu "Relaxing chillout beats, ambient vibes, and deep focus soundscapes..."
+- [x] About-Sektion Text ersetzen mit neuem Text über immersive audio experiences

@@ -37,7 +37,7 @@ export default function About() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-3xl mx-auto leading-relaxed">
-            We create immersive audio experiences that transform your daily activities into moments of clarity, creativity, and calm. Our collection of specialized music channels serves as your sonic companion for work, study, relaxation, and everything in between.
+            We create immersive audio experiences designed to transform your daily activities into moments of clarity, calm, and creativity. Our collection of specialized music channels serves as your sonic companion for work, study, relaxation, and everything in between.
           </p>
         </div>
 
