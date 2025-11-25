@@ -5,22 +5,22 @@ const features = [
   {
     icon: Brain,
     title: "Deep Focus",
-    description: "Scientifically crafted soundscapes designed to enhance concentration and cognitive performance during work and study sessions.",
+    description: "Calm, minimal soundscapes designed to boost concentration, sharpen mental clarity, and help you stay focused during work and study sessions.",
   },
   {
     icon: Heart,
     title: "Relaxation",
-    description: "Soothing ambient music that helps reduce stress, promote calmness, and create peaceful environments for unwinding.",
+    description: "Soothing ambient music that reduces stress, brings calmness, and creates peaceful spaces for unwinding and recharging.",
   },
   {
     icon: Headphones,
     title: "Study Enhancement",
-    description: "Carefully curated playlists that support memory retention, learning efficiency, and sustained mental clarity.",
+    description: "Curated playlists that support learning, improve focus, and maintain steady mental clarity during long study sessions.",
   },
   {
     icon: Sparkles,
     title: "Ambient Atmospheres",
-    description: "Immersive sonic environments spanning from futuristic cyberpunk to serene natural soundscapes and smooth jazz.",
+    description: "Immersive ambient environments ranging from futuristic cyber textures to serene natural soundscapes and gentle chill lounge tones.",
   },
 ];
 
