@@ -140,3 +140,9 @@
 - [x] Impressum in Navigation und Footer verlinken
 - [x] Datenschutz-Seite erstellen
 - [x] Datenschutz in Footer verlinken
+
+## Deployment
+- [ ] GitHub Repository konfigurieren
+- [ ] Code zu GitHub pushen
+- [ ] Build-Konfiguration für Render optimieren
+- [ ] Deployment-Anleitung für Render.com erstellen
