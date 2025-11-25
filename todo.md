@@ -142,7 +142,7 @@
 - [x] Datenschutz in Footer verlinken
 
 ## Deployment
-- [ ] GitHub Repository konfigurieren
-- [ ] Code zu GitHub pushen
-- [ ] Build-Konfiguration für Render optimieren
-- [ ] Deployment-Anleitung für Render.com erstellen
+- [x] GitHub Repository konfigurieren
+- [x] Code zu GitHub pushen
+- [x] Build-Konfiguration für Render optimieren
+- [x] Deployment-Anleitung für Render.com erstellen
