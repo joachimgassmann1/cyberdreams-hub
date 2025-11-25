@@ -61,3 +61,12 @@
 ## Video-Updates
 - [x] Echte Video-IDs von YouTube-Kanälen sammeln
 - [x] FeaturedVideos-Komponente mit korrekten Video-IDs aktualisieren
+
+## Hero-Bereich Optimierung
+- [x] Hintergrundbild sichtbarer machen (Overlay reduzieren)
+- [x] Überschrift einfarbig weiß gestalten (keine bunten Farben)
+
+## Design-Anpassungen
+- [x] Statistiken (6+, 100+, 4K+) einfarbig gestalten
+- [x] Neue thematisch passende Kanal-Bilder generieren
+- [x] Kanal-Bilder in Website integrieren

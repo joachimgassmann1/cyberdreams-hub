@@ -18,7 +18,7 @@ export default function Hero() {
           alt="Hero Background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/80 to-background"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/50 to-background"></div>
       </div>
 
       {/* Content */}
@@ -32,11 +32,8 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-            Your Space for{" "}
-            <span className="bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent">
-              Focus, Relax & Study
-            </span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white">
+            Your Space for Focus, Relax & Study
           </h1>
 
           {/* Subheading */}
@@ -73,7 +70,7 @@ export default function Hero() {
               <div className="text-sm md:text-base text-foreground/60">Channels</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">100+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">100+</div>
               <div className="text-sm md:text-base text-foreground/60">Hours of Music</div>
             </div>
             <div className="text-center">
