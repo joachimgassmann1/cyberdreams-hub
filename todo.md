@@ -146,3 +146,6 @@
 - [x] Code zu GitHub pushen
 - [x] Build-Konfiguration für Render optimieren
 - [x] Deployment-Anleitung für Render.com erstellen
+
+## Bugfixes
+- [x] Browser-Tab-Titel zeigt %VITE_APP_TITLE% statt echten Titel - beheben
