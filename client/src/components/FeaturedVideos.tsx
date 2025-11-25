@@ -1,8 +1,20 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
+import { useEffect, useState } from "react";
+import { getLatestVideosFromDifferentChannels, getVideoStatistics, formatCount } from "@/lib/youtube";
 
-// Static featured videos for instant loading
-const FEATURED_VIDEOS = [
+// Channel IDs for all Sphere Music channels
+const CHANNEL_IDS = [
+  "UCNc7m60KRRtsFugFEPwgL4Q", // Deep Focus Sphere
+  "UCz1te_MlsOdFvo86vJv16_A", // Chillout Sphere
+  "UCaSZ-ibhaSzxB-_PnfCVxFA", // Cyber Dreams
+  "UCBKfJNITtV3Ubf_6uZb527w", // JazzSphere Radio
+  "UCrzRTjTXIcfNJUHPs9nzJzw", // Guitarsphere Radio
+  "UCeYqdPkQ6ZMZHLlbfkZ5qNw", // Pianosphere Radio
+];
+
+// Fallback videos for instant loading
+const FALLBACK_VIDEOS = [
   {
     id: "bsUsjirLjG4",
     title: "Unlock Deep Focus | Ambient Sounds for Nighttime Study & Intense Work",
@@ -23,7 +35,58 @@ const FEATURED_VIDEOS = [
   },
 ];
 
+interface FeaturedVideo {
+  id: string;
+  title: string;
+  channelTitle: string;
+  viewCount: string;
+}
+
 export default function FeaturedVideos() {
+  const [videos, setVideos] = useState<FeaturedVideo[]>(FALLBACK_VIDEOS);
+
+  useEffect(() => {
+    // Fetch latest videos asynchronously in the background
+    const fetchLatestVideos = async () => {
+      try {
+        // Get latest videos from different channels
+        const latestVideos = await getLatestVideosFromDifferentChannels(CHANNEL_IDS);
+        
+        // If API returned videos, fetch their stats
+        if (latestVideos && latestVideos.length > 0) {
+          const videosWithStats = await Promise.all(
+            latestVideos.map(async (video: any) => {
+              try {
+                const stats = await getVideoStatistics(video.id);
+                return {
+                  id: video.id,
+                  title: video.title,
+                  channelTitle: video.channelTitle,
+                  viewCount: stats ? formatCount(stats.statistics.viewCount) : "...",
+                };
+              } catch (error) {
+                console.error(`Error fetching stats for video ${video.id}:`, error);
+                return {
+                  id: video.id,
+                  title: video.title,
+                  channelTitle: video.channelTitle,
+                  viewCount: "...",
+                };
+              }
+            })
+          );
+          
+          setVideos(videosWithStats);
+        }
+      } catch (error) {
+        console.error('Error fetching latest videos, keeping fallback:', error);
+        // Keep fallback videos on error
+      }
+    };
+
+    fetchLatestVideos();
+  }, []);
+
   return (
     <section className="py-20 md:py-32 bg-card/30">
       <div className="container">
@@ -42,7 +105,7 @@ export default function FeaturedVideos() {
 
         {/* Videos Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {FEATURED_VIDEOS.map((video) => (
+          {videos.map((video) => (
             <Card
               key={video.id}
               className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"

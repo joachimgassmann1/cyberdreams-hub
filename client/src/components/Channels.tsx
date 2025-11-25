@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves } from "lucide-react";
-// Removed YouTube API imports for better performance
+import { useEffect, useState } from "react";
+import { getChannelStatistics, formatCount } from "@/lib/youtube";
 
 const channels = [
   {
@@ -72,16 +73,46 @@ const channels = [
   },
 ];
 
+// Fallback subscriber counts for instant loading
+const FALLBACK_SUBSCRIBERS: Record<string, string> = {
+  "deep-focus": "650",
+  "chillout": "720",
+  "cyber-dreams": "890",
+  "jazz-sphere": "540",
+  "guitar-sphere": "610",
+  "piano-sphere": "680",
+};
+
 export default function Channels() {
-  // Static subscriber counts for instant loading
-  const subscriberCounts: Record<string, string> = {
-    "deep-focus": "650",
-    "chillout": "720",
-    "cyber-dreams": "890",
-    "jazz-sphere": "540",
-    "guitarsphere": "610",
-    "pianosphere": "680",
-  };
+  const [subscriberCounts, setSubscriberCounts] = useState<Record<string, string>>(FALLBACK_SUBSCRIBERS);
+
+  useEffect(() => {
+    // Fetch subscriber counts asynchronously in the background
+    const fetchSubscriberCounts = async () => {
+      const counts: Record<string, string> = {};
+      
+      for (const channel of channels) {
+        if (channel.channelId) {
+          try {
+            const stats = await getChannelStatistics(channel.channelId);
+            if (stats) {
+              counts[channel.id] = formatCount(stats.statistics.subscriberCount);
+            }
+          } catch (error) {
+            console.error(`Error fetching stats for ${channel.name}:`, error);
+            // Keep fallback value on error
+          }
+        }
+      }
+      
+      // Only update if we got at least some data
+      if (Object.keys(counts).length > 0) {
+        setSubscriberCounts(prev => ({ ...prev, ...counts }));
+      }
+    };
+
+    fetchSubscriberCounts();
+  }, []);
 
   return (
     <section id="channels" className="py-20 md:py-32 bg-gradient-to-b from-background to-card/30">

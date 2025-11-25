@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Music, Play } from "lucide-react";
-// Removed YouTube API imports for better performance
+import { useEffect, useState } from "react";
+import { getAggregatedStats, formatCount } from "@/lib/youtube";
 
 // Channel IDs for all Sphere Music channels
 const CHANNEL_IDS = [
@@ -12,14 +13,39 @@ const CHANNEL_IDS = [
   "UCeYqdPkQ6ZMZHLlbfkZ5qNw", // Pianosphere Radio
 ];
 
+// Fallback stats for instant loading
+const FALLBACK_STATS = {
+  channels: 6,
+  hours: "100",
+  views: "50K",
+  subscribers: "4.1K",
+};
+
 export default function Hero() {
-  // Static stats for instant loading
-  const stats = {
-    channels: 6,
-    hours: "100",
-    views: "50K",
-    subscribers: "4.1K",
-  };
+  const [stats, setStats] = useState(FALLBACK_STATS);
+
+  useEffect(() => {
+    // Fetch real stats asynchronously in the background
+    const fetchStats = async () => {
+      try {
+        const aggregated = await getAggregatedStats(CHANNEL_IDS);
+        
+        if (aggregated) {
+          setStats({
+            channels: aggregated.totalChannels,
+            hours: aggregated.totalHours.toString(),
+            views: formatCount(aggregated.totalViews),
+            subscribers: formatCount(aggregated.totalSubscribers),
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching hero stats, using fallback:', error);
+        // Keep fallback stats on error
+      }
+    };
+
+    fetchStats();
+  }, []);
 
   const scrollToChannels = () => {
     const element = document.querySelector("#channels");

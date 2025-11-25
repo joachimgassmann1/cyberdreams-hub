@@ -2,7 +2,7 @@ import { Cache } from './cache';
 
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 const BASE_URL = 'https://www.googleapis.com/youtube/v3';
-const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
+const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
 export interface VideoStatistics {
   viewCount: string;
