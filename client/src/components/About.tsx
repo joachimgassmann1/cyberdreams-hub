@@ -76,10 +76,10 @@ export default function About() {
             <CardContent className="p-8 md:p-12 text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-6">Our Mission</h3>
               <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                At Sphere Music Hub, we believe that the right soundtrack can fundamentally transform how you work, learn, and live. Every composition is meticulously crafted to support your mental state, whether you need laser-focused concentration for complex tasks, a peaceful atmosphere for creative thinking, or simply a moment of tranquility in a busy day.
+                At Sphere Music Hub, we believe relaxing music can transform how you work, study and unwind. Our focus music, chill music and ambient music support concentration, calmness and productivity. Whether you need deep focus for studying, a peaceful space for creative thinking or relaxing music for stress relief, our channels provide the right sound atmosphere for every moment.
               </p>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                Our diverse family of channels ensures that no matter your mood or activity, there is always a perfect sonic environment waiting for you. From the productivity-enhancing rhythms of Deep Focus Sphere to the sunset vibes of Chillout Sphere, we are here to elevate your everyday experiences through the power of music.
+                Our family of channels ensures you always find the perfect blend of ambient music, chillout music and study music to stay calm, focused and inspired. Sphere Music Hub brings relaxing and immersive soundscapes into your daily life.
               </p>
             </CardContent>
           </Card>
