@@ -157,3 +157,5 @@
 - [x] Hero-Überschrift und Beschreibung optimieren (Jazz, Chillout, Deep Focus erwähnen)
 - [x] Hero-Überschrift zu "Sphere Music Hub – Focus, Chill & Ambient Vibes" ändern
 - [x] Facebook-Bilder aus Projekt entfernen (wurden versehentlich deployed)
+- [ ] Facebook-Logo wird immer noch angezeigt - komplett aus Projekt entfernen
+- [x] Hero-Titel zu "Sphere Music Hub – Focus, Chill & Ambient Music Vibes" ändern (Music vor Vibes)
