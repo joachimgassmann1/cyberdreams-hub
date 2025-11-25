@@ -78,7 +78,7 @@ export default function Hero() {
 
           {/* Subheading */}
           <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Discover curated jazz sessions, soothing chillout beats, and deep focus ambient soundscapes designed to help you work smarter, study longer, and stay productive with calm.
+            Relaxing chillout beats, ambient vibes, and deep focus soundscapes designed to help you unwind, study longer, and stay calm and productive.
           </p>
 
           {/* CTA Buttons */}
