@@ -74,3 +74,6 @@
 ## Featured Videos Update
 - [x] Aktuelle View-Zahlen von YouTube abrufen
 - [x] View-Zahlen in FeaturedVideos-Komponente aktualisieren
+
+## Bildoptimierung
+- [x] Kanal-Bilder aufhellen (Overlay reduzieren)

@@ -104,7 +104,7 @@ export default function Channels() {
                     alt={channel.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/80 via-card/20 to-transparent"></div>
                   
                   {/* Icon Overlay */}
                   <div className={`absolute top-4 right-4 p-3 rounded-full bg-gradient-to-br ${channel.color} shadow-lg`}>
