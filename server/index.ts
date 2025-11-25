@@ -16,9 +16,23 @@ async function startServer() {
       ? path.resolve(__dirname, "public")
       : path.resolve(__dirname, "..", "dist", "public");
 
-  app.use(express.static(staticPath));
+  // Serve static files with explicit priority
+  app.use(express.static(staticPath, {
+    index: false, // Don't serve index.html automatically
+    setHeaders: (res, filePath) => {
+      // Set proper content types for SEO files
+      if (filePath.endsWith('.xml')) {
+        res.setHeader('Content-Type', 'application/xml');
+      } else if (filePath.endsWith('.txt')) {
+        res.setHeader('Content-Type', 'text/plain');
+      } else if (filePath.endsWith('.html') && !filePath.endsWith('index.html')) {
+        res.setHeader('Content-Type', 'text/html');
+      }
+    }
+  }));
 
   // Handle client-side routing - serve index.html for all routes
+  // This will only be reached if express.static didn't find a file
   app.get("*", (_req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
   });

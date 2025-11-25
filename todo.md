@@ -169,4 +169,4 @@
 - [x] robots.txt erstellen
 - [x] sitemap.xml generieren
 - [x] Schema.org JSON-LD Markup implementieren (Organization, WebSite, MusicGroup)
-- [x] Google Search Console Verifizierungsdatei hinzufügen
+- [x] Google Search Console Verifizierungsdatei hinzufügen- [x] Express-Server Fix: Statische Dateien (robots.txt, sitemap.xml, Google-Verifizierung) korrekt ausliefern
