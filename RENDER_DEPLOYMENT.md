@@ -219,14 +219,12 @@ Das Quota wird täglich um Mitternacht (Pacific Time) zurückgesetzt.
 
 **Problem**: Direkter Aufruf von `/impressum` oder `/datenschutz` führt zu 404-Fehler.
 
-**Lösung**:
-1. Gehen Sie zu Render Dashboard → Settings
-2. Fügen Sie unter **"Redirects/Rewrites"** folgende Regel hinzu:
-   - **Source**: `/*`
-   - **Destination**: `/index.html`
-   - **Action**: `Rewrite`
+**Lösung**: Dieses Problem wurde bereits durch die `render.yaml` Konfiguration gelöst. Die Datei enthält eine `routes` Sektion mit einer Rewrite-Regel, die alle Routen an `/index.html` weiterleitet. Nach dem Deployment sollten alle Unterseiten funktionieren.
 
-Dies stellt sicher, dass alle Routen an die React-App weitergeleitet werden.
+Falls das Problem weiterhin besteht:
+1. Stellen Sie sicher, dass die `render.yaml` Datei im Root-Verzeichnis Ihres Repositories liegt
+2. Triggern Sie ein manuelles Re-Deploy in Render Dashboard
+3. Überprüfen Sie die Build-Logs auf Fehler
 
 ---
 
