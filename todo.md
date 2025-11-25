@@ -149,3 +149,4 @@
 
 ## Bugfixes
 - [x] Browser-Tab-Titel zeigt %VITE_APP_TITLE% statt echten Titel - beheben
+- [x] SPA-Routing für Render.com konfigurieren (Impressum/Datenschutz zeigen "Not Found")
