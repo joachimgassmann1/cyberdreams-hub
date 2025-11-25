@@ -151,3 +151,6 @@
 - [x] Browser-Tab-Titel zeigt %VITE_APP_TITLE% statt echten Titel - beheben
 - [x] SPA-Routing für Render.com konfigurieren (Impressum/Datenschutz zeigen "Not Found")
 - [x] _redirects funktioniert nicht auf Render - alternative Lösung mit render.yaml routes implementieren
+- [x] Von Static Site auf Web Service mit Express-Server upgraden
+- [x] Express-Server für SPA-Routing implementieren
+- [x] Render.yaml für Web Service anpassen
