@@ -340,10 +340,11 @@
 - [ ] In Google Search Console bestätigen
 
 ## Google Fonts lokal hosten (Performance-Optimierung)
-- [ ] Google Fonts (Inter & Poppins) herunterladen
-- [ ] Font-Dateien in /public/fonts ablegen
-- [ ] index.html: Google Fonts CDN-Link entfernen
-- [ ] CSS: @font-face Regeln für lokale Fonts erstellen
-- [ ] Testen ob Schriftarten korrekt angezeigt werden
-- [ ] Deployen
-- [ ] PageSpeed Score erneut messen
+- [x] Google Fonts (Inter & Poppins) heruntergeladen (2,4 MB total)
+- [x] Font-Dateien in /public/fonts abgelegt
+- [x] index.html: Google Fonts CDN-Link entfernt
+- [x] fonts.css: @font-face Regeln für lokale Fonts erstellt
+- [x] Getestet - Fonts laden korrekt
+- [x] Zu GitHub gepusht (Commit c628790)
+- [ ] Render Deployment abwarten
+- [ ] PageSpeed Score erneut messen (Ziel: 90+)
