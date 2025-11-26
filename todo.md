@@ -322,4 +322,13 @@
 - [x] xPjrkMmZElw = Deep Focus Vibes
 - [x] bA1JhbZD8UM = Smooth Vocal Jazz
 - [x] Code aktualisiert
+- [x] Deployen
+
+## Domain-Update auf .com
+- [x] robots.txt: Sitemap-URL auf .com geändert
+- [x] sitemap.xml: Alle URLs auf .com geändert (15 Ersetzungen)
+- [x] index.html: Schema.org URLs auf .com geändert
+- [x] index.html: Open Graph og:url auf .com geändert
+- [x] index.html: Twitter Card URLs auf .com geändert
+- [x] index.html: Canonical URL auf .com geändert
 - [ ] Deployen

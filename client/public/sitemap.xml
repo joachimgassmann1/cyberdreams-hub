@@ -6,24 +6,24 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://sphere-music-hub.de/</loc>
-    <lastmod>2024-11-25</lastmod>
+    <loc>https://sphere-music-hub.com/</loc>
+    <lastmod>2025-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Impressum -->
   <url>
-    <loc>https://sphere-music-hub.de/impressum</loc>
-    <lastmod>2024-11-25</lastmod>
+    <loc>https://sphere-music-hub.com/impressum</loc>
+    <lastmod>2025-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <!-- Datenschutz -->
   <url>
-    <loc>https://sphere-music-hub.de/datenschutz</loc>
-    <lastmod>2024-11-25</lastmod>
+    <loc>https://sphere-music-hub.com/datenschutz</loc>
+    <lastmod>2025-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
