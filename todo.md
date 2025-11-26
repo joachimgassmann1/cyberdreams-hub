@@ -234,4 +234,8 @@
 - [x] Hero.tsx: Headline von weiß zu Cyan-Gold Gradient ändern
 - [x] Deployen
 - [x] Hero.tsx: Korrekten 4-Farben-Gradient (Cyan → Weiß → Beige/Gold → Orange) einbauen
+- [x] Deployen
+
+## Weißanteil im Hero-Gradient erhöhen
+- [x] Hero.tsx: Weißanteil im mittleren Bereich des Gradienten verstärken (via-gray-200 → via-white)
 - [ ] Deployen
