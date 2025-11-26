@@ -228,4 +228,8 @@
 
 ## Logo-Klick scrollt nach oben
 - [x] Navigation.tsx: Scroll-to-top beim Logo-Klick hinzufügen
+- [x] Deployen
+
+## Hero-Headline Farbmuster anpassen
+- [x] Hero.tsx: Headline von weiß zu Cyan-Gold Gradient ändern
 - [ ] Deployen
