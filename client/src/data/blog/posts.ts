@@ -6,8 +6,13 @@ import { jazzAtmosphere } from './jazz-atmosphere';
 import { pianoSoul } from './piano-soul';
 import { quietCureRelaxation } from './quiet-cure-relaxation';
 import { joachimCreatorStory } from './joachim-creator-story';
+import { insideAtmosphereCreativeProcess } from './inside-atmosphere-creative-process';
 
 export const blogPosts: BlogPost[] = [
+  {
+    ...insideAtmosphereCreativeProcess,
+    featured: true
+  },
   {
     ...joachimCreatorStory,
     featured: true
