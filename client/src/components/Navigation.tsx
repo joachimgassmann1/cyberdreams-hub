@@ -10,6 +10,7 @@ export default function Navigation() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "#channels", label: "Channels" },
+    { href: "/blog", label: "Blog" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
   ];
@@ -22,6 +23,9 @@ export default function Navigation() {
         element.scrollIntoView({ behavior: "smooth" });
         setIsMenuOpen(false);
       }
+    } else if (href.startsWith("/")) {
+      // For internal routes, let wouter handle it
+      setIsMenuOpen(false);
     }
   };
 

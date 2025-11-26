@@ -359,3 +359,26 @@
 - [ ] Mobile Score prüfen (sollte wieder bei 83 sein)
 
 **Fazit:** Lokale Fonts waren kontraproduktiv für Mobile. Google CDN ist besser optimiert.
+
+
+## Premium Blog System entwickeln
+- [ ] Blog-Datenstruktur definieren (Markdown + Frontmatter)
+- [ ] Blog-Übersichtsseite mit Grid-Layout erstellen
+- [ ] Pagination implementieren (12 Artikel pro Seite)
+- [ ] Artikel-Detailseite mit Rich-Formatting
+- [ ] Navigation erweitern (Blog-Link im Header)
+- [ ] SEO-Optimierung (Meta-Tags, Schema.org für Artikel)
+- [ ] Kategorien & Tags System
+- [ ] Lesedauer-Berechnung
+- [ ] Related Articles (ähnliche Artikel)
+- [ ] Demo-Artikel mit KI-generierten Bildern erstellen
+- [ ] Mobile-Optimierung testen
+- [ ] Deployen
+
+**Features:**
+- Statisches System (Markdown-basiert)
+- Premium Design (Grid, Hover-Effekte, Gradients)
+- SEO-optimiert (Rich Snippets, Open Graph)
+- Schnell & Performance-optimiert
+- Kategorien, Tags, Suchfunktion
+- Responsive Design

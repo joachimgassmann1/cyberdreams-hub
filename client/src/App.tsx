@@ -7,6 +7,8 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import BlogOverview from "./pages/blog/BlogOverview";
+import BlogArticle from "./pages/blog/BlogArticle";
 
 function Router() {
   return (
@@ -14,6 +16,8 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/impressum"} component={Impressum} />
       <Route path={"/datenschutz"} component={Datenschutz} />
+      <Route path={"/blog"} component={BlogOverview} />
+      <Route path={"/blog/:slug"} component={BlogArticle} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
