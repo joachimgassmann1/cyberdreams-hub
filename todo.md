@@ -224,4 +224,8 @@
 - [x] Logo zu WebP konvertieren und auf 96x96 resizen (1.2 MB → 2.3 KB!)
 - [x] Hero Background zu WebP konvertieren (1.3 MB → 74 KB!)
 - [x] Bild-Referenzen in Komponenten aktualisieren (.jpg → .webp)
-- [ ] Deployen und PageSpeed Score prüfen
+- [x] Deployen - Render buildet automatisch
+
+## Logo-Klick scrollt nach oben
+- [x] Navigation.tsx: Scroll-to-top beim Logo-Klick hinzufügen
+- [ ] Deployen
