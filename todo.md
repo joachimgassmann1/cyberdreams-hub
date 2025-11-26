@@ -298,4 +298,8 @@
 - [x] Korrekte Reihenfolge basierend auf YouTube-Screenshots festgelegt
 - [x] Video-IDs in FeaturedVideos.tsx neu angeordnet
 - [x] Titel mit echten YouTube-Titeln aktualisiert
+- [x] Deployen
+
+## Thumbnails zu Titeln zuordnen (finale Korrektur)
+- [x] Video-IDs neu zugeordnet: Cyberpunk, Jazz, Chillout, Piano, Deep Focus, Deep Focus
 - [ ] Deployen
