@@ -11,6 +11,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import NotFound from '@/pages/NotFound';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
+import ScrollToTop from '@/components/ScrollToTop';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
 
 export default function BlogArticle() {
@@ -104,6 +105,7 @@ export default function BlogArticle() {
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
       <Navigation />
       <ReadingProgressBar />
+      <ScrollToTop />
       {/* Hero Section */}
       <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
         <OptimizedImage
