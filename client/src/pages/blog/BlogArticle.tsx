@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import NotFound from '@/pages/NotFound';
+import ReadingProgressBar from '@/components/ReadingProgressBar';
 
 export default function BlogArticle() {
   const params = useParams<{ slug: string }>();
@@ -100,6 +101,7 @@ export default function BlogArticle() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
       <Navigation />
+      <ReadingProgressBar />
       {/* Hero Section */}
       <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
         <OptimizedImage
