@@ -3,12 +3,14 @@ import { Button } from "@/components/ui/button";
 
 interface SocialShareProps {
   title: string;
-  url: string;
+  url?: string;
   description?: string;
 }
 
 export default function SocialShare({ title, url, description }: SocialShareProps) {
-  const encodedUrl = encodeURIComponent(url);
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const shareUrl = url || currentUrl;
+  const encodedUrl = encodeURIComponent(shareUrl);
   const encodedTitle = encodeURIComponent(title);
   const encodedDescription = encodeURIComponent(description || title);
 

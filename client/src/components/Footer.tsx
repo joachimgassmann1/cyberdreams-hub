@@ -1,5 +1,6 @@
 import { APP_LOGO } from "@/const";
 import { Facebook, Mail, Youtube } from "lucide-react";
+import SocialShare from "./SocialShare";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -119,6 +120,16 @@ export default function Footer() {
                 <span>Email Us</span>
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Share Section */}
+        <div className="pt-8 border-t border-border">
+          <div className="flex justify-center">
+            <SocialShare 
+              title="Sphere Music Hub - Focus, Chill & Ambient Music"
+              description="Discover curated ambient soundscapes, focus music, and relaxing beats for work, study, and relaxation."
+            />
           </div>
         </div>
 
