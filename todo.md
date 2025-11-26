@@ -199,4 +199,11 @@
 - [x] Channels.tsx: useEffect und API-Imports entfernen
 - [x] FeaturedVideos.tsx: useEffect und API-Imports entfernen
 - [x] Statische Werte als permanente Daten behalten
-- [ ] Testen und deployen
+- [x] Testen und deployen
+
+## KRITISCH: Build-Fehler auf Render
+- [x] JavaScript-Asset nicht gefunden (index-BzrFjHni.js 404)
+- [x] Umami Analytics Variable nicht ersetzt (%VITE_ANALYTICS_ENDPOINT%)
+- [x] index.html prüfen - Umami-Script entfernt (funktioniert nicht in HTML)
+- [x] Build lokal testen - funktioniert
+- [ ] Zu Render deployen
