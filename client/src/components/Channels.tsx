@@ -104,7 +104,7 @@ export default function Channels() {
                   <div className="relative h-48 overflow-hidden">
                   <img
                     src={channel.image}
-                    alt={channel.name}
+                    alt={`${channel.name} - ${channel.description}`}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
                   <div className="absolute top-4 right-4 p-3 rounded-full bg-background/80 backdrop-blur-sm">

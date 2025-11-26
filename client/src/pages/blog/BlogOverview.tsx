@@ -88,7 +88,7 @@ export default function BlogOverview() {
                     <div className="relative h-56 overflow-hidden bg-muted">
                       <img
                         src={post.heroImage}
-                        alt={post.title}
+                        alt={`${post.title} - ${post.description}`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       {/* Category Badge */}

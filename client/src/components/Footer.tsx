@@ -39,7 +39,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={APP_LOGO} alt="Sphere Music Hub" className="h-10 w-10" />
+              <img src={APP_LOGO} alt="Sphere Music Hub logo - YouTube music channels for focus, chillout, and ambient soundscapes" className="h-10 w-10" />
               <span className="font-bold text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Sphere Music Hub
               </span>

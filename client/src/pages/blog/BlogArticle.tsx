@@ -102,7 +102,7 @@ export default function BlogArticle() {
       <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
         <img
           src={post.heroImage}
-          alt={post.title}
+          alt={`${post.title} - ${post.description}`}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
@@ -214,7 +214,7 @@ export default function BlogArticle() {
                     <div className="relative h-48 overflow-hidden bg-muted">
                       <img
                         src={relatedPost.heroImage}
-                        alt={relatedPost.title}
+                        alt={`${relatedPost.title} - ${relatedPost.description}`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       {relatedCategory && (

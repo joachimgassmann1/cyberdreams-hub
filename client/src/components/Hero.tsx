@@ -30,7 +30,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <img
           src="/hero-bg.webp"
-          alt="Hero Background"
+          alt="Modern workspace with city skyline at dusk - ambient music atmosphere for focus and productivity"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/30 to-background/90"></div>

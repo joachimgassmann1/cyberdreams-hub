@@ -42,7 +42,7 @@ export default function Navigation() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
           >
-            <img src={APP_LOGO} alt="Sphere Music Hub" className="h-10 w-10 md:h-12 md:w-12" />
+            <img src={APP_LOGO} alt="Sphere Music Hub logo - YouTube music channels for focus, chillout, and ambient soundscapes" className="h-10 w-10 md:h-12 md:w-12" />
             <span className="font-bold text-lg md:text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Sphere Music Hub
             </span>
