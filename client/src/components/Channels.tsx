@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves } from "lucide-react";
-import { getChannelStatistics, formatCount } from "@/lib/youtube";
 
-// Real fallback subscriber counts (as of Nov 25, 2025)
-const FALLBACK_SUBSCRIBERS: Record<string, number> = {
-  "UCWJCgh3eJ_mILLwZ4--snpA": 2740,  // Deep Focus Sphere
-  "UCuQPvy0FcB8EG5kKpvZfUjw": 82,     // Chillout Sphere
-  "UCnLlBi5GoE7YFQHB-KmKe2Q": 173,    // Cyber Dreams
-  "UC7JVkI8IrHqYxg4LB9jPVhg": 1160,   // JazzSphere Radio
-  "UCiN4bH-VKz1YMvvYnRJXwOw": 0,      // Guitarsphere Radio (empty channel)
-  "UCZlHnzC_oYrU9zJGxJQYbSw": 2       // Pianosphere Radio
+// Static subscriber counts (updated manually as needed - last update: Nov 25, 2025)
+const SUBSCRIBER_COUNTS: Record<string, string> = {
+  "UCWJCgh3eJ_mILLwZ4--snpA": "2.7K",  // Deep Focus Sphere
+  "UCuQPvy0FcB8EG5kKpvZfUjw": "82",     // Chillout Sphere
+  "UCnLlBi5GoE7YFQHB-KmKe2Q": "173",    // Cyber Dreams
+  "UC7JVkI8IrHqYxg4LB9jPVhg": "1.2K",   // JazzSphere Radio
+  "UCiN4bH-VKz1YMvvYnRJXwOw": "0",      // Guitarsphere Radio (empty channel)
+  "UCZlHnzC_oYrU9zJGxJQYbSw": "2"       // Pianosphere Radio
 };
 
 const channels = [
@@ -84,52 +82,6 @@ const channels = [
 ];
 
 export default function Channels() {
-  const [subscriberCounts, setSubscriberCounts] = useState<Record<string, string>>(
-    Object.fromEntries(
-      Object.entries(FALLBACK_SUBSCRIBERS).map(([id, count]) => [id, formatCount(count)])
-    )
-  );
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    // Load real subscriber counts in background (non-blocking)
-    const loadSubscriberCounts = async () => {
-      setIsLoading(true);
-      const counts: Record<string, string> = {};
-      
-      try {
-        // Fetch subscriber counts for all channels
-        await Promise.all(
-          channels.map(async (channel) => {
-            try {
-              const data = await getChannelStatistics(channel.channelId);
-              if (data?.statistics?.subscriberCount) {
-                counts[channel.channelId] = formatCount(data.statistics.subscriberCount);
-              } else {
-                // Use fallback if API fails
-                counts[channel.channelId] = formatCount(FALLBACK_SUBSCRIBERS[channel.channelId] || 0);
-              }
-            } catch (error) {
-              console.log(`Using fallback for ${channel.name}:`, error);
-              counts[channel.channelId] = formatCount(FALLBACK_SUBSCRIBERS[channel.channelId] || 0);
-            }
-          })
-        );
-        
-        setSubscriberCounts(counts);
-      } catch (error) {
-        console.log("Using fallback subscriber counts due to API error:", error);
-        // Keep fallback counts on error
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    // Start loading after component mount (non-blocking)
-    const timer = setTimeout(loadSubscriberCounts, 200);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section id="channels" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -145,7 +97,7 @@ export default function Channels() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {channels.map((channel) => {
             const Icon = channel.icon;
-            const subscribers = subscriberCounts[channel.channelId] || formatCount(FALLBACK_SUBSCRIBERS[channel.channelId] || 0);
+            const subscribers = SUBSCRIBER_COUNTS[channel.channelId] || "0";
             
             return (
               <Card key={channel.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-card border-border">
@@ -168,7 +120,7 @@ export default function Channels() {
                 
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-4">{channel.description}</p>
-                  <div className={`flex items-center gap-2 text-sm font-medium transition-opacity duration-500 ${isLoading ? 'opacity-50' : 'opacity-100'}`}>
+                  <div className="flex items-center gap-2 text-sm font-medium">
                     <span className="text-primary">{subscribers}</span>
                     <span className="text-muted-foreground">subscribers</span>
                   </div>

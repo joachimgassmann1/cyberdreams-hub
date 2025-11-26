@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
-import { getLatestVideosFromDifferentChannels } from "@/lib/youtube";
 
-// Real fallback videos (as of Nov 25, 2025)
-const FALLBACK_VIDEOS = [
+// Static featured videos (updated manually as needed - last update: Nov 25, 2025)
+const FEATURED_VIDEOS = [
   {
     id: "Q2NIq7Qwogc",
     title: "🌆 CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
@@ -25,49 +23,7 @@ const FALLBACK_VIDEOS = [
   },
 ];
 
-// Channel IDs for all Sphere Music channels
-const CHANNEL_IDS = [
-  "UCWJCgh3eJ_mILLwZ4--snpA", // Deep Focus Sphere
-  "UCuQPvy0FcB8EG5kKpvZfUjw", // Chillout Sphere
-  "UCnLlBi5GoE7YFQHB-KmKe2Q", // Cyber Dreams
-  "UC7JVkI8IrHqYxg4LB9jPVhg", // JazzSphere Radio
-  "UCZlHnzC_oYrU9zJGxJQYbSw"  // Pianosphere Radio
-];
-
 export default function FeaturedVideos() {
-  const [videos, setVideos] = useState(FALLBACK_VIDEOS);
-  const [isLoading, setIsLoading] = useState(false);
-
-  useEffect(() => {
-    // Load latest videos in background (non-blocking)
-    const loadLatestVideos = async () => {
-      setIsLoading(true);
-      try {
-        const latestVideos = await getLatestVideosFromDifferentChannels(CHANNEL_IDS);
-        
-        if (latestVideos && latestVideos.length > 0) {
-          const formattedVideos = latestVideos.map((video: any) => ({
-            id: video.id,
-            title: video.title,
-            channelTitle: video.channelTitle,
-            viewCount: "New", // We don't fetch view counts to save API quota
-          }));
-          
-          setVideos(formattedVideos);
-        }
-      } catch (error) {
-        console.log("Using fallback videos due to API error:", error);
-        // Keep fallback videos on error
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    // Start loading after component mount (non-blocking)
-    const timer = setTimeout(loadLatestVideos, 300);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section className="py-20 md:py-32 bg-card/30">
       <div className="container">
@@ -85,8 +41,8 @@ export default function FeaturedVideos() {
         </div>
 
         {/* Videos Grid */}
-        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 transition-opacity duration-500 ${isLoading ? 'opacity-70' : 'opacity-100'}`}>
-          {videos.map((video) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {FEATURED_VIDEOS.map((video) => (
             <Card
               key={video.id}
               className="group overflow-hidden bg-card border-border hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"

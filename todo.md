@@ -192,4 +192,11 @@
 - [x] Featured Videos: Statische Auswahl + API-Nachladen
 - [x] Cache TTL auf 24 Stunden erhöht
 - [x] Lokal testen - alle Fallback-Werte werden korrekt angezeigt
-- [ ] Zu GitHub pushen und auf Render deployen
+- [x] Zu GitHub pushen und auf Render deployen
+
+## API komplett entfernen - nur statische Werte
+- [x] Hero.tsx: useEffect und API-Imports entfernen
+- [x] Channels.tsx: useEffect und API-Imports entfernen
+- [x] FeaturedVideos.tsx: useEffect und API-Imports entfernen
+- [x] Statische Werte als permanente Daten behalten
+- [ ] Testen und deployen
