@@ -3,8 +3,13 @@ import { focusMusicGuide } from './focus-music-guide';
 import { chilloutPsychology } from './chillout-psychology';
 import { cyberpunkSoundscapes } from './cyberpunk-soundscapes';
 import { jazzAtmosphere } from './jazz-atmosphere';
+import { pianoSoul } from './piano-soul';
 
 export const blogPosts: BlogPost[] = [
+  {
+    ...pianoSoul,
+    featured: true
+  },
   {
     ...jazzAtmosphere,
     featured: true
