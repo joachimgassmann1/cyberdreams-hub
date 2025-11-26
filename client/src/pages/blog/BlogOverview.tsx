@@ -4,6 +4,8 @@ import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
 import { getAllPosts, getPostsByCategory } from '@/data/blog/posts';
 import { blogCategories } from '@/data/blog/categories';
 import { Button } from '@/components/ui/button';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 const POSTS_PER_PAGE = 12;
 
@@ -26,6 +28,7 @@ export default function BlogOverview() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
+      <Navigation />
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-purple-500/10 to-pink-500/10" />
@@ -177,6 +180,8 @@ export default function BlogOverview() {
           </div>
         )}
       </section>
+      
+      <Footer />
     </div>
   );
 }

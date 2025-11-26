@@ -5,6 +5,8 @@ import { Streamdown } from 'streamdown';
 import { getPostBySlug, getRelatedPosts } from '@/data/blog/posts';
 import { blogCategories } from '@/data/blog/categories';
 import { Button } from '@/components/ui/button';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 import NotFound from '@/pages/NotFound';
 
 export default function BlogArticle() {
@@ -44,6 +46,7 @@ export default function BlogArticle() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
+      <Navigation />
       {/* Hero Section */}
       <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
         <img
@@ -202,6 +205,8 @@ export default function BlogArticle() {
           </Link>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }

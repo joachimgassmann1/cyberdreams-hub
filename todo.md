@@ -382,3 +382,11 @@
 - Schnell & Performance-optimiert
 - Kategorien, Tags, Suchfunktion
 - Responsive Design
+
+
+## Blog Navigation Fix
+- [x] Navigation-Komponente zu Blog-Seiten hinzugefügt
+- [x] Footer zu Blog-Seiten hinzugefügt
+- [x] Link-Routing in Navigation korrigiert (wouter Link statt <a>)
+- [ ] Lokal testen
+- [ ] Deployen
