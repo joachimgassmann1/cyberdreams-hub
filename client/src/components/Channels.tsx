@@ -101,13 +101,12 @@ export default function Channels() {
             
             return (
               <Card key={channel.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-card border-border">
-                <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-48 overflow-hidden">
                   <img
                     src={channel.image}
                     alt={channel.name}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${channel.color} opacity-60`}></div>
                   <div className="absolute top-4 right-4 p-3 rounded-full bg-background/80 backdrop-blur-sm">
                     <Icon className="w-6 h-6 text-primary" />
                   </div>

@@ -212,4 +212,9 @@
 - [x] %VITE_APP_LOGO% in index.html durch statischen Pfad ersetzen
 - [x] Prüfen ob alle Channel-Bilder im public-Ordner existieren - alle da
 - [x] logo.png prüfen - existiert
-- [ ] Deployen und testen
+- [x] Deployen und testen
+
+## Farbüberlagerungen von Channel-Bildern entfernen
+- [x] Channels.tsx: Color-Overlay entfernen
+- [x] Bilder wieder im Original-Look anzeigen
+- [ ] Deployen
