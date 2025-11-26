@@ -18,7 +18,7 @@ export default function Hero() {
   };
 
   const scrollToChannels = () => {
-    const element = document.querySelector("#channels");
+    const element = document.querySelector("#music-channels");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }

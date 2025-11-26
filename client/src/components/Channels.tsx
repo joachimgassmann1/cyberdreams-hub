@@ -83,7 +83,7 @@ const channels = [
 
 export default function Channels() {
   return (
-    <section id="channels" className="py-20 bg-background">
+    <section id="music-channels" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
