@@ -331,4 +331,10 @@
 - [x] index.html: Open Graph og:url auf .com geändert
 - [x] index.html: Twitter Card URLs auf .com geändert
 - [x] index.html: Canonical URL auf .com geändert
+- [x] Deployen
+
+## Google Search Console Verifizierung für .com
+- [x] Neuen Verifizierungs-Code von Google erhalten (q1xeuuYyjgx3E35Apdhy2uqvTixkPHzKN97sYpE0X7M)
+- [x] Meta-Tag in index.html aktualisiert
 - [ ] Deployen
+- [ ] In Google Search Console bestätigen
