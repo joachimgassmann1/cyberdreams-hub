@@ -112,7 +112,7 @@ export default function Footer() {
                 );
               })}
               <a
-                href="mailto:stillcybervisions@gmail.com"
+                href="mailto:info@sphere-music-hub.com"
                 className="flex items-center gap-3 text-foreground/70 hover:text-primary transition-colors text-sm group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />

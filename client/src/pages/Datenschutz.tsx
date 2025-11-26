@@ -76,7 +76,7 @@ export default function Datenschutz() {
                 53859 Niederkassel<br />
                 <br />
                 Telefon: 01715569140<br />
-                E-Mail: stillcybervisions@gmail.com
+                E-Mail: info@sphere-music-hub.com
               </p>
             </section>
 

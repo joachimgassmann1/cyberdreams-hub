@@ -238,4 +238,10 @@
 
 ## Weißanteil im Hero-Gradient erhöhen
 - [x] Hero.tsx: Weißanteil im mittleren Bereich des Gradienten verstärken (via-gray-200 → via-white)
+- [x] Deployen
+
+## E-Mail-Adresse im Footer aktualisieren
+- [x] Footer.tsx: E-Mail von stillcybervisions@gmail.com zu info@sphere-music-hub.com ändern
+- [x] Impressum.tsx: E-Mail aktualisiert
+- [x] Datenschutz.tsx: E-Mail aktualisiert
 - [ ] Deployen

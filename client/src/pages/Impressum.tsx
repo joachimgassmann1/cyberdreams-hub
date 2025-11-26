@@ -24,7 +24,7 @@ export default function Impressum() {
               <h2 className="text-2xl font-bold mb-4 text-primary">Kontakt</h2>
               <p className="text-foreground/80">
                 Telefon: 01715569140<br />
-                E-Mail: stillcybervisions@gmail.com
+                E-Mail: info@sphere-music-hub.com
               </p>
             </section>
 
