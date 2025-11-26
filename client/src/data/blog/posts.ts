@@ -5,8 +5,13 @@ import { cyberpunkSoundscapes } from './cyberpunk-soundscapes';
 import { jazzAtmosphere } from './jazz-atmosphere';
 import { pianoSoul } from './piano-soul';
 import { quietCureRelaxation } from './quiet-cure-relaxation';
+import { joachimCreatorStory } from './joachim-creator-story';
 
 export const blogPosts: BlogPost[] = [
+  {
+    ...joachimCreatorStory,
+    featured: true
+  },
   {
     ...quietCureRelaxation,
     featured: true
