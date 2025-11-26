@@ -282,4 +282,9 @@
 - [x] FeaturedVideos.tsx: 6 Videos implementiert (2x Deep Focus, 1x Chillout, 1x Cyber Dreams, 1x Jazz, 1x Piano)
 - [x] Video-IDs hinzugefügt
 - [x] Beschreibungstext aktualisiert
+- [x] Deployen
+
+## Video-IDs korrigieren
+- [x] Pianosphere Radio Video-ID ersetzt (xPjrkMmZElw)
+- [x] Deep Focus Sphere Video-IDs aktualisiert (bA1JhbZD8UM, XCh88UzbssA)
 - [ ] Deployen

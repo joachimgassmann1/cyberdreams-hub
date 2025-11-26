@@ -22,19 +22,19 @@ const FEATURED_VIDEOS = [
     viewCount: "4",
   },
   {
-    id: "dQw4w9WgXcQ",
+    id: "xPjrkMmZElw",
     title: "🎹 Beautiful Piano Jazz | Emotional Ballads for Peace",
     channelTitle: "Pianosphere Radio",
     viewCount: "2",
   },
   {
-    id: "jfKfPfyJRdk",
+    id: "bA1JhbZD8UM",
     title: "🎼 Deep Focus Music | Ambient Soundscapes for Concentration",
     channelTitle: "Deep Focus Sphere",
     viewCount: "163",
   },
   {
-    id: "5qap5aO4i9A",
+    id: "XCh88UzbssA",
     title: "🎵 Deep Focus & Study Music | Calm Background Beats",
     channelTitle: "Deep Focus Sphere",
     viewCount: "2.7K",
