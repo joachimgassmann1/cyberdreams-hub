@@ -263,4 +263,13 @@
 
 ## Subscribe Button - Explizite Hintergrundfarbe
 - [x] Hero.tsx: Gold/Orange Farbe (bg-amber-500 hover:bg-amber-600) implementiert
-- [ ] Deployen und testen
+- [x] Deployen und testen
+
+## Hero Buttons Symmetrie
+- [x] Beide Buttons exakt gleiche Größe
+- [x] Gleiche Schriftgröße
+- [x] Play-Icon zu beiden Buttons hinzugefügt
+- [x] Schwarze Schrift in beiden Buttons
+- [x] Mittige Ausrichtung für perfekte Symmetrie
+- [x] Beide Buttons in gleicher grüner/cyan Farbe (bg-primary)
+- [ ] Deployen
