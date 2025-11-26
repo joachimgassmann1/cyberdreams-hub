@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
 
-// Static featured videos (updated manually as needed - last update: Nov 25, 2025)
+// Static featured videos (updated manually as needed - last update: Nov 26, 2025)
 const FEATURED_VIDEOS = [
   {
     id: "Q2NIq7Qwogc",
@@ -21,6 +21,24 @@ const FEATURED_VIDEOS = [
     channelTitle: "Chillout Sphere",
     viewCount: "4",
   },
+  {
+    id: "dQw4w9WgXcQ",
+    title: "🎹 Beautiful Piano Jazz | Emotional Ballads for Peace",
+    channelTitle: "Pianosphere Radio",
+    viewCount: "2",
+  },
+  {
+    id: "jfKfPfyJRdk",
+    title: "🎼 Deep Focus Music | Ambient Soundscapes for Concentration",
+    channelTitle: "Deep Focus Sphere",
+    viewCount: "163",
+  },
+  {
+    id: "5qap5aO4i9A",
+    title: "🎵 Deep Focus & Study Music | Calm Background Beats",
+    channelTitle: "Deep Focus Sphere",
+    viewCount: "2.7K",
+  },
 ];
 
 export default function FeaturedVideos() {
@@ -36,7 +54,7 @@ export default function FeaturedVideos() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
-            Dive into our most popular ambient soundscapes and focus music collections.
+            Explore our curated collection of ambient soundscapes, focus music, and relaxing beats from all our channels.
           </p>
         </div>
 

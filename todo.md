@@ -276,4 +276,10 @@
 
 ## Buttons exakt gleiche Breite
 - [x] Hero.tsx: Feste Breite für beide Buttons gesetzt (w-full sm:w-72)
+- [x] Deployen
+
+## Featured Videos von 3 auf 6 erweitern
+- [x] FeaturedVideos.tsx: 6 Videos implementiert (2x Deep Focus, 1x Chillout, 1x Cyber Dreams, 1x Jazz, 1x Piano)
+- [x] Video-IDs hinzugefügt
+- [x] Beschreibungstext aktualisiert
 - [ ] Deployen
