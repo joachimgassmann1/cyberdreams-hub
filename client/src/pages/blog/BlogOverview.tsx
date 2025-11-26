@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
 import { getAllPosts, getPostsByCategory } from '@/data/blog/posts';
@@ -13,6 +13,11 @@ const POSTS_PER_PAGE = 12;
 export default function BlogOverview() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
 
   const allPosts = selectedCategory 
     ? getPostsByCategory(selectedCategory)
