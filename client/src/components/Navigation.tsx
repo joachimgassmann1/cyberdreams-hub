@@ -9,14 +9,28 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "#channels", label: "Channels" },
+    { href: "/#music-channels", label: "Channels" },
     { href: "/blog", label: "Blog" },
-    { href: "#about", label: "About" },
-    { href: "#contact", label: "Contact" },
+    { href: "/#about", label: "About" },
+    { href: "/#contact", label: "Contact" },
   ];
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const hash = href.substring(1); // Remove leading /
+      if (location === "/") {
+        // Already on homepage, just scroll
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          setIsMenuOpen(false);
+        }
+      } else {
+        // Navigate to homepage first, then scroll
+        window.location.href = href;
+      }
+    } else if (href.startsWith("#")) {
       e.preventDefault();
       const element = document.querySelector(href);
       if (element) {
@@ -37,10 +51,6 @@ export default function Navigation() {
           <Link 
             href="/" 
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
           >
             <img src={APP_LOGO} alt="Sphere Music Hub logo - YouTube music channels for focus, chillout, and ambient soundscapes" className="h-10 w-10 md:h-12 md:w-12" />
             <span className="font-bold text-lg md:text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
