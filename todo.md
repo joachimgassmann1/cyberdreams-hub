@@ -206,4 +206,10 @@
 - [x] Umami Analytics Variable nicht ersetzt (%VITE_ANALYTICS_ENDPOINT%)
 - [x] index.html prüfen - Umami-Script entfernt (funktioniert nicht in HTML)
 - [x] Build lokal testen - funktioniert
-- [ ] Zu Render deployen
+- [x] Zu Render deployen
+
+## KRITISCH: Fehlende Assets und ungeparste Variablen
+- [x] %VITE_APP_LOGO% in index.html durch statischen Pfad ersetzen
+- [x] Prüfen ob alle Channel-Bilder im public-Ordner existieren - alle da
+- [x] logo.png prüfen - existiert
+- [ ] Deployen und testen
