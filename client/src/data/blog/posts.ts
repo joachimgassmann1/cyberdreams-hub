@@ -1,8 +1,13 @@
 import { BlogPost } from './types';
 import { focusMusicGuide } from './focus-music-guide';
 import { chilloutPsychology } from './chillout-psychology';
+import { cyberpunkSoundscapes } from './cyberpunk-soundscapes';
 
 export const blogPosts: BlogPost[] = [
+  {
+    ...cyberpunkSoundscapes,
+    featured: true
+  },
   {
     ...chilloutPsychology,
     featured: true
