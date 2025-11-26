@@ -1,7 +1,12 @@
 import { BlogPost } from './types';
 import { focusMusicGuide } from './focus-music-guide';
+import { chilloutPsychology } from './chillout-psychology';
 
 export const blogPosts: BlogPost[] = [
+  {
+    ...chilloutPsychology,
+    featured: true
+  },
   {
     ...focusMusicGuide,
     featured: true

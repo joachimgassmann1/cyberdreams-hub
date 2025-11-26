@@ -22,6 +22,13 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://sphere-music-hub.com/blog/psychology-chillout-music-calm-soundscapes-stress-reduction</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://sphere-music-hub.com/blog/ultimate-guide-focus-music-productivity</loc>
     <lastmod>2025-11-26</lastmod>
     <changefreq>monthly</changefreq>
