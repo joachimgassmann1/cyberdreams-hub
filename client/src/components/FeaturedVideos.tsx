@@ -9,9 +9,9 @@ const FEATURED_VIDEOS = [
     channelTitle: "Cyber Dreams",
   },
   {
-    id: "bA1JhbZD8UM",
-    title: "Deep Focus | Calm Ambient Music for Work and Study Vol. 7",
-    channelTitle: "Deep Focus Sphere",
+    id: "XCh88UzbssA",
+    title: "Chill Piano Escapes – Cozy Melodies to Unwind",
+    channelTitle: "Pianosphere Radio",
   },
   {
     id: "RJIdAEvb_dY",
@@ -19,19 +19,19 @@ const FEATURED_VIDEOS = [
     channelTitle: "Chillout Sphere",
   },
   {
-    id: "XCh88UzbssA",
+    id: "uDbTU2pLCRs",
+    title: "Deep Focus | Calm Ambient Music for Work and Study",
+    channelTitle: "Deep Focus Sphere",
+  },
+  {
+    id: "xPjrkMmZElw",
     title: "Deep Focus Vibes: The Ultimate Study Music Mix",
     channelTitle: "Deep Focus Sphere",
   },
   {
-    id: "uDbTU2pLCRs",
-    title: "Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights Vol. 5",
+    id: "bA1JhbZD8UM",
+    title: "Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights",
     channelTitle: "JazzSphere Radio",
-  },
-  {
-    id: "xPjrkMmZElw",
-    title: "Chill Piano Escapes – Cozy Melodies to Unwind",
-    channelTitle: "Pianosphere Radio",
   },
 ];
 

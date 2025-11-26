@@ -312,4 +312,14 @@
 - [x] Video 5: Smooth Vocal Jazz (uDbTU2pLCRs)
 - [x] Video 6: Chill Piano Escapes (xPjrkMmZElw)
 - [x] Alle Titel aktualisiert
+- [x] Deployen
+
+## FINALE KORREKTE Video-Zuordnung
+- [x] Q2NIq7Qwogc = CYBERPUNK CITYRAIN
+- [x] XCh88UzbssA = Chill Piano Escapes
+- [x] RJIdAEvb_dY = Midnight Glow Terrace
+- [x] uDbTU2pLCRs = Deep Focus | Calm Ambient Music
+- [x] xPjrkMmZElw = Deep Focus Vibes
+- [x] bA1JhbZD8UM = Smooth Vocal Jazz
+- [x] Code aktualisiert
 - [ ] Deployen
