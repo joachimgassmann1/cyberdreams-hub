@@ -1,4 +1,4 @@
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Linkedin, Twitter as X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface SocialShareProps {
@@ -13,12 +13,12 @@ export default function SocialShare({ title, url, description }: SocialShareProp
   const encodedDescription = encodeURIComponent(description || title);
 
   const shareLinks = {
-    twitter: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
+    x: `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`,
     linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
     facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
   };
 
-  const handleShare = (platform: keyof typeof shareLinks) => {
+  const handleShare = (platform: 'x' | 'linkedin' | 'facebook') => {
     window.open(
       shareLinks[platform],
       '_blank',
@@ -35,11 +35,11 @@ export default function SocialShare({ title, url, description }: SocialShareProp
         <Button
           variant="outline"
           size="default"
-          className="rounded-full hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-all duration-300 h-12 w-12 p-0"
-          onClick={() => handleShare('twitter')}
-          aria-label="Share on Twitter"
+          className="rounded-full hover:bg-black hover:text-white hover:border-black transition-all duration-300 h-12 w-12 p-0"
+          onClick={() => handleShare('x')}
+          aria-label="Share on X"
         >
-          <Twitter className="h-5 w-5" />
+          <X className="h-5 w-5" />
         </Button>
         <Button
           variant="outline"
