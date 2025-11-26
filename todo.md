@@ -420,3 +420,8 @@
 - [x] Neues Bild mit weniger Bokeh generiert (scharfe City-Skyline)
 - [x] Altes Bild ersetzt
 - [ ] Deployen
+
+
+## Hero-Overlay reduzieren
+- [x] Overlay-Opazität von 80% auf 40% reduziert
+- [ ] Deployen

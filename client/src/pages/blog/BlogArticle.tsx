@@ -105,7 +105,7 @@ export default function BlogArticle() {
           alt={post.title}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
         
         {/* Back Button */}
         <div className="absolute top-8 left-4 md:left-8">
