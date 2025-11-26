@@ -34,30 +34,30 @@ export default function SocialShare({ title, url, description }: SocialShareProp
       <div className="flex gap-3">
         <Button
           variant="outline"
-          size="icon"
-          className="rounded-full hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-all duration-300"
+          size="default"
+          className="rounded-full hover:bg-[#1DA1F2] hover:text-white hover:border-[#1DA1F2] transition-all duration-300 h-12 w-12 p-0"
           onClick={() => handleShare('twitter')}
           aria-label="Share on Twitter"
         >
-          <Twitter className="h-4 w-4" />
+          <Twitter className="h-5 w-5" />
         </Button>
         <Button
           variant="outline"
-          size="icon"
-          className="rounded-full hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all duration-300"
+          size="default"
+          className="rounded-full hover:bg-[#0A66C2] hover:text-white hover:border-[#0A66C2] transition-all duration-300 h-12 w-12 p-0"
           onClick={() => handleShare('linkedin')}
           aria-label="Share on LinkedIn"
         >
-          <Linkedin className="h-4 w-4" />
+          <Linkedin className="h-5 w-5" />
         </Button>
         <Button
           variant="outline"
-          size="icon"
-          className="rounded-full hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all duration-300"
+          size="default"
+          className="rounded-full hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all duration-300 h-12 w-12 p-0"
           onClick={() => handleShare('facebook')}
           aria-label="Share on Facebook"
         >
-          <Facebook className="h-4 w-4" />
+          <Facebook className="h-5 w-5" />
         </Button>
       </div>
     </div>
