@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useParams, useLocation } from "wouter";
 import { ArrowLeft, Calendar, Clock, Tag, Share2 } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
+import SocialShare from "@/components/SocialShare";
 import { Streamdown } from 'streamdown';
 import { getPostBySlug, getRelatedPosts } from '@/data/blog/posts';
 import { blogCategories } from '@/data/blog/categories';
@@ -201,6 +202,13 @@ export default function BlogArticle() {
             </div>
           </div>
         )}
+
+        {/* Social Share */}
+        <SocialShare
+          title={post.title}
+          url={`https://sphere-music-hub.com/blog/${post.slug}`}
+          description={post.description}
+        />
       </article>
 
       {/* Related Articles */}
