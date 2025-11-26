@@ -1,11 +1,14 @@
 import { APP_LOGO } from "@/const";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
+import { useTheme } from "@/contexts/ThemeContext";
+import { Button } from "@/components/ui/button";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location] = useLocation();
+  const { theme, toggleTheme, switchable } = useTheme();
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -59,7 +62,21 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
+            {/* Theme Toggle */}
+            {switchable && toggleTheme && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleTheme}
+                className="text-foreground/80 hover:text-primary"
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </Button>
+            )}
+            {/* Nav Links */}
+            <div className="flex items-center gap-8">
             {navLinks.map((link) => {
               if (link.href.startsWith('/') && !link.href.startsWith('/#')) {
                 return (
@@ -81,16 +98,31 @@ export default function Navigation() {
                 </a>
               );
             })}
+            </div>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="md:hidden flex items-center gap-2">
+            {switchable && toggleTheme && (
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={toggleTheme}
+                className="text-foreground/80 hover:text-primary"
+                aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+              >
+                {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </Button>
+            )}
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-foreground hover:text-primary transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
