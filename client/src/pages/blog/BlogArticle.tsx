@@ -103,6 +103,7 @@ export default function BlogArticle() {
         <img
           src={post.heroImage}
           alt={`${post.title} - ${post.description}`}
+          fetchPriority="high"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
@@ -215,6 +216,7 @@ export default function BlogArticle() {
                       <img
                         src={relatedPost.heroImage}
                         alt={`${relatedPost.title} - ${relatedPost.description}`}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       {relatedCategory && (
