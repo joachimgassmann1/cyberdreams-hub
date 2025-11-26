@@ -18,10 +18,12 @@ export default function Navigation() {
     { href: "/#contact", label: "Contact" },
   ];
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Handle hash links (/#about, /#contact, etc.)
     if (href.startsWith("/#")) {
       e.preventDefault();
-      const hash = href.substring(1); // Remove leading /
+      const hash = href.substring(1); // Remove leading / to get #about
+      
       if (location === "/") {
         // Already on homepage, just scroll
         const element = document.querySelector(hash);
@@ -30,18 +32,24 @@ export default function Navigation() {
           setIsMenuOpen(false);
         }
       } else {
-        // Navigate to homepage first, then scroll
-        window.location.href = href;
+        // Navigate to homepage first using wouter, then scroll
+        window.location.href = "/";
+        setTimeout(() => {
+          const element = document.querySelector(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
       }
-    } else if (href.startsWith("#")) {
+    }
+    // Handle home link - scroll to top if already on homepage
+    else if (href === "/" && location === "/") {
       e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        setIsMenuOpen(false);
-      }
-    } else if (href.startsWith("/")) {
-      // For internal routes, let wouter handle it
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setIsMenuOpen(false);
+    }
+    // For other internal routes, let wouter handle it
+    else {
       setIsMenuOpen(false);
     }
   };
@@ -78,24 +86,16 @@ export default function Navigation() {
             {/* Nav Links */}
             <div className="flex items-center gap-8">
             {navLinks.map((link) => {
-              if (link.href.startsWith('/') && !link.href.startsWith('/#')) {
-                return (
-                  <Link key={link.href} href={link.href}>
-                    <span className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer">
-                      {link.label}
-                    </span>
-                  </Link>
-                );
-              }
+              // Use Link component for all routes, but add click handler
               return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => scrollToSection(e, link.href)}
-                  className="text-foreground/80 hover:text-primary transition-colors font-medium"
-                >
-                  {link.label}
-                </a>
+                <Link key={link.href} href={link.href.startsWith('/#') ? '/' : link.href}>
+                  <a
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer"
+                  >
+                    {link.label}
+                  </a>
+                </Link>
               );
             })}
             </div>
@@ -130,27 +130,15 @@ export default function Navigation() {
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => {
-                if (link.href.startsWith('/') && !link.href.startsWith('/#')) {
-                  return (
-                    <Link key={link.href} href={link.href}>
-                      <span 
-                        onClick={() => setIsMenuOpen(false)}
-                        className="text-foreground/80 hover:text-primary transition-colors font-medium py-2 cursor-pointer block"
-                      >
-                        {link.label}
-                      </span>
-                    </Link>
-                  );
-                }
                 return (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => scrollToSection(e, link.href)}
-                    className="text-foreground/80 hover:text-primary transition-colors font-medium py-2"
-                  >
-                    {link.label}
-                  </a>
+                  <Link key={link.href} href={link.href.startsWith('/#') ? '/' : link.href}>
+                    <a
+                      onClick={(e) => handleNavClick(e, link.href)}
+                      className="text-foreground/80 hover:text-primary transition-colors font-medium py-2 cursor-pointer block"
+                    >
+                      {link.label}
+                    </a>
+                  </Link>
                 );
               })}
             </div>
