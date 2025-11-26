@@ -244,4 +244,13 @@
 - [x] Footer.tsx: E-Mail von stillcybervisions@gmail.com zu info@sphere-music-hub.com ändern
 - [x] Impressum.tsx: E-Mail aktualisiert
 - [x] Datenschutz.tsx: E-Mail aktualisiert
-- [ ] Deployen
+- [x] Deployen
+
+## Favicon hinzufügen für Google Search Results
+- [x] Favicon aus Logo erstellen (32x32, 16x16 für .ico)
+- [x] favicon.ico in /public ablegen (5.6 KB)
+- [x] apple-touch-icon.png erstellen (180x180, 50 KB)
+- [x] Zusätzliche Größen erstellt (192x192, 512x512 für PWA)
+- [x] Favicon-Links in index.html aktualisiert
+- [x] Schema.org JSON-LD E-Mail zu info@sphere-music-hub.com aktualisiert
+- [ ] Deployen und in Browser/Google testen
