@@ -4,8 +4,13 @@ import { chilloutPsychology } from './chillout-psychology';
 import { cyberpunkSoundscapes } from './cyberpunk-soundscapes';
 import { jazzAtmosphere } from './jazz-atmosphere';
 import { pianoSoul } from './piano-soul';
+import { quietCureRelaxation } from './quiet-cure-relaxation';
 
 export const blogPosts: BlogPost[] = [
+  {
+    ...quietCureRelaxation,
+    featured: true
+  },
   {
     ...pianoSoul,
     featured: true
