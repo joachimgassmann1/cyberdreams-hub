@@ -47,7 +47,7 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-400 via-gray-200 via-amber-200 to-orange-400 bg-clip-text text-transparent">
             Sphere Music Hub – Focus, Chill & Ambient Music Vibes
           </h1>
 
