@@ -1,18 +1,9 @@
 import { BlogPost } from './types';
-import { demoArticleContent } from './demo-article';
+import { focusMusicGuide } from './focus-music-guide';
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'ultimate-guide-focus-music-productivity',
-    title: 'The Ultimate Guide to Focus Music for Maximum Productivity',
-    description: 'Discover how the right music can transform your work sessions, backed by science and curated for peak performance. Learn which soundscapes work best for different tasks.',
-    content: demoArticleContent,
-    heroImage: '/blog-images/focus-music-productivity-hero.webp',
-    category: 'focus',
-    tags: ['Focus Music', 'Productivity', 'Deep Work', 'Concentration', 'Study Music'],
-    author: 'Sphere Music Hub Team',
-    publishDate: '2025-11-26',
-    readingTime: 8,
+    ...focusMusicGuide,
     featured: true
   }
 ];

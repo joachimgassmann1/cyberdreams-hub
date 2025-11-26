@@ -406,3 +406,10 @@
 - [x] Meta Tags (title, description) dynamisch aktualisiert
 - [ ] Deployen
 - [ ] Sitemap in Google Search Console einreichen
+
+
+## Neuer Artikel: "Ultimate Guide to Focus Music"
+- [ ] Hero-Bild generieren (Deep Focus Workspace)
+- [ ] Artikel formatieren und zu posts.ts hinzufügen
+- [ ] Sitemap aktualisieren
+- [ ] Deployen
