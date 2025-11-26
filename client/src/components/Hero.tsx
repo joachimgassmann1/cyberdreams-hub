@@ -60,7 +60,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               size="lg"
-              className="text-base md:text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-black font-semibold"
+              className="text-base md:text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-black font-semibold w-full sm:w-72"
               onClick={scrollToChannels}
             >
               <Play className="mr-2 h-5 w-5" />
@@ -68,7 +68,7 @@ export default function Hero() {
             </Button>
             <Button
               size="lg"
-              className="text-base md:text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-black font-semibold"
+              className="text-base md:text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-black font-semibold w-full sm:w-72"
               asChild
             >
               <a href="https://www.youtube.com/@deepfocussphere67" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">

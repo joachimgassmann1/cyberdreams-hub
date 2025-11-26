@@ -272,4 +272,8 @@
 - [x] Schwarze Schrift in beiden Buttons
 - [x] Mittige Ausrichtung für perfekte Symmetrie
 - [x] Beide Buttons in gleicher grüner/cyan Farbe (bg-primary)
+- [x] Deployen
+
+## Buttons exakt gleiche Breite
+- [x] Hero.tsx: Feste Breite für beide Buttons gesetzt (w-full sm:w-72)
 - [ ] Deployen
