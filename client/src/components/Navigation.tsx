@@ -1,6 +1,6 @@
 import { APP_LOGO } from "@/const";
 import { Menu, X, Moon, Sun } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,23 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location] = useLocation();
   const { theme, toggleTheme, switchable } = useTheme();
+
+  // Handle scroll to hash on page load (for cross-page navigation)
+  useEffect(() => {
+    if (location === "/") {
+      const targetHash = sessionStorage.getItem('scrollToHash');
+      if (targetHash) {
+        sessionStorage.removeItem('scrollToHash');
+        // Wait for page to fully render
+        setTimeout(() => {
+          const element = document.querySelector(targetHash);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 300);
+      }
+    }
+  }, [location]);
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -32,14 +49,9 @@ export default function Navigation() {
           setIsMenuOpen(false);
         }
       } else {
-        // Navigate to homepage first using wouter, then scroll
+        // Store hash in sessionStorage and navigate to homepage
+        sessionStorage.setItem('scrollToHash', hash);
         window.location.href = "/";
-        setTimeout(() => {
-          const element = document.querySelector(hash);
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-          }
-        }, 100);
       }
     }
     // Handle home link - scroll to top if already on homepage
