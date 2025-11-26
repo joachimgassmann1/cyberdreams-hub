@@ -302,4 +302,14 @@
 
 ## Thumbnails zu Titeln zuordnen (finale Korrektur)
 - [x] Video-IDs neu zugeordnet: Cyberpunk, Jazz, Chillout, Piano, Deep Focus, Deep Focus
+- [x] Deployen
+
+## Einzelne Titel-Korrekturen
+- [x] Video 1: CYBERPUNK CITYRAIN (Q2NIq7Qwogc)
+- [x] Video 2: Deep Focus Vol. 7 (bA1JhbZD8UM)
+- [x] Video 3: Midnight Glow Terrace (RJIdAEvb_dY)
+- [x] Video 4: Deep Focus Vibes (XCh88UzbssA)
+- [x] Video 5: Smooth Vocal Jazz (uDbTU2pLCRs)
+- [x] Video 6: Chill Piano Escapes (xPjrkMmZElw)
+- [x] Alle Titel aktualisiert
 - [ ] Deployen
