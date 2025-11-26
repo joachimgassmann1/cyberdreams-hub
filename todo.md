@@ -346,5 +346,13 @@
 - [x] fonts.css: @font-face Regeln für lokale Fonts erstellt
 - [x] Getestet - Fonts laden korrekt
 - [x] Zu GitHub gepusht (Commit c628790)
-- [ ] Render Deployment abwarten
+- [x] Render Deployment abgeschlossen - Fonts sind live!
 - [ ] PageSpeed Score erneut messen (Ziel: 90+)
+
+
+## URGENT: Mobile Performance Regression beheben
+- [ ] Problem analysieren (Score von 83 auf 56 gefallen!)
+- [ ] Lokale Fonts rückgängig machen
+- [ ] Google Fonts CDN wiederherstellen
+- [ ] Deployen
+- [ ] Mobile Score prüfen (sollte wieder bei 83 sein)
