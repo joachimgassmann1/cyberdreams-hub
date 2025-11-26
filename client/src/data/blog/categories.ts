@@ -17,7 +17,7 @@ export const blogCategories: BlogCategory[] = [
     id: 'cyberpunk',
     name: 'Cyberpunk',
     description: 'Futuristic soundscapes and dystopian atmospheres',
-    color: 'from-pink-500 to-purple-600'
+    color: 'from-fuchsia-500 to-cyan-400'
   },
   {
     id: 'jazz',
@@ -29,13 +29,13 @@ export const blogCategories: BlogCategory[] = [
     id: 'guitar',
     name: 'Guitar',
     description: 'Beautiful guitar melodies and acoustic vibes',
-    color: 'from-amber-500 to-orange-500'
+    color: 'from-amber-400 to-yellow-500'
   },
   {
     id: 'piano',
     name: 'Piano',
     description: 'Elegant piano compositions for focus and calm',
-    color: 'from-indigo-500 to-purple-500'
+    color: 'from-slate-400 to-blue-300'
   },
   {
     id: 'relax',
@@ -47,6 +47,6 @@ export const blogCategories: BlogCategory[] = [
     id: 'insights',
     name: 'Insights',
     description: 'Music production tips and behind-the-scenes stories',
-    color: 'from-violet-500 to-fuchsia-500'
+    color: 'from-violet-500 to-purple-600'
   }
 ];
