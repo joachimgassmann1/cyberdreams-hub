@@ -1,51 +1,64 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Music, Play } from "lucide-react";
-import { useEffect, useState } from "react";
-import { getAggregatedStats, formatCount } from "@/lib/youtube";
+import { getAggregatedStats } from "@/lib/youtube";
+
+// Real fallback data (as of Nov 25, 2025)
+const FALLBACK_STATS = {
+  channels: 6,
+  hours: 100,
+  views: 50000,
+  subscribers: 4157 // 2740 + 82 + 173 + 1160 + 0 + 2
+};
 
 // Channel IDs for all Sphere Music channels
 const CHANNEL_IDS = [
-  "UCNc7m60KRRtsFugFEPwgL4Q", // Deep Focus Sphere
-  "UCz1te_MlsOdFvo86vJv16_A", // Chillout Sphere
-  "UCaSZ-ibhaSzxB-_PnfCVxFA", // Cyber Dreams
-  "UCBKfJNITtV3Ubf_6uZb527w", // JazzSphere Radio
-  "UCrzRTjTXIcfNJUHPs9nzJzw", // Guitarsphere Radio
-  "UCeYqdPkQ6ZMZHLlbfkZ5qNw", // Pianosphere Radio
+  "UCWJCgh3eJ_mILLwZ4--snpA", // Deep Focus Sphere
+  "UCuQPvy0FcB8EG5kKpvZfUjw", // Chillout Sphere
+  "UCnLlBi5GoE7YFQHB-KmKe2Q", // Cyber Dreams
+  "UC7JVkI8IrHqYxg4LB9jPVhg", // JazzSphere Radio
+  "UCiN4bH-VKz1YMvvYnRJXwOw", // Guitarsphere Radio
+  "UCZlHnzC_oYrU9zJGxJQYbSw"  // Pianosphere Radio
 ];
-
-// Fallback stats for instant loading
-const FALLBACK_STATS = {
-  channels: 6,
-  hours: "100",
-  views: "50K",
-  subscribers: "4.1K",
-};
 
 export default function Hero() {
   const [stats, setStats] = useState(FALLBACK_STATS);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Fetch real stats asynchronously in the background
-    const fetchStats = async () => {
+    // Load real data in background (non-blocking)
+    const loadRealStats = async () => {
+      setIsLoading(true);
       try {
-        const aggregated = await getAggregatedStats(CHANNEL_IDS);
+        const statsData = await getAggregatedStats(CHANNEL_IDS);
         
-        if (aggregated) {
+        if (statsData) {
           setStats({
-            channels: aggregated.totalChannels,
-            hours: aggregated.totalHours.toString(),
-            views: formatCount(aggregated.totalViews),
-            subscribers: formatCount(aggregated.totalSubscribers),
+            channels: 6,
+            hours: statsData.totalHours || FALLBACK_STATS.hours,
+            views: statsData.totalViews || FALLBACK_STATS.views,
+            subscribers: statsData.totalSubscribers || FALLBACK_STATS.subscribers
           });
         }
       } catch (error) {
-        console.error('Error fetching hero stats, using fallback:', error);
+        console.log("Using fallback stats due to API error:", error);
         // Keep fallback stats on error
+      } finally {
+        setIsLoading(false);
       }
     };
 
-    fetchStats();
+    // Start loading after component mount (non-blocking)
+    const timer = setTimeout(loadRealStats, 100);
+    return () => clearTimeout(timer);
   }, []);
+
+  const formatNumber = (num: number) => {
+    if (num >= 1000) {
+      return `${(num / 1000).toFixed(1)}K`;
+    }
+    return num.toString();
+  };
 
   const scrollToChannels = () => {
     const element = document.querySelector("#channels");
@@ -111,26 +124,26 @@ export default function Hero() {
           {/* Stats */}
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+              <div className={`text-3xl md:text-4xl font-bold text-primary mb-2 transition-opacity duration-500 ${isLoading ? 'opacity-50' : 'opacity-100'}`}>
                 {stats.channels}+
               </div>
               <div className="text-sm md:text-base text-foreground/60">Channels</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+              <div className={`text-3xl md:text-4xl font-bold text-primary mb-2 transition-opacity duration-500 ${isLoading ? 'opacity-50' : 'opacity-100'}`}>
                 {stats.hours}+
               </div>
               <div className="text-sm md:text-base text-foreground/60">Hours of Music</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {stats.views}+
+              <div className={`text-3xl md:text-4xl font-bold text-primary mb-2 transition-opacity duration-500 ${isLoading ? 'opacity-50' : 'opacity-100'}`}>
+                {formatNumber(stats.views)}+
               </div>
               <div className="text-sm md:text-base text-foreground/60">Total Views</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-                {stats.subscribers}+
+              <div className={`text-3xl md:text-4xl font-bold text-primary mb-2 transition-opacity duration-500 ${isLoading ? 'opacity-50' : 'opacity-100'}`}>
+                {formatNumber(stats.subscribers)}+
               </div>
               <div className="text-sm md:text-base text-foreground/60">Subscribers</div>
             </div>

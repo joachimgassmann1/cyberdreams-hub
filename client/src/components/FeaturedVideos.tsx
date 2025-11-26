@@ -1,90 +1,71 @@
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
-import { useEffect, useState } from "react";
-import { getLatestVideosFromDifferentChannels, getVideoStatistics, formatCount } from "@/lib/youtube";
+import { getLatestVideosFromDifferentChannels } from "@/lib/youtube";
 
-// Channel IDs for all Sphere Music channels
-const CHANNEL_IDS = [
-  "UCNc7m60KRRtsFugFEPwgL4Q", // Deep Focus Sphere
-  "UCz1te_MlsOdFvo86vJv16_A", // Chillout Sphere
-  "UCaSZ-ibhaSzxB-_PnfCVxFA", // Cyber Dreams
-  "UCBKfJNITtV3Ubf_6uZb527w", // JazzSphere Radio
-  "UCrzRTjTXIcfNJUHPs9nzJzw", // Guitarsphere Radio
-  "UCeYqdPkQ6ZMZHLlbfkZ5qNw", // Pianosphere Radio
-];
-
-// Fallback videos for instant loading
+// Real fallback videos (as of Nov 25, 2025)
 const FALLBACK_VIDEOS = [
   {
-    id: "bsUsjirLjG4",
-    title: "Unlock Deep Focus | Ambient Sounds for Nighttime Study & Intense Work",
-    channelTitle: "Deep Focus Sphere",
-    viewCount: "163",
-  },
-  {
-    id: "B2g2msoQsHA",
-    title: "Velvet Night Lounge | Smooth Chillout & Relaxing Music",
-    channelTitle: "Chillout Sphere",
-    viewCount: "3",
-  },
-  {
     id: "Q2NIq7Qwogc",
-    title: "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
+    title: "🌆 CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
     channelTitle: "Cyber Dreams",
     viewCount: "29",
   },
+  {
+    id: "uDbTU2pLCRs",
+    title: "🎙️ Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights Vol. 5",
+    channelTitle: "JazzSphere Radio",
+    viewCount: "6.2K",
+  },
+  {
+    id: "RJIdAEvb_dY",
+    title: "Midnight Glow Terrace: Relaxing Lounge Beats for Ultimate Chill",
+    channelTitle: "Chillout Sphere",
+    viewCount: "4",
+  },
 ];
 
-interface FeaturedVideo {
-  id: string;
-  title: string;
-  channelTitle: string;
-  viewCount: string;
-}
+// Channel IDs for all Sphere Music channels
+const CHANNEL_IDS = [
+  "UCWJCgh3eJ_mILLwZ4--snpA", // Deep Focus Sphere
+  "UCuQPvy0FcB8EG5kKpvZfUjw", // Chillout Sphere
+  "UCnLlBi5GoE7YFQHB-KmKe2Q", // Cyber Dreams
+  "UC7JVkI8IrHqYxg4LB9jPVhg", // JazzSphere Radio
+  "UCZlHnzC_oYrU9zJGxJQYbSw"  // Pianosphere Radio
+];
 
 export default function FeaturedVideos() {
-  const [videos, setVideos] = useState<FeaturedVideo[]>(FALLBACK_VIDEOS);
+  const [videos, setVideos] = useState(FALLBACK_VIDEOS);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    // Fetch latest videos asynchronously in the background
-    const fetchLatestVideos = async () => {
+    // Load latest videos in background (non-blocking)
+    const loadLatestVideos = async () => {
+      setIsLoading(true);
       try {
-        // Get latest videos from different channels
         const latestVideos = await getLatestVideosFromDifferentChannels(CHANNEL_IDS);
         
-        // If API returned videos, fetch their stats
         if (latestVideos && latestVideos.length > 0) {
-          const videosWithStats = await Promise.all(
-            latestVideos.map(async (video: any) => {
-              try {
-                const stats = await getVideoStatistics(video.id);
-                return {
-                  id: video.id,
-                  title: video.title,
-                  channelTitle: video.channelTitle,
-                  viewCount: stats ? formatCount(stats.statistics.viewCount) : "...",
-                };
-              } catch (error) {
-                console.error(`Error fetching stats for video ${video.id}:`, error);
-                return {
-                  id: video.id,
-                  title: video.title,
-                  channelTitle: video.channelTitle,
-                  viewCount: "...",
-                };
-              }
-            })
-          );
+          const formattedVideos = latestVideos.map((video: any) => ({
+            id: video.id,
+            title: video.title,
+            channelTitle: video.channelTitle,
+            viewCount: "New", // We don't fetch view counts to save API quota
+          }));
           
-          setVideos(videosWithStats);
+          setVideos(formattedVideos);
         }
       } catch (error) {
-        console.error('Error fetching latest videos, keeping fallback:', error);
+        console.log("Using fallback videos due to API error:", error);
         // Keep fallback videos on error
+      } finally {
+        setIsLoading(false);
       }
     };
 
-    fetchLatestVideos();
+    // Start loading after component mount (non-blocking)
+    const timer = setTimeout(loadLatestVideos, 300);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -104,7 +85,7 @@ export default function FeaturedVideos() {
         </div>
 
         {/* Videos Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 transition-opacity duration-500 ${isLoading ? 'opacity-70' : 'opacity-100'}`}>
           {videos.map((video) => (
             <Card
               key={video.id}
