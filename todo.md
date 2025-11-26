@@ -292,4 +292,10 @@
 ## View-Angaben aus Featured Videos entfernen
 - [x] FeaturedVideos.tsx: viewCount aus Daten-Array entfernt
 - [x] FeaturedVideos.tsx: View-Anzeige aus UI entfernt
+- [x] Deployen
+
+## Video-IDs neu zuordnen (Thumbnails passen nicht)
+- [x] Korrekte Reihenfolge basierend auf YouTube-Screenshots festgelegt
+- [x] Video-IDs in FeaturedVideos.tsx neu angeordnet
+- [x] Titel mit echten YouTube-Titeln aktualisiert
 - [ ] Deployen

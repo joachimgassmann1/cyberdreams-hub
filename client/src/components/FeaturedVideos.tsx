@@ -5,13 +5,13 @@ import { Play } from "lucide-react";
 const FEATURED_VIDEOS = [
   {
     id: "Q2NIq7Qwogc",
-    title: "🌆 CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
+    title: "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
     channelTitle: "Cyber Dreams",
   },
   {
-    id: "uDbTU2pLCRs",
-    title: "🎙️ Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights Vol. 5",
-    channelTitle: "JazzSphere Radio",
+    id: "bA1JhbZD8UM",
+    title: "Deep Focus | Calm Ambient Music for Work and Study Vol. 7",
+    channelTitle: "Deep Focus Sphere",
   },
   {
     id: "RJIdAEvb_dY",
@@ -19,19 +19,19 @@ const FEATURED_VIDEOS = [
     channelTitle: "Chillout Sphere",
   },
   {
-    id: "xPjrkMmZElw",
-    title: "🎹 Beautiful Piano Jazz | Emotional Ballads for Peace",
-    channelTitle: "Pianosphere Radio",
-  },
-  {
-    id: "bA1JhbZD8UM",
-    title: "🎼 Deep Focus Music | Ambient Soundscapes for Concentration",
-    channelTitle: "Deep Focus Sphere",
-  },
-  {
     id: "XCh88UzbssA",
-    title: "🎵 Deep Focus & Study Music | Calm Background Beats",
+    title: "Deep Focus Vibes: The Ultimate Study Music Mix",
     channelTitle: "Deep Focus Sphere",
+  },
+  {
+    id: "uDbTU2pLCRs",
+    title: "Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights Vol. 5",
+    channelTitle: "JazzSphere Radio",
+  },
+  {
+    id: "xPjrkMmZElw",
+    title: "Chill Piano Escapes – Cozy Melodies to Unwind",
+    channelTitle: "Pianosphere Radio",
   },
 ];
 
