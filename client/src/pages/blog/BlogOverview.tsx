@@ -36,8 +36,11 @@ export default function BlogOverview() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-transparent">
             Blog & Music Insights
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
             Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, and the art of creating the perfect atmosphere for work and relaxation.
+          </p>
+          <p className="text-lg text-muted-foreground/80 max-w-3xl mx-auto">
+            Explore categories inspired by the Sphere Music Universe — from Focus and Chillout to Jazz, Piano, Cyberpunk and more.
           </p>
         </div>
       </section>
@@ -48,16 +51,16 @@ export default function BlogOverview() {
           <Button
             variant={selectedCategory === null ? "default" : "outline"}
             onClick={() => handleCategoryFilter(null)}
-            className="rounded-full"
+            className="rounded-full whitespace-nowrap"
           >
-            All Articles
+            All
           </Button>
           {blogCategories.map((category) => (
             <Button
               key={category.id}
               variant={selectedCategory === category.id ? "default" : "outline"}
               onClick={() => handleCategoryFilter(category.id)}
-              className="rounded-full"
+              className="rounded-full whitespace-nowrap"
             >
               {category.name}
             </Button>

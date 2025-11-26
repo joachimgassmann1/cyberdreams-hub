@@ -390,3 +390,11 @@
 - [x] Link-Routing in Navigation korrigiert (wouter Link statt <a>)
 - [ ] Lokal testen
 - [ ] Deployen
+
+
+## Blog-Kategorien anpassen
+- [x] Kategorien auf 1-Wort-Begriffe geändert (All, Focus, Chillout, Cyberpunk, Jazz, Guitar, Piano, Relax, Insights)
+- [x] Erklärungssatz unter Untertitel eingefügt
+- [x] whitespace-nowrap zu Buttons hinzugefügt (kein Umbruch)
+- [ ] Lokal testen
+- [ ] Deployen
