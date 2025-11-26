@@ -253,4 +253,8 @@
 - [x] Zusätzliche Größen erstellt (192x192, 512x512 für PWA)
 - [x] Favicon-Links in index.html aktualisiert
 - [x] Schema.org JSON-LD E-Mail zu info@sphere-music-hub.com aktualisiert
-- [ ] Deployen und in Browser/Google testen
+- [x] Deployen und in Browser/Google testen
+
+## Subscribe Button Hintergrundfarbe fehlt
+- [x] Hero.tsx: Subscribe on YouTube Button mit bg-card/80 backdrop-blur-sm versehen
+- [ ] Deployen

@@ -69,7 +69,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="text-base md:text-lg px-8 py-6 border-primary/30 hover:bg-primary/10"
+              className="text-base md:text-lg px-8 py-6 bg-card/80 backdrop-blur-sm border-primary/30 hover:bg-primary/10"
               asChild
             >
               <a href="https://www.youtube.com/@deepfocussphere67" target="_blank" rel="noopener noreferrer">
