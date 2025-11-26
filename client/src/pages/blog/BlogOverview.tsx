@@ -6,6 +6,7 @@ import { blogCategories } from '@/data/blog/categories';
 import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import OptimizedImage from '@/components/OptimizedImage';
 
 const POSTS_PER_PAGE = 12;
 
@@ -86,7 +87,7 @@ export default function BlogOverview() {
                   <article className="group h-full bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1">
                     {/* Hero Image */}
                     <div className="relative h-56 overflow-hidden bg-muted">
-                      <img
+                      <OptimizedImage
                         src={post.heroImage}
                         alt={`${post.title} - ${post.description}`}
                         loading="lazy"

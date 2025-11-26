@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { Link, useParams, useLocation } from 'wouter';
-import { Calendar, Clock, ArrowLeft, Tag, Share2 } from 'lucide-react';
+import { Link, useParams, useLocation } from "wouter";
+import { ArrowLeft, Calendar, Clock, Tag, Share2 } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Streamdown } from 'streamdown';
 import { getPostBySlug, getRelatedPosts } from '@/data/blog/posts';
 import { blogCategories } from '@/data/blog/categories';
@@ -100,10 +101,11 @@ export default function BlogArticle() {
       <Navigation />
       {/* Hero Section */}
       <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
-        <img
+        <OptimizedImage
           src={post.heroImage}
           alt={`${post.title} - ${post.description}`}
           fetchPriority="high"
+          loading="eager"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
@@ -213,7 +215,7 @@ export default function BlogArticle() {
                 <Link key={relatedPost.slug} href={`/blog/${relatedPost.slug}`}>
                   <article className="group h-full bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1">
                     <div className="relative h-48 overflow-hidden bg-muted">
-                      <img
+                      <OptimizedImage
                         src={relatedPost.heroImage}
                         alt={`${relatedPost.title} - ${relatedPost.description}`}
                         loading="lazy"
