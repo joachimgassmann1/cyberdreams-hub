@@ -414,3 +414,9 @@
 - [x] Sitemap bereits aktuell
 - [x] Zu GitHub gepusht (Commit 1107643)
 - [ ] Render Deployment abwarten
+
+
+## Hero-Bild schärfer machen
+- [x] Neues Bild mit weniger Bokeh generiert (scharfe City-Skyline)
+- [x] Altes Bild ersetzt
+- [ ] Deployen
