@@ -29,7 +29,7 @@ export default function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/hero-bg.jpg"
+          src="/hero-bg.webp"
           alt="Hero Background"
           className="w-full h-full object-cover"
         />

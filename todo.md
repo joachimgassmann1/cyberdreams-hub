@@ -217,4 +217,11 @@
 ## Farbüberlagerungen von Channel-Bildern entfernen
 - [x] Channels.tsx: Color-Overlay entfernen
 - [x] Bilder wieder im Original-Look anzeigen
-- [ ] Deployen
+- [x] Deployen
+
+## Bildoptimierung für PageSpeed (13 MB Einsparung)
+- [x] Channel-Bilder zu WebP konvertieren und auf 800x450 resizen
+- [x] Logo zu WebP konvertieren und auf 96x96 resizen (1.2 MB → 2.3 KB!)
+- [x] Hero Background zu WebP konvertieren (1.3 MB → 74 KB!)
+- [x] Bild-Referenzen in Komponenten aktualisieren (.jpg → .webp)
+- [ ] Deployen und PageSpeed Score prüfen
