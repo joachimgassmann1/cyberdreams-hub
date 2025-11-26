@@ -336,5 +336,14 @@
 ## Google Search Console Verifizierung für .com
 - [x] Neuen Verifizierungs-Code von Google erhalten (q1xeuuYyjgx3E35Apdhy2uqvTixkPHzKN97sYpE0X7M)
 - [x] Meta-Tag in index.html aktualisiert
-- [ ] Deployen
+- [x] Deployen - Live auf sphere-music-hub.com
 - [ ] In Google Search Console bestätigen
+
+## Google Fonts lokal hosten (Performance-Optimierung)
+- [ ] Google Fonts (Inter & Poppins) herunterladen
+- [ ] Font-Dateien in /public/fonts ablegen
+- [ ] index.html: Google Fonts CDN-Link entfernen
+- [ ] CSS: @font-face Regeln für lokale Fonts erstellen
+- [ ] Testen ob Schriftarten korrekt angezeigt werden
+- [ ] Deployen
+- [ ] PageSpeed Score erneut messen
