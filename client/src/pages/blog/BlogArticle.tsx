@@ -14,17 +14,68 @@ export default function BlogArticle() {
   const [, setLocation] = useLocation();
   const post = getPostBySlug(params.slug || '');
 
-  useEffect(() => {
-    // Scroll to top when article loads
-    window.scrollTo(0, 0);
-  }, [params.slug]);
-
   if (!post) {
     return <NotFound />;
   }
 
   const category = blogCategories.find(c => c.id === post.category);
   const relatedPosts = getRelatedPosts(post.slug);
+
+  useEffect(() => {
+    // Scroll to top when article loads
+    window.scrollTo(0, 0);
+
+    // Update meta tags for SEO
+    document.title = `${post.title} | Sphere Music Hub Blog`;
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', post.description);
+    }
+
+    // Add Schema.org BlogPosting JSON-LD
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.description,
+      "image": `https://sphere-music-hub.com${post.heroImage}`,
+      "datePublished": post.publishDate,
+      "dateModified": post.publishDate,
+      "author": {
+        "@type": "Organization",
+        "name": post.author,
+        "url": "https://sphere-music-hub.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Sphere Music Hub",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sphere-music-hub.com/logo.webp"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://sphere-music-hub.com/blog/${post.slug}`
+      },
+      "keywords": post.tags.join(', '),
+      "articleSection": category?.name || 'Music',
+      "wordCount": post.content.split(/\s+/).length,
+      "timeRequired": `PT${post.readingTime}M`
+    });
+    document.head.appendChild(schemaScript);
+
+    return () => {
+      // Cleanup schema script on unmount
+      if (document.head.contains(schemaScript)) {
+        document.head.removeChild(schemaScript);
+      }
+    };
+  }, [params.slug, post, category]);
 
   const handleShare = async () => {
     const url = window.location.href;

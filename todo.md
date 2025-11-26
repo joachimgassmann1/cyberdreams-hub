@@ -398,3 +398,11 @@
 - [x] whitespace-nowrap zu Buttons hinzugefügt (kein Umbruch)
 - [ ] Lokal testen
 - [ ] Deployen
+
+
+## Blog SEO-Optimierung
+- [x] Blog-URLs zu sitemap.xml hinzugefügt (/blog + Artikel)
+- [x] Schema.org BlogPosting JSON-LD zu BlogArticle hinzugefügt
+- [x] Meta Tags (title, description) dynamisch aktualisiert
+- [ ] Deployen
+- [ ] Sitemap in Google Search Console einreichen

@@ -12,6 +12,22 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Blog Overview -->
+  <url>
+    <loc>https://sphere-music-hub.com/blog</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://sphere-music-hub.com/blog/ultimate-guide-focus-music-productivity</loc>
+    <lastmod>2025-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Impressum -->
   <url>
     <loc>https://sphere-music-hub.com/impressum</loc>
