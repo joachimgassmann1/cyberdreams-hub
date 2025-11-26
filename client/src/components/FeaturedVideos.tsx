@@ -7,37 +7,31 @@ const FEATURED_VIDEOS = [
     id: "Q2NIq7Qwogc",
     title: "🌆 CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
     channelTitle: "Cyber Dreams",
-    viewCount: "29",
   },
   {
     id: "uDbTU2pLCRs",
     title: "🎙️ Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights Vol. 5",
     channelTitle: "JazzSphere Radio",
-    viewCount: "6.2K",
   },
   {
     id: "RJIdAEvb_dY",
     title: "Midnight Glow Terrace: Relaxing Lounge Beats for Ultimate Chill",
     channelTitle: "Chillout Sphere",
-    viewCount: "4",
   },
   {
     id: "xPjrkMmZElw",
     title: "🎹 Beautiful Piano Jazz | Emotional Ballads for Peace",
     channelTitle: "Pianosphere Radio",
-    viewCount: "2",
   },
   {
     id: "bA1JhbZD8UM",
     title: "🎼 Deep Focus Music | Ambient Soundscapes for Concentration",
     channelTitle: "Deep Focus Sphere",
-    viewCount: "163",
   },
   {
     id: "XCh88UzbssA",
     title: "🎵 Deep Focus & Study Music | Calm Background Beats",
     channelTitle: "Deep Focus Sphere",
-    viewCount: "2.7K",
   },
 ];
 
@@ -97,9 +91,8 @@ export default function FeaturedVideos() {
                     <h3 className="font-semibold text-base mb-2 line-clamp-2 group-hover:text-primary transition-colors">
                       {video.title}
                     </h3>
-                    <div className="flex items-center justify-between text-sm text-foreground/60">
+                    <div className="text-sm text-foreground/60">
                       <span>{video.channelTitle}</span>
-                      <span>{video.viewCount} views</span>
                     </div>
                   </div>
                 </a>

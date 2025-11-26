@@ -287,4 +287,9 @@
 ## Video-IDs korrigieren
 - [x] Pianosphere Radio Video-ID ersetzt (xPjrkMmZElw)
 - [x] Deep Focus Sphere Video-IDs aktualisiert (bA1JhbZD8UM, XCh88UzbssA)
+- [x] Deployen
+
+## View-Angaben aus Featured Videos entfernen
+- [x] FeaturedVideos.tsx: viewCount aus Daten-Array entfernt
+- [x] FeaturedVideos.tsx: View-Anzeige aus UI entfernt
 - [ ] Deployen
