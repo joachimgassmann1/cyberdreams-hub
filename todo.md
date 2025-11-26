@@ -256,5 +256,7 @@
 - [x] Deployen und in Browser/Google testen
 
 ## Subscribe Button Hintergrundfarbe fehlt
-- [x] Hero.tsx: Subscribe on YouTube Button mit bg-card/80 backdrop-blur-sm versehen
+- [x] Hero.tsx: Subscribe on YouTube Button mit bg-card/80 backdrop-blur-sm versehen (funktioniert nicht - outline variant hat transparent bg)
+- [x] Deployen
+- [x] Hero.tsx: Button von variant="outline" zu variant="secondary" geändert
 - [ ] Deployen
