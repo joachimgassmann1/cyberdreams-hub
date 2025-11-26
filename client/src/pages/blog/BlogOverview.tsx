@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/OptimizedImage';
+import { calculateReadTime, formatReadTime } from '@/lib/readTime';
 
 const POSTS_PER_PAGE = 12;
 
@@ -86,6 +87,7 @@ export default function BlogOverview() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {currentPosts.map((post) => {
               const category = blogCategories.find(c => c.id === post.category);
+              const dynamicReadTime = calculateReadTime(post.content);
               
               return (
                 <Link key={post.slug} href={`/blog/${post.slug}`}>
@@ -124,7 +126,7 @@ export default function BlogOverview() {
                         </div>
                         <div className="flex items-center gap-1">
                           <Clock className="w-4 h-4" />
-                          <span>{post.readingTime} min read</span>
+                          <span>{formatReadTime(dynamicReadTime)}</span>
                         </div>
                       </div>
 

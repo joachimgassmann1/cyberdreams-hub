@@ -11,6 +11,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import NotFound from '@/pages/NotFound';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
+import { calculateReadTime, formatReadTime } from '@/lib/readTime';
 
 export default function BlogArticle() {
   const params = useParams<{ slug: string }>();
@@ -23,6 +24,7 @@ export default function BlogArticle() {
 
   const category = blogCategories.find(c => c.id === post.category);
   const relatedPosts = getRelatedPosts(post.slug);
+  const dynamicReadTime = calculateReadTime(post.content);
 
   useEffect(() => {
     // Scroll to top when article loads
@@ -146,7 +148,7 @@ export default function BlogArticle() {
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5" />
-                <span>{post.readingTime} min read</span>
+                <span>{formatReadTime(dynamicReadTime)}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span>By {post.author}</span>
