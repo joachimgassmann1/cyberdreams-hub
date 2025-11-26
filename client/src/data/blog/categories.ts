@@ -17,7 +17,7 @@ export const blogCategories: BlogCategory[] = [
     id: 'cyberpunk',
     name: 'Cyberpunk',
     description: 'Futuristic soundscapes and dystopian atmospheres',
-    color: 'from-cyan-500 to-blue-600'
+    color: 'from-pink-500 to-purple-600'
   },
   {
     id: 'jazz',
