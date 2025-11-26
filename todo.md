@@ -351,8 +351,11 @@
 
 
 ## URGENT: Mobile Performance Regression beheben
-- [ ] Problem analysieren (Score von 83 auf 56 gefallen!)
-- [ ] Lokale Fonts rückgängig machen
-- [ ] Google Fonts CDN wiederherstellen
-- [ ] Deployen
+- [x] Problem analysiert: 2,4 MB Fonts blockieren Mobile Rendering
+- [x] Lokale Fonts entfernt
+- [x] Google Fonts CDN wiederhergestellt
+- [x] Zu GitHub gepusht (Commit a50cdca)
+- [x] Render Deployment abgeschlossen - Google Fonts CDN ist wieder live!
 - [ ] Mobile Score prüfen (sollte wieder bei 83 sein)
+
+**Fazit:** Lokale Fonts waren kontraproduktiv für Mobile. Google CDN ist besser optimiert.
