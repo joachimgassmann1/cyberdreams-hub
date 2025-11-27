@@ -14,10 +14,12 @@ import ReadingProgressBar from '@/components/ReadingProgressBar';
 import ScrollToTop from '@/components/ScrollToTop';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
 import { Helmet } from 'react-helmet-async';
+import { detectLanguage } from '@/lib/i18n';
 
 export default function BlogArticle() {
   const params = useParams<{ slug: string }>();
   const [, setLocation] = useLocation();
+  const lang = detectLanguage();
   const post = getPostBySlug(params.slug || '');
 
   if (!post) {
@@ -51,12 +53,18 @@ export default function BlogArticle() {
     }
   };
 
+  const title = lang === 'de' && post.titleDe ? post.titleDe : post.title;
+  const description = lang === 'de' && post.descriptionDe ? post.descriptionDe : post.description;
+  const content = lang === 'de' && post.contentDe ? post.contentDe : post.content;
+  const tags = lang === 'de' && post.tagsDe ? post.tagsDe : post.tags;
+  const categoryName = lang === 'de' && category?.nameDe ? category.nameDe : category?.name;
+
   const articleUrl = `https://sphere-music-hub.com/blog/${post.slug}`;
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": post.title,
-    "description": post.description,
+    "headline": title,
+    "description": description,
     "image": post.heroImage,
     "datePublished": post.publishDate,
     "dateModified": post.publishDate,
@@ -73,31 +81,31 @@ export default function BlogArticle() {
         "url": "https://sphere-music-hub.com/logo.png"
       }
     },
-    "keywords": post.tags.join(', '),
-    "articleSection": category?.name || 'Music',
-    "wordCount": post.content.split(/\s+/).length,
+    "keywords": tags.join(', '),
+    "articleSection": categoryName || 'Music',
+    "wordCount": content.split(/\s+/).length,
     "timeRequired": `PT${post.readingTime}M`
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
       <Helmet>
-        <title>{post.title} | Sphere Music Hub Blog</title>
-        <meta name="description" content={post.description} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.description} />
+        <title>{title} | Sphere Music Hub Blog</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:image" content={post.heroImage} />
         <meta property="og:url" content={articleUrl} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.publishDate} />
         <meta property="article:author" content={post.author} />
-        <meta property="article:section" content={category?.name || 'Music'} />
-        {post.tags.map(tag => (
+        <meta property="article:section" content={categoryName || 'Music'} />
+        {tags.map(tag => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.description} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={post.heroImage} />
         <link rel="canonical" href={articleUrl} />
         <script type="application/ld+json">
@@ -134,13 +142,13 @@ export default function BlogArticle() {
             {/* Category Badge */}
             {category && (
               <div className={`inline-block px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${category.color} mb-4`}>
-                {category.name}
+                {categoryName}
               </div>
             )}
 
             {/* Title */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white drop-shadow-lg">
-              {post.title}
+              {title}
             </h1>
 
             {/* Meta Info */}
@@ -174,7 +182,7 @@ export default function BlogArticle() {
       <article className="container max-w-4xl px-4 py-12 md:py-16">
         {/* Description */}
         <div className="text-xl text-muted-foreground mb-8 pb-8 border-b border-border">
-          {post.description}
+          {description}
         </div>
 
         {/* Main Content */}
@@ -189,15 +197,15 @@ export default function BlogArticle() {
           prose-img:rounded-xl prose-img:my-8
           prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic
         ">
-          <Streamdown>{post.content}</Streamdown>
+          <Streamdown>{content}</Streamdown>
         </div>
 
         {/* Tags */}
-        {post.tags.length > 0 && (
+        {tags.length > 0 && (
           <div className="mt-12 pt-8 border-t border-border">
             <h3 className="text-sm font-semibold text-muted-foreground mb-4">TAGS</h3>
             <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
+              {tags.map((tag) => (
                 <span
                   key={tag}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-sm hover:bg-muted/80 transition-colors cursor-pointer"
