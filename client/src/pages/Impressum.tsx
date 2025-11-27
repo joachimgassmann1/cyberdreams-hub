@@ -10,12 +10,12 @@ export default function Impressum() {
     <div className="min-h-screen flex flex-col">
       <Helmet>
         <title>{lang === 'de' ? 'Impressum - Sphere Music Hub' : 'Imprint - Sphere Music Hub'}</title>
-        <meta name="description" content={lang === 'de' ? 'Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel.' : 'Imprint of Sphere Music Hub. Information according to § 5 TMG: Joachim Gassmann – Music & Media Production, Niederkassel.'} />
+        <meta name="description" content={lang === 'de' ? 'Impressum von Sphere Music Hub. Angaben gemäß § 5 DDG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel.' : 'Imprint of Sphere Music Hub. Information according to § 5 DDG: Joachim Gassmann – Music & Media Production, Niederkassel.'} />
         <meta property="og:title" content={lang === 'de' ? 'Impressum - Sphere Music Hub' : 'Imprint - Sphere Music Hub'} />
-        <meta property="og:description" content={lang === 'de' ? 'Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel.' : 'Imprint of Sphere Music Hub. Information according to § 5 TMG: Joachim Gassmann – Music & Media Production, Niederkassel.'} />
+        <meta property="og:description" content={lang === 'de' ? 'Impressum von Sphere Music Hub. Angaben gemäß § 5 DDG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel.' : 'Imprint of Sphere Music Hub. Information according to § 5 DDG: Joachim Gassmann – Music & Media Production, Niederkassel.'} />
         <meta property="og:url" content="https://sphere-music-hub.com/impressum" />
         <meta name="twitter:title" content={lang === 'de' ? 'Impressum - Sphere Music Hub' : 'Imprint - Sphere Music Hub'} />
-        <meta name="twitter:description" content={lang === 'de' ? 'Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel.' : 'Imprint of Sphere Music Hub. Information according to § 5 TMG: Joachim Gassmann – Music & Media Production, Niederkassel.'} />
+        <meta name="twitter:description" content={lang === 'de' ? 'Impressum von Sphere Music Hub. Angaben gemäß § 5 DDG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel.' : 'Imprint of Sphere Music Hub. Information according to § 5 DDG: Joachim Gassmann – Music & Media Production, Niederkassel.'} />
         <link rel="canonical" href="https://sphere-music-hub.com/impressum" />
       </Helmet>
       <Navigation />
@@ -26,7 +26,7 @@ export default function Impressum() {
           
           <div className="space-y-8 max-w-4xl">
             <section>
-              <h2 className="text-2xl font-bold mb-4 text-primary">Angaben gemäß § 5 TMG</h2>
+              <h2 className="text-2xl font-bold mb-4 text-primary">Angaben gemäß § 5 DDG</h2>
               <p className="text-foreground/80">
                 Joachim Gassmann – Musik- & Medienproduktion<br />
                 Agnes-Miegel-Str. 2<br />
@@ -86,8 +86,8 @@ export default function Impressum() {
             <section>
               <h2 className="text-2xl font-bold mb-4 text-primary">Haftung für Inhalte</h2>
               <p className="text-foreground/80 mb-4">
-                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten 
-                nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als 
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten 
+                nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als 
                 Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde 
                 Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige 
                 Tätigkeit hinweisen.
