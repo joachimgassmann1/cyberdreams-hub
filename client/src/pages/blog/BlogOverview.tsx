@@ -74,6 +74,10 @@ export default function BlogOverview() {
         <meta property="og:title" content={lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'} />
         <meta property="og:description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres.'} />
         <meta property="og:url" content={`https://${baseDomain}/blog`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`https://${baseDomain}/og-image.jpg`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={`https://${baseDomain}/og-image.jpg`} />
         <meta name="twitter:title" content={lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'} />
         <meta name="twitter:description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres.'} />
         <link rel="canonical" href={`https://${baseDomain}/blog`} />

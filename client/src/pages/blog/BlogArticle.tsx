@@ -68,7 +68,7 @@ export default function BlogArticle() {
     "@type": "BlogPosting",
     "headline": displayTitle,
     "description": displayDescription,
-    "image": post.heroImage,
+    "image": `https://${baseDomain}${post.heroImage}`,
     "datePublished": post.publishDate,
     "dateModified": post.publishDate,
     "author": {
@@ -97,7 +97,7 @@ export default function BlogArticle() {
         <meta name="description" content={displayDescription} />
         <meta property="og:title" content={displayTitle} />
         <meta property="og:description" content={displayDescription} />
-        <meta property="og:image" content={post.heroImage} />
+        <meta property="og:image" content={`https://${baseDomain}${post.heroImage}`} />
         <meta property="og:url" content={articleUrl} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={post.publishDate} />
@@ -109,7 +109,7 @@ export default function BlogArticle() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={displayTitle} />
         <meta name="twitter:description" content={displayDescription} />
-        <meta name="twitter:image" content={post.heroImage} />
+        <meta name="twitter:image" content={`https://${baseDomain}${post.heroImage}`} />
         <link rel="canonical" href={articleUrl} />
         <link rel="alternate" hrefLang="en" href={`https://sphere-music-hub.com/blog/${post.slug}`} />
         <link rel="alternate" hrefLang="de" href={`https://sphere-music-hub.de/blog/${post.slug}`} />
