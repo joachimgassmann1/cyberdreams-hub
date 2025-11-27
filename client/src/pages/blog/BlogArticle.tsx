@@ -56,6 +56,7 @@ export default function BlogArticle() {
   const displayTitle = lang === 'de' && post.titleDe ? post.titleDe : post.title;
   const displayDescription = lang === 'de' && post.descriptionDe ? post.descriptionDe : post.description;
   const displayTags = lang === 'de' && post.tagsDe ? post.tagsDe : post.tags;
+  const displayContent = lang === 'de' && post.contentDe ? post.contentDe : post.content;
 
   const articleUrl = `https://sphere-music-hub.com/blog/${post.slug}`;
   const schemaData = {
@@ -195,7 +196,7 @@ export default function BlogArticle() {
           prose-img:rounded-xl prose-img:my-8
           prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic
         ">
-          <Streamdown>{post.content}</Streamdown>
+          <Streamdown>{displayContent}</Streamdown>
         </div>
 
         {/* Tags */}

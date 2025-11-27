@@ -1,5 +1,6 @@
 import type { BlogPost } from './types';
 import nightShiftMindContent from './posts/night-shift-mind-late-evening-focus-creativity.md?raw';
+import nightShiftMindContentDe from './posts/night-shift-mind-late-evening-focus-creativity.de.md?raw';
 
 export const nightShiftMind: BlogPost = {
   title: "The Night Shift Mind: Why Late Evening Hours Unlock Deeper Focus and Creativity",
@@ -15,5 +16,6 @@ export const nightShiftMind: BlogPost = {
   readingTime: 7,
   readingTimeDe: 7,
   heroImage: "/blog-night-shift-mind.webp",
-  content: nightShiftMindContent
+  content: nightShiftMindContent,
+  contentDe: nightShiftMindContentDe
 };
