@@ -153,7 +153,11 @@ Dystopian rain sounds create deep focus because they offer something rare in mod
 
 Channels like Cyber Dreams understand this balance. They craft soundscapes that are not just background noise, but carefully designed environments for thought, creativity, and concentration.
 
-The next time you need to focus, consider stepping into a world where it is always raining, the neon never fades, and the future is both beautiful and broken. You may find that in the heart of the storm, your mind becomes perfectly still.`,
+The next time you need to focus, consider stepping into a world where it is always raining, the neon never fades, and the future is both beautiful and broken. You may find that in the heart of the storm, your mind becomes perfectly still.
+
+---
+
+**Step into the cyberpunk rain:** Experience [Cyber Dreams](https://www.youtube.com/@CyberDreams-AmbientMusic) for dystopian soundscapes designed for deep focus and creative flow.`,
   contentDe: `# Warum dystopische Regenklänge tiefe Konzentration erzeugen
 
 In den neongetränkten Straßen imaginierter Zukünfte, wo holografische Werbung gegen regengestreifte Fenster flackert und das Summen ferner Maschinen sich mit dem Prasseln endlosen Niederschlags vermischt, geschieht etwas Unerwartetes: Der Geist findet Klarheit. Cyberpunk-Soundscapes – diese atmosphärischen Mischungen aus futuristischen Ambient-Klängen, synthetischen Texturen und anhaltendem Regen – sind zu mächtigen Werkzeugen für Konzentration, Kreativität und Deep Work geworden. Aber warum hilft uns die Audio-Ästhetik dystopischer Zukünfte, uns in der Gegenwart zu fokussieren?
@@ -301,7 +305,11 @@ Dystopische Regenklänge erzeugen tiefe Konzentration, weil sie etwas Seltenes i
 
 Kanäle wie Cyber Dreams verstehen diese Balance. Sie erschaffen Klanglandschaften, die nicht nur Hintergrundgeräusch sind, sondern sorgfältig gestaltete Umgebungen für Gedanken, Kreativität und Konzentration.
 
-Das nächste Mal, wenn du dich fokussieren musst, erwäge, in eine Welt einzutreten, wo es immer regnet, das Neon nie verblasst und die Zukunft sowohl schön als auch zerbrochen ist. Du wirst vielleicht feststellen, dass im Herzen des Sturms dein Geist vollkommen still wird.`,
+Das nächste Mal, wenn du dich fokussieren musst, erwäge, in eine Welt einzutreten, wo es immer regnet, das Neon nie verblasst und die Zukunft sowohl schön als auch zerbrochen ist. Du wirst vielleicht feststellen, dass im Herzen des Sturms dein Geist vollkommen still wird.
+
+---
+
+**Tritt in den Cyberpunk-Regen ein:** Erlebe [Cyber Dreams](https://www.youtube.com/@CyberDreams-AmbientMusic) für dystopische Soundscapes, die für tiefen Fokus und kreativen Flow entwickelt wurden.`,
   heroImage: '/images/blog/cyberpunk-rain-hero.jpg',
   category: 'cyberpunk',
   tags: ['cyberpunk', 'rain sounds', 'focus music', 'ambient music', 'deep work', 'concentration'],

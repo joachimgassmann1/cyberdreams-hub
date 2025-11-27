@@ -63,3 +63,7 @@ The night shift mind is not a mystery. It is the natural result of an environmen
 Late evening hours open doors that daylight keeps closed. They invite deeper thought, steadier focus and a sense of creative truth that is easy to miss in the rush of the day.
 
 For many, the night is not a time to slow down. **It is the moment when the mind finally wakes up**.
+
+---
+
+**Experience the night shift mind:** Explore [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere) for ambient soundscapes designed for late-night concentration and creative flow.
