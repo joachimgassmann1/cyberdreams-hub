@@ -41,8 +41,9 @@ export default function FeaturedVideos() {
   const lang = detectLanguage();
   const { playVideo } = useMusicPlayer();
   
-  // Detect if user is on mobile device
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  // Detect if user is on mobile device (including iPad/iPadOS)
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS 13+
   
   const handleVideoClick = (video: typeof FEATURED_VIDEOS[0]) => {
     if (isMobile) {

@@ -110,8 +110,9 @@ export default function Channels() {
   const channels = getChannels(lang);
   const { playVideo } = useMusicPlayer();
   
-  // Detect if user is on mobile device
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  // Detect if user is on mobile device (including iPad/iPadOS)
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS 13+
   
   const handlePlayClick = (channel: typeof channels[0]) => {
     const videoId = CHANNEL_FEATURED_VIDEOS[channel.channelId] || "uDbTU2pLCRs";
