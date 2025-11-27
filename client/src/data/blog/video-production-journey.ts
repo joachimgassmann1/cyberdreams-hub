@@ -1,21 +1,21 @@
 import type { BlogPost } from './types';
 
 export const videoProductionJourney: BlogPost = {
-  slug: 'video-production-journey-10-hour-workflow',
-  title: 'The 10-Hour Journey: How a Single Ambient Video Comes to Life',
-  titleDe: 'Die 10-Stunden-Reise: Wie ein einzelnes Ambient-Video entsteht',
-  description: 'Discover the intricate creative process behind every Sphere Music Hub video—from AI image generation to sound design, animation, and YouTube optimization. A behind-the-scenes look at the 8-10 hour workflow that brings ambient videos to life.',
-  descriptionDe: 'Entdecken Sie den komplexen kreativen Prozess hinter jedem Sphere Music Hub Video—von KI-Bildgenerierung über Sound Design, Animation bis hin zur YouTube-Optimierung. Ein Blick hinter die Kulissen des 8-10-Stunden-Workflows, der Ambient-Videos zum Leben erweckt.',
-  heroImage: '/images/blog/video-production-hero.jpg',
-  category: 'insights',
-  tags: ['video production', 'content creation', 'AI tools', 'DaVinci Resolve', 'Suno AI', 'YouTube SEO', 'workflow', 'behind the scenes'],
-  tagsDe: ['Videoproduktion', 'Content-Erstellung', 'KI-Tools', 'DaVinci Resolve', 'Suno AI', 'YouTube SEO', 'Workflow', 'Hinter den Kulissen'],
-  author: 'Joachim Gassmann',
-  publishDate: '2025-11-27',
-  readingTime: 10,
-  readingTimeDe: 10,
-  featured: true,
-  content: `Behind every seamless ambient video on Sphere Music Hub lies an intricate creative process that most viewers never see. What appears as a simple, calming visual experience is actually the result of a meticulous 8-10 hour workflow involving artificial intelligence, professional video editing, sound design, and strategic optimization. This is the story of how a single ambient video is born—from the first spark of inspiration to the moment it goes live on YouTube.
+ slug: 'video-production-journey-10-hour-workflow',
+ title: 'The 10-Hour Journey: How a Single Ambient Video Comes to Life',
+ titleDe: 'Die 10-Stunden-Reise: Wie ein einzelnes Ambient-Video entsteht',
+ description: 'Discover the intricate creative process behind every Sphere Music Hub video—from AI image generation to sound design, animation, and YouTube optimization. A behind-the-scenes look at the 8-10 hour workflow that brings ambient videos to life.',
+ descriptionDe: 'Entdecken Sie den komplexen kreativen Prozess hinter jedem Sphere Music Hub Video—von KI-Bildgenerierung über Sound Design, Animation bis hin zur YouTube-Optimierung. Ein Blick hinter die Kulissen des 8-10-Stunden-Workflows, der Ambient-Videos zum Leben erweckt.',
+ heroImage: '/images/blog/video-production-hero.jpg',
+ category: 'insights',
+ tags: ['video production', 'content creation', 'AI tools', 'DaVinci Resolve', 'Suno AI', 'YouTube SEO', 'workflow', 'behind the scenes'],
+ tagsDe: ['Videoproduktion', 'Content-Erstellung', 'KI-Tools', 'DaVinci Resolve', 'Suno AI', 'YouTube SEO', 'Workflow', 'Hinter den Kulissen'],
+ author: 'Joachim Gassmann',
+ publishDate: '2025-11-27',
+ readingTime: 10,
+ readingTimeDe: 10,
+ featured: true,
+ content: `Behind every seamless ambient video on Sphere Music Hub lies an intricate creative process that most viewers never see. What appears as a simple, calming visual experience is actually the result of a meticulous 8-10 hour workflow involving artificial intelligence, professional video editing, sound design, and strategic optimization. This is the story of how a single ambient video is born—from the first spark of inspiration to the moment it goes live on YouTube.
 
 Creating content that helps millions focus, relax, and find their flow is not a matter of simply pressing record. It is a craft that demands technical expertise, creative vision, and an unwavering commitment to quality. Each video is a carefully orchestrated symphony of visual atmosphere, musical coherence, and psychological intentionality.
 
@@ -130,7 +130,7 @@ The next time you press play on a Deep Focus video, or let a Chillout Sphere ses
 This is the art of ambient video production. And it is just getting started.
 
 **Ready to experience the result?** Explore the [Deep Focus Sphere channel](https://www.youtube.com/@DeepFocusSphere) and discover hours of meticulously crafted ambient videos designed for peak productivity and deep focus.`,
-  contentDe: `Hinter jedem nahtlosen Ambient-Video auf Sphere Music Hub verbirgt sich ein komplexer kreativer Prozess, den die meisten Zuschauer nie sehen. Was als einfaches, beruhigendes visuelles Erlebnis erscheint, ist tatsächlich das Ergebnis eines akribischen 8-10-Stunden-Workflows, der künstliche Intelligenz, professionelle Videobearbeitung, Sound Design und strategische Optimierung umfasst. Dies ist die Geschichte, wie ein einzelnes Ambient-Video geboren wird—vom ersten Funken der Inspiration bis zu dem Moment, in dem es auf YouTube live geht.
+ contentDe: `Hinter jedem nahtlosen Ambient-Video auf Sphere Music Hub verbirgt sich ein komplexer kreativer Prozess, den die meisten Zuschauer nie sehen. Was als einfaches, beruhigendes visuelles Erlebnis erscheint, ist tatsächlich das Ergebnis eines akribischen 8-10-Stunden-Workflows, der künstliche Intelligenz, professionelle Videobearbeitung, Sound Design und strategische Optimierung umfasst. Dies ist die Geschichte, wie ein einzelnes Ambient-Video geboren wird—vom ersten Funken der Inspiration bis zu dem Moment, in dem es auf YouTube live geht.
 
 Content zu erstellen, der Millionen dabei hilft, sich zu konzentrieren, zu entspannen und ihren Flow zu finden, ist keine Frage des einfachen Aufnahmeknopf-Drückens. Es ist ein Handwerk, das technisches Fachwissen, kreative Vision und ein unerschütterliches Engagement für Qualität erfordert. Jedes Video ist eine sorgfältig orchestrierte Symphonie aus visueller Atmosphäre, musikalischer Kohärenz und psychologischer Intentionalität.
 

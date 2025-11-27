@@ -1,21 +1,21 @@
 import type { BlogPost } from './types';
 
 export const binauralBeats: BlogPost = {
-  slug: 'binaural-beats-science-focus-meditation',
-  title: 'The Science of Binaural Beats: How Frequency Patterns Enhance Focus and Meditation',
-  titleDe: 'Die Wissenschaft der Binauralen Beats: Wie Frequenzmuster Fokus und Meditation verbessern',
-  description: 'Discover how binaural beats leverage brainwave entrainment to enhance concentration, deepen meditation, and optimize mental states through scientifically grounded frequency patterns.',
-  descriptionDe: 'Entdecken Sie, wie binaurale Beats Gehirnwellen-Entrainment nutzen, um Konzentration zu verbessern, Meditation zu vertiefen und mentale Zustände durch wissenschaftlich fundierte Frequenzmuster zu optimieren.',
-  heroImage: '/images/blog/binaural-beats-hero.jpg',
-  category: 'focus',
-  tags: ['binaural beats', 'focus music', 'meditation', 'neuroscience', 'brainwaves', 'concentration'],
-  tagsDe: ['Binaurale Beats', 'Fokusmusik', 'Meditation', 'Neurowissenschaft', 'Gehirnwellen', 'Konzentration'],
-  author: 'Sphere Music Hub Team',
-  publishDate: '2025-11-27',
-  readingTime: 12,
-  readingTimeDe: 12,
-  featured: true,
-  content: `In an age where distractions are constant and attention spans are shrinking, the search for effective focus tools has never been more urgent. Among the various techniques that have emerged, binaural beats stand out as a scientifically grounded method that leverages the brain's natural response to sound frequencies. This auditory phenomenon has captured the attention of neuroscientists, productivity enthusiasts, and meditation practitioners alike, offering a bridge between ancient contemplative practices and modern neuroscience.
+ slug: 'binaural-beats-science-focus-meditation',
+ title: 'The Science of Binaural Beats: How Frequency Patterns Enhance Focus and Meditation',
+ titleDe: 'Die Wissenschaft der Binauralen Beats: Wie Frequenzmuster Fokus und Meditation verbessern',
+ description: 'Discover how binaural beats leverage brainwave entrainment to enhance concentration, deepen meditation, and optimize mental states through scientifically grounded frequency patterns.',
+ descriptionDe: 'Entdecken Sie, wie binaurale Beats Gehirnwellen-Entrainment nutzen, um Konzentration zu verbessern, Meditation zu vertiefen und mentale Zustände durch wissenschaftlich fundierte Frequenzmuster zu optimieren.',
+ heroImage: '/images/blog/binaural-beats-hero.jpg',
+ category: 'focus',
+ tags: ['binaural beats', 'focus music', 'meditation', 'neuroscience', 'brainwaves', 'concentration'],
+ tagsDe: ['Binaurale Beats', 'Fokusmusik', 'Meditation', 'Neurowissenschaft', 'Gehirnwellen', 'Konzentration'],
+ author: 'Sphere Music Hub Team',
+ publishDate: '2025-11-27',
+ readingTime: 12,
+ readingTimeDe: 12,
+ featured: true,
+ content: `In an age where distractions are constant and attention spans are shrinking, the search for effective focus tools has never been more urgent. Among the various techniques that have emerged, binaural beats stand out as a scientifically grounded method that leverages the brain's natural response to sound frequencies. This auditory phenomenon has captured the attention of neuroscientists, productivity enthusiasts, and meditation practitioners alike, offering a bridge between ancient contemplative practices and modern neuroscience.
 
 Binaural beats represent more than just another wellness trend. They are rooted in the fundamental way our brains process auditory information and synchronize neural activity. Understanding how these frequency patterns work, and how to use them effectively, can unlock new levels of concentration, creativity, and mental clarity.
 
@@ -122,7 +122,7 @@ Understanding the science behind binaural beats—how they work, which frequenci
 As with any tool for cognitive enhancement, the key lies in informed, consistent, and mindful use. When integrated thoughtfully into a broader practice of self-care and mental training, binaural beats can serve as a gateway to deeper states of awareness, sharper focus, and greater well-being.
 
 **Ready to experience deep focus?** Explore our [Deep Focus Sphere channel](https://www.youtube.com/@DeepFocusSphere) and discover longform ambient sessions designed for peak productivity and meditation.`,
-  contentDe: `In einer Zeit, in der Ablenkungen allgegenwärtig sind und die Aufmerksamkeitsspanne schwindet, war die Suche nach effektiven Werkzeugen zur Konzentration noch nie so dringlich. Unter den verschiedenen Techniken, die entstanden sind, stechen binaurale Beats als wissenschaftlich fundierte Methode hervor, die die natürliche Reaktion des Gehirns auf Schallfrequenzen nutzt. Dieses auditive Phänomen hat die Aufmerksamkeit von Neurowissenschaftlern, Produktivitätsbegeisterten und Meditationspraktizierenden gleichermaßen auf sich gezogen und bietet eine Brücke zwischen alten kontemplativen Praktiken und moderner Neurowissenschaft.
+ contentDe: `In einer Zeit, in der Ablenkungen allgegenwärtig sind und die Aufmerksamkeitsspanne schwindet, war die Suche nach effektiven Werkzeugen zur Konzentration noch nie so dringlich. Unter den verschiedenen Techniken, die entstanden sind, stechen binaurale Beats als wissenschaftlich fundierte Methode hervor, die die natürliche Reaktion des Gehirns auf Schallfrequenzen nutzt. Dieses auditive Phänomen hat die Aufmerksamkeit von Neurowissenschaftlern, Produktivitätsbegeisterten und Meditationspraktizierenden gleichermaßen auf sich gezogen und bietet eine Brücke zwischen alten kontemplativen Praktiken und moderner Neurowissenschaft.
 
 Binaurale Beats sind mehr als nur ein weiterer Wellness-Trend. Sie basieren auf der grundlegenden Art und Weise, wie unser Gehirn auditive Informationen verarbeitet und neuronale Aktivität synchronisiert. Das Verständnis, wie diese Frequenzmuster funktionieren und wie man sie effektiv einsetzt, kann neue Ebenen der Konzentration, Kreativität und mentalen Klarheit erschließen.
 

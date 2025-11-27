@@ -1,24 +1,24 @@
 import { BlogPost } from './types';
 
 export const pianoSoul: BlogPost = {
-  slug: 'soul-of-piano-soft-ambience-heals-mind-mood',
-  title: 'The Soul of the Piano: Why Soft Piano Ambience Heals the Mind and Quietly Shapes Our Mood',
-  titleDe: 'Die Seele des Klaviers: Warum sanfte Klavier-Ambience den Geist heilt und leise unsere Stimmung formt',
-  description: 'Discover why soft piano ambience has become a refuge for millions seeking calm, focus, and emotional grounding. Explore the psychology behind the piano\'s unique ability to heal the mind and create atmospheric stillness.',
-  descriptionDe: 'Entdecke, warum sanfte Klavier-Ambience zu einem Zufluchtsort für Millionen geworden ist, die Ruhe, Fokus und emotionale Erdung suchen. Erkunde die Psychologie hinter der einzigartigen Fähigkeit des Klaviers, den Geist zu heilen und atmosphärische Stille zu schaffen.',
-  heroImage: '/blog-images/soul-of-piano-ambience-hero.webp',
-  category: 'piano',
-  tags: ['piano', 'ambient music', 'healing', 'mood', 'introspection', 'calm'],
-  tagsDe: ['Klavier', 'Ambient-Musik', 'Heilung', 'Stimmung', 'Innenschau', 'Ruhe'],
-  author: 'Sphere Music Hub',
-  publishDate: '2025-11-26',
-  readingTime: 6,
-  readingTimeDe: 6,
-  content: `Few instruments have the ability to shift the atmosphere of a room as effortlessly as the piano. A single note, played softly, can settle the breath, ease tension, and invite the mind into a slower rhythm. Piano ambience has become a refuge for millions seeking calm, focus, or emotional grounding, and its power lies not in complexity but in its quiet sincerity.
+ slug: 'soul-of-piano-soft-ambience-heals-mind-mood',
+ title: 'The Soul of the Piano: Why Soft Piano Ambience Heals the Mind and Quietly Shapes Our Mood',
+ titleDe: 'Die Seele des Klaviers: Warum sanfte Klavier-Ambience den Geist heilt und leise unsere Stimmung formt',
+ description: 'Discover why soft piano ambience has become a refuge for millions seeking calm, focus, and emotional grounding. Explore the psychology behind the piano\'s unique ability to heal the mind and create atmospheric stillness.',
+ descriptionDe: 'Entdecke, warum sanfte Klavier-Ambience zu einem Zufluchtsort für Millionen geworden ist, die Ruhe, Fokus und emotionale Erdung suchen. Erkunde die Psychologie hinter der einzigartigen Fähigkeit des Klaviers, den Geist zu heilen und atmosphärische Stille zu schaffen.',
+ heroImage: '/blog-images/soul-of-piano-ambience-hero.webp',
+ category: 'piano',
+ tags: ['piano', 'ambient music', 'healing', 'mood', 'introspection', 'calm'],
+ tagsDe: ['Klavier', 'Ambient-Musik', 'Heilung', 'Stimmung', 'Innenschau', 'Ruhe'],
+ author: 'Sphere Music Hub',
+ publishDate: '2025-11-26',
+ readingTime: 6,
+ readingTimeDe: 6,
+ content: `Few instruments have the ability to shift the atmosphere of a room as effortlessly as the piano. A single note, played softly, can settle the breath, ease tension, and invite the mind into a slower rhythm. Piano ambience has become a refuge for millions seeking calm, focus, or emotional grounding, and its power lies not in complexity but in its quiet sincerity.
 
 ---
 
-## 🎹 A Sound That Feels Human
+## A Sound That Feels Human
 
 The piano has a uniquely human quality.
 
@@ -30,7 +30,7 @@ It creates a sense of familiarity even for people who never learned to play. The
 
 ---
 
-## 💭 The Atmosphere of Memory
+## The Atmosphere of Memory
 
 Soft piano often feels like remembering, even when we cannot explain why.
 
@@ -40,7 +40,7 @@ People naturally turn to piano ambience for journaling, reading, slow evenings, 
 
 ---
 
-## 🌿 The Comfort of Simplicity
+## The Comfort of Simplicity
 
 In a world that constantly adds noise, piano ambience subtracts it.
 
@@ -50,7 +50,7 @@ Soft reverb deepens this effect by adding a sense of space around the listener. 
 
 ---
 
-## 🎬 When Music Becomes a Place
+## When Music Becomes a Place
 
 At a certain point, soft piano stops being sound and becomes atmosphere.
 
@@ -67,7 +67,7 @@ A short list of the qualities that shape this experience:
 
 ---
 
-## ✨ Why Pianosphere Resonates So Deeply
+## Why Pianosphere Resonates So Deeply
 
 [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) brings these qualities together with intention.
 
@@ -119,7 +119,7 @@ The piano's unique combination of melodic clarity and harmonic richness makes it
 
 ---
 
-## 💫 Conclusion: The Gentle Power of One Note
+## Conclusion: The Gentle Power of One Note
 
 The piano does not need to be loud to be powerful.
 
@@ -132,11 +132,11 @@ And in that pause, we find ourselves again.
 ---
 
 *Experience the quiet beauty of [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) — where soft piano ambience meets cinematic visuals to create intimate spaces for reflection, healing, and emotional stillness.*`,
-  contentDe: `Wenige Instrumente haben die Fähigkeit, die Atmosphäre eines Raumes so mühelos zu verändern wie das Klavier. Eine einzelne Note, sanft gespielt, kann den Atem beruhigen, Spannung lösen und den Geist in einen langsameren Rhythmus einladen. Klavier-Ambience ist zu einem Zufluchtsort für Millionen geworden, die Ruhe, Fokus oder emotionale Erdung suchen, und ihre Kraft liegt nicht in Komplexität, sondern in ihrer stillen Aufrichtigkeit.
+ contentDe: `Wenige Instrumente haben die Fähigkeit, die Atmosphäre eines Raumes so mühelos zu verändern wie das Klavier. Eine einzelne Note, sanft gespielt, kann den Atem beruhigen, Spannung lösen und den Geist in einen langsameren Rhythmus einladen. Klavier-Ambience ist zu einem Zufluchtsort für Millionen geworden, die Ruhe, Fokus oder emotionale Erdung suchen, und ihre Kraft liegt nicht in Komplexität, sondern in ihrer stillen Aufrichtigkeit.
 
 ---
 
-## 🎹 Ein Sound, der sich menschlich anfühlt
+## Ein Sound, der sich menschlich anfühlt
 
 Das Klavier hat eine einzigartig menschliche Qualität.
 
@@ -148,7 +148,7 @@ Es erschafft ein Gefühl von Vertrautheit selbst für Menschen, die nie gelernt 
 
 ---
 
-## 💭 Die Atmosphäre der Erinnerung
+## Die Atmosphäre der Erinnerung
 
 Sanftes Klavier fühlt sich oft an wie Erinnern, selbst wenn wir nicht erklären können warum.
 
@@ -158,7 +158,7 @@ Menschen wenden sich natürlich Klavier-Ambience zu für Journaling, Lesen, lang
 
 ---
 
-## 🌿 Der Komfort der Einfachheit
+## Der Komfort der Einfachheit
 
 In einer Welt, die ständig Lärm hinzufügt, subtrahiert Klavier-Ambience ihn.
 
@@ -168,7 +168,7 @@ Sanfter Reverb vertieft diesen Effekt, indem er ein Gefühl von Raum um den Zuh�
 
 ---
 
-## 🎬 Wenn Musik zu einem Ort wird
+## Wenn Musik zu einem Ort wird
 
 An einem bestimmten Punkt hört sanftes Klavier auf, Sound zu sein, und wird zu Atmosphäre.
 
@@ -185,7 +185,7 @@ Eine kurze Liste der Qualitäten, die diese Erfahrung formen:
 
 ---
 
-## ✨ Warum Pianosphere so tief resoniert
+## Warum Pianosphere so tief resoniert
 
 [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) bringt diese Qualitäten mit Intention zusammen.
 
@@ -237,7 +237,7 @@ Die einzigartige Kombination des Klaviers aus melodischer Klarheit und harmonisc
 
 ---
 
-## 💫 Fazit: Die sanfte Kraft einer Note
+## Fazit: Die sanfte Kraft einer Note
 
 Das Klavier muss nicht laut sein, um kraftvoll zu sein.
 
