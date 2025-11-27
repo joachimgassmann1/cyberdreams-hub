@@ -206,11 +206,11 @@ export default function BlogArticle() {
         </div>
 
         {/* Tags */}
-        {post.tags.length > 0 && (
+        {displayTags.length > 0 && (
           <div className="mt-12 pt-8 border-t border-border">
             <h3 className="text-sm font-semibold text-muted-foreground mb-4">TAGS</h3>
             <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
+              {displayTags.map((tag) => (
                 <span
                   key={tag}
                   className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-sm hover:bg-muted/80 transition-colors cursor-pointer"
