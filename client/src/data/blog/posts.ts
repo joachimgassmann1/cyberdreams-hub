@@ -8,8 +8,13 @@ import { quietCureRelaxation } from './quiet-cure-relaxation';
 import { joachimCreatorStory } from './joachim-creator-story';
 import { insideAtmosphereCreativeProcess } from './inside-atmosphere-creative-process';
 import { nightShiftMind } from './night-shift-mind';
+import { binauralBeats } from './binaural-beats';
 
 export const blogPosts: BlogPost[] = [
+  {
+    ...binauralBeats,
+    featured: true
+  },
   {
     ...nightShiftMind,
     featured: true
