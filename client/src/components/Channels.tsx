@@ -115,19 +115,8 @@ export default function Channels() {
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS 13+
   
   const handlePlayClick = (channel: typeof channels[0]) => {
-    const videoId = CHANNEL_FEATURED_VIDEOS[channel.channelId] || "uDbTU2pLCRs";
-    
-    if (isMobile) {
-      // On mobile, open YouTube directly in new tab
-      window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
-    } else {
-      // On desktop, use embedded player
-      playVideo({
-        id: videoId,
-        title: channel.name,
-        channelName: channel.handle,
-      });
-    }
+    // Open YouTube channel page (not individual video)
+    window.open(channel.url, '_blank');
   };
   return (
     <section id="music-channels" className="py-20 bg-background">
