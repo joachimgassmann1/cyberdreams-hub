@@ -101,8 +101,8 @@ export default function FeaturedVideos() {
                     />
                     
                     {/* Play Button Overlay */}
-                    <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <div className="p-4 rounded-full bg-primary group-hover:scale-110 transition-transform">
+                    <div className="absolute inset-0 bg-background/60 opacity-0 md:group-hover:opacity-100 [@media(hover:none)]:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="p-4 rounded-full bg-primary md:group-hover:scale-110 transition-transform">
                         <Play className="w-8 h-8 text-primary-foreground fill-current" />
                       </div>
                     </div>
