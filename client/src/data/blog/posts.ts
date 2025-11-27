@@ -7,8 +7,13 @@ import { pianoSoul } from './piano-soul';
 import { quietCureRelaxation } from './quiet-cure-relaxation';
 import { joachimCreatorStory } from './joachim-creator-story';
 import { insideAtmosphereCreativeProcess } from './inside-atmosphere-creative-process';
+import { nightShiftMind } from './night-shift-mind';
 
 export const blogPosts: BlogPost[] = [
+  {
+    ...nightShiftMind,
+    featured: true
+  },
   {
     ...insideAtmosphereCreativeProcess,
     featured: true
