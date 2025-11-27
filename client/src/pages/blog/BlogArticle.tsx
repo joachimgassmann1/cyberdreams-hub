@@ -12,6 +12,7 @@ import Footer from '@/components/Footer';
 import NotFound from '@/pages/NotFound';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
 import ScrollToTop from '@/components/ScrollToTop';
+import AuthorBox from '@/components/AuthorBox';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
 import { Helmet } from 'react-helmet-async';
 import { detectLanguage } from '@/lib/i18n';
@@ -229,6 +230,9 @@ export default function BlogArticle() {
           url={`https://sphere-music-hub.com/blog/${post.slug}`}
           description={displayDescription}
         />
+        
+        {/* Author Box */}
+        <AuthorBox />
       </article>
 
       {/* Related Articles */}
