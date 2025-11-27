@@ -184,7 +184,7 @@ export default function BlogArticle() {
       <article className="container max-w-4xl px-4 py-12 md:py-16">
         {/* Description */}
         <div className="text-xl text-muted-foreground mb-8 pb-8 border-b border-border">
-          {post.description}
+          {displayDescription}
         </div>
 
         {/* Main Content */}
@@ -222,9 +222,9 @@ export default function BlogArticle() {
 
         {/* Social Share */}
         <SocialShare
-          title={post.title}
+          title={displayTitle}
           url={`https://sphere-music-hub.com/blog/${post.slug}`}
-          description={post.description}
+          description={displayDescription}
         />
       </article>
 
