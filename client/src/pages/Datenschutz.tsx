@@ -3,6 +3,10 @@ import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
 
 export default function Datenschutz() {
+  // Use current domain for canonical URL
+  const currentDomain = typeof window !== 'undefined' ? window.location.hostname : 'sphere-music-hub.com';
+  const baseDomain = currentDomain.includes('sphere-music-hub.de') ? 'sphere-music-hub.de' : 'sphere-music-hub.com';
+  
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
@@ -13,7 +17,7 @@ export default function Datenschutz() {
         <meta property="og:url" content="https://sphere-music-hub.com/datenschutz" />
         <meta name="twitter:title" content="Datenschutzerklärung - Sphere Music Hub" />
         <meta name="twitter:description" content="Datenschutzerklärung von Sphere Music Hub. Informationen über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf unserer Website." />
-        <link rel="canonical" href="https://sphere-music-hub.com/datenschutz" />
+        <link rel="canonical" href={`https://${baseDomain}/datenschutz`} />
       </Helmet>
       <Navigation />
       

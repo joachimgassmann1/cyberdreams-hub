@@ -58,7 +58,10 @@ export default function BlogArticle() {
   const displayTags = lang === 'de' && post.tagsDe ? post.tagsDe : post.tags;
   const displayContent = lang === 'de' && post.contentDe ? post.contentDe : post.content;
 
-  const articleUrl = `https://sphere-music-hub.com/blog/${post.slug}`;
+  // Use current domain for canonical URL
+  const currentDomain = typeof window !== 'undefined' ? window.location.hostname : 'sphere-music-hub.com';
+  const baseDomain = currentDomain.includes('sphere-music-hub.de') ? 'sphere-music-hub.de' : 'sphere-music-hub.com';
+  const articleUrl = `https://${baseDomain}/blog/${post.slug}`;
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",

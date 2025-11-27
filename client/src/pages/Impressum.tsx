@@ -3,6 +3,10 @@ import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
 
 export default function Impressum() {
+  // Use current domain for canonical URL
+  const currentDomain = typeof window !== 'undefined' ? window.location.hostname : 'sphere-music-hub.com';
+  const baseDomain = currentDomain.includes('sphere-music-hub.de') ? 'sphere-music-hub.de' : 'sphere-music-hub.com';
+  
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
@@ -13,7 +17,7 @@ export default function Impressum() {
         <meta property="og:url" content="https://sphere-music-hub.com/impressum" />
         <meta name="twitter:title" content="Impressum - Sphere Music Hub" />
         <meta name="twitter:description" content="Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel." />
-        <link rel="canonical" href="https://sphere-music-hub.com/impressum" />
+        <link rel="canonical" href={`https://${baseDomain}/impressum`} />
       </Helmet>
       <Navigation />
       
