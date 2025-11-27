@@ -14,6 +14,16 @@ const SUBSCRIBER_COUNTS: Record<string, string> = {
   "UCZlHnzC_oYrU9zJGxJQYbSw": "2"       // Pianosphere Radio
 };
 
+// Latest featured video from each channel (updated manually as needed - last update: Nov 27, 2025)
+const CHANNEL_FEATURED_VIDEOS: Record<string, string> = {
+  "UCWJCgh3eJ_mILLwZ4--snpA": "uDbTU2pLCRs",  // Deep Focus Sphere - Deep Focus | Calm Ambient Music
+  "UCuQPvy0FcB8EG5kKpvZfUjw": "RJIdAEvb_dY",  // Chillout Sphere - Midnight Glow Terrace
+  "UCnLlBi5GoE7YFQHB-KmKe2Q": "Q2NIq7Qwogc",  // Cyber Dreams - CYBERPUNK CITYRAIN
+  "UC7JVkI8IrHqYxg4LB9jPVhg": "bA1JhbZD8UM",  // JazzSphere Radio - Smooth Vocal Jazz
+  "UCiN4bH-VKz1YMvvYnRJXwOw": "uDbTU2pLCRs",  // Guitarsphere Radio (placeholder - use Deep Focus)
+  "UCZlHnzC_oYrU9zJGxJQYbSw": "XCh88UzbssA"   // Pianosphere Radio - Chill Piano Escapes
+};
+
 const getChannels = (lang: 'en' | 'de') => [
   {
     id: "deep-focus",
@@ -99,6 +109,25 @@ export default function Channels() {
   const lang = detectLanguage();
   const channels = getChannels(lang);
   const { playVideo } = useMusicPlayer();
+  
+  // Detect if user is on mobile device
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+  const handlePlayClick = (channel: typeof channels[0]) => {
+    const videoId = CHANNEL_FEATURED_VIDEOS[channel.channelId] || "uDbTU2pLCRs";
+    
+    if (isMobile) {
+      // On mobile, open YouTube directly in new tab
+      window.open(`https://www.youtube.com/watch?v=${videoId}`, '_blank');
+    } else {
+      // On desktop, use embedded player
+      playVideo({
+        id: videoId,
+        title: channel.name,
+        channelName: channel.handle,
+      });
+    }
+  };
   return (
     <section id="music-channels" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -148,11 +177,7 @@ export default function Channels() {
                   <Button 
                     variant="default" 
                     className="flex-1"
-                    onClick={() => playVideo({
-                      id: `channel-${channel.channelId}`,
-                      title: channel.name,
-                      channelName: channel.handle,
-                    })}
+                    onClick={() => handlePlayClick(channel)}
                   >
                     <Play className="mr-2 h-4 w-4" />
                     {lang === 'de' ? 'Jetzt abspielen' : 'Play Now'}

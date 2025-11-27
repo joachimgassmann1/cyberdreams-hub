@@ -40,6 +40,23 @@ const FEATURED_VIDEOS = [
 export default function FeaturedVideos() {
   const lang = detectLanguage();
   const { playVideo } = useMusicPlayer();
+  
+  // Detect if user is on mobile device
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+  const handleVideoClick = (video: typeof FEATURED_VIDEOS[0]) => {
+    if (isMobile) {
+      // On mobile, open YouTube directly in new tab
+      window.open(`https://www.youtube.com/watch?v=${video.id}`, '_blank');
+    } else {
+      // On desktop, use embedded player
+      playVideo({
+        id: video.id,
+        title: video.title,
+        channelName: video.channelTitle,
+      });
+    }
+  };
   return (
     <section className="py-20 md:py-32 bg-card/30">
       <div className="container">
@@ -68,11 +85,7 @@ export default function FeaturedVideos() {
               <CardContent className="p-0">
                 {/* Video Thumbnail */}
                 <div
-                  onClick={() => playVideo({
-                    id: video.id,
-                    title: video.title,
-                    channelName: video.channelTitle,
-                  })}
+                  onClick={() => handleVideoClick(video)}
                   className="block relative cursor-pointer"
                 >
                   <div className="relative aspect-video bg-muted overflow-hidden">
