@@ -169,17 +169,8 @@ export default function Channels() {
                     className="flex-1"
                     onClick={() => handlePlayClick(channel)}
                   >
-                    <Play className="mr-2 h-4 w-4" />
-                    {lang === 'de' ? 'Jetzt abspielen' : 'Play Now'}
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    className="border-primary/30 hover:bg-primary/10"
-                    asChild
-                  >
-                    <a href={channel.url} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    {lang === 'de' ? 'Zum Kanal' : 'Visit Channel'}
                   </Button>
                 </CardFooter>
               </Card>
