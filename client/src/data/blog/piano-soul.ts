@@ -77,7 +77,7 @@ The melodies move at an unhurried pace. The visuals complement the tone with war
 
 ---
 
-## 🧘 A Quiet Return to Ourselves
+## A Quiet Return to Ourselves
 
 Soft piano ambience is more than a backdrop.
 
@@ -85,7 +85,7 @@ It is a quiet companion that helps the mind remember what calm feels like. It sp
 
 ---
 
-## 🎧 How to Use Piano Ambience Effectively
+## How to Use Piano Ambience Effectively
 
 To maximize the calming and reflective benefits of soft piano music:
 
@@ -106,7 +106,7 @@ Play soft piano when transitioning from work to rest, or from activity to stilln
 
 ---
 
-## 🔬 The Science of Piano and Emotional Healing
+## The Science of Piano and Emotional Healing
 
 Research in music therapy shows that piano music can:
 - Reduce cortisol levels (stress hormone)
@@ -195,7 +195,7 @@ Die Melodien bewegen sich in ungehetztem Tempo. Die Visuals ergänzen den Ton mi
 
 ---
 
-## 🧘 Eine stille Rückkehr zu uns selbst
+## Eine stille Rückkehr zu uns selbst
 
 Sanfte Klavier-Ambience ist mehr als eine Kulisse.
 
@@ -203,7 +203,7 @@ Sie ist ein stiller Begleiter, der dem Geist hilft, sich daran zu erinnern, wie 
 
 ---
 
-## 🎧 Wie man Klavier-Ambience effektiv nutzt
+## Wie man Klavier-Ambience effektiv nutzt
 
 Um die beruhigenden und reflektierenden Vorteile sanfter Klaviermusik zu maximieren:
 
@@ -224,7 +224,7 @@ Spiele sanftes Klavier beim Übergang von Arbeit zu Ruhe, oder von Aktivität zu
 
 ---
 
-## 🔬 Die Wissenschaft von Klavier und emotionaler Heilung
+## Die Wissenschaft von Klavier und emotionaler Heilung
 
 Forschung in Musiktherapie zeigt, dass Klaviermusik kann:
 - Cortisol-Spiegel reduzieren (Stresshormon)

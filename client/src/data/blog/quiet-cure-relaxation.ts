@@ -20,7 +20,7 @@ The modern mind rarely shuts off. Even in moments of rest, thoughts keep running
 
 ---
 
-## 🧠 The Nervous System and the Feeling of Safety
+## The Nervous System and the Feeling of Safety
 
 Real relaxation begins long before the mind becomes quiet. It begins when the nervous system recognizes safety.
 
@@ -57,7 +57,7 @@ For relaxation to take hold, the environment must communicate safety and slownes
 
 ---
 
-## 🎧 How Ambient Atmospheres Support Calm
+## How Ambient Atmospheres Support Calm
 
 Ambient soundscapes have become one of the most effective tools for relaxation.
 
@@ -77,7 +77,7 @@ The quiet cure is not an escape from life. It is the return to a centered versio
 
 ---
 
-## 🧘 How to Practice Intentional Relaxation
+## How to Practice Intentional Relaxation
 
 To cultivate relaxation as a skill, create intentional practices and environments:
 
@@ -98,7 +98,7 @@ Dim lights 1-2 hours before bed. Reduce screen time. Allow your body to naturall
 
 ---
 
-## 🔬 The Science of Relaxation
+## The Science of Relaxation
 
 Research in neuroscience and psychology shows that intentional relaxation:
 - Activates the parasympathetic nervous system (rest and digest mode)
@@ -112,7 +112,7 @@ The key is consistency. Regular relaxation practices create lasting changes in h
 
 ---
 
-## 🌙 Creating Your Relaxation Sanctuary
+## Creating Your Relaxation Sanctuary
 
 The most effective relaxation happens in environments designed for it:
 
@@ -147,7 +147,7 @@ Der moderne Geist schaltet selten ab. Selbst in Momenten der Ruhe laufen Gedanke
 
 ---
 
-## 🧠 Das Nervensystem und das Gefühl von Sicherheit
+## Das Nervensystem und das Gefühl von Sicherheit
 
 Echte Entspannung beginnt lange bevor der Geist ruhig wird. Sie beginnt, wenn das Nervensystem Sicherheit erkennt.
 
@@ -184,7 +184,7 @@ Damit Entspannung greifen kann, muss die Umgebung Sicherheit und Langsamkeit kom
 
 ---
 
-## 🎧 Wie Ambient-Atmosphären Ruhe unterstützen
+## Wie Ambient-Atmosphären Ruhe unterstützen
 
 Ambient-Soundscapes sind zu einem der effektivsten Werkzeuge für Entspannung geworden.
 
@@ -204,7 +204,7 @@ Die stille Heilung ist keine Flucht aus dem Leben. Sie ist die Rückkehr zu eine
 
 ---
 
-## 🧘 Wie man bewusste Entspannung praktiziert
+## Wie man bewusste Entspannung praktiziert
 
 Um Entspannung als Fähigkeit zu kultivieren, erschaffe bewusste Praktiken und Umgebungen:
 
@@ -225,7 +225,7 @@ Dimme Lichter 1-2 Stunden vor dem Schlafengehen. Reduziere Bildschirmzeit. Erlau
 
 ---
 
-## 🔬 Die Wissenschaft der Entspannung
+## Die Wissenschaft der Entspannung
 
 Forschung in Neurowissenschaft und Psychologie zeigt, dass bewusste Entspannung:
 - Das parasympathische Nervensystem aktiviert (Ruhe- und Verdauungsmodus)
@@ -239,7 +239,7 @@ Der Schlüssel ist Konsistenz. Regelmäßige Entspannungspraktiken erschaffen da
 
 ---
 
-## 🌙 Erschaffe dein Entspannungs-Heiligtum
+## Erschaffe dein Entspannungs-Heiligtum
 
 Die effektivste Entspannung passiert in Umgebungen, die dafür designed sind:
 

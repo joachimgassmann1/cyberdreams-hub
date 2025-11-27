@@ -20,7 +20,7 @@ For Sphere Music Hub, that moment happened when a seven-year-old boy sat at a pi
 
 ---
 
-## 🎹 A Childhood Built on Classical Discipline
+## A Childhood Built on Classical Discipline
 
 Joachim's musical foundation began early. At the age of seven he entered the world of classical piano and spent the next ten years studying complex works from composers like Bach, Beethoven and Chopin. These weren't simple childhood lessons. They were demanding pieces that required precision, emotional depth and disciplined practice.
 
@@ -32,7 +32,7 @@ They trained his ear. They sharpened his sense of structure. They formed his mus
 
 ---
 
-## 🎸 A Teenager Finds a New Voice in Rock
+## A Teenager Finds a New Voice in Rock
 
 At sixteen, everything changed.
 
@@ -102,16 +102,16 @@ Ambient soundscapes designed for concentration, productivity and deep work. For 
 ### **Chillout Sphere** 🌊
 Relaxing beats and calm atmospheres for unwinding, reflection and peaceful moments. Music that helps the mind slow down.
 
-### **Cyber Dreams** 🌃
+### **Cyber Dreams**
 Futuristic soundscapes inspired by neon-lit cities, dystopian worlds and late-night creativity. For those drawn to the aesthetic of cyberpunk culture.
 
 ### **JazzSphere Radio** 🎺
 Smooth jazz and lounge music for relaxation, sophistication and warm acoustic spaces. The sound of intimate evenings and timeless elegance.
 
-### **Pianosphere Radio** 🎹
+### **Pianosphere Radio**
 Elegant piano compositions for focus, calm and emotional grounding. The instrument that started it all, now reimagined for modern listeners.
 
-### **Guitarsphere Radio** 🎸
+### **Guitarsphere Radio**
 *(Coming soon)* Beautiful guitar melodies and acoustic vibes for those who find peace in strings.
 
 Each channel is a world. Each world is an invitation to step into a specific mood, a specific feeling, a specific moment.
@@ -138,7 +138,7 @@ Music is no longer something he left behind. It's woven into every part of his l
 
 ---
 
-## 🚀 What's Next for Sphere Music Hub
+## What's Next for Sphere Music Hub
 
 The vision continues to grow.
 
@@ -169,7 +169,7 @@ Für Sphere Music Hub geschah dieser Moment, als ein siebenjähriger Junge auf e
 
 ---
 
-## 🎹 Eine Kindheit gebaut auf klassischer Disziplin
+## Eine Kindheit gebaut auf klassischer Disziplin
 
 Joachims musikalisches Fundament begann früh. Im Alter von sieben Jahren trat er in die Welt des klassischen Klaviers ein und verbrachte die nächsten zehn Jahre damit, komplexe Werke von Komponisten wie Bach, Beethoven und Chopin zu studieren. Das waren keine einfachen Kinderstunden. Es waren anspruchsvolle Stücke, die Präzision, emotionale Tiefe und diszipliniertes Üben erforderten.
 
@@ -181,7 +181,7 @@ Sie trainierten sein Ohr. Sie schärften seinen Sinn für Struktur. Sie formten 
 
 ---
 
-## 🎸 Ein Teenager findet eine neue Stimme im Rock
+## Ein Teenager findet eine neue Stimme im Rock
 
 Mit sechzehn änderte sich alles.
 
@@ -235,7 +235,7 @@ Die Intensität des Rock war erfüllend, aber etwas Tieferes zog ihn an. Er bega
 
 ---
 
-## 🎧 Die Geburt eines Universums
+## Die Geburt eines Universums
 
 Joachim erkannte, dass Menschen nicht nur Musik brauchten. Sie brauchten Atmosphären.
 
@@ -243,10 +243,10 @@ Räume für Fokus. Räume für Entspannung. Räume für Kreativität. Räume fü
 
 Er begann, Kanäle zu erschaffen, die jeweils einer bestimmten emotionalen Landschaft gewidmet waren:
 
-### **Deep Focus Sphere** 🧠
+### **Deep Focus Sphere**
 Langform-Ambient-Sessions für tiefe Konzentration, Lernen und produktive Arbeit. Der Sound von Flow-Zuständen und ununterbrochenem Fokus.
 
-### **Chillout Sphere** 🌅
+### **Chillout Sphere**
 Warme, entspannende Soundscapes für friedliche Momente, Sonnenuntergänge und sanfte Übergänge aus dem Tag.
 
 ### **Cyber Dreams** 💜
@@ -255,10 +255,10 @@ Futuristische Ambient-Musik für nächtliche Kreativität, Cyberpunk-Atmosphäre
 ### **JazzSphere Radio** 🎺
 Sanfter Jazz und Lounge-Musik für Entspannung, Raffinesse und warme akustische Räume. Der Sound intimer Abende und zeitloser Eleganz.
 
-### **Pianosphere Radio** 🎹
+### **Pianosphere Radio**
 Elegante Klavierkompositionen für Fokus, Ruhe und emotionale Erdung. Das Instrument, das alles begann, jetzt neu imaginiert für moderne Zuhörer.
 
-### **Guitarsphere Radio** 🎸
+### **Guitarsphere Radio**
 *(Bald verfügbar)* Schöne Gitarrenmelodien und akustische Vibes für diejenigen, die Frieden in Saiten finden.
 
 Jeder Kanal ist eine Welt. Jede Welt ist eine Einladung, in eine bestimmte Stimmung, ein bestimmtes Gefühl, einen bestimmten Moment einzutreten.
@@ -285,7 +285,7 @@ Musik ist nicht länger etwas, das er zurückgelassen hat. Sie ist in jeden Teil
 
 ---
 
-## 🚀 Was als Nächstes für Sphere Music Hub kommt
+## Was als Nächstes für Sphere Music Hub kommt
 
 Die Vision wächst weiter.
 

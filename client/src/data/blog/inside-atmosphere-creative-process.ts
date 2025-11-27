@@ -81,7 +81,7 @@ This is why Sphere Music Hub feels effortless. The sound doesn't ask for anythin
 
 ---
 
-## 🎯 A Creator Who Builds for Others, Not for Himself
+## A Creator Who Builds for Others, Not for Himself
 
 Many musicians create to express themselves. **Joachim creates to serve a moment.**
 
@@ -137,7 +137,7 @@ Elegant piano compositions for calm and emotional grounding. The instrument that
 
 ---
 
-## 🚀 The Future of Sphere Music Hub
+## The Future of Sphere Music Hub
 
 Joachim's creative world continues to grow.
 
@@ -250,7 +250,7 @@ Deshalb fühlt sich Sphere Music Hub mühelos an. Der Sound verlangt nichts. **E
 
 ---
 
-## 🎯 Ein Schöpfer, der für andere baut, nicht für sich selbst
+## Ein Schöpfer, der für andere baut, nicht für sich selbst
 
 Viele Musiker kreieren, um sich auszudrücken. **Joachim kreiert, um einem Moment zu dienen.**
 
@@ -306,7 +306,7 @@ Elegante Klavierkompositionen für Ruhe und emotionale Erdung. Das Instrument, d
 
 ---
 
-## 🚀 Die Zukunft von Sphere Music Hub
+## Die Zukunft von Sphere Music Hub
 
 Joachims kreative Welt wächst weiter.
 
