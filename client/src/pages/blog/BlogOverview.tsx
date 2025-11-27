@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
-import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, Tag, Search, X } from 'lucide-react';
 import { getAllPosts, getPostsByCategory } from '@/data/blog/posts';
 import { blogCategories } from '@/data/blog/categories';
 import { Button } from '@/components/ui/button';
@@ -17,6 +17,7 @@ export default function BlogOverview() {
   const lang = detectLanguage();
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
   
   // Use current domain for canonical URL
   const currentDomain = typeof window !== 'undefined' ? window.location.hostname : 'sphere-music-hub.com';
@@ -27,9 +28,24 @@ export default function BlogOverview() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
-  const allPosts = selectedCategory 
+  // Filter posts by category first
+  const categoryFilteredPosts = selectedCategory 
     ? getPostsByCategory(selectedCategory)
     : getAllPosts();
+
+  // Then filter by search query
+  const allPosts = searchQuery.trim() === ''
+    ? categoryFilteredPosts
+    : categoryFilteredPosts.filter(post => {
+        const query = searchQuery.toLowerCase();
+        const title = (lang === 'de' && post.titleDe ? post.titleDe : post.title).toLowerCase();
+        const description = (lang === 'de' && post.descriptionDe ? post.descriptionDe : post.description).toLowerCase();
+        const tags = (lang === 'de' && post.tagsDe ? post.tagsDe : post.tags).map(t => t.toLowerCase());
+        
+        return title.includes(query) || 
+               description.includes(query) || 
+               tags.some(tag => tag.includes(query));
+      });
 
   const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
@@ -37,6 +53,16 @@ export default function BlogOverview() {
 
   const handleCategoryFilter = (categoryId: string | null) => {
     setSelectedCategory(categoryId);
+    setCurrentPage(1);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setCurrentPage(1); // Reset to first page on search
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
     setCurrentPage(1);
   };
 
@@ -88,6 +114,38 @@ export default function BlogOverview() {
               ? 'Erkunde Kategorien inspiriert vom Sphere Music Universe — von Fokus und Chillout bis Jazz, Piano, Cyberpunk und mehr.'
               : 'Explore categories inspired by the Sphere Music Universe — from Focus and Chillout to Jazz, Piano, Cyberpunk and more.'}
           </p>
+        </div>
+      </section>
+
+      {/* Search Bar */}
+      <section className="container px-4 py-8">
+        <div className="max-w-2xl mx-auto mb-8">
+          <div className="relative">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <input
+              type="text"
+              placeholder={lang === 'de' ? 'Artikel durchsuchen...' : 'Search articles...'}
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="w-full pl-12 pr-12 py-4 bg-card border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+            />
+            {searchQuery && (
+              <button
+                onClick={clearSearch}
+                className="absolute right-4 top-1/2 -translate-y-1/2 h-8 w-8 flex items-center justify-center rounded-full hover:bg-muted transition-colors"
+                aria-label="Clear search"
+              >
+                <X className="h-4 w-4 text-muted-foreground" />
+              </button>
+            )}
+          </div>
+          {searchQuery && (
+            <p className="mt-3 text-sm text-muted-foreground text-center">
+              {lang === 'de' 
+                ? `${allPosts.length} ${allPosts.length === 1 ? 'Ergebnis' : 'Ergebnisse'} für "${searchQuery}"`
+                : `${allPosts.length} ${allPosts.length === 1 ? 'result' : 'results'} for "${searchQuery}"`}
+            </p>
+          )}
         </div>
       </section>
 
