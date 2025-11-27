@@ -43,17 +43,32 @@ export default function BlogOverview() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
       <Helmet>
-        <title>Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes</title>
-        <meta name="description" content="Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation." />
-        <meta property="og:title" content="Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes" />
-        <meta property="og:description" content="Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation." />
-        <meta property="og:url" content="https://sphere-music-hub.com/blog" />
-        <meta name="twitter:title" content="Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes" />
-        <meta name="twitter:description" content="Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation." />
+        <title>{lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'}</title>
+        <meta name="description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären. Experteneinblicke für Arbeit und Entspannung.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation.'} />
+        <meta property="og:title" content={lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'} />
+        <meta property="og:description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres.'} />
+        <meta property="og:url" content={`https://${baseDomain}/blog`} />
+        <meta name="twitter:title" content={lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'} />
+        <meta name="twitter:description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres.'} />
         <link rel="canonical" href={`https://${baseDomain}/blog`} />
         <link rel="alternate" hrefLang="en" href="https://sphere-music-hub.com/blog" />
         <link rel="alternate" hrefLang="de" href="https://sphere-music-hub.de/blog" />
         <link rel="alternate" hrefLang="x-default" href="https://sphere-music-hub.com/blog" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            "name": lang === 'de' ? 'Blog - Sphere Music Hub' : 'Blog - Sphere Music Hub',
+            "description": lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität und Ambient-Soundscapes.' : 'Discover tips, guides, and stories about focus music, productivity, and ambient soundscapes.',
+            "url": `https://${baseDomain}/blog`,
+            "inLanguage": lang,
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Sphere Music Hub",
+              "url": `https://${baseDomain}/`
+            }
+          })}
+        </script>
       </Helmet>
       <Navigation />
       {/* Hero Section */}

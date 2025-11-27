@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Connect Column */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Connect With Us</h3>
+            <h3 className="font-bold text-lg mb-4">{lang === 'de' ? 'Verbinde dich mit uns' : 'Connect With Us'}</h3>
             <div className="space-y-3">
               {socialLinks.map((link) => {
                 const Icon = link.icon;
@@ -121,7 +121,7 @@ export default function Footer() {
                 className="flex items-center gap-3 text-foreground/70 hover:text-primary transition-colors text-sm group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>Email Us</span>
+                <span>{lang === 'de' ? 'E-Mail an uns' : 'Email Us'}</span>
               </a>
             </div>
           </div>

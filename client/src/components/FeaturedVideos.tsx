@@ -50,7 +50,9 @@ export default function FeaturedVideos() {
             </span>
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">
-            Explore our curated collection of ambient soundscapes, focus music, and relaxing beats from all our channels.
+            {lang === 'de' 
+              ? 'Entdecke unsere kuratierte Sammlung von Ambient-Soundscapes, Fokus-Musik und entspannenden Beats aus all unseren Kanälen.'
+              : 'Explore our curated collection of ambient soundscapes, focus music, and relaxing beats from all our channels.'}
           </p>
         </div>
 
@@ -111,7 +113,7 @@ export default function FeaturedVideos() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors font-medium text-lg"
           >
-            View All Videos on YouTube
+            {lang === 'de' ? 'Alle Videos auf YouTube ansehen' : 'View All Videos on YouTube'}
             <Play className="w-5 h-5" />
           </a>
         </div>
