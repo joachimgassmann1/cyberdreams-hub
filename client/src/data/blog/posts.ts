@@ -78,16 +78,39 @@ export const getFeaturedPosts = (): BlogPost[] => {
     );
 };
 
-// Helper function to get related posts
+// Helper function to get related posts with relevance scoring
 export const getRelatedPosts = (currentSlug: string, limit: number = 3): BlogPost[] => {
   const currentPost = getPostBySlug(currentSlug);
   if (!currentPost) return [];
   
-  return blogPosts
-    .filter(post => 
-      post.slug !== currentSlug && 
-      (post.category === currentPost.category || 
-       post.tags.some(tag => currentPost.tags.includes(tag)))
-    )
-    .slice(0, limit);
+  // Calculate relevance score for each post
+  const postsWithScore = blogPosts
+    .filter(post => post.slug !== currentSlug)
+    .map(post => {
+      let score = 0;
+      
+      // Same category: +10 points
+      if (post.category === currentPost.category) {
+        score += 10;
+      }
+      
+      // Shared tags: +5 points per tag
+      const sharedTags = post.tags.filter(tag => currentPost.tags.includes(tag));
+      score += sharedTags.length * 5;
+      
+      return { post, score };
+    })
+    .filter(item => item.score > 0) // Only include posts with some relevance
+    .sort((a, b) => {
+      // Sort by score first (descending)
+      if (b.score !== a.score) {
+        return b.score - a.score;
+      }
+      // Then by date (newest first)
+      return new Date(b.post.publishDate).getTime() - new Date(a.post.publishDate).getTime();
+    })
+    .slice(0, limit)
+    .map(item => item.post);
+  
+  return postsWithScore;
 };
