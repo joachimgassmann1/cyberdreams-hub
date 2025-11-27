@@ -188,7 +188,7 @@ export default function BlogOverview() {
               
               return (
                 <Link key={post.slug} href={`/blog/${post.slug}`}>
-                  <article className="group h-full bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1">
+                  <article className="group h-full bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 flex flex-col">
                     {/* Hero Image */}
                     <div className="relative h-56 overflow-hidden bg-muted">
                       <OptimizedImage
@@ -206,7 +206,7 @@ export default function BlogOverview() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-grow">
                       <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">
                         {lang === 'de' && post.titleDe ? post.titleDe : post.title}
                       </h2>
@@ -243,7 +243,7 @@ export default function BlogOverview() {
                       )}
 
                       {/* Read More */}
-                      <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                      <div className="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all mt-auto">
                         Read Article
                         <ArrowRight className="w-4 h-4" />
                       </div>
