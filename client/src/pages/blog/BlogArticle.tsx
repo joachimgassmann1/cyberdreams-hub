@@ -14,12 +14,10 @@ import ReadingProgressBar from '@/components/ReadingProgressBar';
 import ScrollToTop from '@/components/ScrollToTop';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
 import { Helmet } from 'react-helmet-async';
-import { detectLanguage } from '@/lib/i18n';
 
 export default function BlogArticle() {
   const params = useParams<{ slug: string }>();
   const [, setLocation] = useLocation();
-  const lang = detectLanguage();
   const post = getPostBySlug(params.slug || '');
 
   if (!post) {
@@ -53,11 +51,11 @@ export default function BlogArticle() {
     }
   };
 
-  const title = lang === 'de' && post.titleDe ? post.titleDe : post.title;
-  const description = lang === 'de' && post.descriptionDe ? post.descriptionDe : post.description;
-  const content = lang === 'de' && post.contentDe ? post.contentDe : post.content;
-  const tags = lang === 'de' && post.tagsDe ? post.tagsDe : post.tags;
-  const categoryName = lang === 'de' && category?.nameDe ? category.nameDe : category?.name;
+  const title = post.title;
+  const description = post.description;
+  const content = post.content;
+  const tags = post.tags;
+  const categoryName = category?.name;
 
   const articleUrl = `https://sphere-music-hub.com/blog/${post.slug}`;
   const schemaData = {
