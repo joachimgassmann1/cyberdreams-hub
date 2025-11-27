@@ -3,13 +3,17 @@ import { BlogPost } from './types';
 export const insideAtmosphereCreativeProcess: BlogPost = {
   slug: 'inside-atmosphere-how-joachim-creates-emotional-worlds-sphere-music-hub',
   title: 'Inside the Atmosphere: How Joachim Creates the Emotional Worlds of Sphere Music Hub',
+  titleDe: 'In der Atmosphäre: Wie Joachim die emotionalen Welten des Sphere Music Hub erschafft',
   description: 'Discover the creative philosophy and meticulous process behind Sphere Music Hub. Learn how classical training, visual storytelling, and emotional architecture combine to create immersive ambient worlds.',
+  descriptionDe: 'Entdecke die kreative Philosophie und den sorgfältigen Prozess hinter Sphere Music Hub. Lerne, wie klassische Ausbildung, visuelles Storytelling und emotionale Architektur zusammenkommen, um immersive Ambient-Welten zu erschaffen.',
   heroImage: '/blog-images/inside-atmosphere-creative-process-hero.webp',
   category: 'insights',
   tags: ['creative process', 'music production', 'ambient design', 'behind the scenes', 'sound design', 'emotional architecture'],
+  tagsDe: ['Kreativer Prozess', 'Musikproduktion', 'Ambient-Design', 'Hinter den Kulissen', 'Sound-Design', 'Emotionale Architektur'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 7,
+  readingTimeDe: 7,
   content: `Most people listen to music. Fewer people create music. But only a few design worlds through sound.
 
 The ambient universes of Sphere Music Hub are not accidental. They are crafted. Layer by layer, detail by detail, emotion by emotion. Behind every calm room, neon-lit street, soft piano sanctuary or late-night jazz bar stands a creative philosophy shaped by a lifetime in music.

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves } from "lucide-react";
+import { detectLanguage } from "@/lib/i18n";
 
 // Static subscriber counts (updated manually as needed - last update: Nov 25, 2025)
 const SUBSCRIBER_COUNTS: Record<string, string> = {
@@ -12,13 +13,15 @@ const SUBSCRIBER_COUNTS: Record<string, string> = {
   "UCZlHnzC_oYrU9zJGxJQYbSw": "2"       // Pianosphere Radio
 };
 
-const channels = [
+const getChannels = (lang: 'en' | 'de') => [
   {
     id: "deep-focus",
     name: "Deep Focus Sphere",
     handle: "@DeepFocusSphere67",
     channelId: "UCWJCgh3eJ_mILLwZ4--snpA",
-    description: "Focus, Relax & Study Music designed to help you work better, study longer and stay calm while staying productive.",
+    description: lang === 'de'
+      ? "Fokus-, Entspannungs- & Lernmusik, die dir hilft, besser zu arbeiten, länger zu lernen und ruhig und produktiv zu bleiben."
+      : "Focus, Relax & Study Music designed to help you work better, study longer and stay calm while staying productive.",
     image: "/channel-deep-focus-new.webp",
     url: "https://www.youtube.com/@deepfocussphere67",
     icon: Music2,
@@ -29,7 +32,9 @@ const channels = [
     name: "Chillout Sphere",
     handle: "@ChilloutSphere67",
     channelId: "UCuQPvy0FcB8EG5kKpvZfUjw",
-    description: "Chillout Lounge & Relaxing Music for peaceful moments, beach vibes, and sunset relaxation.",
+    description: lang === 'de'
+      ? "Chillout Lounge & Entspannungsmusik für friedliche Momente, Strand-Vibes und Sonnenuntergangs-Entspannung."
+      : "Chillout Lounge & Relaxing Music for peaceful moments, beach vibes, and sunset relaxation.",
     image: "/channel-chillout-new.webp",
     url: "https://www.youtube.com/@ChilloutSphere67",
     icon: Waves,
@@ -40,7 +45,9 @@ const channels = [
     name: "Cyber Dreams",
     handle: "@CyberDreams-x9p",
     channelId: "UCnLlBi5GoE7YFQHB-KmKe2Q",
-    description: "Ambient Music & Futuristic Sounds for a journey into cyberpunk atmospheres and electronic soundscapes.",
+    description: lang === 'de'
+      ? "Ambient-Musik & Futuristische Klänge für eine Reise in Cyberpunk-Atmosphären und elektronische Soundscapes."
+      : "Ambient Music & Futuristic Sounds for a journey into cyberpunk atmospheres and electronic soundscapes.",
     image: "/channel-cyber-new.webp",
     url: "https://www.youtube.com/@CyberDreams-x9p",
     icon: Sparkles,
@@ -51,7 +58,9 @@ const channels = [
     name: "JazzSphere Radio",
     handle: "@JazzSphereRadio",
     channelId: "UC7JVkI8IrHqYxg4LB9jPVhg",
-    description: "World of Smooth Jazz featuring elegant melodies and sophisticated rhythms for refined listening.",
+    description: lang === 'de'
+      ? "Welt des Smooth Jazz mit eleganten Melodien und raffinierten Rhythmen für anspruchsvolles Hören."
+      : "World of Smooth Jazz featuring elegant melodies and sophisticated rhythms for refined listening.",
     image: "/channel-jazz-new.webp",
     url: "https://www.youtube.com/@JazzSphereRadio",
     icon: Radio,
@@ -62,7 +71,9 @@ const channels = [
     name: "Guitarsphere Radio",
     handle: "@GuitarsphereRadio",
     channelId: "UCiN4bH-VKz1YMvvYnRJXwOw",
-    description: "The Sound of Guitar with chill and soulful guitar music for relaxation and contemplation.",
+    description: lang === 'de'
+      ? "Der Klang der Gitarre mit chilliger und gefühlvoller Gitarrenmusik für Entspannung und Kontemplation."
+      : "The Sound of Guitar with chill and soulful guitar music for relaxation and contemplation.",
     image: "/channel-guitar-new.webp",
     url: "https://www.youtube.com/@GuitarsphereRadio",
     icon: Guitar,
@@ -73,7 +84,9 @@ const channels = [
     name: "Pianosphere Radio",
     handle: "@PianosphereRadio",
     channelId: "UCZlHnzC_oYrU9zJGxJQYbSw",
-    description: "Beautiful Piano - Jazz Piano - Emotional Ballads for moments of peace and introspection.",
+    description: lang === 'de'
+      ? "Wunderschönes Klavier - Jazz-Piano - Emotionale Balladen für Momente des Friedens und der Innenschau."
+      : "Beautiful Piano - Jazz Piano - Emotional Ballads for moments of peace and introspection.",
     image: "/channel-piano-new.webp",
     url: "https://www.youtube.com/@PianosphereRadio",
     icon: Piano,
@@ -82,15 +95,19 @@ const channels = [
 ];
 
 export default function Channels() {
+  const lang = detectLanguage();
+  const channels = getChannels(lang);
   return (
     <section id="music-channels" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-            Explore Our Music Channels
+            {lang === 'de' ? 'Entdecke unsere Musikkanäle' : 'Explore Our Music Channels'}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Each channel offers a unique sonic experience tailored to different moods, activities, and atmospheres.
+            {lang === 'de' 
+              ? 'Jeder Kanal bietet ein einzigartiges Klangerlebnis, zugeschnitten auf verschiedene Stimmungen, Aktivitäten und Atmosphären.'
+              : 'Each channel offers a unique sonic experience tailored to different moods, activities, and atmospheres.'}
           </p>
         </div>
 

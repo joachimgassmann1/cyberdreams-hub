@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
+import { detectLanguage } from "@/lib/i18n";
 
 // Static featured videos (updated manually as needed - last update: Nov 26, 2025)
 const FEATURED_VIDEOS = [
@@ -36,15 +37,16 @@ const FEATURED_VIDEOS = [
 ];
 
 export default function FeaturedVideos() {
+  const lang = detectLanguage();
   return (
     <section className="py-20 md:py-32 bg-card/30">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Featured{" "}
+            {lang === 'de' ? 'Ausgewählte' : 'Featured'}{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Music Mixes
+              {lang === 'de' ? 'Musik-Mixes' : 'Music Mixes'}
             </span>
           </h2>
           <p className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto">

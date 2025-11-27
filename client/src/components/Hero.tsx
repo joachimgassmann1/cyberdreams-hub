@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Music, Play } from "lucide-react";
+import { detectLanguage } from "@/lib/i18n";
 
 // Static data (updated manually as needed)
 const STATS = {
@@ -10,6 +11,7 @@ const STATS = {
 };
 
 export default function Hero() {
+  const lang = detectLanguage();
   const formatNumber = (num: number) => {
     if (num >= 1000) {
       return `${(num / 1000).toFixed(1)}K`;
@@ -48,12 +50,14 @@ export default function Hero() {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-400 via-white via-amber-200 to-orange-400 bg-clip-text text-transparent">
-            Sphere Music Hub – Focus, Chill & Ambient Music Vibes
+            {lang === 'de' ? 'Sphere Music Hub – Fokus, Chill & Ambient Musik' : 'Sphere Music Hub – Focus, Chill & Ambient Music Vibes'}
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Relaxing chillout beats, ambient vibes, and deep focus soundscapes designed to help you unwind, study longer, and stay calm and productive.
+            {lang === 'de' 
+              ? 'Entspannende Chillout-Beats, Ambient-Vibes und Deep-Focus-Soundscapes, die dir helfen, zu entspannen, länger zu lernen und ruhig und produktiv zu bleiben.'
+              : 'Relaxing chillout beats, ambient vibes, and deep focus soundscapes designed to help you unwind, study longer, and stay calm and productive.'}
           </p>
 
           {/* CTA Buttons */}
@@ -64,7 +68,7 @@ export default function Hero() {
               onClick={scrollToChannels}
             >
               <Play className="mr-2 h-5 w-5" />
-              Explore Channels
+{lang === 'de' ? 'Kanäle entdecken' : 'Explore Channels'}
             </Button>
             <Button
               size="lg"
@@ -73,7 +77,7 @@ export default function Hero() {
             >
               <a href="https://www.youtube.com/@deepfocussphere67" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
                 <Play className="mr-2 h-5 w-5" />
-                Subscribe on YouTube
+{lang === 'de' ? 'Auf YouTube abonnieren' : 'Subscribe on YouTube'}
               </a>
             </Button>
           </div>
@@ -84,25 +88,25 @@ export default function Hero() {
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 {STATS.channels}+
               </div>
-              <div className="text-sm md:text-base text-foreground/60">Channels</div>
+              <div className="text-sm md:text-base text-foreground/60">{lang === 'de' ? 'Kanäle' : 'Channels'}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 {STATS.hours}+
               </div>
-              <div className="text-sm md:text-base text-foreground/60">Hours of Music</div>
+              <div className="text-sm md:text-base text-foreground/60">{lang === 'de' ? 'Stunden Musik' : 'Hours of Music'}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 {formatNumber(STATS.views)}+
               </div>
-              <div className="text-sm md:text-base text-foreground/60">Total Views</div>
+              <div className="text-sm md:text-base text-foreground/60">{lang === 'de' ? 'Aufrufe gesamt' : 'Total Views'}</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
                 {formatNumber(STATS.subscribers)}+
               </div>
-              <div className="text-sm md:text-base text-foreground/60">Subscribers</div>
+              <div className="text-sm md:text-base text-foreground/60">{lang === 'de' ? 'Abonnenten' : 'Subscribers'}</div>
             </div>
           </div>
         </div>

@@ -3,13 +3,17 @@ import { BlogPost } from './types';
 export const quietCureRelaxation: BlogPost = {
   slug: 'quiet-cure-why-relaxation-essential-skill-modern-life',
   title: 'The Quiet Cure: Why Relaxation Has Become the New Essential Skill',
+  titleDe: 'Die stille Heilung: Warum Entspannung zur neuen essentiellen Fähigkeit geworden ist',
   description: 'Discover why relaxation is no longer a luxury but an essential skill in modern life. Learn how to create environments that signal safety to your nervous system and master the art of intentional calm.',
+  descriptionDe: 'Entdecke, warum Entspannung kein Luxus mehr ist, sondern eine essentielle Fähigkeit im modernen Leben. Lerne, wie du Umgebungen schaffst, die deinem Nervensystem Sicherheit signalisieren und die Kunst der bewussten Ruhe meisterst.',
   heroImage: '/blog-images/quiet-cure-relaxation-essential-skill-hero.webp',
   category: 'relax',
   tags: ['relaxation', 'stress relief', 'calm', 'mindfulness', 'nervous system', 'well-being'],
+  tagsDe: ['Entspannung', 'Stressabbau', 'Ruhe', 'Achtsamkeit', 'Nervensystem', 'Wohlbefinden'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 6,
+  readingTimeDe: 6,
   content: `Relaxation used to be something people enjoyed when time allowed. A quiet Sunday morning. A slow hour before bed. A moment of silence after a long day. Today, the pace of life has changed. The world moves faster, demands more, and interrupts constantly. In this new reality, **relaxation is no longer a luxury. It has become a skill**, and one that few people learned to practice with intention.
 
 The modern mind rarely shuts off. Even in moments of rest, thoughts keep running, planning, evaluating, preparing. The nervous system stays alert, as if the next demand is only seconds away. This continuous mental motion drains clarity and energy without people even noticing until they feel the weight of it. **Relaxation is the quiet cure for this.** It brings the mind back into balance and allows the body to feel safe enough to release tension.

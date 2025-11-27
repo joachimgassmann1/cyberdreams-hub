@@ -2,19 +2,17 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
 
-
 export default function Datenschutz() {
-  
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>"Privacy Policy - Sphere Music Hub"</title>
-        <meta name="description" content="Privacy policy of Sphere Music Hub. Information about the collection, processing and use of personal data on our website." />
-        <meta property="og:title" content="Privacy Policy - Sphere Music Hub" />
-        <meta property="og:description" content="Privacy policy of Sphere Music Hub. Information about the collection, processing and use of personal data on our website." />
+        <title>Datenschutzerklärung - Sphere Music Hub</title>
+        <meta name="description" content="Datenschutzerklärung von Sphere Music Hub. Informationen über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf unserer Website." />
+        <meta property="og:title" content="Datenschutzerklärung - Sphere Music Hub" />
+        <meta property="og:description" content="Datenschutzerklärung von Sphere Music Hub. Informationen über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf unserer Website." />
         <meta property="og:url" content="https://sphere-music-hub.com/datenschutz" />
-        <meta name="twitter:title" content="Privacy Policy - Sphere Music Hub" />
-        <meta name="twitter:description" content="Privacy policy of Sphere Music Hub. Information about the collection, processing and use of personal data on our website." />
+        <meta name="twitter:title" content="Datenschutzerklärung - Sphere Music Hub" />
+        <meta name="twitter:description" content="Datenschutzerklärung von Sphere Music Hub. Informationen über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf unserer Website." />
         <link rel="canonical" href="https://sphere-music-hub.com/datenschutz" />
       </Helmet>
       <Navigation />

@@ -1,9 +1,11 @@
 import { APP_LOGO } from "@/const";
 import { Facebook, Mail, Youtube } from "lucide-react";
 import SocialShare from "./SocialShare";
+import { detectLanguage } from "@/lib/i18n";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const lang = detectLanguage();
 
   const socialLinks = [
     {
@@ -46,13 +48,15 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-foreground/70 text-sm leading-relaxed">
-              Your space for focus, relaxation, and study music. Curated ambient soundscapes for every moment.
+              {lang === 'de'
+                ? 'Dein Raum für Fokus, Entspannung und Lernmusik. Kuratierte Ambient-Soundscapes für jeden Moment.'
+                : 'Your space for focus, relaxation, and study music. Curated ambient soundscapes for every moment.'}
             </p>
           </div>
 
           {/* Quick Links Column */}
           <div>
-            <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-bold text-lg mb-4">{lang === 'de' ? 'Schnelllinks' : 'Quick Links'}</h3>
             <ul className="space-y-2">
               <li>
                 <a

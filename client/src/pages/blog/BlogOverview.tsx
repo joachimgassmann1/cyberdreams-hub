@@ -9,10 +9,12 @@ import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/OptimizedImage';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
 import { Helmet } from 'react-helmet-async';
+import { detectLanguage } from '@/lib/i18n';
 
 const POSTS_PER_PAGE = 12;
 
 export default function BlogOverview() {
+  const lang = detectLanguage();
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
@@ -52,13 +54,17 @@ export default function BlogOverview() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-purple-500/10 to-pink-500/10" />
         <div className="container relative z-10 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 pb-2 leading-tight bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Blog & Music Insights
+            {lang === 'de' ? 'Blog & Musik-Einblicke' : 'Blog & Music Insights'}
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
-            Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, and the art of creating the perfect atmosphere for work and relaxation.
+            {lang === 'de'
+              ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes und die Kunst, die perfekte Atmosphäre für Arbeit und Entspannung zu schaffen.'
+              : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, and the art of creating the perfect atmosphere for work and relaxation.'}
           </p>
           <p className="text-lg text-muted-foreground/80 max-w-3xl mx-auto">
-            Explore categories inspired by the Sphere Music Universe — from Focus and Chillout to Jazz, Piano, Cyberpunk and more.
+            {lang === 'de'
+              ? 'Erkunde Kategorien inspiriert vom Sphere Music Universe — von Fokus und Chillout bis Jazz, Piano, Cyberpunk und mehr.'
+              : 'Explore categories inspired by the Sphere Music Universe — from Focus and Chillout to Jazz, Piano, Cyberpunk and more.'}
           </p>
         </div>
       </section>
@@ -122,11 +128,11 @@ export default function BlogOverview() {
                     {/* Content */}
                     <div className="p-6">
                       <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                        {post.title}
+                        {lang === 'de' && post.titleDe ? post.titleDe : post.title}
                       </h2>
                       
                       <p className="text-muted-foreground mb-4 line-clamp-3">
-                        {post.description}
+                        {lang === 'de' && post.descriptionDe ? post.descriptionDe : post.description}
                       </p>
 
                       {/* Meta Info */}
@@ -144,7 +150,7 @@ export default function BlogOverview() {
                       {/* Tags */}
                       {post.tags.length > 0 && (
                         <div className="flex flex-wrap gap-2 mb-4">
-                          {post.tags.slice(0, 3).map((tag) => (
+                          {(lang === 'de' && post.tagsDe ? post.tagsDe : post.tags).slice(0, 3).map((tag) => (
                             <span
                               key={tag}
                               className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-muted text-xs text-muted-foreground"

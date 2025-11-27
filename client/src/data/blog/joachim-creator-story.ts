@@ -3,13 +3,17 @@ import { BlogPost } from './types';
 export const joachimCreatorStory: BlogPost = {
   slug: 'mind-behind-atmospheres-joachim-creator-sphere-music-hub',
   title: 'The Mind Behind the Atmospheres: The Life Journey of Joachim, Creator of Sphere Music Hub',
+  titleDe: 'Der Kopf hinter den Atmosphären: Die Lebensreise von Joachim, Schöpfer des Sphere Music Hub',
   description: 'From classical piano at age seven to rock guitar stages, through twenty-five years of silence, to creating ambient worlds that millions listen to—discover the remarkable journey of Joachim Gassmann, the creator behind Sphere Music Hub.',
+  descriptionDe: 'Vom klassischen Klavier mit sieben Jahren über Rock-Gitarren-Bühnen, durch fünfundzwanzig Jahre Stille, bis zur Erschaffung von Ambient-Welten, die Millionen hören – entdecke die bemerkenswerte Reise von Joachim Gassmann, dem Schöpfer hinter Sphere Music Hub.',
   heroImage: '/blog-images/joachim-creator-story-hero.webp',
   category: 'insights',
   tags: ['behind the scenes', 'creator story', 'music journey', 'classical piano', 'rock guitar', 'ambient music'],
+  tagsDe: ['Hinter den Kulissen', 'Schöpfer-Geschichte', 'Musikreise', 'Klassisches Klavier', 'Rock-Gitarre', 'Ambient-Musik'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 8,
+  readingTimeDe: 8,
   content: `Every universe begins with a moment.
 
 For Sphere Music Hub, that moment happened when a seven-year-old boy sat at a piano bench, feet barely touching the ground, hands resting on ivory keys that would shape the entire arc of his life.

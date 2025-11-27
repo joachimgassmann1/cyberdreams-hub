@@ -10,10 +10,13 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import BlogOverview from "./pages/blog/BlogOverview";
 import BlogArticle from "./pages/blog/BlogArticle";
+import ScrollRestoration from "./components/ScrollRestoration";
 
 function Router() {
   return (
-    <Switch>
+    <>
+      <ScrollRestoration />
+      <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/impressum"} component={Impressum} />
       <Route path={"/datenschutz"} component={Datenschutz} />
@@ -22,7 +25,8 @@ function Router() {
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
-    </Switch>
+      </Switch>
+    </>
   );
 }
 

@@ -3,13 +3,17 @@ import { BlogPost } from './types';
 export const jazzAtmosphere: BlogPost = {
   slug: 'jazz-atmosphere-warm-acoustic-spaces-calm-mind',
   title: 'Inside the Jazz Atmosphere: Why Warm Acoustic Spaces Calm the Modern Mind',
+  titleDe: 'In der Jazz-Atmosphäre: Warum warme akustische Räume den modernen Geist beruhigen',
   description: 'Discover the psychology behind jazz music and learn how warm acoustic spaces, intimate atmospheres, and human imperfection create the perfect environment for relaxation, focus, and emotional comfort.',
+  descriptionDe: 'Entdecke die Psychologie hinter Jazzmusik und lerne, wie warme akustische Räume, intime Atmosphären und menschliche Unvollkommenheit die perfekte Umgebung für Entspannung, Fokus und emotionalen Komfort schaffen.',
   heroImage: '/blog-images/jazz-atmosphere-warm-acoustic-hero.webp',
   category: 'jazz',
   tags: ['jazz', 'relaxation', 'acoustic music', 'atmosphere', 'comfort', 'nostalgia'],
+  tagsDe: ['Jazz', 'Entspannung', 'Akustische Musik', 'Atmosphäre', 'Komfort', 'Nostalgie'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 7,
+  readingTimeDe: 7,
   content: `Some places feel instantly different the moment you step inside.
 
 A warm café at dusk, a quiet bar with soft lighting, the gentle clatter of cups, the distant rustle of people speaking in low voices — and somewhere in the background, soft jazz weaving through the air like a gentle thread.

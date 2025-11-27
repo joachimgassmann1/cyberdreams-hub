@@ -3,13 +3,17 @@ import { BlogPost } from './types';
 export const chilloutPsychology: BlogPost = {
   slug: 'psychology-chillout-music-calm-soundscapes-stress-reduction',
   title: 'The Psychology of Chillout Music: Why Calm Soundscapes Restore Balance and Reduce Stress',
+  titleDe: 'Die Psychologie der Chillout-Musik: Warum ruhige Soundscapes Balance wiederherstellen und Stress reduzieren',
   description: 'Explore the deeper psychology behind chillout music and discover how ambient soundscapes help restore emotional balance, reduce stress, and create peaceful transitions in your daily life.',
+  descriptionDe: 'Erkunde die tiefere Psychologie hinter Chillout-Musik und entdecke, wie Ambient-Soundscapes helfen, emotionale Balance wiederherzustellen, Stress zu reduzieren und friedliche Übergänge in deinem Alltag zu schaffen.',
   heroImage: '/blog-images/psychology-chillout-music-hero.webp',
   category: 'chillout',
   tags: ['chillout', 'relaxation', 'stress relief', 'psychology', 'ambient music', 'mental health'],
+  tagsDe: ['Chillout', 'Entspannung', 'Stressabbau', 'Psychologie', 'Ambient-Musik', 'Mentale Gesundheit'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 7,
+  readingTimeDe: 7,
   content: `In a world that moves too fast, the simple wish for calm has become a luxury. Chillout music, with its warm textures and slow-moving atmospheres, offers a space where the mind can soften, the world becomes quieter, and the body remembers how to breathe again. But what exactly makes these soundscapes so uniquely comforting? And why do millions around the world rely on them to unwind, relax, or transition out of a stressful day?
 
 This article explores the deeper psychology behind chillout music — and the subtle ways in which ambient sound can restore emotional balance.
@@ -139,5 +143,5 @@ And in that space, something important happens:
 
 ---
 
-*Explore curated chillout sessions on [Chillout Sphere](https://www.youtube.com/@ChilloutSphere) — where warm soundscapes meet cinematic visuals to create the perfect atmosphere for relaxation and emotional balance.*`,
+*Explore curated chillout sessions on [Chillout Sphere](https://www.youtube.com/@ChilloutSphere) — where warm soundscapes meet cinematic visuals to create the perfect atmosphere for relaxation and emotional balance.*`
 };

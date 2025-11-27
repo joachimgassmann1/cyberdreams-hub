@@ -4,11 +4,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
+import { detectLanguage } from "@/lib/i18n";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location] = useLocation();
   const { theme, toggleTheme, switchable } = useTheme();
+  const lang = detectLanguage();
 
   // Handle scroll to hash on page load (for cross-page navigation)
   useEffect(() => {
@@ -28,11 +30,11 @@ export default function Navigation() {
   }, [location]);
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/#music-channels", label: "Channels" },
+    { href: "/", label: lang === 'de' ? "Startseite" : "Home" },
+    { href: "/#music-channels", label: lang === 'de' ? "Kanäle" : "Channels" },
     { href: "/blog", label: "Blog" },
-    { href: "/#about", label: "About" },
-    { href: "/#contact", label: "Contact" },
+    { href: "/#about", label: lang === 'de' ? "Über uns" : "About" },
+    { href: "/#contact", label: "Kontakt" },
   ];
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

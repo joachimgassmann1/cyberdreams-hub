@@ -3,13 +3,17 @@ import { BlogPost } from './types';
 export const pianoSoul: BlogPost = {
   slug: 'soul-of-piano-soft-ambience-heals-mind-mood',
   title: 'The Soul of the Piano: Why Soft Piano Ambience Heals the Mind and Quietly Shapes Our Mood',
+  titleDe: 'Die Seele des Klaviers: Warum sanfte Klavier-Ambience den Geist heilt und leise unsere Stimmung formt',
   description: 'Discover why soft piano ambience has become a refuge for millions seeking calm, focus, and emotional grounding. Explore the psychology behind the piano\'s unique ability to heal the mind and create atmospheric stillness.',
+  descriptionDe: 'Entdecke, warum sanfte Klavier-Ambience zu einem Zufluchtsort für Millionen geworden ist, die Ruhe, Fokus und emotionale Erdung suchen. Erkunde die Psychologie hinter der einzigartigen Fähigkeit des Klaviers, den Geist zu heilen und atmosphärische Stille zu schaffen.',
   heroImage: '/blog-images/soul-of-piano-ambience-hero.webp',
   category: 'piano',
   tags: ['piano', 'ambient music', 'healing', 'mood', 'introspection', 'calm'],
+  tagsDe: ['Klavier', 'Ambient-Musik', 'Heilung', 'Stimmung', 'Innenschau', 'Ruhe'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 6,
+  readingTimeDe: 6,
   content: `Few instruments have the ability to shift the atmosphere of a room as effortlessly as the piano. A single note, played softly, can settle the breath, ease tension, and invite the mind into a slower rhythm. Piano ambience has become a refuge for millions seeking calm, focus, or emotional grounding, and its power lies not in complexity but in its quiet sincerity.
 
 ---

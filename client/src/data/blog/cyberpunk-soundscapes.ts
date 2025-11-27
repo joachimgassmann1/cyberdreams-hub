@@ -1,15 +1,19 @@
-import type { BlogPost } from './types';
+import { BlogPost } from './types';
 
 export const cyberpunkSoundscapes: BlogPost = {
   slug: 'cyberpunk-futuristic-soundscapes-creativity-focus-flow',
   title: 'Inside the Cyberpunk Mind: How Futuristic Soundscapes Spark Creativity, Focus, and Night-Time Flow',
+  titleDe: 'Im Cyberpunk-Mind: Wie futuristische Soundscapes Kreativität, Fokus und nächtlichen Flow entfachen',
   description: 'Discover the psychology behind cyberpunk ambient music and learn how neon-lit soundscapes create the perfect environment for late-night creativity, deep focus, and immersive productivity.',
+  descriptionDe: 'Entdecke die Psychologie hinter Cyberpunk-Ambient-Musik und lerne, wie neonbeleuchtete Soundscapes die perfekte Umgebung für nächtliche Kreativität, tiefen Fokus und immersive Produktivität schaffen.',
   heroImage: '/blog-images/cyberpunk-futuristic-soundscapes-hero.webp',
   category: 'cyberpunk',
   tags: ['cyberpunk', 'creativity', 'focus music', 'ambient music', 'productivity', 'night work'],
+  tagsDe: ['Cyberpunk', 'Kreativität', 'Fokusmusik', 'Ambient-Musik', 'Produktivität', 'Nachtarbeit'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 8,
+  readingTimeDe: 8,
   content: `Cities at night have always inspired the imagination — neon reflections on wet streets, the quiet hum of distant engines, the glow of signs cutting through the darkness. Today, thanks to cyberpunk ambient music, people can step into this world without ever leaving their desk.
 
 Cyberpunk soundscapes are more than an aesthetic.
@@ -155,5 +159,5 @@ They sharpen the mind while settling the emotions. They expand imagination while
 
 ---
 
-*Step into the neon-lit world of [Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p) — where futuristic soundscapes meet cinematic visuals to create the ultimate environment for late-night creativity and focused productivity.*`,
+*Step into the neon-lit world of [Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p) — where futuristic soundscapes meet cinematic visuals to create the ultimate environment for late-night creativity and focused productivity.*`
 };

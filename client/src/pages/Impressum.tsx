@@ -2,19 +2,17 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
 
-
 export default function Impressum() {
-  
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>Imprint - Sphere Music Hub</title>
-        <meta name="description" content="Imprint of Sphere Music Hub. Information according to § 5 DDG: Joachim Gassmann – Music & Media Production, Niederkassel." />
-        <meta property="og:title" content="Imprint - Sphere Music Hub" />
-        <meta property="og:description" content="Imprint of Sphere Music Hub. Information according to § 5 DDG: Joachim Gassmann – Music & Media Production, Niederkassel." />
+        <title>Impressum - Sphere Music Hub</title>
+        <meta name="description" content="Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel." />
+        <meta property="og:title" content="Impressum - Sphere Music Hub" />
+        <meta property="og:description" content="Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel." />
         <meta property="og:url" content="https://sphere-music-hub.com/impressum" />
-        <meta name="twitter:title" content="Imprint - Sphere Music Hub" />
-        <meta name="twitter:description" content="Imprint of Sphere Music Hub. Information according to § 5 DDG: Joachim Gassmann – Music & Media Production, Niederkassel." />
+        <meta name="twitter:title" content="Impressum - Sphere Music Hub" />
+        <meta name="twitter:description" content="Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel." />
         <link rel="canonical" href="https://sphere-music-hub.com/impressum" />
       </Helmet>
       <Navigation />
@@ -25,7 +23,7 @@ export default function Impressum() {
           
           <div className="space-y-8 max-w-4xl">
             <section>
-              <h2 className="text-2xl font-bold mb-4 text-primary">Angaben gemäß § 5 DDG</h2>
+              <h2 className="text-2xl font-bold mb-4 text-primary">Angaben gemäß § 5 TMG</h2>
               <p className="text-foreground/80">
                 Joachim Gassmann – Musik- & Medienproduktion<br />
                 Agnes-Miegel-Str. 2<br />
@@ -85,8 +83,8 @@ export default function Impressum() {
             <section>
               <h2 className="text-2xl font-bold mb-4 text-primary">Haftung für Inhalte</h2>
               <p className="text-foreground/80 mb-4">
-                Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene Inhalte auf diesen Seiten 
-                nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als 
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten 
+                nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als 
                 Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde 
                 Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige 
                 Tätigkeit hinweisen.

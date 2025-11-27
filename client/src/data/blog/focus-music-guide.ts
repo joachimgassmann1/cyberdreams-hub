@@ -3,13 +3,17 @@ import type { BlogPost } from './types';
 export const focusMusicGuide: BlogPost = {
   slug: 'ultimate-guide-focus-music-productivity',
   title: 'The Ultimate Guide to Focus Music: How Soundscapes Unlock Deep Work, Flow, and Peak Productivity',
+  titleDe: 'Der ultimative Guide zu Fokusmusik: Wie Soundscapes Deep Work, Flow und Spitzenproduktivität ermöglichen',
   description: 'Discover the neuroscience, psychology, and creative principles behind focus music. Learn how ambient soundscapes can dramatically improve concentration, trigger flow state, and transform your productivity.',
+  descriptionDe: 'Entdecke die Neurowissenschaft, Psychologie und kreativen Prinzipien hinter Fokusmusik. Lerne, wie Ambient-Soundscapes die Konzentration dramatisch verbessern, Flow-Zustände auslösen und deine Produktivität transformieren können.',
   heroImage: '/blog-images/ultimate-guide-focus-music-hero.webp',
   category: 'focus',
   tags: ['focus music', 'productivity', 'neuroscience', 'flow state', 'deep focus', 'ambient music'],
+  tagsDe: ['Fokusmusik', 'Produktivität', 'Neurowissenschaft', 'Flow-Zustand', 'Deep Focus', 'Ambient-Musik'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 9,
+  readingTimeDe: 9,
   content: `In a world filled with constant notifications, background noise, and endless digital distractions, the ability to concentrate has become one of the most valuable modern skills. Yet many people overlook one of the most powerful productivity tools available: **sound**.
 
 From ambient textures to longform focus sessions like those on [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere), the right music can dramatically improve how deeply and how long you can work.
@@ -148,5 +152,5 @@ Deep Focus Sphere and similar channels help people access deeper concentration, 
 
 If you're looking to work better, think clearer, and enter flow more often, start by shaping the sound around you.
 
-**Ready to experience deep focus?** Explore our [Deep Focus Sphere channel](https://www.youtube.com/@DeepFocusSphere) and discover longform ambient sessions designed for peak productivity.`,
+**Ready to experience deep focus?** Explore our [Deep Focus Sphere channel](https://www.youtube.com/@DeepFocusSphere) and discover longform ambient sessions designed for peak productivity.`
 };
