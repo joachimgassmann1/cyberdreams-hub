@@ -1,0 +1,34 @@
+# URLs für manuelle Google Indexierung
+# Reiche diese URLs in Google Search Console ein (URL-Prüfung → Indexierung beantragen)
+
+## Priorität 1 (Wichtigste Seiten)
+https://sphere-music-hub.com/blog
+https://sphere-music-hub.com/blog/ultimate-guide-focus-music-productivity
+https://sphere-music-hub.com/blog/psychology-chillout-music-calm-soundscapes-stress-reduction
+https://sphere-music-hub.com/blog/cyberpunk-futuristic-soundscapes-creativity-focus-flow
+
+## Priorität 2 (Weitere Blog-Artikel)
+https://sphere-music-hub.com/blog/jazz-atmosphere-warm-acoustic-spaces-calm-mind
+https://sphere-music-hub.com/blog/soul-of-piano-soft-ambience-heals-mind-mood
+https://sphere-music-hub.com/blog/quiet-cure-why-relaxation-essential-skill-modern-life
+https://sphere-music-hub.com/blog/mind-behind-atmospheres-joachim-creator-sphere-music-hub
+https://sphere-music-hub.com/blog/inside-atmosphere-how-joachim-creates-emotional-worlds-sphere-music-hub
+
+## Priorität 3 (Rechtliches)
+https://sphere-music-hub.com/impressum
+
+## Anleitung:
+1. Öffne Google Search Console: https://search.google.com/search-console
+2. Klicke oben auf das Suchfeld "Beliebige URL prüfen"
+3. Füge eine URL ein und drücke Enter
+4. Klicke auf "Indexierung beantragen"
+5. Warte 1-2 Minuten pro URL
+6. Wiederhole für alle URLs (beginne mit Priorität 1)
+
+## Erwartete Indexierung:
+- Priorität 1: 1-3 Tage
+- Priorität 2: 3-7 Tage
+- Priorität 3: 7-14 Tage
+
+## Status prüfen:
+Nach 2-3 Tagen: site:sphere-music-hub.com in Google suchen

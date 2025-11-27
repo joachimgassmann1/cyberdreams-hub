@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from "react";
 import { Link, useParams, useLocation } from "wouter";
 import { ArrowLeft, Calendar, Clock, Tag, Share2 } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
@@ -13,6 +13,7 @@ import NotFound from '@/pages/NotFound';
 import ReadingProgressBar from '@/components/ReadingProgressBar';
 import ScrollToTop from '@/components/ScrollToTop';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
+import { Helmet } from 'react-helmet-async';
 
 export default function BlogArticle() {
   const params = useParams<{ slug: string }>();
@@ -30,58 +31,7 @@ export default function BlogArticle() {
   useEffect(() => {
     // Scroll to top when article loads
     window.scrollTo(0, 0);
-
-    // Update meta tags for SEO
-    document.title = `${post.title} | Sphere Music Hub Blog`;
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', post.description);
-    }
-
-    // Add Schema.org BlogPosting JSON-LD
-    const schemaScript = document.createElement('script');
-    schemaScript.type = 'application/ld+json';
-    schemaScript.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": post.title,
-      "description": post.description,
-      "image": `https://sphere-music-hub.com${post.heroImage}`,
-      "datePublished": post.publishDate,
-      "dateModified": post.publishDate,
-      "author": {
-        "@type": "Organization",
-        "name": post.author,
-        "url": "https://sphere-music-hub.com"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Sphere Music Hub",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://sphere-music-hub.com/logo.webp"
-        }
-      },
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": `https://sphere-music-hub.com/blog/${post.slug}`
-      },
-      "keywords": post.tags.join(', '),
-      "articleSection": category?.name || 'Music',
-      "wordCount": post.content.split(/\s+/).length,
-      "timeRequired": `PT${post.readingTime}M`
-    });
-    document.head.appendChild(schemaScript);
-
-    return () => {
-      // Cleanup schema script on unmount
-      if (document.head.contains(schemaScript)) {
-        document.head.removeChild(schemaScript);
-      }
-    };
-  }, [params.slug, post, category]);
+  }, []);
 
   const handleShare = async () => {
     const url = window.location.href;
@@ -101,8 +51,59 @@ export default function BlogArticle() {
     }
   };
 
+  const articleUrl = `https://sphere-music-hub.com/blog/${post.slug}`;
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.description,
+    "image": post.heroImage,
+    "datePublished": post.publishDate,
+    "dateModified": post.publishDate,
+    "author": {
+      "@type": "Person",
+      "name": post.author,
+      "url": "https://sphere-music-hub.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sphere Music Hub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sphere-music-hub.com/logo.png"
+      }
+    },
+    "keywords": post.tags.join(', '),
+    "articleSection": category?.name || 'Music',
+    "wordCount": post.content.split(/\s+/).length,
+    "timeRequired": `PT${post.readingTime}M`
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
+      <Helmet>
+        <title>{post.title} | Sphere Music Hub Blog</title>
+        <meta name="description" content={post.description} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.description} />
+        <meta property="og:image" content={post.heroImage} />
+        <meta property="og:url" content={articleUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.publishDate} />
+        <meta property="article:author" content={post.author} />
+        <meta property="article:section" content={category?.name || 'Music'} />
+        {post.tags.map(tag => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.description} />
+        <meta name="twitter:image" content={post.heroImage} />
+        <link rel="canonical" href={articleUrl} />
+        <script type="application/ld+json">
+          {JSON.stringify(schemaData)}
+        </script>
+      </Helmet>
       <Navigation />
       <ReadingProgressBar />
       <ScrollToTop />

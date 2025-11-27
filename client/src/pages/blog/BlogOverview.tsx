@@ -8,6 +8,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/OptimizedImage';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
+import { Helmet } from 'react-helmet-async';
 
 const POSTS_PER_PAGE = 12;
 
@@ -35,6 +36,16 @@ export default function BlogOverview() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
+      <Helmet>
+        <title>Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes</title>
+        <meta name="description" content="Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation." />
+        <meta property="og:title" content="Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes" />
+        <meta property="og:description" content="Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation." />
+        <meta property="og:url" content="https://sphere-music-hub.com/blog" />
+        <meta name="twitter:title" content="Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes" />
+        <meta name="twitter:description" content="Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation." />
+        <link rel="canonical" href="https://sphere-music-hub.com/blog" />
+      </Helmet>
       <Navigation />
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">

@@ -1,9 +1,20 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { Helmet } from "react-helmet-async";
 
 export default function Impressum() {
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Impressum - Sphere Music Hub</title>
+        <meta name="description" content="Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel." />
+        <meta property="og:title" content="Impressum - Sphere Music Hub" />
+        <meta property="og:description" content="Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel." />
+        <meta property="og:url" content="https://sphere-music-hub.com/impressum" />
+        <meta name="twitter:title" content="Impressum - Sphere Music Hub" />
+        <meta name="twitter:description" content="Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel." />
+        <link rel="canonical" href="https://sphere-music-hub.com/impressum" />
+      </Helmet>
       <Navigation />
       
       <main className="flex-1 bg-background">
