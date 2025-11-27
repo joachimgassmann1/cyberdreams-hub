@@ -6,7 +6,7 @@ export const focusMusicGuide: BlogPost = {
   description: 'Discover the neuroscience, psychology, and creative principles behind focus music. Learn how ambient soundscapes can dramatically improve concentration, trigger flow state, and transform your productivity.',
   heroImage: '/blog-images/ultimate-guide-focus-music-hero.webp',
   category: 'focus',
-  tags: ['focus', 'productivity', 'neuroscience', 'flow state', 'deep work', 'ambient music'],
+  tags: ['focus music', 'productivity', 'neuroscience', 'flow state', 'deep focus', 'ambient music'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 9,

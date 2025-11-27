@@ -84,7 +84,7 @@ export const getRelatedPosts = (currentSlug: string, limit: number = 3): BlogPos
   if (!currentPost) return [];
   
   // Calculate relevance score for each post
-  const postsWithScore = blogPosts
+  const allPostsWithScore = blogPosts
     .filter(post => post.slug !== currentSlug)
     .map(post => {
       let score = 0;
@@ -100,7 +100,6 @@ export const getRelatedPosts = (currentSlug: string, limit: number = 3): BlogPos
       
       return { post, score };
     })
-    .filter(item => item.score > 0) // Only include posts with some relevance
     .sort((a, b) => {
       // Sort by score first (descending)
       if (b.score !== a.score) {
@@ -108,9 +107,20 @@ export const getRelatedPosts = (currentSlug: string, limit: number = 3): BlogPos
       }
       // Then by date (newest first)
       return new Date(b.post.publishDate).getTime() - new Date(a.post.publishDate).getTime();
-    })
-    .slice(0, limit)
-    .map(item => item.post);
+    });
   
-  return postsWithScore;
+  // Get relevant posts (score > 0)
+  const relevantPosts = allPostsWithScore.filter(item => item.score > 0);
+  
+  // If we have enough relevant posts, return them
+  if (relevantPosts.length >= limit) {
+    return relevantPosts.slice(0, limit).map(item => item.post);
+  }
+  
+  // Otherwise, fill up with latest posts (even if score is 0)
+  const fillerPosts = allPostsWithScore
+    .filter(item => item.score === 0)
+    .slice(0, limit - relevantPosts.length);
+  
+  return [...relevantPosts, ...fillerPosts].map(item => item.post);
 };

@@ -6,7 +6,7 @@ export const cyberpunkSoundscapes: BlogPost = {
   description: 'Discover the psychology behind cyberpunk ambient music and learn how neon-lit soundscapes create the perfect environment for late-night creativity, deep focus, and immersive productivity.',
   heroImage: '/blog-images/cyberpunk-futuristic-soundscapes-hero.webp',
   category: 'cyberpunk',
-  tags: ['cyberpunk', 'creativity', 'focus', 'ambient music', 'productivity', 'night work'],
+  tags: ['cyberpunk', 'creativity', 'focus music', 'ambient music', 'productivity', 'night work'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 8,
