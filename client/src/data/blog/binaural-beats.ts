@@ -7,7 +7,7 @@ export const binauralBeats: BlogPost = {
   description: 'Discover how binaural beats leverage brainwave entrainment to enhance concentration, deepen meditation, and optimize mental states through scientifically grounded frequency patterns.',
   descriptionDe: 'Entdecken Sie, wie binaurale Beats Gehirnwellen-Entrainment nutzen, um Konzentration zu verbessern, Meditation zu vertiefen und mentale Zustände durch wissenschaftlich fundierte Frequenzmuster zu optimieren.',
   heroImage: '/images/blog/binaural-beats-hero.jpg',
-  category: 'Focus',
+  category: 'focus',
   tags: ['binaural beats', 'focus music', 'meditation', 'neuroscience', 'brainwaves', 'concentration'],
   tagsDe: ['Binaurale Beats', 'Fokusmusik', 'Meditation', 'Neurowissenschaft', 'Gehirnwellen', 'Konzentration'],
   author: 'Sphere Music Hub Team',

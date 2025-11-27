@@ -7,7 +7,7 @@ export const videoProductionJourney: BlogPost = {
   description: 'Discover the intricate creative process behind every Sphere Music Hub video—from AI image generation to sound design, animation, and YouTube optimization. A behind-the-scenes look at the 8-10 hour workflow that brings ambient videos to life.',
   descriptionDe: 'Entdecken Sie den komplexen kreativen Prozess hinter jedem Sphere Music Hub Video—von KI-Bildgenerierung über Sound Design, Animation bis hin zur YouTube-Optimierung. Ein Blick hinter die Kulissen des 8-10-Stunden-Workflows, der Ambient-Videos zum Leben erweckt.',
   heroImage: '/images/blog/video-production-hero.jpg',
-  category: 'Insights',
+  category: 'insights',
   tags: ['video production', 'content creation', 'AI tools', 'DaVinci Resolve', 'Suno AI', 'YouTube SEO', 'workflow', 'behind the scenes'],
   tagsDe: ['Videoproduktion', 'Content-Erstellung', 'KI-Tools', 'DaVinci Resolve', 'Suno AI', 'YouTube SEO', 'Workflow', 'Hinter den Kulissen'],
   author: 'Joachim Gassmann',
