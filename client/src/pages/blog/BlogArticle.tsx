@@ -234,7 +234,7 @@ export default function BlogArticle() {
       {/* Related Articles */}
       {relatedPosts.length > 0 && (
         <section className="container max-w-6xl px-4 py-16 border-t border-border">
-          <h2 className="text-3xl font-bold mb-8 text-center">Related Articles</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">{lang === 'de' ? 'Ähnliche Artikel' : 'Related Articles'}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {relatedPosts.map((relatedPost) => {
               const relatedCategory = blogCategories.find(c => c.id === relatedPost.category);
@@ -257,13 +257,13 @@ export default function BlogArticle() {
                     </div>
                     <div className="p-5">
                       <h3 className="text-lg font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                        {relatedPost.title}
+                        {lang === 'de' && relatedPost.titleDe ? relatedPost.titleDe : relatedPost.title}
                       </h3>
                       <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
-                        {relatedPost.description}
+                        {lang === 'de' && relatedPost.descriptionDe ? relatedPost.descriptionDe : relatedPost.description}
                       </p>
                       <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                        <span>{relatedPost.readingTime} min read</span>
+                        <span>{relatedPost.readingTime} {lang === 'de' ? 'Min. Lesezeit' : 'min read'}</span>
                       </div>
                     </div>
                   </article>
@@ -277,13 +277,15 @@ export default function BlogArticle() {
       {/* CTA Section */}
       <section className="container max-w-4xl px-4 py-16">
         <div className="bg-gradient-to-r from-primary/10 via-purple-500/10 to-pink-500/10 rounded-3xl p-8 md:p-12 text-center border border-primary/20">
-          <h2 className="text-3xl font-bold mb-4">Enjoy Our Music Channels</h2>
+          <h2 className="text-3xl font-bold mb-4">{lang === 'de' ? 'Entdecke unsere Musikkanäle' : 'Enjoy Our Music Channels'}</h2>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-            Discover our curated collection of focus music, ambient soundscapes, and relaxing beats designed to enhance your productivity and well-being.
+            {lang === 'de' 
+              ? 'Entdecke unsere kuratierte Sammlung von Fokusmusik, Ambient-Soundscapes und entspannenden Beats, die deine Produktivität und dein Wohlbefinden steigern.'
+              : 'Discover our curated collection of focus music, ambient soundscapes, and relaxing beats designed to enhance your productivity and well-being.'}
           </p>
           <Link href="/">
             <Button size="lg" className="rounded-full">
-              Explore Channels
+              {lang === 'de' ? 'Kanäle entdecken' : 'Explore Channels'}
             </Button>
           </Link>
         </div>
