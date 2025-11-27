@@ -10,8 +10,13 @@ import { insideAtmosphereCreativeProcess } from './inside-atmosphere-creative-pr
 import { nightShiftMind } from './night-shift-mind';
 import { binauralBeats } from './binaural-beats';
 import { videoProductionJourney } from './video-production-journey';
+import { dystopianRainFocus } from './dystopian-rain-focus';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...dystopianRainFocus,
+ featured: true
+ },
  {
  ...videoProductionJourney,
  featured: true
