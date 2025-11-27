@@ -1,6 +1,7 @@
 {
   "name": "sphere-music-hub",
   "version": "1.0.0",
+  "description": "Sphere Music Hub - Focus, Chill & Ambient Music",
   "type": "module",
   "license": "MIT",
   "scripts": {
