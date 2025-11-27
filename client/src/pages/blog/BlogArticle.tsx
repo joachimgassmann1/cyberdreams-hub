@@ -107,6 +107,9 @@ export default function BlogArticle() {
         <meta name="twitter:description" content={displayDescription} />
         <meta name="twitter:image" content={post.heroImage} />
         <link rel="canonical" href={articleUrl} />
+        <link rel="alternate" hrefLang="en" href={`https://sphere-music-hub.com/blog/${post.slug}`} />
+        <link rel="alternate" hrefLang="de" href={`https://sphere-music-hub.de/blog/${post.slug}`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://sphere-music-hub.com/blog/${post.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
         </script>

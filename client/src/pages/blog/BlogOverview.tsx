@@ -47,6 +47,9 @@ export default function BlogOverview() {
         <meta name="twitter:title" content="Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes" />
         <meta name="twitter:description" content="Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation." />
         <link rel="canonical" href="https://sphere-music-hub.com/blog" />
+        <link rel="alternate" hrefLang="en" href="https://sphere-music-hub.com/blog" />
+        <link rel="alternate" hrefLang="de" href="https://sphere-music-hub.de/blog" />
+        <link rel="alternate" hrefLang="x-default" href="https://sphere-music-hub.com/blog" />
       </Helmet>
       <Navigation />
       {/* Hero Section */}
