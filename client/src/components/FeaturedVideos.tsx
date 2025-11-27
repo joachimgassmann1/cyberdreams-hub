@@ -72,6 +72,8 @@ export default function FeaturedVideos() {
                       src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
                       alt={`${video.title} - ${video.channelTitle} YouTube video thumbnail`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;

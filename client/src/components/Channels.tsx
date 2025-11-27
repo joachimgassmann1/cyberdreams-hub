@@ -106,6 +106,8 @@ export default function Channels() {
                     src={channel.image}
                     alt={`${channel.name} - ${channel.description}`}
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute top-4 right-4 p-3 rounded-full bg-background/80 backdrop-blur-sm">
                     <Icon className="w-6 h-6 text-primary" />
