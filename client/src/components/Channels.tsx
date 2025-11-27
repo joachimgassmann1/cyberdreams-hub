@@ -148,7 +148,7 @@ export default function Channels() {
             const subscribers = SUBSCRIBER_COUNTS[channel.channelId] || "0";
             
             return (
-              <Card key={channel.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-card border-border">
+              <Card key={channel.id} className="overflow-hidden hover:shadow-xl transition-shadow duration-300 bg-card border-border flex flex-col h-full">
                   <div className="relative h-48 overflow-hidden">
                   <img
                     src={channel.image}
@@ -165,7 +165,7 @@ export default function Channels() {
                   <CardDescription className="text-muted-foreground">{channel.handle}</CardDescription>
                 </CardHeader>
                 
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p className="text-sm text-muted-foreground mb-4">{channel.description}</p>
                   <div className="flex items-center gap-2 text-sm font-medium">
                     <span className="text-primary">{subscribers}</span>
