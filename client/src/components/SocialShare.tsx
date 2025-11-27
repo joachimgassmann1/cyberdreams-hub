@@ -1,5 +1,6 @@
 import { Facebook, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 interface SocialShareProps {
   title: string;
@@ -32,7 +33,9 @@ export default function SocialShare({ title, url, description }: SocialShareProp
         }).catch(() => {
           // Fallback: copy to clipboard
           navigator.clipboard.writeText(shareUrl);
-          alert('Link copied! Share it on ' + (platform === 'instagram' ? 'Instagram' : 'TikTok'));
+          toast.success('Link copied!', {
+            description: `Open ${platform === 'instagram' ? 'Instagram' : 'TikTok'} app to share`,
+          });
         });
       } else {
         // Fallback: copy to clipboard
