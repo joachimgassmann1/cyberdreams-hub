@@ -1,16 +1,12 @@
 import type { BlogPost } from './types';
-import focusMusicGuideDe from './posts/ultimate-guide-focus-music-de.md?raw';
 
 export const focusMusicGuide: BlogPost = {
   slug: 'ultimate-guide-focus-music-productivity',
   title: 'The Ultimate Guide to Focus Music: How Soundscapes Unlock Deep Work, Flow, and Peak Productivity',
-  titleDe: 'Der ultimative Leitfaden für Fokusmusik: Wie Soundscapes Deep Work, Flow und Spitzenproduktivität freisetzen',
   description: 'Discover the neuroscience, psychology, and creative principles behind focus music. Learn how ambient soundscapes can dramatically improve concentration, trigger flow state, and transform your productivity.',
-  descriptionDe: 'Entdecke die Neurowissenschaft, Psychologie und kreativen Prinzipien hinter Fokusmusik. Lerne, wie Ambient-Soundscapes Konzentration dramatisch verbessern, Flow-Zustand auslösen und deine Produktivität transformieren können.',
   heroImage: '/blog-images/ultimate-guide-focus-music-hero.webp',
   category: 'focus',
   tags: ['focus music', 'productivity', 'neuroscience', 'flow state', 'deep focus', 'ambient music'],
-  tagsDe: ['Fokusmusik', 'Produktivität', 'Neurowissenschaft', 'Flow-Zustand', 'Tiefe Konzentration', 'Ambient-Musik'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 9,
@@ -153,5 +149,4 @@ Deep Focus Sphere and similar channels help people access deeper concentration, 
 If you're looking to work better, think clearer, and enter flow more often, start by shaping the sound around you.
 
 **Ready to experience deep focus?** Explore our [Deep Focus Sphere channel](https://www.youtube.com/@DeepFocusSphere) and discover longform ambient sessions designed for peak productivity.`,
-  contentDe: focusMusicGuideDe
 };

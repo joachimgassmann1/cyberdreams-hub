@@ -1,21 +1,20 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Helmet } from "react-helmet-async";
-import { detectLanguage } from '@/lib/i18n';
+
 
 export default function Datenschutz() {
-  const lang = detectLanguage();
   
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
-        <title>{lang === 'de' ? 'Datenschutzerklärung - Sphere Music Hub' : 'Privacy Policy - Sphere Music Hub'}</title>
-        <meta name="description" content={lang === 'de' ? 'Datenschutzerklärung von Sphere Music Hub. Informationen über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf unserer Website.' : 'Privacy policy of Sphere Music Hub. Information about the collection, processing and use of personal data on our website.'} />
-        <meta property="og:title" content={lang === 'de' ? 'Datenschutzerklärung - Sphere Music Hub' : 'Privacy Policy - Sphere Music Hub'} />
-        <meta property="og:description" content={lang === 'de' ? 'Datenschutzerklärung von Sphere Music Hub. Informationen über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf unserer Website.' : 'Privacy policy of Sphere Music Hub. Information about the collection, processing and use of personal data on our website.'} />
+        <title>"Privacy Policy - Sphere Music Hub"</title>
+        <meta name="description" content="Privacy policy of Sphere Music Hub. Information about the collection, processing and use of personal data on our website." />
+        <meta property="og:title" content="Privacy Policy - Sphere Music Hub" />
+        <meta property="og:description" content="Privacy policy of Sphere Music Hub. Information about the collection, processing and use of personal data on our website." />
         <meta property="og:url" content="https://sphere-music-hub.com/datenschutz" />
-        <meta name="twitter:title" content={lang === 'de' ? 'Datenschutzerklärung - Sphere Music Hub' : 'Privacy Policy - Sphere Music Hub'} />
-        <meta name="twitter:description" content={lang === 'de' ? 'Datenschutzerklärung von Sphere Music Hub. Informationen über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf unserer Website.' : 'Privacy policy of Sphere Music Hub. Information about the collection, processing and use of personal data on our website.'} />
+        <meta name="twitter:title" content="Privacy Policy - Sphere Music Hub" />
+        <meta name="twitter:description" content="Privacy policy of Sphere Music Hub. Information about the collection, processing and use of personal data on our website." />
         <link rel="canonical" href="https://sphere-music-hub.com/datenschutz" />
       </Helmet>
       <Navigation />

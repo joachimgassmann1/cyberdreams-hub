@@ -1,16 +1,12 @@
 import { BlogPost } from './types';
-import chilloutPsychologyDe from './posts/psychology-chillout-music-de.md?raw';
 
 export const chilloutPsychology: BlogPost = {
   slug: 'psychology-chillout-music-calm-soundscapes-stress-reduction',
   title: 'The Psychology of Chillout Music: Why Calm Soundscapes Restore Balance and Reduce Stress',
-  titleDe: 'Die Psychologie von Chillout-Musik: Warum ruhige Soundscapes Balance wiederherstellen und Stress reduzieren',
   description: 'Explore the deeper psychology behind chillout music and discover how ambient soundscapes help restore emotional balance, reduce stress, and create peaceful transitions in your daily life.',
-  descriptionDe: 'Erkunde die tiefere Psychologie hinter Chillout-Musik und entdecke, wie Ambient-Soundscapes helfen, emotionales Gleichgewicht wiederherzustellen, Stress zu reduzieren und friedliche Übergänge in deinem täglichen Leben zu schaffen.',
   heroImage: '/blog-images/psychology-chillout-music-hero.webp',
   category: 'chillout',
   tags: ['chillout', 'relaxation', 'stress relief', 'psychology', 'ambient music', 'mental health'],
-  tagsDe: ['Chillout', 'Entspannung', 'Stressabbau', 'Psychologie', 'Ambient-Musik', 'Mentale Gesundheit'],
   author: 'Sphere Music Hub',
   publishDate: '2025-11-26',
   readingTime: 7,
@@ -144,5 +140,4 @@ And in that space, something important happens:
 ---
 
 *Explore curated chillout sessions on [Chillout Sphere](https://www.youtube.com/@ChilloutSphere) — where warm soundscapes meet cinematic visuals to create the perfect atmosphere for relaxation and emotional balance.*`,
-  contentDe: chilloutPsychologyDe
 };
