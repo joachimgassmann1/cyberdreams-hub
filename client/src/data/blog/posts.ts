@@ -9,8 +9,13 @@ import { joachimCreatorStory } from './joachim-creator-story';
 import { insideAtmosphereCreativeProcess } from './inside-atmosphere-creative-process';
 import { nightShiftMind } from './night-shift-mind';
 import { binauralBeats } from './binaural-beats';
+import { videoProductionJourney } from './video-production-journey';
 
 export const blogPosts: BlogPost[] = [
+  {
+    ...videoProductionJourney,
+    featured: true
+  },
   {
     ...binauralBeats,
     featured: true

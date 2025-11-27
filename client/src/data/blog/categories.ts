@@ -46,7 +46,9 @@ export const blogCategories: BlogCategory[] = [
   {
     id: 'insights',
     name: 'Insights',
+    nameDe: 'Einblicke',
     description: 'Music production tips and behind-the-scenes stories',
+    descriptionDe: 'Musikproduktions-Tipps und Geschichten hinter den Kulissen',
     color: 'from-violet-500 to-purple-600'
   }
 ];
