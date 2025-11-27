@@ -1,17 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
 
-// Static featured videos (updated manually as needed - last update: Nov 26, 2025)
+// Static featured videos (updated manually as needed - last update: Nov 27, 2025)
+// Reduced to 3 videos for optimal mobile performance
 const FEATURED_VIDEOS = [
   {
-    id: "Q2NIq7Qwogc",
-    title: "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
-    channelTitle: "Cyber Dreams",
-  },
-  {
-    id: "XCh88UzbssA",
-    title: "Chill Piano Escapes – Cozy Melodies to Unwind",
-    channelTitle: "Pianosphere Radio",
+    id: "uDbTU2pLCRs",
+    title: "Deep Focus | Calm Ambient Music for Work and Study",
+    channelTitle: "Deep Focus Sphere",
   },
   {
     id: "RJIdAEvb_dY",
@@ -19,19 +15,9 @@ const FEATURED_VIDEOS = [
     channelTitle: "Chillout Sphere",
   },
   {
-    id: "uDbTU2pLCRs",
-    title: "Deep Focus | Calm Ambient Music for Work and Study",
-    channelTitle: "Deep Focus Sphere",
-  },
-  {
-    id: "xPjrkMmZElw",
-    title: "Deep Focus Vibes: The Ultimate Study Music Mix",
-    channelTitle: "Deep Focus Sphere",
-  },
-  {
-    id: "bA1JhbZD8UM",
-    title: "Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights",
-    channelTitle: "JazzSphere Radio",
+    id: "Q2NIq7Qwogc",
+    title: "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
+    channelTitle: "Cyber Dreams",
   },
 ];
 
