@@ -11,6 +11,7 @@ import Datenschutz from "./pages/Datenschutz";
 import BlogOverview from "./pages/blog/BlogOverview";
 import BlogArticle from "./pages/blog/BlogArticle";
 import ScrollRestoration from "./components/ScrollRestoration";
+import CookieBanner from "./components/CookieBanner";
 
 function Router() {
   return (
@@ -46,6 +47,7 @@ function App() {
           <TooltipProvider>
             <Toaster />
             <Router />
+            <CookieBanner />
           </TooltipProvider>
         </ThemeProvider>
       </HelmetProvider>

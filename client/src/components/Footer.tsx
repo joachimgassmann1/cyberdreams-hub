@@ -2,6 +2,7 @@ import { APP_LOGO } from "@/const";
 import { Facebook, Mail, Youtube } from "lucide-react";
 import SocialShare from "./SocialShare";
 import { detectLanguage } from "@/lib/i18n";
+import { resetCookieConsent } from "./CookieBanner";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -150,6 +151,12 @@ export default function Footer() {
               <a href="/datenschutz" className="hover:text-primary transition-colors">
                 Datenschutz
               </a>
+              <button
+                onClick={resetCookieConsent}
+                className="hover:text-primary transition-colors"
+              >
+                {lang === 'de' ? 'Cookie-Einstellungen' : 'Cookie Settings'}
+              </button>
             </div>
           </div>
         </div>
