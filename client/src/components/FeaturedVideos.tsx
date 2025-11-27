@@ -1,13 +1,17 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
 
-// Static featured videos (updated manually as needed - last update: Nov 27, 2025)
-// Reduced to 3 videos for optimal mobile performance
+// Static featured videos (updated manually as needed - last update: Nov 26, 2025)
 const FEATURED_VIDEOS = [
   {
-    id: "uDbTU2pLCRs",
-    title: "Deep Focus | Calm Ambient Music for Work and Study",
-    channelTitle: "Deep Focus Sphere",
+    id: "Q2NIq7Qwogc",
+    title: "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
+    channelTitle: "Cyber Dreams",
+  },
+  {
+    id: "XCh88UzbssA",
+    title: "Chill Piano Escapes – Cozy Melodies to Unwind",
+    channelTitle: "Pianosphere Radio",
   },
   {
     id: "RJIdAEvb_dY",
@@ -15,9 +19,19 @@ const FEATURED_VIDEOS = [
     channelTitle: "Chillout Sphere",
   },
   {
-    id: "Q2NIq7Qwogc",
-    title: "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
-    channelTitle: "Cyber Dreams",
+    id: "uDbTU2pLCRs",
+    title: "Deep Focus | Calm Ambient Music for Work and Study",
+    channelTitle: "Deep Focus Sphere",
+  },
+  {
+    id: "xPjrkMmZElw",
+    title: "Deep Focus Vibes: The Ultimate Study Music Mix",
+    channelTitle: "Deep Focus Sphere",
+  },
+  {
+    id: "bA1JhbZD8UM",
+    title: "Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights",
+    channelTitle: "JazzSphere Radio",
   },
 ];
 
@@ -58,8 +72,6 @@ export default function FeaturedVideos() {
                       src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
                       alt={`${video.title} - ${video.channelTitle} YouTube video thumbnail`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      loading="lazy"
-                      decoding="async"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
