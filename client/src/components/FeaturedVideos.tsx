@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
 import { detectLanguage } from "@/lib/i18n";
+import { useMusicPlayer } from "@/contexts/MusicPlayerContext";
 
 // Static featured videos (updated manually as needed - last update: Nov 26, 2025)
 const FEATURED_VIDEOS = [
@@ -38,6 +39,7 @@ const FEATURED_VIDEOS = [
 
 export default function FeaturedVideos() {
   const lang = detectLanguage();
+  const { playVideo } = useMusicPlayer();
   return (
     <section className="py-20 md:py-32 bg-card/30">
       <div className="container">
@@ -65,11 +67,13 @@ export default function FeaturedVideos() {
             >
               <CardContent className="p-0">
                 {/* Video Thumbnail */}
-                <a
-                  href={`https://www.youtube.com/watch?v=${video.id}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block relative"
+                <div
+                  onClick={() => playVideo({
+                    id: video.id,
+                    title: video.title,
+                    channelName: video.channelTitle,
+                  })}
+                  className="block relative cursor-pointer"
                 >
                   <div className="relative aspect-video bg-muted overflow-hidden">
                     <img
@@ -99,7 +103,7 @@ export default function FeaturedVideos() {
                       <span>{video.channelTitle}</span>
                     </div>
                   </div>
-                </a>
+                </div>
               </CardContent>
             </Card>
           ))}

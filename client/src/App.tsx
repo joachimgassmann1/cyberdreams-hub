@@ -12,6 +12,8 @@ import BlogOverview from "./pages/blog/BlogOverview";
 import BlogArticle from "./pages/blog/BlogArticle";
 import ScrollRestoration from "./components/ScrollRestoration";
 import CookieBanner from "./components/CookieBanner";
+import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
+import MusicPlayer from "./components/MusicPlayer";
 
 function Router() {
   return (
@@ -44,11 +46,14 @@ function App() {
           defaultTheme="dark"
           switchable
         >
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-            <CookieBanner />
-          </TooltipProvider>
+          <MusicPlayerProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Router />
+              <CookieBanner />
+              <MusicPlayer />
+            </TooltipProvider>
+          </MusicPlayerProvider>
         </ThemeProvider>
       </HelmetProvider>
     </ErrorBoundary>

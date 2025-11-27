@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves } from "lucide-react";
+import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves, Play } from "lucide-react";
+import { useMusicPlayer } from "@/contexts/MusicPlayerContext";
 import { detectLanguage } from "@/lib/i18n";
 
 // Static subscriber counts (updated manually as needed - last update: Nov 25, 2025)
@@ -97,6 +98,7 @@ const getChannels = (lang: 'en' | 'de') => [
 export default function Channels() {
   const lang = detectLanguage();
   const channels = getChannels(lang);
+  const { playVideo } = useMusicPlayer();
   return (
     <section id="music-channels" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -142,15 +144,26 @@ export default function Channels() {
                   </div>
                 </CardContent>
                 
-                <CardFooter>
+                <CardFooter className="flex gap-2">
+                  <Button 
+                    variant="default" 
+                    className="flex-1"
+                    onClick={() => playVideo({
+                      id: `channel-${channel.channelId}`,
+                      title: channel.name,
+                      channelName: channel.handle,
+                    })}
+                  >
+                    <Play className="mr-2 h-4 w-4" />
+                    {lang === 'de' ? 'Jetzt abspielen' : 'Play Now'}
+                  </Button>
                   <Button 
                     variant="outline" 
-                    className="w-full border-primary/30 hover:bg-primary/10"
+                    className="border-primary/30 hover:bg-primary/10"
                     asChild
                   >
                     <a href={channel.url} target="_blank" rel="noopener noreferrer">
-                      Visit Channel
-                      <ExternalLink className="ml-2 h-4 w-4" />
+                      <ExternalLink className="h-4 w-4" />
                     </a>
                   </Button>
                 </CardFooter>
