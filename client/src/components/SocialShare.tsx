@@ -1,14 +1,16 @@
 import { Facebook, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { trackSocialShare } from "@/lib/analytics";
 
 interface SocialShareProps {
   title: string;
   url?: string;
   description?: string;
+  articleSlug?: string;
 }
 
-export default function SocialShare({ title, url, description }: SocialShareProps) {
+export default function SocialShare({ title, url, description, articleSlug }: SocialShareProps) {
   const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
   const shareUrl = url || currentUrl;
   const encodedUrl = encodeURIComponent(shareUrl);
@@ -22,6 +24,9 @@ export default function SocialShare({ title, url, description }: SocialShareProp
   };
 
   const handleShare = (platform: 'x' | 'linkedin' | 'facebook' | 'instagram' | 'tiktok') => {
+    // Track social share in Google Analytics
+    trackSocialShare(platform, title, articleSlug || '');
+    
     if (platform === 'instagram' || platform === 'tiktok') {
       // Instagram and TikTok don't have direct web share URLs
       // Use Web Share API if available, otherwise copy link

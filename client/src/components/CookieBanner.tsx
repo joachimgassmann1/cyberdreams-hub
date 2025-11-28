@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detectLanguage } from '@/lib/i18n';
+import { trackCookieConsent } from '@/lib/analytics';
 
 const COOKIE_CONSENT_KEY = 'sphere-music-hub-cookie-consent';
 
@@ -83,10 +84,12 @@ export default function CookieBanner() {
 
   const handleAcceptAll = () => {
     saveConsent(true);
+    trackCookieConsent('accept_all');
   };
 
   const handleNecessaryOnly = () => {
     saveConsent(false);
+    trackCookieConsent('necessary_only');
   };
 
   if (!showBanner) return null;
