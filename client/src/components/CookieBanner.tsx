@@ -57,6 +57,13 @@ export default function CookieBanner() {
   };
 
   const initializeAnalytics = () => {
+    // Update Google Consent Mode v2 to 'granted' for analytics
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+    
     // Initialize Umami Analytics (privacy-friendly, no cookies)
     const websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
     const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT;

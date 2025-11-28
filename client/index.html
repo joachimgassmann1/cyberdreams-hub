@@ -99,6 +99,21 @@
       ]
     }
     </script>
+    <!-- Google Consent Mode v2 (MUST be loaded BEFORE Google Analytics) -->
+    <script>
+      // Define dataLayer and gtag function
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Set default consent to 'denied' for all tracking (GDPR compliant)
+      gtag('consent', 'default', {
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied',
+        'analytics_storage': 'denied'
+      });
+    </script>
+    
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJXK61KJNE"></script>
     <script>
