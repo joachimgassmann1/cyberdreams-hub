@@ -37,7 +37,7 @@ export default function About() {
   const lang = detectLanguage();
   const features = getFeatures(lang);
   return (
-    <section id="about" className="py-20 md:py-32 bg-gradient-to-b from-background to-card/30">
+    <section id="about" className="py-16 md:py-24 bg-gradient-to-b from-background to-card/30">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16">

@@ -59,7 +59,7 @@ export default function FeaturedVideos() {
     }
   };
   return (
-    <section className="py-20 md:py-32 bg-card/30">
+    <section className="py-16 md:py-24 bg-card/30">
       <div className="container">
         {/* Section Header */}
         <div className="text-center mb-16">
