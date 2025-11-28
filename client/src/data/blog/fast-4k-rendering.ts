@@ -245,10 +245,9 @@ The next time someone asks how I render ten-hour videos so quickly, the answer i
 
 **Related Articles:**
 
-- [My 10-Hour Video Production Journey: Behind the Scenes](/blog/video-production-journey-10-hour-ambient-music-workflow)
-- [Inside the Atmosphere: My Creative Process](/blog/inside-atmosphere-creative-process-ambient-music-production)
-- Creating Perfect Seamless Loops in DaVinci Resolve *(Coming Soon)*
-- Mastering Audio in Fairlight for YouTube *(Coming Soon)*`,
+- [My 10-Hour Video Production Journey: Behind the Scenes](/blog/video-production-journey-10-hour-workflow)
+- [Creating Perfect Seamless Loops in DaVinci Resolve for Long-Form Videos](/blog/perfect-seamless-loops-davinci-resolve-long-form-videos)
+- [Mastering Audio in DaVinci Resolve Fairlight for YouTube: LUFS, Limiters & Compression](/blog/audio-mastering-davinci-resolve-fairlight-youtube-lufs)`,
   contentDe: `Die meisten Content-Creator verbringen Stunden—manchmal Tage—mit dem Rendern von langen 4K-Videos. Wenn ich Leuten erzähle, dass ich ein dreistündiges 4K-Ambient-Musik-Video in nur zehn Minuten rendern kann, vermuten sie, dass ich übertreibe. Tue ich nicht. Mit dem richtigen Hardware-Setup und optimierten DaVinci Resolve Studio Einstellungen wird das Rendern massiver Videodateien überraschend schnell.
 
 Dieser Artikel erklärt meinen kompletten Rendering-Workflow, von Hardware-Spezifikationen bis zu Export-Einstellungen, damit du deine Render-Zeiten dramatisch reduzieren und mehr Zeit mit Kreativität statt mit Warten verbringen kannst.
@@ -480,8 +479,7 @@ Das nächste Mal, wenn jemand fragt, wie ich zehnstündige Videos so schnell ren
 
 **Verwandte Artikel:**
 
-- [Meine 10-Stunden-Video-Produktions-Journey: Behind the Scenes](/blog/video-production-journey-10-hour-ambient-music-workflow)
-- [Inside the Atmosphere: Mein kreativer Prozess](/blog/inside-atmosphere-creative-process-ambient-music-production)
-- Perfekte nahtlose Loops in DaVinci Resolve erstellen *(Demnächst)*
-- Audio in Fairlight für YouTube mastern *(Demnächst)*`
+- [Meine 10-Stunden-Video-Produktionsreise: Hinter den Kulissen](/blog/video-production-journey-10-hour-workflow)
+- [Perfekte nahtlose Loops in DaVinci Resolve für Langform-Videos erstellen](/blog/perfect-seamless-loops-davinci-resolve-long-form-videos)
+- [Audio-Mastering in DaVinci Resolve Fairlight für YouTube: LUFS, Limiter & Kompression](/blog/audio-mastering-davinci-resolve-fairlight-youtube-lufs)`
 };
