@@ -332,8 +332,6 @@ My workflow—Fairlight for mixing and dynamics control, iZotope Ozone 11 for fi
 
 The next time you upload a video and wonder why it sounds quieter or less polished than competing content, the answer is simple: mastering. Invest the time to understand LUFS, compression, and limiting, and your audio will stand out in a crowded platform.
 
-If you want to hear this mastering workflow in action, check out any video on [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio)—every upload demonstrates the balance between loudness, dynamics, and clarity that this process achieves.
-
 ---
 
 **Related Articles:**
@@ -660,8 +658,6 @@ Audio-Mastering wird oft von YouTube-Creatorn übersehen, ist aber einer der wir
 Mein Workflow—Fairlight für Mixing und Dynamik-Kontrolle, iZotope Ozone 11 für finales Mastering und rigoroses Testen über Wiedergabesysteme hinweg—liefert konsistente Broadcast-Qualität-Audio, optimiert für YouTubes -14 LUFS-Standard. Dieser Workflow skaliert über Content-Typen hinweg, von delikater Klavier-Ambience bis bass-schweren Cyberpunk-Soundscapes, während die dynamische Tiefe erhalten bleibt, die Ambient-Musik effektiv macht.
 
 Das nächste Mal, wenn du ein Video hochlädst und dich fragst, warum es leiser oder weniger polished klingt als konkurrierender Content, ist die Antwort einfach: Mastering. Investiere die Zeit, um LUFS, Kompression und Limiting zu verstehen, und dein Audio wird auf einer überfüllten Plattform herausstechen.
-
-Wenn du diesen Mastering-Workflow in Aktion hören möchtest, schau dir jedes Video auf [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio) an—jeder Upload demonstriert die Balance zwischen Lautstärke, Dynamik und Klarheit, die dieser Prozess erreicht.
 
 ---
 
