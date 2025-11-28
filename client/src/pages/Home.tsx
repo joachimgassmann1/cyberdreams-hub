@@ -66,6 +66,76 @@ export default function Home() {
             "inLanguage": lang
           })}
         </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Featured Music Videos",
+            "description": "Curated collection of ambient soundscapes, focus music, and relaxing beats",
+            "itemListElement": [
+              {
+                "@type": "VideoObject",
+                "position": 1,
+                "name": "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
+                "description": "Immersive cyberpunk ambient music for deep focus and creative work",
+                "thumbnailUrl": "https://i.ytimg.com/vi/Q2NIq7Qwogc/maxresdefault.jpg",
+                "uploadDate": "2025-11-20",
+                "contentUrl": "https://www.youtube.com/watch?v=Q2NIq7Qwogc",
+                "embedUrl": "https://www.youtube.com/embed/Q2NIq7Qwogc"
+              },
+              {
+                "@type": "VideoObject",
+                "position": 2,
+                "name": "Chill Piano Escapes – Cozy Melodies to Unwind",
+                "description": "Relaxing piano music for calm moments and peaceful relaxation",
+                "thumbnailUrl": "https://i.ytimg.com/vi/XCh88UzbssA/maxresdefault.jpg",
+                "uploadDate": "2025-11-18",
+                "contentUrl": "https://www.youtube.com/watch?v=XCh88UzbssA",
+                "embedUrl": "https://www.youtube.com/embed/XCh88UzbssA"
+              },
+              {
+                "@type": "VideoObject",
+                "position": 3,
+                "name": "Midnight Glow Terrace: Relaxing Lounge Beats for Ultimate Chill",
+                "description": "Chillout lounge music for peaceful evenings and relaxation",
+                "thumbnailUrl": "https://i.ytimg.com/vi/RJIdAEvb_dY/maxresdefault.jpg",
+                "uploadDate": "2025-11-15",
+                "contentUrl": "https://www.youtube.com/watch?v=RJIdAEvb_dY",
+                "embedUrl": "https://www.youtube.com/embed/RJIdAEvb_dY"
+              },
+              {
+                "@type": "VideoObject",
+                "position": 4,
+                "name": "Deep Focus | Calm Ambient Music for Work and Study",
+                "description": "Ambient focus music for concentration, studying, and productive work",
+                "thumbnailUrl": "https://i.ytimg.com/vi/uDbTU2pLCRs/maxresdefault.jpg",
+                "uploadDate": "2025-11-12",
+                "contentUrl": "https://www.youtube.com/watch?v=uDbTU2pLCRs",
+                "embedUrl": "https://www.youtube.com/embed/uDbTU2pLCRs"
+              },
+              {
+                "@type": "VideoObject",
+                "position": 5,
+                "name": "Deep Focus Vibes: The Ultimate Study Music Mix",
+                "description": "Long-form ambient music for extended study sessions and deep work",
+                "thumbnailUrl": "https://i.ytimg.com/vi/xPjrkMmZElw/maxresdefault.jpg",
+                "uploadDate": "2025-11-10",
+                "contentUrl": "https://www.youtube.com/watch?v=xPjrkMmZElw",
+                "embedUrl": "https://www.youtube.com/embed/xPjrkMmZElw"
+              },
+              {
+                "@type": "VideoObject",
+                "position": 6,
+                "name": "Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights",
+                "description": "Smooth jazz with vocals for sophisticated relaxation and elegant ambience",
+                "thumbnailUrl": "https://i.ytimg.com/vi/bA1JhbZD8UM/maxresdefault.jpg",
+                "uploadDate": "2025-11-08",
+                "contentUrl": "https://www.youtube.com/watch?v=bA1JhbZD8UM",
+                "embedUrl": "https://www.youtube.com/embed/bA1JhbZD8UM"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <Navigation />
       <Hero />

@@ -6,7 +6,7 @@ Allow: /
 
 # Sitemap locations
 Sitemap: https://sphere-music-hub.com/sitemap.xml
-Sitemap: https://sphere-music-hub.de/sitemap.xml
+Sitemap: https://sphere-music-hub.de/sitemap-de.xml
 
 # Crawl-delay for polite bots
 Crawl-delay: 1
