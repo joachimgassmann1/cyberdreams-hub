@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ExternalLink, Music2, Radio, Guitar, Piano, Sparkles, Waves, Play } from "lucide-react";
 import { useMusicPlayer } from "@/contexts/MusicPlayerContext";
 import { detectLanguage } from "@/lib/i18n";
-import { trackChannelClick } from "@/lib/analytics";
 
 // Static subscriber counts (updated manually as needed - last update: Nov 25, 2025)
 const SUBSCRIBER_COUNTS: Record<string, string> = {
@@ -116,9 +115,6 @@ export default function Channels() {
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS 13+
   
   const handlePlayClick = (channel: typeof channels[0]) => {
-    // Track channel click in Google Analytics
-    trackChannelClick(channel.name, channel.url);
-    
     // Open YouTube channel page (not individual video)
     window.open(channel.url, '_blank');
   };

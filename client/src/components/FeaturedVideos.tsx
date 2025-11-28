@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
 import { detectLanguage } from "@/lib/i18n";
 import { useMusicPlayer } from "@/contexts/MusicPlayerContext";
-import { trackVideoClick } from "@/lib/analytics";
 
 // Static featured videos (updated manually as needed - last update: Nov 26, 2025)
 const FEATURED_VIDEOS = [
@@ -47,9 +46,6 @@ export default function FeaturedVideos() {
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS 13+
   
   const handleVideoClick = (video: typeof FEATURED_VIDEOS[0]) => {
-    // Track video click in Google Analytics
-    trackVideoClick(video.id, video.title, video.channelTitle);
-    
     if (isMobile) {
       // On mobile, open YouTube directly in new tab
       window.open(`https://www.youtube.com/watch?v=${video.id}`, '_blank');

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { detectLanguage } from '@/lib/i18n';
-import { trackCookieConsent } from '@/lib/analytics';
 
 const COOKIE_CONSENT_KEY = 'sphere-music-hub-cookie-consent';
 
@@ -58,13 +57,6 @@ export default function CookieBanner() {
   };
 
   const initializeAnalytics = () => {
-    // Update Google Consent Mode v2 to 'granted' for analytics
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('consent', 'update', {
-        'analytics_storage': 'granted'
-      });
-    }
-    
     // Initialize Umami Analytics (privacy-friendly, no cookies)
     const websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
     const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT;
@@ -84,12 +76,10 @@ export default function CookieBanner() {
 
   const handleAcceptAll = () => {
     saveConsent(true);
-    trackCookieConsent('accept_all');
   };
 
   const handleNecessaryOnly = () => {
     saveConsent(false);
-    trackCookieConsent('necessary_only');
   };
 
   if (!showBanner) return null;

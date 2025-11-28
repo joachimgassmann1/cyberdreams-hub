@@ -24,7 +24,6 @@ import AuthorBox from '@/components/AuthorBox';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
 import { Helmet } from 'react-helmet-async';
 import { detectLanguage } from '@/lib/i18n';
-import { trackBlogArticleView } from '@/lib/analytics';
 
 export default function BlogArticle() {
   const lang = detectLanguage();
@@ -43,10 +42,7 @@ export default function BlogArticle() {
   useEffect(() => {
     // Scroll to top when article loads
     window.scrollTo(0, 0);
-    
-    // Track blog article view in Google Analytics
-    trackBlogArticleView(post.slug, displayTitle, post.category);
-  }, [post.slug, displayTitle, post.category]);
+  }, []);
 
   const handleShare = async () => {
     const url = window.location.href;
@@ -305,7 +301,6 @@ export default function BlogArticle() {
           title={displayTitle}
           url={`https://sphere-music-hub.com/blog/${post.slug}`}
           description={displayDescription}
-          articleSlug={post.slug}
         />
         
         {/* Author Box */}
