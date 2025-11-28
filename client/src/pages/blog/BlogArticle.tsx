@@ -63,31 +63,6 @@ export default function BlogArticle() {
   const currentDomain = typeof window !== 'undefined' ? window.location.hostname : 'sphere-music-hub.com';
   const baseDomain = currentDomain.includes('sphere-music-hub.de') ? 'sphere-music-hub.de' : 'sphere-music-hub.com';
   const articleUrl = `https://${baseDomain}/blog/${post.slug}`;
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": `https://${baseDomain}/`
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Blog",
-        "item": `https://${baseDomain}/blog`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": displayTitle,
-        "item": articleUrl
-      }
-    ]
-  };
-
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -141,9 +116,6 @@ export default function BlogArticle() {
         <link rel="alternate" hrefLang="x-default" href={`https://sphere-music-hub.com/blog/${post.slug}`} />
         <script type="application/ld+json">
           {JSON.stringify(schemaData)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
         </script>
       </Helmet>
       <Navigation />
