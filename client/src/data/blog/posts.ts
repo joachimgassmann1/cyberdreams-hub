@@ -11,8 +11,13 @@ import { nightShiftMind } from './night-shift-mind';
 import { binauralBeats } from './binaural-beats';
 import { videoProductionJourney } from './video-production-journey';
 import { dystopianRainFocus } from './dystopian-rain-focus';
+import { fast4kRendering } from './fast-4k-rendering';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...fast4kRendering,
+ featured: true
+ },
  {
  ...dystopianRainFocus,
  featured: true
