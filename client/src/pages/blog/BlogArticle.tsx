@@ -271,7 +271,7 @@ export default function BlogArticle() {
           prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
           prose-a:text-primary prose-a:no-underline hover:prose-a:underline
           prose-strong:text-foreground prose-strong:font-semibold
-          prose-ul:my-6 prose-li:text-muted-foreground
+          prose-ul:my-6 prose-ul:pl-0 prose-li:text-muted-foreground prose-li:ml-0
           prose-img:rounded-xl prose-img:my-8
           prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic
         ">
