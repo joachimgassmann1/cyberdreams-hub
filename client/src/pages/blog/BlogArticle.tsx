@@ -1,6 +1,14 @@
 import { useEffect } from "react";
 import { Link, useParams, useLocation } from "wouter";
-import { ArrowLeft, Calendar, Clock, Tag, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Tag, Share2, ChevronRight } from "lucide-react";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import OptimizedImage from "@/components/OptimizedImage";
 import SocialShare from "@/components/SocialShare";
 import { Streamdown } from 'streamdown';
@@ -213,8 +221,43 @@ export default function BlogArticle() {
         </div>
       </div>
 
+      {/* Breadcrumb Navigation */}
+      <div className="container max-w-4xl px-4 pt-8">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">{lang === 'de' ? 'Startseite' : 'Home'}</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>
+              <ChevronRight className="h-4 w-4" />
+            </BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/blog">Blog</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>
+              <ChevronRight className="h-4 w-4" />
+            </BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/blog">{category?.name || 'Article'}</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator>
+              <ChevronRight className="h-4 w-4" />
+            </BreadcrumbSeparator>
+            <BreadcrumbItem>
+              <BreadcrumbPage className="line-clamp-1">{displayTitle}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
+
       {/* Article Content */}
-      <article className="container max-w-4xl px-4 py-12 md:py-16">
+      <article className="container max-w-4xl px-4 py-8 md:py-12">
         {/* Description */}
         <div className="text-xl text-muted-foreground mb-8 pb-8 border-b border-border">
           {displayDescription}
