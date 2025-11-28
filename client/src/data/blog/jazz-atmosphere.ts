@@ -170,8 +170,7 @@ And that invitation is more valuable today than ever.
 
 ---
 
-*Step into the warm acoustic world of [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio) — where smooth jazz meets cinematic visuals to create intimate spaces for relaxation, reflection, and focused creativity.*
-- [The Psychology of Chillout Music: Why Calm Soundscapes Restore Balance](/blog/psychology-chillout-music-calm-soundscapes-stress-reduction)`,
+*Step into the warm acoustic world of [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio) — where smooth jazz meets cinematic visuals to create intimate spaces for relaxation, reflection, and focused creativity.*`,
  contentDe: `Manche Orte fühlen sich sofort anders an, in dem Moment, in dem du eintrittst.
 
 Ein warmes Café in der Dämmerung, eine ruhige Bar mit sanfter Beleuchtung, das sanfte Klappern von Tassen, das entfernte Rascheln von Menschen, die in leisen Stimmen sprechen — und irgendwo im Hintergrund webt sich sanfter Jazz durch die Luft wie ein sanfter Faden.

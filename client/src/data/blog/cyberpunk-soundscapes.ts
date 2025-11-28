@@ -159,8 +159,7 @@ They sharpen the mind while settling the emotions. They expand imagination while
 
 ---
 
-*Step into the neon-lit world of [Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p) — where futuristic soundscapes meet cinematic visuals to create the ultimate environment for late-night creativity and focused productivity.*
-- [Why Dystopian Rain Sounds Create Deep Focus](/blog/dystopian-rain-sounds-deep-focus-cyberpunk)`,
+*Step into the neon-lit world of [Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p) — where futuristic soundscapes meet cinematic visuals to create the ultimate environment for late-night creativity and focused productivity.*`,
  contentDe: `Städte bei Nacht haben die Vorstellungskraft schon immer inspiriert — Neon-Reflexionen auf nassen Straßen, das leise Summen entfernter Motoren, das Leuchten von Schildern, das durch die Dunkelheit schneidet. Heute können Menschen dank Cyberpunk-Ambient-Musik in diese Welt eintreten, ohne jemals ihren Schreibtisch zu verlassen.
 
 Cyberpunk-Soundscapes sind mehr als eine Ästhetik.

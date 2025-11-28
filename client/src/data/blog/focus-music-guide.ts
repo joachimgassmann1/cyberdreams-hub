@@ -150,9 +150,7 @@ The right soundscape is not just background noise — **it's a performance enhan
 
 Deep Focus Sphere and similar channels help people access deeper concentration, better study sessions, and higher productivity by transforming the mental environment.
 
-If you're looking to work better, think clearer, and enter flow more often, start by shaping the sound around you.
-
-- [Why Dystopian Rain Sounds Create Deep Focus](/blog/dystopian-rain-sounds-deep-focus-cyberpunk)`,
+If you're looking to work better, think clearer, and enter flow more often, start by shaping the sound around you.`,
  contentDe: `In einer Welt voller ständiger Benachrichtigungen, Hintergrundgeräusche und endloser digitaler Ablenkungen ist die Fähigkeit zur Konzentration zu einer der wertvollsten modernen Fähigkeiten geworden. Doch viele Menschen übersehen eines der mächtigsten Produktivitätswerkzeuge, die verfügbar sind: **Sound**.
 
 Von Ambient-Texturen bis hin zu langen Fokus-Sessions wie denen auf [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere) kann die richtige Musik dramatisch verbessern, wie tief und wie lange du arbeiten kannst.

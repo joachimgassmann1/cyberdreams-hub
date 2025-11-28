@@ -182,8 +182,7 @@ And for millions of listeners around the world, these quiet worlds have become e
 
 ---
 
-*Experience the emotional worlds of [Sphere Music Hub](/) — where classical discipline meets ambient design to create immersive soundscapes for modern life.*
-- [The 10-Hour Journey: How a Single Ambient Video Comes to Life](/blog/video-production-journey-10-hour-workflow)`,
+*Experience the emotional worlds of [Sphere Music Hub](/) — where classical discipline meets ambient design to create immersive soundscapes for modern life.*`,
  contentDe: `Die meisten Menschen hören Musik. Weniger Menschen kreieren Musik. Aber nur wenige designen Welten durch Sound.
 
 Die Ambient-Universen von Sphere Music Hub sind nicht zufällig. Sie sind gestaltet. Schicht für Schicht, Detail für Detail, Emotion für Emotion. Hinter jedem ruhigen Raum, jeder neonbeleuchteten Straße, jedem sanften Klavier-Heiligtum oder jeder spätnächtlichen Jazzbar steht eine kreative Philosophie, geformt durch ein Leben in Musik.

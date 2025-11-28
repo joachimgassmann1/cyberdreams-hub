@@ -155,9 +155,7 @@ Channels like Cyber Dreams understand this balance. They craft soundscapes that 
 
 The next time you need to focus, consider stepping into a world where it is always raining, the neon never fades, and the future is both beautiful and broken. You may find that in the heart of the storm, your mind becomes perfectly still.
 
----
-
-- [The Ultimate Guide to Focus Music: How Soundscapes Unlock Deep Work](/blog/ultimate-guide-focus-music-productivity)`,
+---`,
   contentDe: `# Warum dystopische Regenklänge tiefe Konzentration erzeugen
 
 In den neongetränkten Straßen imaginierter Zukünfte, wo holografische Werbung gegen regengestreifte Fenster flackert und das Summen ferner Maschinen sich mit dem Prasseln endlosen Niederschlags vermischt, geschieht etwas Unerwartetes: Der Geist findet Klarheit. Cyberpunk-Soundscapes – diese atmosphärischen Mischungen aus futuristischen Ambient-Klängen, synthetischen Texturen und anhaltendem Regen – sind zu mächtigen Werkzeugen für Konzentration, Kreativität und Deep Work geworden. Aber warum hilft uns die Audio-Ästhetik dystopischer Zukünfte, uns in der Gegenwart zu fokussieren?
@@ -307,9 +305,7 @@ Kanäle wie Cyber Dreams verstehen diese Balance. Sie erschaffen Klanglandschaft
 
 Das nächste Mal, wenn du dich fokussieren musst, erwäge, in eine Welt einzutreten, wo es immer regnet, das Neon nie verblasst und die Zukunft sowohl schön als auch zerbrochen ist. Du wirst vielleicht feststellen, dass im Herzen des Sturms dein Geist vollkommen still wird.
 
----
-
-- [Der ultimative Guide zu Fokusmusik: Wie Soundscapes Deep Work freischalten](/blog/ultimate-guide-focus-music-productivity)`,
+---`,
   heroImage: '/images/blog/cyberpunk-rain-hero.jpg',
   category: 'cyberpunk',
   tags: ['cyberpunk', 'rain sounds', 'focus music', 'ambient music', 'deep work', 'concentration'],

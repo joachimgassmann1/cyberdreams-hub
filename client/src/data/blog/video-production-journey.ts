@@ -127,9 +127,7 @@ And for the broader creative community, it highlights the evolving role of AI in
 
 The next time you press play on a Deep Focus video, or let a Chillout Sphere session carry you through a sunset, remember the journey that brought it to your screen. Behind the seamless loop, the perfect soundscape, and the calming visuals is a 10-hour odyssey of creativity, technology, and craftsmanship.
 
-This is the art of ambient video production. And it is just getting started.
-
-- [The Mind Behind the Atmospheres: The Life Journey of Joachim](/blog/mind-behind-atmospheres-joachim-creator-sphere-music-hub)`,
+This is the art of ambient video production. And it is just getting started.`,
  contentDe: `Hinter jedem nahtlosen Ambient-Video auf Sphere Music Hub verbirgt sich ein komplexer kreativer Prozess, den die meisten Zuschauer nie sehen. Was als einfaches, beruhigendes visuelles Erlebnis erscheint, ist tatsächlich das Ergebnis eines akribischen 8-10-Stunden-Workflows, der künstliche Intelligenz, professionelle Videobearbeitung, Sound Design und strategische Optimierung umfasst. Dies ist die Geschichte, wie ein einzelnes Ambient-Video geboren wird—vom ersten Funken der Inspiration bis zu dem Moment, in dem es auf YouTube live geht.
 
 Content zu erstellen, der Millionen dabei hilft, sich zu konzentrieren, zu entspannen und ihren Flow zu finden, ist keine Frage des einfachen Aufnahmeknopf-Drückens. Es ist ein Handwerk, das technisches Fachwissen, kreative Vision und ein unerschütterliches Engagement für Qualität erfordert. Jedes Video ist eine sorgfältig orchestrierte Symphonie aus visueller Atmosphäre, musikalischer Kohärenz und psychologischer Intentionalität.
@@ -242,7 +240,5 @@ Und für die breitere kreative Community hebt es die sich entwickelnde Rolle von
 
 Das nächste Mal, wenn Sie auf ein Deep Focus Video klicken oder eine Chillout Sphere Session Sie durch einen Sonnenuntergang trägt, erinnern Sie sich an die Reise, die es auf Ihren Bildschirm gebracht hat. Hinter dem nahtlosen Loop, der perfekten Soundscape und den beruhigenden Visuals liegt eine 10-Stunden-Odyssee aus Kreativität, Technologie und Handwerkskunst.
 
-Dies ist die Kunst der Ambient-Videoproduktion. Und sie fängt gerade erst an.
-
-- [Der Kopf hinter den Atmosphären: Die Lebensreise von Joachim](/blog/mind-behind-atmospheres-joachim-creator-sphere-music-hub)`
+Dies ist die Kunst der Ambient-Videoproduktion. Und sie fängt gerade erst an.`
 };

@@ -131,8 +131,7 @@ And in that pause, we find ourselves again.
 
 ---
 
-*Experience the quiet beauty of [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) — where soft piano ambience meets cinematic visuals to create intimate spaces for reflection, healing, and emotional stillness.*
-- [Inside the Jazz Atmosphere: Why Warm Acoustic Spaces Calm the Modern Mind](/blog/jazz-atmosphere-warm-acoustic-spaces-calm-mind)`,
+*Experience the quiet beauty of [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) — where soft piano ambience meets cinematic visuals to create intimate spaces for reflection, healing, and emotional stillness.*`,
  contentDe: `Wenige Instrumente haben die Fähigkeit, die Atmosphäre eines Raumes so mühelos zu verändern wie das Klavier. Eine einzelne Note, sanft gespielt, kann den Atem beruhigen, Spannung lösen und den Geist in einen langsameren Rhythmus einladen. Klavier-Ambience ist zu einem Zufluchtsort für Millionen geworden, die Ruhe, Fokus oder emotionale Erdung suchen, und ihre Kraft liegt nicht in Komplexität, sondern in ihrer stillen Aufrichtigkeit.
 
 ---
