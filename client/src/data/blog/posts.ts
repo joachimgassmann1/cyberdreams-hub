@@ -12,8 +12,13 @@ import { binauralBeats } from './binaural-beats';
 import { videoProductionJourney } from './video-production-journey';
 import { dystopianRainFocus } from './dystopian-rain-focus';
 import { fast4kRendering } from './fast-4k-rendering';
+import { seamlessLoopsDaVinciResolve } from './seamless-loops-davinci-resolve';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...seamlessLoopsDaVinciResolve,
+ featured: true
+ },
  {
  ...fast4kRendering,
  featured: true
