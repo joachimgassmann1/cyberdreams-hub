@@ -220,8 +220,6 @@ The techniques in this article—4-frame crossfades, zero-crossing audio alignme
 
 The next time you watch a 10-hour ambient video and wonder how it maintains such consistent quality throughout, the answer is simple: perfect loops, executed with precision.
 
-If you want to see these techniques in action, check out my [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere) channel, where every video demonstrates seamless looping at its finest.
-
 ---
 
 **Related Articles:**
@@ -436,8 +434,6 @@ Loop-Erstellung in DaVinci Resolve zu meistern transformiert den Produktionsproz
 Die Techniken in diesem Artikel—4-Frame-Crossfades, Zero-Crossing-Audio-Ausrichtung, 2x-Speed-Testing, geschichtete Loops—repräsentieren Jahre der Verfeinerung. Sie funktionieren über Content-Typen hinweg, von statischen Stadtlandschaften bis komplexen Partikelsystemen, und sie skalieren von 10-Minuten-Videos bis 10-Stunden-Marathons.
 
 Das nächste Mal, wenn du ein 10-Stunden-Ambient-Video schaust und dich fragst, wie es solch konsistente Qualität durchgehend aufrechterhält, ist die Antwort einfach: perfekte Loops, mit Präzision ausgeführt.
-
-Wenn du diese Techniken in Aktion sehen möchtest, schau dir meinen [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere) Kanal an, wo jedes Video nahtloses Looping in Perfektion demonstriert.
 
 ---
 

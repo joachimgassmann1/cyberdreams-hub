@@ -13,8 +13,13 @@ import { videoProductionJourney } from './video-production-journey';
 import { dystopianRainFocus } from './dystopian-rain-focus';
 import { fast4kRendering } from './fast-4k-rendering';
 import { seamlessLoopsDaVinciResolve } from './seamless-loops-davinci-resolve';
+import { audioMasteringFairlightYoutube } from './audio-mastering-fairlight-youtube';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...audioMasteringFairlightYoutube,
+ featured: true
+ },
  {
  ...seamlessLoopsDaVinciResolve,
  featured: true
