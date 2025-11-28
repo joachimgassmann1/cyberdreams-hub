@@ -160,11 +160,6 @@ They sharpen the mind while settling the emotions. They expand imagination while
 ---
 
 *Step into the neon-lit world of [Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p) — where futuristic soundscapes meet cinematic visuals to create the ultimate environment for late-night creativity and focused productivity.*
-
----
-
-**Related Articles:**
-- [The Night Shift Mind: Why Late Evening Hours Unlock Deeper Focus](/blog/night-shift-mind-late-evening-focus-creativity)
 - [Why Dystopian Rain Sounds Create Deep Focus](/blog/dystopian-rain-sounds-deep-focus-cyberpunk)`,
  contentDe: `Städte bei Nacht haben die Vorstellungskraft schon immer inspiriert — Neon-Reflexionen auf nassen Straßen, das leise Summen entfernter Motoren, das Leuchten von Schildern, das durch die Dunkelheit schneidet. Heute können Menschen dank Cyberpunk-Ambient-Musik in diese Welt eintreten, ohne jemals ihren Schreibtisch zu verlassen.
 
@@ -312,11 +307,5 @@ Sie schärfen den Geist, während sie die Emotionen beruhigen. Sie erweitern die
 ---
 
 *Tritt ein in die neonbeleuchtete Welt von [Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p) — wo futuristische Soundscapes auf kinematografische Visuals treffen, um die ultimative Umgebung für nächtliche Kreativität und fokussierte Produktivität zu schaffen.*
-
----
-
-**Verwandte Artikel:**
-- [Der Nachtschicht-Mind: Warum späte Abendstunden tieferen Fokus freisetzen](/blog/night-shift-mind-late-evening-focus-creativity)
-- [Warum dystopische Regenklänge tiefen Fokus erzeugen](/blog/dystopian-rain-sounds-deep-focus-cyberpunk)
 `
 };

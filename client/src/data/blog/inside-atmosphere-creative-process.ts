@@ -183,11 +183,6 @@ And for millions of listeners around the world, these quiet worlds have become e
 ---
 
 *Experience the emotional worlds of [Sphere Music Hub](/) — where classical discipline meets ambient design to create immersive soundscapes for modern life.*
-
----
-
-**Related Articles:**
-- [The Mind Behind the Atmospheres: The Life Journey of Joachim](/blog/mind-behind-atmospheres-joachim-creator-sphere-music-hub)
 - [The 10-Hour Journey: How a Single Ambient Video Comes to Life](/blog/video-production-journey-10-hour-workflow)`,
  contentDe: `Die meisten Menschen hören Musik. Weniger Menschen kreieren Musik. Aber nur wenige designen Welten durch Sound.
 
@@ -354,11 +349,5 @@ Und für Millionen von Zuhörern weltweit sind diese stillen Welten zu essentiel
 ---
 
 *Erlebe die emotionalen Welten von [Sphere Music Hub](/) — wo klassische Disziplin auf Ambient-Design trifft, um immersive Soundscapes für das moderne Leben zu schaffen.*
-
----
-
-**Verwandte Artikel:**
-- [Der Kopf hinter den Atmosphären: Die Lebensreise von Joachim](/blog/mind-behind-atmospheres-joachim-creator-sphere-music-hub)
-- [Die 10-Stunden-Reise: Wie ein einzelnes Ambient-Video entsteht](/blog/video-production-journey-10-hour-workflow)
 `
 };

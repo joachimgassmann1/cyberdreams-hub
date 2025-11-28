@@ -129,12 +129,6 @@ The next time you press play on a Deep Focus video, or let a Chillout Sphere ses
 
 This is the art of ambient video production. And it is just getting started.
 
-**Ready to experience the result?** Explore the [Deep Focus Sphere channel](https://www.youtube.com/@DeepFocusSphere) and discover hours of meticulously crafted ambient videos designed for peak productivity and deep focus.
-
----
-
-**Related Articles:**
-- [Inside the Atmosphere: How Joachim Creates the Emotional Worlds](/blog/inside-atmosphere-how-joachim-creates-emotional-worlds-sphere-music-hub)
 - [The Mind Behind the Atmospheres: The Life Journey of Joachim](/blog/mind-behind-atmospheres-joachim-creator-sphere-music-hub)`,
  contentDe: `Hinter jedem nahtlosen Ambient-Video auf Sphere Music Hub verbirgt sich ein komplexer kreativer Prozess, den die meisten Zuschauer nie sehen. Was als einfaches, beruhigendes visuelles Erlebnis erscheint, ist tatsächlich das Ergebnis eines akribischen 8-10-Stunden-Workflows, der künstliche Intelligenz, professionelle Videobearbeitung, Sound Design und strategische Optimierung umfasst. Dies ist die Geschichte, wie ein einzelnes Ambient-Video geboren wird—vom ersten Funken der Inspiration bis zu dem Moment, in dem es auf YouTube live geht.
 
@@ -250,11 +244,5 @@ Das nächste Mal, wenn Sie auf ein Deep Focus Video klicken oder eine Chillout S
 
 Dies ist die Kunst der Ambient-Videoproduktion. Und sie fängt gerade erst an.
 
-**Bereit, das Ergebnis zu erleben?** Entdecke den [Deep Focus Sphere Kanal](https://www.youtube.com/@DeepFocusSphere) und finde stundenlang sorgfältig gestaltete Ambient-Videos für maximale Produktivität und tiefen Fokus.
-
----
-
-**Verwandte Artikel:**
-- [In der Atmosphäre: Wie Joachim die emotionalen Welten erschafft](/blog/inside-atmosphere-how-joachim-creates-emotional-worlds-sphere-music-hub)
 - [Der Kopf hinter den Atmosphären: Die Lebensreise von Joachim](/blog/mind-behind-atmospheres-joachim-creator-sphere-music-hub)`
 };

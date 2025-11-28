@@ -163,11 +163,6 @@ Every atmosphere begins with a moment. For Joachim, that moment was at a piano b
 ---
 
 *Explore the worlds of [Sphere Music Hub](/) — where decades of musical mastery meet modern ambient design to create soundscapes for focus, relaxation and creative flow.*
-
----
-
-**Related Articles:**
-- [Inside the Atmosphere: How Joachim Creates the Emotional Worlds](/blog/inside-atmosphere-how-joachim-creates-emotional-worlds-sphere-music-hub)
 - [The 10-Hour Journey: How a Single Ambient Video Comes to Life](/blog/video-production-journey-10-hour-workflow)`,
  contentDe: `Jedes Universum beginnt mit einem Moment.
 
@@ -316,11 +311,5 @@ Jede Atmosphäre beginnt mit einem Moment. Für Joachim war dieser Moment auf ei
 ---
 
 *Erkunde die Welten von [Sphere Music Hub](/) — wo Jahrzehnte musikalischer Meisterschaft auf modernes Ambient-Design treffen, um Soundscapes für Fokus, Entspannung und kreativen Flow zu schaffen.*
-
----
-
-**Verwandte Artikel:**
-- [In der Atmosphäre: Wie Joachim die emotionalen Welten erschafft](/blog/inside-atmosphere-how-joachim-creates-emotional-worlds-sphere-music-hub)
-- [Die 10-Stunden-Reise: Wie ein einzelnes Ambient-Video entsteht](/blog/video-production-journey-10-hour-workflow)
 `
 };

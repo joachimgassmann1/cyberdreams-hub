@@ -157,12 +157,6 @@ The next time you need to focus, consider stepping into a world where it is alwa
 
 ---
 
-**Step into the cyberpunk rain:** Experience [Cyber Dreams](https://www.youtube.com/@CyberDreams-AmbientMusic) for dystopian soundscapes designed for deep focus and creative flow.
-
----
-
-**Related Articles:**
-- [Inside the Cyberpunk Mind: How Futuristic Soundscapes Spark Creativity](/blog/cyberpunk-futuristic-soundscapes-creativity-focus-flow)
 - [The Ultimate Guide to Focus Music: How Soundscapes Unlock Deep Work](/blog/ultimate-guide-focus-music-productivity)`,
   contentDe: `# Warum dystopische Regenklänge tiefe Konzentration erzeugen
 
@@ -315,12 +309,6 @@ Das nächste Mal, wenn du dich fokussieren musst, erwäge, in eine Welt einzutre
 
 ---
 
-**Tritt in den Cyberpunk-Regen ein:** Erlebe [Cyber Dreams](https://www.youtube.com/@CyberDreams-AmbientMusic) für dystopische Soundscapes, die für tiefen Fokus und kreativen Flow entwickelt wurden.
-
----
-
-**Verwandte Artikel:**
-- [Im Cyberpunk-Mind: Wie futuristische Soundscapes Kreativität entfachen](/blog/cyberpunk-futuristic-soundscapes-creativity-focus-flow)
 - [Der ultimative Guide zu Fokusmusik: Wie Soundscapes Deep Work freischalten](/blog/ultimate-guide-focus-music-productivity)`,
   heroImage: '/images/blog/cyberpunk-rain-hero.jpg',
   category: 'cyberpunk',
