@@ -19,8 +19,13 @@ import { lofiVsAmbientMusic } from './lofi-vs-ambient-music';
 import { studyMusicGuide } from './study-music-guide';
 import { morningCoffeeJazzRitual } from './morning-coffee-jazz-ritual';
 import { aiMusicTrainedMusician } from './ai-music-trained-musician';
+import { ambientVsLofiDeepWork } from './ambient-vs-lofi-deep-work';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...ambientVsLofiDeepWork,
+ featured: true
+ },
  {
  ...aiMusicTrainedMusician,
  featured: true
