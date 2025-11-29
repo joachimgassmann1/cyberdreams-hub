@@ -102,9 +102,18 @@ export default function BlogOverview() {
       </Helmet>
       <Navigation />
       {/* Hero Section */}
-      <section className="relative py-16 md:py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-purple-500/20 to-pink-500/20" />
-        <div className="container relative z-10 text-center">
+      <section className="relative py-24 md:py-32 px-4 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/blog-hero-bg.webp"
+            alt=""
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
+        </div>
+        <div className="container relative z-10 text-center flex flex-col justify-center min-h-[400px] md:min-h-[500px]">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 pb-2 leading-tight bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-transparent whitespace-nowrap">
             {lang === 'de' ? 'Blog & Musik-Insights' : 'Blog & Music Insights'}
           </h1>
