@@ -91,7 +91,7 @@ export default function FeaturedVideos() {
                 >
                   <div className="relative aspect-video bg-muted overflow-hidden">
                     <img
-                      src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
+                      src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
                       alt={`${video.title} - ${video.channelTitle} YouTube video thumbnail`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       onError={(e) => {
