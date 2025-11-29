@@ -16,8 +16,13 @@ import { seamlessLoopsDaVinciResolve } from './seamless-loops-davinci-resolve';
 import { audioMasteringFairlightYoutube } from './audio-mastering-fairlight-youtube';
 import { sleepMusicScience } from './sleep-music-science';
 import { lofiVsAmbientMusic } from './lofi-vs-ambient-music';
+import { studyMusicGuide } from './study-music-guide';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...studyMusicGuide,
+ featured: true
+ },
  {
  ...lofiVsAmbientMusic,
  featured: true
