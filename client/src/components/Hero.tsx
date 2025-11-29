@@ -61,8 +61,8 @@ export default function Hero() {
           {/* Subheading */}
           <p className="text-lg md:text-xl lg:text-2xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed">
             {lang === 'de' 
-              ? 'Entspannende Chillout-Beats, Ambient-Vibes und Deep-Focus-Soundscapes, die dir helfen, zu entspannen, länger zu lernen und ruhig und produktiv zu bleiben.'
-              : 'Relaxing chillout beats, ambient vibes, and deep focus soundscapes designed to help you unwind, study longer, and stay calm and productive.'}
+              ? 'Tauche ein in Musikwelten aus Ambient, Chillout, Lounge und unseren Sphere-Genres. Geschaffen, um dich zu beruhigen, zu fokussieren und in die perfekte Stimmung zu bringen.'
+              : 'Immerse yourself in musical worlds of Ambient, Chillout, Lounge, and our Sphere genres. Crafted to calm you, help you focus, and set the perfect mood.'}
           </p>
 
           {/* CTA Buttons */}
