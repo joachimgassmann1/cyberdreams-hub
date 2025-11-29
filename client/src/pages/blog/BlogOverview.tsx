@@ -28,6 +28,11 @@ export default function BlogOverview() {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, []);
 
+  // Scroll to top when pagination changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentPage]);
+
   // Filter posts by category first
   const categoryFilteredPosts = selectedCategory 
     ? getPostsByCategory(selectedCategory)
