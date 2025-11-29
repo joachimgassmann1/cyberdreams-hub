@@ -27,6 +27,15 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://sphere-music-hub.com/blog/ai-music-trained-pianist-guitarist-suno-udio-topmedi</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/ai-music-trained-pianist-guitarist-suno-udio-topmedi" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/ai-music-trained-pianist-guitarist-suno-udio-topmedi" />
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://sphere-music-hub.com/blog/morning-coffee-jazz-ritual-metal-guitarist-stress-relief</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/morning-coffee-jazz-ritual-metal-guitarist-stress-relief" />
     <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/morning-coffee-jazz-ritual-metal-guitarist-stress-relief" />

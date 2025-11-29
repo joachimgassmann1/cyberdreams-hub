@@ -18,8 +18,13 @@ import { sleepMusicScience } from './sleep-music-science';
 import { lofiVsAmbientMusic } from './lofi-vs-ambient-music';
 import { studyMusicGuide } from './study-music-guide';
 import { morningCoffeeJazzRitual } from './morning-coffee-jazz-ritual';
+import { aiMusicTrainedMusician } from './ai-music-trained-musician';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...aiMusicTrainedMusician,
+ featured: true
+ },
  {
  ...morningCoffeeJazzRitual,
  featured: true
