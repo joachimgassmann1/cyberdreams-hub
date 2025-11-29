@@ -43,7 +43,7 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto">
           {/* Icon */}
           <div className="flex justify-center mb-8">
-            <div className="p-4 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20">
+            <div className="p-4 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 animate-pulse">
               <Music className="w-12 h-12 md:w-16 md:h-16 text-primary" />
             </div>
           </div>
