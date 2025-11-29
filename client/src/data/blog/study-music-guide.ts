@@ -203,10 +203,6 @@ And if you want to explore what I've found works best, check out our [Deep Focus
 The goal isn't to find the "perfect" study music. It's to find what works for YOUR brain, for YOUR tasks, in YOUR environment.
 
 Now go ace that exam. And yes, I'll be using ambient music while I do it.
-
----
-
-*Want more focus strategies? Explore our other articles on [binaural beats](/blog/binaural-beats-science-focus-meditation), [lofi vs. ambient music](/blog/lofi-vs-ambient-music), and [the science of flow state](/blog/ultimate-guide-focus-music-productivity).*
 `,
   contentDe: `
 Es ist 23 Uhr. Deine Prüfung ist in 8 Stunden. Du hast noch drei Kapitel zu lernen, und dein Gehirn fühlt sich an wie Brei. Du öffnest Spotify, tippst "study music" ein und bekommst 47 Millionen Playlists. Welche funktioniert wirklich? Und warum schwört dein Mitbewohner auf Heavy Metal, während du komplette Stille brauchst?
@@ -390,9 +386,5 @@ Und wenn du erkunden möchtest, was ich als am besten funktionierend gefunden ha
 Das Ziel ist nicht, die "perfekte" Study Music zu finden. Es ist, zu finden, was für DEIN Gehirn, für DEINE Aufgaben, in DEINER Umgebung funktioniert.
 
 Jetzt geh und rocke diese Prüfung. Und ja, ich werde Ambient-Musik nutzen, während ich das mache.
-
----
-
-*Willst du mehr Fokus-Strategien? Erkunde unsere anderen Artikel über [Binaural Beats](/blog/binaural-beats-science-focus-meditation), [Lofi vs. Ambient Music](/blog/lofi-vs-ambient-music) und [die Wissenschaft des Flow State](/blog/ultimate-guide-focus-music-productivity).*
 `,
 };
