@@ -50,10 +50,10 @@ export default function Hero() {
 
           {/* Main Heading */}
           <div className="mb-6">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-3 leading-tight bg-gradient-to-r from-cyan-200 via-white to-cyan-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-3 leading-tight bg-gradient-to-r from-cyan-400 via-white to-cyan-400 bg-clip-text text-transparent">
               Sphere Music Hub
             </h1>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight bg-gradient-to-r from-cyan-100 via-white to-cyan-100 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight bg-gradient-to-r from-cyan-300 via-white to-cyan-300 bg-clip-text text-transparent">
               {lang === 'de' ? 'Fokus, Chill & Ambient Musik' : 'Focus, Chill & Ambient Music Vibes'}
             </h2>
           </div>
