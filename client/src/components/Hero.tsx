@@ -43,8 +43,9 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto">
           {/* Icon */}
           <div className="flex justify-center mb-8">
-            <div className="p-4 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 animate-pulse">
-              <Music className="w-12 h-12 md:w-16 md:h-16 text-primary" />
+            <div className="relative p-4 rounded-full bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 backdrop-blur-sm border border-primary/20 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 opacity-30 animate-[gradient_3s_ease-in-out_infinite] bg-[length:200%_100%]" />
+              <Music className="w-12 h-12 md:w-16 md:h-16 text-cyan-300 relative z-10" />
             </div>
           </div>
 
