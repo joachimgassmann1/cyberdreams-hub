@@ -134,7 +134,7 @@ export default function BlogOverview() {
               </div>
             </div>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent whitespace-nowrap text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-300 via-white to-cyan-300 bg-clip-text text-transparent whitespace-nowrap text-center">
             {lang === 'de' ? 'Blog & Musik-Insights' : 'Blog & Music Insights'}
           </h1>
           <p className="text-lg text-foreground/80 max-w-3xl text-center">
