@@ -113,7 +113,27 @@ export default function BlogOverview() {
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/40 to-background/90" />
         </div>
-        <div className="container relative z-10 flex flex-col items-center justify-center min-h-[240px] md:min-h-[280px]">
+        <div className="container relative z-10 flex flex-col items-center justify-center min-h-[280px] md:min-h-[320px]">
+          {/* Icon */}
+          <div className="flex justify-center mb-6">
+            <div className="relative">
+              {/* Outer glow ring */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 blur-xl" />
+              {/* Icon container */}
+              <div className="relative p-4 rounded-full bg-gradient-to-br from-primary/10 to-purple-500/10 backdrop-blur-sm border border-primary/30">
+                {/* Soundwave bars */}
+                <div className="flex items-center gap-1 w-12 h-12 md:w-14 md:h-14">
+                  <div className="w-1 bg-gradient-to-t from-cyan-400 to-cyan-300 rounded-full h-6 animate-pulse" style={{animationDelay: '0s'}} />
+                  <div className="w-1 bg-gradient-to-t from-purple-400 to-purple-300 rounded-full h-10 animate-pulse" style={{animationDelay: '0.1s'}} />
+                  <div className="w-1 bg-gradient-to-t from-pink-400 to-pink-300 rounded-full h-8 animate-pulse" style={{animationDelay: '0.2s'}} />
+                  <div className="w-1 bg-gradient-to-t from-cyan-400 to-cyan-300 rounded-full h-12 animate-pulse" style={{animationDelay: '0.3s'}} />
+                  <div className="w-1 bg-gradient-to-t from-purple-400 to-purple-300 rounded-full h-7 animate-pulse" style={{animationDelay: '0.4s'}} />
+                  <div className="w-1 bg-gradient-to-t from-pink-400 to-pink-300 rounded-full h-10 animate-pulse" style={{animationDelay: '0.5s'}} />
+                  <div className="w-1 bg-gradient-to-t from-cyan-400 to-cyan-300 rounded-full h-6 animate-pulse" style={{animationDelay: '0.6s'}} />
+                </div>
+              </div>
+            </div>
+          </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent whitespace-nowrap text-center">
             {lang === 'de' ? 'Blog & Musik-Insights' : 'Blog & Music Insights'}
           </h1>
