@@ -29,13 +29,8 @@ export default function CookieBanner() {
       }, 1000);
       
       return () => clearTimeout(timer);
-    } else {
-      // Load existing consent and initialize analytics if accepted
-      const consent: CookieConsent = JSON.parse(savedConsent);
-      if (consent.analytics) {
-        initializeAnalytics();
-      }
     }
+    // Note: Umami Analytics has been removed. Only Google Analytics is used.
   }, []);
 
   const saveConsent = (analytics: boolean) => {
@@ -47,31 +42,11 @@ export default function CookieBanner() {
     
     localStorage.setItem(COOKIE_CONSENT_KEY, JSON.stringify(consent));
     
-    if (analytics) {
-      initializeAnalytics();
-    }
+    // Note: Umami Analytics has been removed. Google Analytics is loaded via index.html.
     
     // Slide out animation
     setIsVisible(false);
     setTimeout(() => setShowBanner(false), 300);
-  };
-
-  const initializeAnalytics = () => {
-    // Initialize Umami Analytics (privacy-friendly, no cookies)
-    const websiteId = import.meta.env.VITE_ANALYTICS_WEBSITE_ID;
-    const endpoint = import.meta.env.VITE_ANALYTICS_ENDPOINT;
-    
-    if (websiteId && endpoint) {
-      // Umami tracking script
-      const script = document.createElement('script');
-      script.async = true;
-      script.defer = true;
-      script.src = endpoint;
-      script.setAttribute('data-website-id', websiteId);
-      script.setAttribute('data-domains', 'sphere-music-hub.com,sphere-music-hub.de');
-      script.setAttribute('data-auto-track', 'true');
-      document.head.appendChild(script);
-    }
   };
 
   const handleAcceptAll = () => {
@@ -105,8 +80,8 @@ export default function CookieBanner() {
                   </h3>
                   <p className="text-sm text-muted-foreground max-w-2xl">
                     {lang === 'de'
-                      ? 'Diese Website nutzt Cookies, um die Nutzung zu analysieren und Inhalte zu verbessern. Wir verwenden ausschließlich privacy-freundliche Analytics ohne personenbezogene Daten. Sie können Ihre Einstellungen jederzeit ändern.'
-                      : 'This website uses cookies to analyze usage and improve content. We use privacy-friendly analytics without personal data. You can change your settings at any time.'}
+                      ? 'Diese Website nutzt Cookies, um die Nutzung zu analysieren und Inhalte zu verbessern. Sie können Ihre Einstellungen jederzeit ändern.'
+                      : 'This website uses cookies to analyze usage and improve content. You can change your settings at any time.'}
                   </p>
                   <a 
                     href="/datenschutz" 
