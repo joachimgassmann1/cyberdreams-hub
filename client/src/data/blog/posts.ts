@@ -17,8 +17,13 @@ import { audioMasteringFairlightYoutube } from './audio-mastering-fairlight-yout
 import { sleepMusicScience } from './sleep-music-science';
 import { lofiVsAmbientMusic } from './lofi-vs-ambient-music';
 import { studyMusicGuide } from './study-music-guide';
+import { morningCoffeeJazzRitual } from './morning-coffee-jazz-ritual';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...morningCoffeeJazzRitual,
+ featured: true
+ },
  {
  ...studyMusicGuide,
  featured: true
