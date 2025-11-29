@@ -42,9 +42,9 @@ Here's the reality of running music channels like [Deep Focus Sphere](https://ww
 
 **Each video needs 50 songs. FIFTY.**
 
-I publish multiple videos per week. That's 200+ unique tracks per month. Over 2,400 songs per year.
+I publish multiple videos per week. That's 200+ unique tracks **per week**. Over 10,000 songs per year.
 
-Let's do the math: If I composed each song myself, spending just 2 hours per track (which is insanely fast for quality music), that's **4,800 hours per year**. That's working 13 hours a day, every single day, with no breaks, no weekends, no life.
+Let's do the math: If I composed each song myself, spending just 2 hours per track (which is insanely fast for quality music), that's **20,000+ hours per year**. That's working 55 hours a day. Which, last time I checked, is physically impossible.
 
 Oh, and I also run a media company. And have a family. And occasionally sleep.
 
@@ -62,7 +62,7 @@ I tried. For months. Here's what I found:
 
 **Problem #2: Everyone uses the same tracks.** Your "unique" ambient video sounds exactly like 47 other channels because you're all pulling from the same libraries.
 
-**Problem #3: It's expensive.** Quality royalty-free music isn't cheap. For 200 tracks per month, you're looking at thousands of dollars. Every month. Forever.
+**Problem #3: It's expensive.** Quality royalty-free music isn't cheap. For 200 tracks per week (800+ per month), you're looking at tens of thousands of dollars. Every month. Forever.
 
 **Problem #4: It's still not original.** You're still using someone else's music. You're just paying for the privilege.
 
@@ -308,7 +308,7 @@ Not because I'm lazy. Not because I lack skill. Not because I don't respect trad
 
 **Because AI lets me create things that would be literally impossible otherwise.**
 
-My channels exist because of AI. The 2,400+ songs I create each year exist because of AI. The value I provide to thousands of people exists because of AI.
+My channels exist because of AI. The 10,000+ songs I create each year exist because of AI. The value I provide to thousands of people exists because of AI.
 
 Is it controversial? Yes.
 
@@ -345,9 +345,9 @@ Hier ist die Realität beim Betreiben von Musik-Kanälen wie [Deep Focus Sphere]
 
 **Jedes Video braucht 50 Songs. FÜNFZIG.**
 
-Ich veröffentliche mehrere Videos pro Woche. Das sind 200+ einzigartige Tracks pro Monat. Über 2.400 Songs pro Jahr.
+Ich veröffentliche mehrere Videos pro Woche. Das sind 200+ einzigartige Tracks **pro Woche**. Über 10.000 Songs pro Jahr.
 
-Rechnen wir mal: Wenn ich jeden Song selbst komponieren würde, mit nur 2 Stunden pro Track (was wahnsinnig schnell ist für Qualitätsmusik), wären das **4.800 Stunden pro Jahr**. Das bedeutet 13 Stunden Arbeit pro Tag, jeden einzelnen Tag, ohne Pausen, ohne Wochenenden, ohne Leben.
+Rechnen wir mal: Wenn ich jeden Song selbst komponieren würde, mit nur 2 Stunden pro Track (was wahnsinnig schnell ist für Qualitätsmusik), wären das **20.000+ Stunden pro Jahr**. Das bedeutet 55 Stunden Arbeit pro Tag. Was, soweit ich weiß, physisch unmöglich ist.
 
 Ach ja, und ich leite auch noch ein Medien-Unternehmen. Und habe eine Familie. Und schlafe gelegentlich.
 
@@ -365,7 +365,7 @@ Habe ich versucht. Monatelang. Hier ist, was ich herausgefunden habe:
 
 **Problem #2: Jeder nutzt dieselben Tracks.** Dein "einzigartiges" Ambient-Video klingt genau wie 47 andere Kanäle, weil ihr alle aus denselben Bibliotheken zieht.
 
-**Problem #3: Es ist teuer.** Qualitativ hochwertige Royalty-Free Musik ist nicht billig. Für 200 Tracks pro Monat schaust du auf Tausende von Euro. Jeden Monat. Für immer.
+**Problem #3: Es ist teuer.** Qualitativ hochwertige Royalty-Free Musik ist nicht billig. Für 200 Tracks pro Woche (800+ pro Monat) schaust du auf Zehntausende von Euro. Jeden Monat. Für immer.
 
 **Problem #4: Es ist immer noch nicht original.** Du nutzt immer noch die Musik von jemand anderem. Du zahlst nur für das Privileg.
 
@@ -611,7 +611,7 @@ Nicht weil ich faul bin. Nicht weil mir Skill fehlt. Nicht weil ich traditionell
 
 **Weil AI mir erlaubt, Dinge zu kreieren, die buchstäblich sonst unmöglich wären.**
 
-Meine Kanäle existieren wegen AI. Die 2.400+ Songs, die ich jedes Jahr kreiere, existieren wegen AI. Der Wert, den ich Tausenden von Menschen biete, existiert wegen AI.
+Meine Kanäle existieren wegen AI. Die 10.000+ Songs, die ich jedes Jahr kreiere, existieren wegen AI. Der Wert, den ich Tausenden von Menschen biete, existiert wegen AI.
 
 Ist es kontrovers? Ja.
 
