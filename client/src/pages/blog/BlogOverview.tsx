@@ -102,7 +102,7 @@ export default function BlogOverview() {
       </Helmet>
       <Navigation />
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-20 px-4 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -111,13 +111,13 @@ export default function BlogOverview() {
             className="w-full h-full object-cover"
           />
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/40 to-background/90" />
         </div>
-        <div className="container relative z-10 text-center flex flex-col justify-center min-h-[400px] md:min-h-[500px]">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 pb-2 leading-tight bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-transparent whitespace-nowrap">
+        <div className="container relative z-10 text-center flex flex-col justify-center min-h-[280px] md:min-h-[320px]">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 pb-2 leading-tight bg-gradient-to-r from-cyan-300 via-purple-300 to-pink-300 bg-clip-text text-transparent whitespace-nowrap">
             {lang === 'de' ? 'Blog & Musik-Insights' : 'Blog & Music Insights'}
           </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
             {lang === 'de'
               ? 'Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes und die Kunst der perfekten Atmosphäre.'
               : 'Tips, guides, and stories about focus music, productivity, ambient soundscapes, and the art of the perfect atmosphere.'}
