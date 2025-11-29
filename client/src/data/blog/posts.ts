@@ -14,8 +14,13 @@ import { dystopianRainFocus } from './dystopian-rain-focus';
 import { fast4kRendering } from './fast-4k-rendering';
 import { seamlessLoopsDaVinciResolve } from './seamless-loops-davinci-resolve';
 import { audioMasteringFairlightYoutube } from './audio-mastering-fairlight-youtube';
+import { sleepMusicScience } from './sleep-music-science';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...sleepMusicScience,
+ featured: false
+ },
  {
  ...audioMasteringFairlightYoutube,
  featured: true
