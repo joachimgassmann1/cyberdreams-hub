@@ -102,7 +102,7 @@ export default function BlogOverview() {
       </Helmet>
       <Navigation />
       {/* Hero Section */}
-      <section className="relative py-12 px-4 overflow-hidden">
+      <section className="relative py-16 md:py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-purple-500/10 to-pink-500/10" />
         <div className="container relative z-10 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 pb-2 leading-tight bg-gradient-to-r from-primary via-purple-400 to-pink-400 bg-clip-text text-transparent whitespace-nowrap">
