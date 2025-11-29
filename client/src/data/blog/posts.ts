@@ -15,8 +15,13 @@ import { fast4kRendering } from './fast-4k-rendering';
 import { seamlessLoopsDaVinciResolve } from './seamless-loops-davinci-resolve';
 import { audioMasteringFairlightYoutube } from './audio-mastering-fairlight-youtube';
 import { sleepMusicScience } from './sleep-music-science';
+import { lofiVsAmbientMusic } from './lofi-vs-ambient-music';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...lofiVsAmbientMusic,
+ featured: true
+ },
  {
  ...sleepMusicScience,
  featured: false
