@@ -102,7 +102,7 @@ export default function BlogOverview() {
       </Helmet>
       <Navigation />
       {/* Hero Section */}
-      <section className="relative py-12 md:py-16 px-4 overflow-hidden">
+      <section className="relative py-20 md:py-24 px-4 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -113,7 +113,7 @@ export default function BlogOverview() {
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/40 to-background/90" />
         </div>
-        <div className="container relative z-10 flex flex-col items-center justify-center min-h-[280px] md:min-h-[320px]">
+        <div className="container relative z-10 flex flex-col items-center justify-center min-h-[320px] md:min-h-[380px]">
           {/* Icon */}
           <div className="flex justify-center mb-6">
             <div className="relative">
