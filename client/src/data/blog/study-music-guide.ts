@@ -52,7 +52,7 @@ Picture this: You're not just "studying." You're doing four completely different
 - Slow instrumental music (60-70 BPM)
 - Piano ambience without melodies that demand attention
 - Nature sounds with minimal variation
-- Our [Deep Focus Ambient soundscapes](https://youtu.be/pcNNNZngqjU) work perfectly here
+- Our [Deep Focus Ambient soundscapes playlist](https://youtube.com/playlist?list=PL1nVMfXe7BHqy3etvPbFiuXlgMK2XrV2m) work perfectly here
 
 **Why it works:** Your brain's language center stays free to decode the textbook. The gentle background fills the silence without competing for attention. It's like having a "do not disturb" sign for your mind.
 
@@ -239,7 +239,7 @@ Stell dir vor: Du "lernst" nicht einfach. Du machst vier völlig unterschiedlich
 - Langsame Instrumentalmusik (60-70 BPM)
 - Piano-Ambience ohne Melodien, die Aufmerksamkeit fordern
 - Naturgeräusche mit minimaler Variation
-- Unsere [Deep Focus Ambient Soundscapes](https://youtu.be/pcNNNZngqjU) funktionieren hier perfekt
+- Unsere [Deep Focus Ambient Soundscapes Playlist](https://youtube.com/playlist?list=PL1nVMfXe7BHqy3etvPbFiuXlgMK2XrV2m) funktioniert hier perfekt
 
 **Warum es funktioniert:** Das Sprachzentrum deines Gehirns bleibt frei, um das Lehrbuch zu dekodieren. Der sanfte Hintergrund füllt die Stille, ohne um Aufmerksamkeit zu konkurrieren. Es ist wie ein "Bitte nicht stören"-Schild für deinen Geist.
 
