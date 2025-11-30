@@ -16,8 +16,8 @@ const FEATURED_VIDEOS = [
     channelTitle: "Pianosphere Radio",
   },
   {
-    id: "RJIdAEvb_dY",
-    title: "Midnight Glow Terrace: Relaxing Lounge Beats for Ultimate Chill",
+    id: "Gu9dNvn5hfU",
+    title: "Chill Beats for Sunset Vibes | Lounge & Relax Music",
     channelTitle: "Chillout Sphere",
   },
   {

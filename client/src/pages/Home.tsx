@@ -99,12 +99,12 @@ export default function Home() {
               {
                 "@type": "VideoObject",
                 "position": 3,
-                "name": "Midnight Glow Terrace: Relaxing Lounge Beats for Ultimate Chill",
-                "description": "Chillout lounge music for peaceful evenings and relaxation",
-                "thumbnailUrl": "https://i.ytimg.com/vi/RJIdAEvb_dY/mqdefault.jpg",
-                "uploadDate": "2025-11-15T00:00:00Z",
-                "contentUrl": "https://www.youtube.com/watch?v=RJIdAEvb_dY",
-                "embedUrl": "https://www.youtube.com/embed/RJIdAEvb_dY"
+                "name": "Chill Beats for Sunset Vibes | Lounge & Relax Music",
+                "description": "Relaxing lounge beats for sunset moments and peaceful evenings",
+                "thumbnailUrl": "https://i.ytimg.com/vi/Gu9dNvn5hfU/mqdefault.jpg",
+                "uploadDate": "2025-11-23T00:00:00Z",
+                "contentUrl": "https://www.youtube.com/watch?v=Gu9dNvn5hfU",
+                "embedUrl": "https://www.youtube.com/embed/Gu9dNvn5hfU"
               },
               {
                 "@type": "VideoObject",
