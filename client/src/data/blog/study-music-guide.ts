@@ -11,7 +11,7 @@ export const studyMusicGuide: BlogPost = {
   author: "Joachim Gassmann",
   publishDate: "2025-11-29",
   readingTime: 11,
-  category: "Focus",
+  category: "focus",
   tags: [
     "study music",
     "learning",

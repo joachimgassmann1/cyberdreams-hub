@@ -6,7 +6,7 @@ export const pianoStressRelief: BlogPost = {
   titleDe: 'Warum Klaviermusik die ultimative Stressbewältigung ist (laut einem ausgebildeten Pianisten)',
   description: 'After 10 years of classical piano training, I discovered that the best stress-relief music isn\'t complex Chopin or Beethoven—it\'s simple ambient piano loops. Learn the science behind why piano music calms your nervous system and how to use it effectively.',
   descriptionDe: 'Nach 10 Jahren klassischer Klavierausbildung habe ich entdeckt, dass die beste Musik zur Stressbewältigung nicht komplexer Chopin oder Beethoven ist – sondern einfache Ambient-Piano-Loops. Lerne die Wissenschaft dahinter, warum Klaviermusik dein Nervensystem beruhigt und wie du sie effektiv nutzt.',
-  heroImage: '/blog/piano-stress-relief-hero.webp',
+  heroImage: '/blog/piano-stress-relief-hero-v2.webp',
   category: 'piano',
   tags: ['piano', 'stress relief', 'ambient music', 'relaxation', 'classical training', 'neuroscience'],
   tagsDe: ['Klavier', 'Stressbewältigung', 'Ambient-Musik', 'Entspannung', 'klassische Ausbildung', 'Neurowissenschaft'],
