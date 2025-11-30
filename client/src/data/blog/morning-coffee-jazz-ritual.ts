@@ -24,6 +24,12 @@ export const morningCoffeeJazzRitual: BlogPost = {
   content: `
 I can shred John Petrucci solos. The kind of technical metal guitar work that requires surgical precision, hours of practice, and complete focus. My fingers know every note of Dream Theater's most complex passages.
 
+<div style="margin: 2rem 0; text-align: center;">
+  <img src="/images/blog/joachim-guitar.jpg" alt="Joachim playing guitar in his studio" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
+  <p style="font-size: 0.9rem; color: #888; margin-bottom: 0.5rem;"><em>Yes, that's me. 20 years of metal guitar.</em></p>
+  <p style="font-size: 0.9rem;"><a href="https://youtu.be/KEMYabu0Y0k" target="_blank" rel="noopener noreferrer" style="color: #60a5fa;">Watch me play Dream Theater's "The Best of Times" solo →</a></p>
+</div>
+
 But here's the thing nobody expects: When I wake up in the morning? I don't put on metal. I don't even put on rock.
 
 I make coffee. I put on jazz. And for the next hour, that's my world.
