@@ -20,8 +20,13 @@ import { studyMusicGuide } from './study-music-guide';
 import { morningCoffeeJazzRitual } from './morning-coffee-jazz-ritual';
 import { aiMusicTrainedMusician } from './ai-music-trained-musician';
 import { ambientVsLofiDeepWork } from './ambient-vs-lofi-deep-work';
+import { pianoStressRelief } from './piano-stress-relief';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...pianoStressRelief,
+ featured: true
+ },
  {
  ...ambientVsLofiDeepWork,
  featured: true
