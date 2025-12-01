@@ -214,6 +214,12 @@ Now if you'll excuse me, I have a coffee to make and some jazz to put on. It's 6
   contentDe: `
 Ich kann John Petrucci Solos shredden. Die Art von technischer Metal-Gitarrenarbeit, die chirurgische Präzision, stundenlange Übung und kompletten Fokus erfordert. Meine Finger kennen jede Note von Dream Theaters komplexesten Passagen.
 
+<div style="margin: 2rem 0; text-align: center;">
+  <img src="/images/blog/joachim-guitar.webp" alt="Joachim spielt Gitarre in seinem Studio" style="max-width: 100%; border-radius: 8px; margin-bottom: 1rem;" />
+  <p style="font-size: 0.9rem; color: #888; margin-bottom: 0.5rem;"><em>Ja, das bin ich. 20 Jahre Metal-Gitarre.</em></p>
+  <p style="font-size: 0.9rem;"><a href="https://youtu.be/KEMYabu0Y0k" target="_blank" rel="noopener noreferrer" style="color: #60a5fa;">Schau mir zu, wie ich Dream Theaters "The Best of Times" Solo spiele →</a></p>
+</div>
+
 Aber hier ist die Sache, die niemand erwartet: Wenn ich morgens aufwache? Dann höre ich kein Metal. Nicht mal Rock.
 
 Ich mache Kaffee. Ich höre Jazz. Und für die nächste Stunde ist das meine Welt.
