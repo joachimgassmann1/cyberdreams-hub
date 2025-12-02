@@ -1,7 +1,7 @@
 # Sphere Music Hub - Blog Content Database
 **Zweck:** Verhindert Wiederholungen bei neuen Artikeln  
 **Stand:** 30. November 2025  
-**Artikel:** 22 (alle EN + DE)
+**Artikel:** 23 (alle EN + DE)
 
 ---
 
@@ -281,7 +281,27 @@
 
 ---
 
-### 22. AI Music from a Trained Musician: Why It's Not Cheating (Insights)
+### 22. Why Jazz Works Better Than Classical for Stress Relief (Jazz)
+**Slug:** `why-jazz-works-better-than-classical-stress-relief-trained-pianist`  
+**Datei:** `jazz-vs-classical-stress-relief.ts`  
+**Datum:** 2025-11-30  
+**Tags:** jazz, classical music, stress relief, piano, relaxation, improvisation  
+**Kernthemen:**
+- Joachims 10 Jahre klassische Piano-Ausbildung
+- Warum Jazz besser für Stressabbau funktioniert als Klassik
+- Struktur vs. Improvisation (Klassik = kognitiv anstrengend, Jazz = loslassen)
+- Swing-Rhythmus und Entspannung (Rhythmic Entrainment)
+- Harmonische Mehrdeutigkeit vs. Spannung/Auflösung
+- Menschliche Unvollkommenheit als Trost
+- Persönliche Story: Vom Konservatorium (Beethoven) zu Jazz (Chet Baker)
+- Wann Klassik doch funktioniert (Erik Satie, Arvo Pärt, Barockmusik)
+- Abendritual: Von Beethoven zu Baker
+- Conversational Storytelling-Stil (KEINE Bullet-Listen!)
+- 1405 Wörter, 8 Minuten Lesezeit
+
+---
+
+### 23. AI Music from a Trained Musician: Why It's Not Cheating (Insights)
 **Slug:** `ai-music-trained-pianist-guitarist-suno-udio-topmediai`  
 **Datei:** `ai-music-trained-musician.ts`  
 **Datum:** 2025-11-30  
@@ -374,10 +394,10 @@
 - 🎯 **Late-Night Piano Sessions** (2 AM Atmosphäre)
 - 🎯 **From Beethoven to AI** (Joachims persönliche Journey)
 
-### Jazz-Kategorie (NUR 1 Artikel):
+### Jazz-Kategorie (NUR 2 Artikel):
 - 🎯 **Smooth Jazz vs. Bebop for Relaxation**
-- 🎯 **Why Jazz Works Better Than Classical for Stress Relief**
 - 🎯 **The Science of Swing: Why Jazz Rhythms Calm You**
+- 🎯 **Sunday Morning Jazz** (langsamer Morgen, Gegenteil zu Montag)
 
 ### Neue Kategorien:
 - 🎯 **Lounge Music** (Chillout Sphere Promotion)
@@ -392,7 +412,7 @@
 - **Insights:** 8 Artikel ✅ (sehr gut)
 - **Relax:** 2 Artikel ⚠️ (braucht mehr!)
 - **Piano:** 2 Artikel ⚠️ (braucht mehr!)
-- **Jazz:** 1 Artikel ⚠️ (braucht mehr!)
+- **Jazz:** 2 Artikel ⚠️ (besser, aber braucht noch mehr!)
 - **Cyberpunk:** 2 Artikel ✅
 - **Chillout:** 1 Artikel ⚠️
 
