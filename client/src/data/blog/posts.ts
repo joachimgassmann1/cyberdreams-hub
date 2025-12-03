@@ -22,8 +22,13 @@ import { aiMusicTrainedMusician } from './ai-music-trained-musician';
 import { ambientVsLofiDeepWork } from './ambient-vs-lofi-deep-work';
 import { pianoStressRelief } from './piano-stress-relief';
 import { jazzVsClassicalStressRelief } from './jazz-vs-classical-stress-relief';
+import { whyPeopleRelaxWrong } from './why-people-relax-wrong';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...whyPeopleRelaxWrong,
+ featured: true
+ },
  {
  ...jazzVsClassicalStressRelief,
  featured: true
