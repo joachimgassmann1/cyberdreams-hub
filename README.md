@@ -6,6 +6,22 @@
 
 ---
 
+## 🔐 GitHub Deployment Credentials
+
+**Repository:** `https://github.com/joachimgassmann1/cyberdreams-hub.git`  
+**Token:** `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`
+
+**Deploy Command:**
+```bash
+cd /home/ubuntu/sphere-music-hub
+git remote set-url github https://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@github.com/joachimgassmann1/cyberdreams-hub.git
+git push github main
+```
+
+**Note:** After push, Render.com auto-deploys in 2-3 minutes.
+
+---
+
 ## 🚨 CRITICAL FILES - ALWAYS CHECK FIRST!
 
 ### 📚 Blog Knowledge Database
