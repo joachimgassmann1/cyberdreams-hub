@@ -127,8 +127,10 @@ export default function BlogArticle() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
       <Helmet>
+        <html lang={lang} />
         <title>{displayTitle} | Sphere Music Hub Blog</title>
         <meta name="description" content={displayDescription} />
+        <meta httpEquiv="content-language" content={lang} />
         <meta property="og:title" content={displayTitle} />
         <meta property="og:description" content={displayDescription} />
         <meta property="og:image" content={`https://${baseDomain}${post.heroImage}`} />

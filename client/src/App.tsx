@@ -14,6 +14,8 @@ import ScrollRestoration from "./components/ScrollRestoration";
 import CookieBanner from "./components/CookieBanner";
 import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
 import MusicPlayer from "./components/MusicPlayer";
+import { detectLanguage } from "./lib/i18n";
+import { useEffect } from "react";
 
 function Router() {
   return (
@@ -39,6 +41,12 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
+  // Set html lang attribute based on domain
+  useEffect(() => {
+    const lang = detectLanguage();
+    document.documentElement.lang = lang;
+  }, []);
+
   return (
     <ErrorBoundary>
       <HelmetProvider>

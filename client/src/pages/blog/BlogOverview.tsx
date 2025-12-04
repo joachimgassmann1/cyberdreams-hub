@@ -74,8 +74,10 @@ export default function BlogOverview() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
       <Helmet>
+        <html lang={lang} />
         <title>{lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'}</title>
         <meta name="description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären. Experteneinblicke für Arbeit und Entspannung.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation.'} />
+        <meta httpEquiv="content-language" content={lang} />
         <meta property="og:title" content={lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'} />
         <meta property="og:description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres.'} />
         <meta property="og:url" content={`https://${baseDomain}/blog`} />

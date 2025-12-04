@@ -26,6 +26,7 @@ export default function Home() {
         <html lang={lang} />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta httpEquiv="content-language" content={lang} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://${baseDomain}/`} />
