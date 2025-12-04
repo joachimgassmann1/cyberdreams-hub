@@ -11,7 +11,7 @@ export default function AuthorBox() {
           {/* Author Photo */}
           <div className="flex-shrink-0">
             <img
-              src="/images/joachim-gassmann.jpg"
+              src="/joachim-avatar.jpg"
               alt="Joachim Gassmann - Creator of Sphere Music Hub"
               className="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-2 border-primary/20"
             />
