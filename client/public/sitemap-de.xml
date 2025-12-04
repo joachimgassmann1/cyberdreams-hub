@@ -27,6 +27,15 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://sphere-music-hub.de/blog/how-to-build-perfect-focus-music-playlist-science-backed-method</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/how-to-build-perfect-focus-music-playlist-science-backed-method" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/how-to-build-perfect-focus-music-playlist-science-backed-method" />
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://sphere-music-hub.de/blog/why-most-people-relax-wrong-how-music-can-fix-it</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/why-most-people-relax-wrong-how-music-can-fix-it" />
     <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/why-most-people-relax-wrong-how-music-can-fix-it" />

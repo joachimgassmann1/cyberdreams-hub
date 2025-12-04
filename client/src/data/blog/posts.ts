@@ -23,8 +23,13 @@ import { ambientVsLofiDeepWork } from './ambient-vs-lofi-deep-work';
 import { pianoStressRelief } from './piano-stress-relief';
 import { jazzVsClassicalStressRelief } from './jazz-vs-classical-stress-relief';
 import { whyPeopleRelaxWrong } from './why-people-relax-wrong';
+import { perfectFocusPlaylist } from './perfect-focus-playlist';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...perfectFocusPlaylist,
+ featured: true
+ },
  {
  ...whyPeopleRelaxWrong,
  featured: true

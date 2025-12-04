@@ -1,13 +1,29 @@
 # Sphere Music Hub - Blog Content Database
 **Zweck:** Verhindert Wiederholungen bei neuen Artikeln  
-**Stand:** 30. November 2025  
-**Artikel:** 24 (alle EN + DE)
+**Stand:** 4. Dezember 2025  
+**Artikel:** 25 (alle EN + DE)
 
 ---
 
 ## 📋 Alle Artikel mit Kernthemen
 
-### 1. The Ultimate Guide to Focus Music (Focus)
+### 1. How to Build the Perfect Focus Music Playlist: A Science-Backed 5-Step Method (Focus)
+**Slug:** `how-to-build-perfect-focus-music-playlist-science-backed-method`  
+**Datei:** `perfect-focus-playlist.ts`  
+**Datum:** 2025-12-04  
+**Tags:** Focus Music, Productivity, Playlist Building, Music Science, Deep Work  
+**Kernthemen:**
+- Praktische Anleitung zum Erstellen einer Fokus-Playlist
+- BPM-Konsistenz (60-80 BPM) und rhythmisches Entrainment
+- Warum Vocals ablenkend sind (Broca-Areal Aktivierung)
+- Harmonische Konsistenz (Moll/Dur/Modal)
+- Instrumentierungs-Begrenzung für weniger kognitive Last
+- 5-Schritte-Methode mit konkreten Beispielen
+- Häufige Fehler beim Playlist-Building
+
+---
+
+### 2. The Ultimate Guide to Focus Music (Focus)
 **Slug:** `ultimate-guide-focus-music-productivity`  
 **Datei:** `focus-music-guide.ts`  
 **Datum:** 2025-11-28  
