@@ -1,7 +1,7 @@
 # Sphere Music Hub - Blog Content Database
 **Zweck:** Verhindert Wiederholungen bei neuen Artikeln  
 **Stand:** 4. Dezember 2025  
-**Artikel:** 25 (alle EN + DE)
+**Artikel:** 26 (alle EN + DE)
 
 ---
 
@@ -487,3 +487,18 @@
 
 **Letzte Aktualisierung:** 30. November 2025, 23:59 Uhr  
 **Nächster Artikel:** TBD (Empfehlung: "Evening Wind-Down Routine" für Relax-Kategorie)
+
+### 26. The Science of Jazz for Sleep: Why Smooth Jazz Works Better Than White Noise (Jazz)
+**Slug:** `science-jazz-sleep-smooth-jazz-better-white-noise`  
+**Datei:** `jazz-sleep-science.ts`  
+**Datum:** 2025-12-04  
+**Tags:** jazz, sleep music, smooth jazz, relaxation, white noise, neuroscience  
+**Kernthemen:**
+- Warum weißes Rauschen nicht wirklich beim Schlafen hilft
+- Swing-Rhythmus synchronisiert mit Atmung (60-80 BPM)
+- Harmonische Mehrdeutigkeit beruhigt analytischen Verstand
+- Keine Vocals = Sprachzentren bleiben ruhig
+- Parasympathische Aktivierung durch Jazz
+- Joachims Abendritual: Von White Noise zu Chet Baker
+- Welche Jazz-Stile für Schlaf funktionieren (Smooth, Cool, Modal)
+- Praktische Anleitung ohne Overthinking

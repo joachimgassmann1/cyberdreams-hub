@@ -24,11 +24,16 @@ import { pianoStressRelief } from './piano-stress-relief';
 import { jazzVsClassicalStressRelief } from './jazz-vs-classical-stress-relief';
 import { whyPeopleRelaxWrong } from './why-people-relax-wrong';
 import { perfectFocusPlaylist } from './perfect-focus-playlist';
+import jazzSleepScience from './jazz-sleep-science';
 
 export const blogPosts: BlogPost[] = [
  {
- ...perfectFocusPlaylist,
+ ...jazzSleepScience,
  featured: true
+ },
+ {
+ ...perfectFocusPlaylist,
+ featured: false
  },
  {
  ...whyPeopleRelaxWrong,
