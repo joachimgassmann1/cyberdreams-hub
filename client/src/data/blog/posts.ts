@@ -27,8 +27,13 @@ import { perfectFocusPlaylist } from './perfect-focus-playlist';
 import jazzSleepScience from './jazz-sleep-science';
 import { pianoVsGuitarAnxiety } from './piano-vs-guitar-anxiety';
 import { sunsetEffectChillout } from './sunset-effect-chillout';
+import { harvardStudyMusic } from './harvard-study-music';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...harvardStudyMusic,
+ featured: true
+ },
  {
  ...sunsetEffectChillout,
  featured: true
