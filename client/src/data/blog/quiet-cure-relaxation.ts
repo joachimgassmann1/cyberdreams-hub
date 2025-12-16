@@ -124,7 +124,7 @@ The most effective relaxation happens in environments designed for it:
 
 **Emotional Safety**: Privacy, predictability, freedom from interruption, absence of urgent demands
 
-When combined with the right ambient soundscapes, these elements create a complete relaxation environment. Channels like [Chillout Sphere](https://www.youtube.com/@ChilloutSphere) and [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) offer carefully curated atmospheres designed specifically for deep relaxation and emotional restoration.
+When combined with the right ambient soundscapes, these elements create a complete relaxation environment. Channels like [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) and [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) offer carefully curated atmospheres designed specifically for deep relaxation and emotional restoration.
 
 ---
 
@@ -251,7 +251,7 @@ Die effektivste Entspannung passiert in Umgebungen, die dafür designed sind:
 
 **Physischer Komfort**: Weiche Texturen (Decken, Kissen), komfortable Sitzgelegenheiten, optimale Temperatur, frische Luft oder sanfte Ventilation**Emotionale Sicherheit**: Privatsphäre, Vorhersehbarkeit, Freiheit von Unterbrechungen, Abwesenheit dringender Anforderungen
 
-Wenn diese Elemente mit den richtigen Ambient-Soundscapes kombiniert werden, entsteht eine vollständige Entspannungsumgebung. Kanäle wie [Chillout Sphere](https://www.youtube.com/@ChilloutSphere) und [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) bieten sorgfältig kuratierte Atmosphären, die speziell für tiefe Entspannung und emotionale Wiederherstellung designed sind.
+Wenn diese Elemente mit den richtigen Ambient-Soundscapes kombiniert werden, entsteht eine vollständige Entspannungsumgebung. Kanäle wie [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) und [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) bieten sorgfältig kuratierte Atmosphären, die speziell für tiefe Entspannung und emotionale Wiederherstellung designed sind.
 
 ---
 

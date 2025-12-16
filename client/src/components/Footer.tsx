@@ -16,7 +16,7 @@ export default function Footer() {
     },
     {
       name: "YouTube - Chillout Sphere",
-      url: "https://www.youtube.com/@ChilloutSphere67",
+      url: "https://www.youtube.com/@chilloutsphere67",
       icon: Youtube,
     },
     {

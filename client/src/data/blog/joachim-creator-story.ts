@@ -99,7 +99,7 @@ A collection of YouTube channels, each dedicated to a specific emotional atmosph
 ### **[Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere)** 
 Ambient soundscapes designed for concentration, productivity and deep work. For those who need music that supports focus without distraction.
 
-### **[Chillout Sphere](https://www.youtube.com/@ChilloutSphere)** 
+### **[Chillout Sphere](https://www.youtube.com/@chilloutsphere67)** 
 Relaxing beats and calm atmospheres for unwinding, reflection and peaceful moments. Music that helps the mind slow down.
 
 ### **[Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p)**
@@ -246,7 +246,7 @@ Er begann, Kanäle zu erschaffen, die jeweils einer bestimmten emotionalen Lands
 ### **[Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere)**
 Langform-Ambient-Sessions für tiefe Konzentration, Lernen und produktive Arbeit. Der Sound von Flow-Zuständen und ununterbrochenem Fokus.
 
-### **[Chillout Sphere](https://www.youtube.com/@ChilloutSphere)**
+### **[Chillout Sphere](https://www.youtube.com/@chilloutsphere67)**
 Warme, entspannende Soundscapes für friedliche Momente, Sonnenuntergänge und sanfte Übergänge aus dem Tag.
 
 ### **[Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p)** 

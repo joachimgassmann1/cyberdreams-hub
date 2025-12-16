@@ -38,7 +38,7 @@ Let me tell you why they're wrong. And why, as a trained musician, I'm more exci
 
 ## The Confession (That Shouldn't Be Controversial)
 
-Here's the reality of running music channels like [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67), [Chillout Sphere](https://www.youtube.com/@ChilloutSphere67), and [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio):
+Here's the reality of running music channels like [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67), [Chillout Sphere](https://www.youtube.com/@chilloutsphere67), and [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio):
 
 **Each video needs 50 songs. FIFTY.**
 
@@ -322,7 +322,7 @@ And honestly? I can't wait to see what we create together.
 
 ---
 
-*Want to hear what AI-generated music can sound like? Check out my channels: [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67) for ambient focus music, [Chillout Sphere](https://www.youtube.com/@ChilloutSphere67) for relaxing soundscapes, and [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio) for smooth jazz vibes. Every track is AI-generated, curated by a trained musician.*
+*Want to hear what AI-generated music can sound like? Check out my channels: [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67) for ambient focus music, [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) for relaxing soundscapes, and [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio) for smooth jazz vibes. Every track is AI-generated, curated by a trained musician.*
 `,
   contentDe: `
 Ich habe 15 Jahre Klavier gelernt. Klassische Ausbildung. Tonleitern, Arpeggios, Chopin, Debussy—das volle Programm. Dann weitere 20 Jahre Gitarre gespielt, von Jazz bis Metal, Techniken gemeistert, die Tausende von Stunden Übung erforderten.
@@ -341,7 +341,7 @@ Lass mich dir erzählen, warum sie falsch liegen. Und warum ich als ausgebildete
 
 ## Das Geständnis (das nicht kontrovers sein sollte)
 
-Hier ist die Realität beim Betreiben von Musik-Kanälen wie [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67), [Chillout Sphere](https://www.youtube.com/@ChilloutSphere67) und [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio):
+Hier ist die Realität beim Betreiben von Musik-Kanälen wie [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67), [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) und [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio):
 
 **Jedes Video braucht 50 Songs. FÜNFZIG.**
 
@@ -625,6 +625,6 @@ Und ehrlich? Ich kann es kaum erwarten zu sehen, was wir zusammen kreieren.
 
 ---
 
-*Willst du hören, wie AI-generierte Musik klingen kann? Schau dir meine Kanäle an: [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67) für Ambient Focus Music, [Chillout Sphere](https://www.youtube.com/@ChilloutSphere67) für entspannende Soundscapes und [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio) für Smooth Jazz Vibes. Jeder Track ist AI-generiert, kuratiert von einem ausgebildeten Musiker.*
+*Willst du hören, wie AI-generierte Musik klingen kann? Schau dir meine Kanäle an: [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67) für Ambient Focus Music, [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) für entspannende Soundscapes und [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio) für Smooth Jazz Vibes. Jeder Track ist AI-generiert, kuratiert von einem ausgebildeten Musiker.*
 `,
 };

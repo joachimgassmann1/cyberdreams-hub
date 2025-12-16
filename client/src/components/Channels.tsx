@@ -47,7 +47,7 @@ const getChannels = (lang: 'en' | 'de') => [
       ? "Chillout Lounge & Entspannungsmusik für friedliche Momente, Strand-Vibes und Sonnenuntergangs-Entspannung."
       : "Chillout Lounge & Relaxing Music for peaceful moments, beach vibes, and sunset relaxation.",
     image: "/channel-chillout-new.webp",
-    url: "https://www.youtube.com/@ChilloutSphere67",
+    url: "https://www.youtube.com/@chilloutsphere67",
     icon: Waves,
     color: "from-accent to-accent/70",
   },

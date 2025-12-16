@@ -52,7 +52,7 @@ Soft pads, mellow synths, quiet guitars, ocean waves, warm wind, distant cafés 
 
 When these textures are combined with visuals — sunset beaches, cozy rooms, evening cafés — the effect becomes even stronger.
 
-This is why channels like [Chillout Sphere](https://www.youtube.com/@ChilloutSphere) resonate so deeply with listeners: the combination of ambience and visuals creates a complete emotional environment.
+This is why channels like [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) resonate so deeply with listeners: the combination of ambience and visuals creates a complete emotional environment.
 
 ---
 
@@ -143,7 +143,7 @@ And in that space, something important happens:
 
 ---
 
-*Explore curated chillout sessions on [Chillout Sphere](https://www.youtube.com/@ChilloutSphere) — where warm soundscapes meet cinematic visuals to create the perfect atmosphere for relaxation and emotional balance.*`,
+*Explore curated chillout sessions on [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) — where warm soundscapes meet cinematic visuals to create the perfect atmosphere for relaxation and emotional balance.*`,
  contentDe: `In einer Welt, die sich zu schnell bewegt, ist der einfache Wunsch nach Ruhe zu einem Luxus geworden. Chillout-Musik mit ihren warmen Texturen und langsam fließenden Atmosphären bietet einen Raum, in dem der Geist weicher werden kann, die Welt leiser wird und der Körper sich daran erinnert, wieder zu atmen. Aber was macht diese Soundscapes so einzigartig tröstlich? Und warum verlassen sich Millionen weltweit auf sie, um zu entspannen, zu relaxen oder aus einem stressigen Tag herauszukommen?
 
 Dieser Artikel erkundet die tiefere Psychologie hinter Chillout-Musik — und die subtilen Wege, auf denen Ambient-Sound emotionale Balance wiederherstellen kann.
@@ -182,7 +182,7 @@ Weiche Pads, sanfte Synths, leise Gitarren, Meereswellen, warmer Wind, entfernte
 
 Wenn diese Texturen mit Visuals kombiniert werden — Sonnenuntergangsstrände, gemütliche Räume, Abendcafés — wird der Effekt noch stärker.
 
-Deshalb resonieren Kanäle wie [Chillout Sphere](https://www.youtube.com/@ChilloutSphere) so tief mit Zuhörern: die Kombination aus Ambience und Visuals erschafft eine komplette emotionale Umgebung.
+Deshalb resonieren Kanäle wie [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) so tief mit Zuhörern: die Kombination aus Ambience und Visuals erschafft eine komplette emotionale Umgebung.
 
 ---
 
@@ -273,6 +273,6 @@ Und in diesem Raum passiert etwas Wichtiges:
 
 ---
 
-*Erkunde kuratierte Chillout-Sessions auf [Chillout Sphere](https://www.youtube.com/@ChilloutSphere) — wo warme Soundscapes auf kinematografische Visuals treffen, um die perfekte Atmosphäre für Entspannung und emotionale Balance zu schaffen.*
+*Erkunde kuratierte Chillout-Sessions auf [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) — wo warme Soundscapes auf kinematografische Visuals treffen, um die perfekte Atmosphäre für Entspannung und emotionale Balance zu schaffen.*
 `
 };

@@ -53,7 +53,7 @@ export default function Home() {
             "description": description,
             "sameAs": [
               "https://www.youtube.com/@deepfocussphere67",
-              "https://www.youtube.com/@ChilloutSphere67",
+              "https://www.youtube.com/@chilloutsphere67",
               "https://www.youtube.com/@CyberDreams-x9p",
               "https://www.youtube.com/@JazzSphereRadio",
               "https://facebook.com/profile.php?id=61580223927048"

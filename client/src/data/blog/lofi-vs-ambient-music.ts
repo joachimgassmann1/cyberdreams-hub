@@ -143,7 +143,7 @@ Want to experience the difference firsthand? I've created both lofi-style and am
 
 For ambient focus music, check out [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67), where you'll find long-form ambient tracks designed specifically for deep work and concentration.
 
-If you're more drawn to the chillout vibe that bridges lofi and ambient, explore [Chillout Sphere](https://www.youtube.com/@ChilloutSphere67) for relaxing soundscapes that provide gentle support without demanding attention.
+If you're more drawn to the chillout vibe that bridges lofi and ambient, explore [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) for relaxing soundscapes that provide gentle support without demanding attention.
 
 ## The Bottom Line
 
@@ -284,7 +284,7 @@ Möchtest du den Unterschied aus erster Hand erleben? Ich habe sowohl Lofi-Style
 
 Für Ambient Fokusmusik schau dir [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67) an, wo du Langform-Ambient-Tracks findest, die speziell für Deep Work und Konzentration entworfen wurden.
 
-Wenn du mehr zur Chillout-Stimmung hingezogen bist, die Lofi und Ambient überbrückt, erkunde [Chillout Sphere](https://www.youtube.com/@ChilloutSphere67) für entspannende Soundscapes, die sanfte Unterstützung bieten, ohne Aufmerksamkeit zu fordern.
+Wenn du mehr zur Chillout-Stimmung hingezogen bist, die Lofi und Ambient überbrückt, erkunde [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) für entspannende Soundscapes, die sanfte Unterstützung bieten, ohne Aufmerksamkeit zu fordern.
 
 ## Das Fazit
 

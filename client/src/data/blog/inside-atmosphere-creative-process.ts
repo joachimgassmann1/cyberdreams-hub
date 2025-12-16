@@ -120,7 +120,7 @@ Each channel represents a distinct emotional world:
 ### **[Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere)** 
 Designed for concentration and productivity. Clean, minimal, supportive. The sound stays out of the way while keeping the mind engaged.
 
-### **[Chillout Sphere](https://www.youtube.com/@ChilloutSphere)** 
+### **[Chillout Sphere](https://www.youtube.com/@chilloutsphere67)** 
 For unwinding and reflection. Soft, warm, calming. The atmosphere invites you to slow down and breathe.
 
 ### **[Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p)** 
@@ -287,7 +287,7 @@ Dieser sorgfältige Prozess stellt sicher, dass sich jede Sphere komplett, kohä
 Jeder Kana### **[Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere)** 
 Entworfen für Konzentration und Produktivität. Klar, minimal, unterstützend. Der Sound bleibt aus dem Weg, während er den Geist engagiert hält.
 
-### **[Chillout Sphere](https://www.youtube.com/@ChilloutSphere)** 
+### **[Chillout Sphere](https://www.youtube.com/@chilloutsphere67)** 
 Zum Entspannen und Reflektieren. Sanft, warm, beruhigend. Die Atmosphäre lädt dich ein, langsamer zu werden und zu atmen.
 
 ### **[Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p)** 

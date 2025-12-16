@@ -44,7 +44,7 @@ During this transition, your brain releases different neurochemicals. Cortisol�
 
 Translation: you're more likely to feel things deeply during sunset.
 
-I remember the first time I really noticed this. I was sitting on my balcony, watching the sky turn from blue to orange to that impossible shade of purple that only exists for about seven minutes. I had [Chillout Sphere](https://www.youtube.com/@chilloutsphere) playing in my headphones—nothing fancy, just some ambient downtempo I'd heard a hundred times before.
+I remember the first time I really noticed this. I was sitting on my balcony, watching the sky turn from blue to orange to that impossible shade of purple that only exists for about seven minutes. I had [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) playing in my headphones—nothing fancy, just some ambient downtempo I'd heard a hundred times before.
 
 But in that moment, with the light changing and my brain chemistry shifting, that music hit me like a freight train of nostalgia and peace all mixed together. I actually got a little teary-eyed, which is embarrassing to admit but also kind of beautiful?
 
@@ -90,7 +90,7 @@ Music selection matters. Not all chillout music works equally well. The sweet sp
 
 Consistency creates ritual. The more often you pair sunset with chillout music, the stronger the association becomes. Your brain learns to anticipate the emotional state, which actually makes the effect more powerful over time.
 
-I've built my entire evening routine around this. Every day, weather permitting, I step outside around sunset with my headphones and [Chillout Sphere](https://www.youtube.com/@chilloutsphere) queued up. It's become my daily reset button—a guaranteed 20-30 minutes of peace no matter how chaotic the day was.
+I've built my entire evening routine around this. Every day, weather permitting, I step outside around sunset with my headphones and [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) queued up. It's become my daily reset button—a guaranteed 20-30 minutes of peace no matter how chaotic the day was.
 
 ## Why This Matters
 
@@ -122,7 +122,7 @@ That's just magic.
 
 ---
 
-Want to experience the Sunset Effect for yourself? Check out [Chillout Sphere](https://www.youtube.com/@chilloutsphere) for curated chillout music designed for your evening listening. And next time the sun starts to set, don't fight the urge to slow down and listen. Your biology is trying to tell you something.
+Want to experience the Sunset Effect for yourself? Check out [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) for curated chillout music designed for your evening listening. And next time the sun starts to set, don't fight the urge to slow down and listen. Your biology is trying to tell you something.
 `,
   contentDe: `Es gibt etwas fast peinlich Vorhersehbares an meiner Abendroutine. Gegen 18:47 Uhr – ja, ich habe oft genug in meiner Spotify-Historie nachgesehen, um zu wissen, dass es seltsam spezifisch ist – greife ich immer zur gleichen Playlist. Nicht mein Morgen-Jazz. Nicht meine Nachmittags-Fokus-Tracks. Immer, ohne Ausnahme, Chillout-Musik.
 
@@ -144,7 +144,7 @@ Psychologen haben einen Begriff für den emotionalen Zustand, der während der D
 
 Während dieses Übergangs setzt dein Gehirn verschiedene Neurochemikalien frei. Cortisol beginnt zu sinken. Währenddessen beginnen Serotonin und Melatonin ihren langsamen Anstieg. Diese chemische Verschiebung erzeugt ein "emotionales Verwundbarkeitsfenster."
 
-Ich erinnere mich an das erste Mal, als ich das wirklich bemerkte. Ich saß auf meinem Balkon und beobachtete, wie der Himmel von Blau zu Orange zu diesem unmöglichen Lila-Ton wechselte. Ich hatte [Chillout Sphere](https://www.youtube.com/@chilloutsphere) in meinen Kopfhörern.
+Ich erinnere mich an das erste Mal, als ich das wirklich bemerkte. Ich saß auf meinem Balkon und beobachtete, wie der Himmel von Blau zu Orange zu diesem unmöglichen Lila-Ton wechselte. Ich hatte [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) in meinen Kopfhörern.
 
 Aber in diesem Moment, mit dem sich ändernden Licht und meiner sich verschiebenden Gehirnchemie, traf mich diese Musik wie ein Güterzug aus Nostalgie und Frieden. Das ist der Sunset-Effekt in Aktion.
 
@@ -170,5 +170,5 @@ Aber noch wichtiger, er ist schön.
 
 ---
 
-Willst du den Sunset-Effekt selbst erleben? Schau dir [Chillout Sphere](https://www.youtube.com/@chilloutsphere) für kuratierte Chillout-Musik an, die für dein Abendhören entworfen wurde. Und wenn das nächste Mal die Sonne untergeht, kämpfe nicht gegen den Drang an, langsamer zu werden und zuzuhören. Deine Biologie versucht dir etwas zu sagen.`
+Willst du den Sunset-Effekt selbst erleben? Schau dir [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) für kuratierte Chillout-Musik an, die für dein Abendhören entworfen wurde. Und wenn das nächste Mal die Sonne untergeht, kämpfe nicht gegen den Drang an, langsamer zu werden und zuzuhören. Deine Biologie versucht dir etwas zu sagen.`
 };
