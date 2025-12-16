@@ -26,8 +26,13 @@ import { whyPeopleRelaxWrong } from './why-people-relax-wrong';
 import { perfectFocusPlaylist } from './perfect-focus-playlist';
 import jazzSleepScience from './jazz-sleep-science';
 import { pianoVsGuitarAnxiety } from './piano-vs-guitar-anxiety';
+import { sunsetEffectChillout } from './sunset-effect-chillout';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...sunsetEffectChillout,
+ featured: true
+ },
  {
  ...pianoVsGuitarAnxiety,
  featured: true
