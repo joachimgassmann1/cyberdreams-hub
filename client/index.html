@@ -10,8 +10,10 @@
     <!-- Preconnect Resource Hints for Performance -->
     <link rel="preconnect" href="https://www.youtube.com" />
     <link rel="preconnect" href="https://i.ytimg.com" />
+    <link rel="preconnect" href="https://img.youtube.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
@@ -26,13 +28,22 @@
     <!-- Open Graph, Twitter Card, and Canonical URL are dynamically set by React Helmet based on domain -->
     
     <!-- Schema.org JSON-LD is dynamically set by React Helmet based on domain and language -->
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJXK61KJNE"></script>
+    <!-- Google Analytics 4 - Deferred for better performance -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-JJXK61KJNE');
+      // Defer Google Analytics loading until after page load
+      window.addEventListener('load', function() {
+        // Create script element for GTM
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-JJXK61KJNE';
+        document.head.appendChild(script);
+        
+        // Initialize dataLayer
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JJXK61KJNE');
+      });
     </script>
     
     <!-- Preload critical logo -->

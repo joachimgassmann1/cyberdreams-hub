@@ -1,36 +1,47 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { HelmetProvider } from "react-helmet-async";
-import Home from "./pages/Home";
-import Impressum from "./pages/Impressum";
-import Datenschutz from "./pages/Datenschutz";
-import BlogOverview from "./pages/blog/BlogOverview";
-import BlogArticle from "./pages/blog/BlogArticle";
 import ScrollRestoration from "./components/ScrollRestoration";
-import CookieBanner from "./components/CookieBanner";
 import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
-import MusicPlayer from "./components/MusicPlayer";
 import { detectLanguage } from "./lib/i18n";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
+
+// Lazy load route components for better code splitting
+const Home = lazy(() => import("./pages/Home"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const Impressum = lazy(() => import("./pages/Impressum"));
+const Datenschutz = lazy(() => import("./pages/Datenschutz"));
+const BlogOverview = lazy(() => import("./pages/blog/BlogOverview"));
+const BlogArticle = lazy(() => import("./pages/blog/BlogArticle"));
+const CookieBanner = lazy(() => import("./components/CookieBanner"));
+const MusicPlayer = lazy(() => import("./components/MusicPlayer"));
+
+// Loading fallback component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-background">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+);
 
 function Router() {
   return (
     <>
       <ScrollRestoration />
-      <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/impressum"} component={Impressum} />
-      <Route path={"/datenschutz"} component={Datenschutz} />
-      <Route path={"/blog"} component={BlogOverview} />
-      <Route path={"/blog/:slug"} component={BlogArticle} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-      </Switch>
+      <Suspense fallback={<PageLoader />}>
+        <Switch>
+          <Route path={"/"} component={Home} />
+          <Route path={"/impressum"} component={Impressum} />
+          <Route path={"/datenschutz"} component={Datenschutz} />
+          <Route path={"/blog"} component={BlogOverview} />
+          <Route path={"/blog/:slug"} component={BlogArticle} />
+          <Route path={"/404"} component={NotFound} />
+          {/* Final fallback route */}
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
     </>
   );
 }
@@ -58,8 +69,10 @@ function App() {
             <TooltipProvider>
               <Toaster />
               <Router />
-              <CookieBanner />
-              <MusicPlayer />
+              <Suspense fallback={null}>
+                <CookieBanner />
+                <MusicPlayer />
+              </Suspense>
             </TooltipProvider>
           </MusicPlayerProvider>
         </ThemeProvider>
