@@ -34,6 +34,7 @@ export default function Hero() {
           src="/hero-bg.webp"
           alt="Modern workspace with city skyline at dusk - ambient music atmosphere for focus and productivity"
           className="w-full h-full object-cover"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/30 to-background/90"></div>
       </div>
