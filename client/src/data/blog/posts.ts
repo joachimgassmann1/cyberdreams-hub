@@ -28,8 +28,13 @@ import jazzSleepScience from './jazz-sleep-science';
 import { pianoVsGuitarAnxiety } from './piano-vs-guitar-anxiety';
 import { sunsetEffectChillout } from './sunset-effect-chillout';
 import { harvardStudyMusic } from './harvard-study-music';
+import { silenceAnxiety } from './silence-anxiety';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...silenceAnxiety,
+ featured: true
+ },
  {
  ...harvardStudyMusic,
  featured: true
