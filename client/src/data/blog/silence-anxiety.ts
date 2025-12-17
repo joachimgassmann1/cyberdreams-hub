@@ -4,15 +4,15 @@ import { blogCategories } from './categories';
 export const silenceAnxiety: BlogPost = {
   slug: 'silence-anxiety-sleep',
   title: 'Why Silence Keeps You Awake: The Psychology of "Silence Anxiety"',
-  description: 'Why do your thoughts race as soon as it gets quiet? Learn why your brain interprets silence as danger and how Brown Noise helps you sleep.',
+  description: 'Why do your thoughts race as soon as it gets quiet? Learn why your brain interprets silence as danger and how Deep Focus Ambient helps you sleep.',
   publishDate: '2025-12-18',
   author: 'Sphere Music Hub',
   category: 'insights',
   readingTime: 5,
   heroImage: '/images/blog/silence-anxiety-hero.jpg',
-  tags: ['sleep', 'anxiety', 'brown noise', 'psychology', 'focus'],
+  tags: ['sleep', 'anxiety', 'ambient', 'psychology', 'focus'],
   featured: true,
-  content: `Why Silence Keeps You Awake: The Psychology of "Silence Anxiety" (And How Brown Noise Helps)
+  content: `Why Silence Keeps You Awake: The Psychology of "Silence Anxiety" (And How Ambient Music Helps)
 
 It's 11:45 PM. You're tired. Your eyes are burning. You lie down, turn off the lights, and look forward to some well-deserved sleep.
 
@@ -45,22 +45,22 @@ The DMN is the network for daydreaming, self-reflection – and worrying. It is 
 
 In silence, the DMN has free rein. There is nothing to distract it. Your own thoughts become deafeningly loud.
 
-## The Solution: "Acoustic Blankets" (Colored Noise)
+## The Solution: "Acoustic Blankets" (Colored Noise & Ambient)
 
-Here comes the trick that millions of people (and especially the ADHD community) have discovered for themselves: **Controlled Noise.**
+Here comes the trick that millions of people (and especially the ADHD community) have discovered for themselves: **Controlled Sound.**
 
 It sounds paradoxical, but to find peace in your head, you need noise. But not just any noise.
 
-### Why "Brown Noise" Is Better Than Silence
+### Why Ambient Drones Are Better Than Silence
 Most people know White Noise – it sounds like aggressive radio static. For many, this is too high-pitched and annoying.
 
-The new star in the sleep sky is **Brown Noise**. It emphasizes the lower frequencies. It sounds like:
+The better alternative is **Deep Ambient** or **Brown Noise**. It emphasizes the lower frequencies. It sounds like:
 *   A distant waterfall
 *   Heavy rain on a roof
 *   The deep rumble of an airplane
 
 **Why it works:**
-Brown Noise wraps around your auditory perception like a heavy, warm blanket. It offers your brain just enough stimulation to switch off the "saber-toothed tiger warning system," but is monotonous enough not to trigger the DMN.
+Deep Ambient wraps around your auditory perception like a heavy, warm blanket. It offers your brain just enough stimulation to switch off the "saber-toothed tiger warning system," but is monotonous enough not to trigger the DMN.
 
 It masks sudden noises (like floorboards creaking) that would otherwise startle you. Your brain registers: "Constant sound = Safety."
 
@@ -68,17 +68,17 @@ It masks sudden noises (like floorboards creaking) that would otherwise startle 
 
 The next time you lie awake and the silence is screaming at you, don't force yourself to be quiet. Your brain is just trying to protect you from invisible tigers.
 
-Instead, give it what it needs: A signal of safety. Try Brown Noise, rain sounds, or deep ambient drones (like on our *Deep Focus Sphere* channel).
+Instead, give it what it needs: A signal of safety. Try rain sounds or deep ambient drones (like on our *Deep Focus Sphere* channel).
 
 Sometimes the best way to find silence is to just make it a little louder.
 
 ---
-*Want to try it out? Listen to our latest [Deep Focus Ambient Playlist](https://www.youtube.com/@DeepFocusSphere) or visit our [Deep Focus Sphere YouTube channel](https://www.youtube.com/@DeepFocusSphere) for 8 hours of Deep Focus Sounds.*
+*Want to try it out? Listen to our latest [Deep Focus Ambient Playlist](https://www.youtube.com/@DeepFocusSphere67) or visit our [Deep Focus Sphere YouTube channel](https://www.youtube.com/@DeepFocusSphere67) for 8 hours of Deep Focus Sounds.*
 
 *If you found this interesting, you might also like our article on [The Best Study Music According to Harvard Neuroscience](/blog/best-study-music-harvard-neuroscience).*`,
   titleDe: 'Warum Stille dich wach hält: Die Psychologie der "Stille-Angst"',
-  descriptionDe: 'Warum rasen deine Gedanken, sobald es leise wird? Erfahre, warum dein Gehirn Stille als Gefahr interpretiert und wie Brown Noise dir beim Einschlafen hilft.',
-  contentDe: `Warum Stille dich wach hält: Die Psychologie der "Stille-Angst" (und wie Brown Noise hilft)
+  descriptionDe: 'Warum rasen deine Gedanken, sobald es leise wird? Erfahre, warum dein Gehirn Stille als Gefahr interpretiert und wie Deep Focus Ambient dir beim Einschlafen hilft.',
+  contentDe: `Warum Stille dich wach hält: Die Psychologie der "Stille-Angst" (und wie Ambient Musik hilft)
 
 Es ist 23:45 Uhr. Du bist müde. Deine Augen brennen. Du legst dich ins Bett, machst das Licht aus und freust dich auf wohlverdienten Schlaf.
 
@@ -111,22 +111,22 @@ Das DMN ist das Netzwerk für Tagträume, Selbstreflexion – und Sorgen. Es ist
 
 In der Stille hat das DMN freie Bahn. Es gibt nichts, was es ablenkt. Deine eigenen Gedanken werden ohrenbetäubend laut.
 
-## Die Lösung: "Akustische Decken" (Colored Noise)
+## Die Lösung: "Akustische Decken" (Colored Noise & Ambient)
 
-Hier kommt der Trick, den Millionen Menschen (und besonders die ADHS-Community) für sich entdeckt haben: **Kontrollierter Lärm.**
+Hier kommt der Trick, den Millionen Menschen (und besonders die ADHS-Community) für sich entdeckt haben: **Kontrollierter Sound.**
 
 Es klingt paradox, aber um Ruhe im Kopf zu finden, brauchst du Geräusche. Aber nicht irgendwelche.
 
-### Warum "Brown Noise" besser ist als Stille
+### Warum Deep Ambient besser ist als Stille
 Weißes Rauschen (White Noise) kennen die meisten – es klingt wie ein aggressives Radio-Rauschen. Vielen ist das zu hochfrequent und nervig.
 
-Der neue Star am Schlaf-Himmel ist **Brown Noise** (Braunes Rauschen). Es betont die tiefen Frequenzen. Es klingt wie:
+Die bessere Alternative ist **Deep Ambient** oder **Brown Noise**. Es betont die tiefen Frequenzen. Es klingt wie:
 *   Ein ferner Wasserfall
 *   Starker Regen auf einem Dach
 *   Das tiefe Grollen eines Flugzeugs
 
 **Warum es funktioniert:**
-Brown Noise legt sich wie eine schwere, warme Decke über deine auditive Wahrnehmung. Es bietet deinem Gehirn gerade genug Stimulation, um das "Säbelzahntiger-Warnsystem" abzuschalten, ist aber monoton genug, um das DMN nicht zu triggern.
+Deep Ambient legt sich wie eine schwere, warme Decke über deine auditive Wahrnehmung. Es bietet deinem Gehirn gerade genug Stimulation, um das "Säbelzahntiger-Warnsystem" abzuschalten, ist aber monoton genug, um das DMN nicht zu triggern.
 
 Es maskiert plötzliche Geräusche (wie das Knacken der Dielen), die dich sonst aufschrecken würden. Dein Gehirn registriert: "Konstantes Geräusch = Sicherheit".
 
@@ -134,12 +134,12 @@ Es maskiert plötzliche Geräusche (wie das Knacken der Dielen), die dich sonst 
 
 Wenn du das nächste Mal wach liegst und die Stille dich anschreit, zwing dich nicht zur Ruhe. Dein Gehirn versucht nur, dich vor unsichtbaren Tigern zu beschützen.
 
-Gib ihm stattdessen das, was es braucht: Ein Signal der Sicherheit. Probier es mit Brown Noise, Regen-Sounds oder tiefen Ambient-Drones (wie auf unserem *Deep Focus Sphere* Kanal).
+Gib ihm stattdessen das, was es braucht: Ein Signal der Sicherheit. Probier es mit Regen-Sounds oder tiefen Ambient-Drones (wie auf unserem *Deep Focus Sphere* Kanal).
 
 Manchmal ist der beste Weg zur Stille, es einfach ein bisschen lauter zu machen.
 
 ---
-*Lust bekommen, es auszuprobieren? Hör dir unsere neueste [Deep Focus Ambient Playlist](https://www.youtube.com/@DeepFocusSphere) an oder besuche unseren [Deep Focus Sphere YouTube-Kanal](https://www.youtube.com/@DeepFocusSphere) für 8 Stunden Deep Focus Sounds.*
+*Lust bekommen, es auszuprobieren? Hör dir unsere neueste [Deep Focus Ambient Playlist](https://www.youtube.com/@DeepFocusSphere67) an oder besuche unseren [Deep Focus Sphere YouTube-Kanal](https://www.youtube.com/@DeepFocusSphere67) für 8 Stunden Deep Focus Sounds.*
 
 *Wenn du das interessant fandest, gefällt dir vielleicht auch unser Artikel über [Die beste Lernmusik laut Harvard-Neurowissenschaft](/blog/best-study-music-harvard-neuroscience).*`
 };
