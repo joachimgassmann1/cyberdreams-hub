@@ -73,7 +73,9 @@ Instead, give it what it needs: A signal of safety. Try Brown Noise, rain sounds
 Sometimes the best way to find silence is to just make it a little louder.
 
 ---
-*Want to try it out? Listen to our latest [Brown Noise Playlist](#) or visit our YouTube channel for 8 hours of Deep Focus Sounds.*`,
+*Want to try it out? Listen to our latest [Deep Focus Ambient Playlist](https://www.youtube.com/@DeepFocusSphere) or visit our [Deep Focus Sphere YouTube channel](https://www.youtube.com/@DeepFocusSphere) for 8 hours of Deep Focus Sounds.*
+
+*If you found this interesting, you might also like our article on [The Best Study Music According to Harvard Neuroscience](/blog/best-study-music-harvard-neuroscience).*`,
   titleDe: 'Warum Stille dich wach hält: Die Psychologie der "Stille-Angst"',
   descriptionDe: 'Warum rasen deine Gedanken, sobald es leise wird? Erfahre, warum dein Gehirn Stille als Gefahr interpretiert und wie Brown Noise dir beim Einschlafen hilft.',
   contentDe: `Warum Stille dich wach hält: Die Psychologie der "Stille-Angst" (und wie Brown Noise hilft)
@@ -137,5 +139,7 @@ Gib ihm stattdessen das, was es braucht: Ein Signal der Sicherheit. Probier es m
 Manchmal ist der beste Weg zur Stille, es einfach ein bisschen lauter zu machen.
 
 ---
-*Lust bekommen, es auszuprobieren? Hör dir unsere neueste [Brown Noise Playlist](#) an oder besuche unseren YouTube-Kanal für 8 Stunden Deep Focus Sounds.*`
+*Lust bekommen, es auszuprobieren? Hör dir unsere neueste [Deep Focus Ambient Playlist](https://www.youtube.com/@DeepFocusSphere) an oder besuche unseren [Deep Focus Sphere YouTube-Kanal](https://www.youtube.com/@DeepFocusSphere) für 8 Stunden Deep Focus Sounds.*
+
+*Wenn du das interessant fandest, gefällt dir vielleicht auch unser Artikel über [Die beste Lernmusik laut Harvard-Neurowissenschaft](/blog/best-study-music-harvard-neuroscience).*`
 };
