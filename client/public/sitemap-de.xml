@@ -27,6 +27,15 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://sphere-music-hub.de/blog/silence-anxiety-sleep</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/silence-anxiety-sleep" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/silence-anxiety-sleep" />
+    <lastmod>2025-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://sphere-music-hub.de/blog/best-study-music-harvard-neuroscience</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/best-study-music-harvard-neuroscience" />
     <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/best-study-music-harvard-neuroscience" />

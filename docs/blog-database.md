@@ -1,7 +1,7 @@
 # Sphere Music Hub - Blog Content Database
 **Zweck:** Verhindert Wiederholungen bei neuen Artikeln  
-**Stand:** 4. Dezember 2025  
-**Artikel:** 26 (alle EN + DE)
+**Stand:** 18. Dezember 2025  
+**Artikel:** 28 (alle EN + DE)
 
 ---
 
@@ -502,3 +502,16 @@
 - Joachims Abendritual: Von White Noise zu Chet Baker
 - Welche Jazz-Stile für Schlaf funktionieren (Smooth, Cool, Modal)
 - Praktische Anleitung ohne Overthinking
+
+---
+
+### 28. Why Silence Keeps You Awake: The Psychology of "Silence Anxiety" (Insights)
+**Slug:** `silence-anxiety-sleep`
+**Datei:** `silence-anxiety.ts`
+**Datum:** 2025-12-18
+**Tags:** sleep, anxiety, brown noise, psychology, focus
+**Kernthemen:**
+- Warum das Gehirn Stille als Gefahr interpretiert (Evolution)
+- Default Mode Network (DMN) und Gedankenkarussell
+- Brown Noise als "akustische Decke"
+- Wissenschaftliche Erklärung für "Stille-Angst"
