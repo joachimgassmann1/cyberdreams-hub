@@ -73,7 +73,7 @@ Instead, give it what it needs: A signal of safety. Try rain sounds or deep ambi
 Sometimes the best way to find silence is to just make it a little louder.
 
 ---
-*Want to try it out? Listen to our latest [Deep Focus Ambient Playlist](https://www.youtube.com/@DeepFocusSphere67) or visit our [Deep Focus Sphere YouTube channel](https://www.youtube.com/@DeepFocusSphere67) for 8 hours of Deep Focus Sounds.*
+*Want to try it out? Listen to our latest [Deep Focus Ambient Playlist](https://youtube.com/playlist?list=PL1nVMfXe7BHpZWkqtug3e-bPvzUrz72gi&si=xEa9Lt1afiqt5lRQ) or visit our [Deep Focus Sphere YouTube channel](https://www.youtube.com/@DeepFocusSphere67) for 8 hours of Deep Focus Sounds.*
 
 *If you found this interesting, you might also like our article on [The Best Study Music According to Harvard Neuroscience](/blog/best-study-music-harvard-neuroscience).*`,
   titleDe: 'Warum Stille dich wach hält: Die Psychologie der "Stille-Angst"',
@@ -139,7 +139,7 @@ Gib ihm stattdessen das, was es braucht: Ein Signal der Sicherheit. Probier es m
 Manchmal ist der beste Weg zur Stille, es einfach ein bisschen lauter zu machen.
 
 ---
-*Lust bekommen, es auszuprobieren? Hör dir unsere neueste [Deep Focus Ambient Playlist](https://www.youtube.com/@DeepFocusSphere67) an oder besuche unseren [Deep Focus Sphere YouTube-Kanal](https://www.youtube.com/@DeepFocusSphere67) für 8 Stunden Deep Focus Sounds.*
+*Lust bekommen, es auszuprobieren? Hör dir unsere neueste [Deep Focus Ambient Playlist](https://youtube.com/playlist?list=PL1nVMfXe7BHpZWkqtug3e-bPvzUrz72gi&si=xEa9Lt1afiqt5lRQ) an oder besuche unseren [Deep Focus Sphere YouTube-Kanal](https://www.youtube.com/@DeepFocusSphere67) für 8 Stunden Deep Focus Sounds.*
 
 *Wenn du das interessant fandest, gefällt dir vielleicht auch unser Artikel über [Die beste Lernmusik laut Harvard-Neurowissenschaft](/blog/best-study-music-harvard-neuroscience).*`
 };
