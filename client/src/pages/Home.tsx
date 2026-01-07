@@ -80,12 +80,12 @@ export default function Home() {
               {
                 "@type": "VideoObject",
                 "position": 1,
-                "name": "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
-                "description": "Immersive cyberpunk ambient music for deep focus and creative work",
-                "thumbnailUrl": "https://i.ytimg.com/vi/Q2NIq7Qwogc/mqdefault.jpg",
-                "uploadDate": "2025-11-20T00:00:00Z",
-                "contentUrl": "https://www.youtube.com/watch?v=Q2NIq7Qwogc",
-                "embedUrl": "https://www.youtube.com/embed/Q2NIq7Qwogc"
+                "name": "Post-Apocalyptic Cyborg | Immersive Dystopian Atmosphere for Coding",
+                "description": "Immersive dystopian ambient music for deep focus and coding",
+                "thumbnailUrl": "https://i.ytimg.com/vi/ZLV_qi22E40/mqdefault.jpg",
+                "uploadDate": "2026-01-03T00:00:00Z",
+                "contentUrl": "https://www.youtube.com/watch?v=ZLV_qi22E40",
+                "embedUrl": "https://www.youtube.com/embed/ZLV_qi22E40"
               },
               {
                 "@type": "VideoObject",
@@ -110,12 +110,12 @@ export default function Home() {
               {
                 "@type": "VideoObject",
                 "position": 4,
-                "name": "Deep Focus | Calm Ambient Music for Work and Study",
-                "description": "Ambient focus music for concentration, studying, and productive work",
-                "thumbnailUrl": "https://i.ytimg.com/vi/uDbTU2pLCRs/mqdefault.jpg",
-                "uploadDate": "2025-11-12T00:00:00Z",
-                "contentUrl": "https://www.youtube.com/watch?v=uDbTU2pLCRs",
-                "embedUrl": "https://www.youtube.com/embed/uDbTU2pLCRs"
+                "name": "Deep Work Soundscape – Stay Focused for Hours with Cozy Office Vibes",
+                "description": "Cozy office ambience with deep focus music for productivity",
+                "thumbnailUrl": "https://i.ytimg.com/vi/WrUw5iL2J3A/mqdefault.jpg",
+                "uploadDate": "2026-01-04T00:00:00Z",
+                "contentUrl": "https://www.youtube.com/watch?v=WrUw5iL2J3A",
+                "embedUrl": "https://www.youtube.com/embed/WrUw5iL2J3A"
               },
               {
                 "@type": "VideoObject",

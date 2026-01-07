@@ -6,8 +6,8 @@ import { useMusicPlayer } from "@/contexts/MusicPlayerContext";
 // Static featured videos (updated manually as needed - last update: Nov 26, 2025)
 const FEATURED_VIDEOS = [
   {
-    id: "Q2NIq7Qwogc",
-    title: "CYBERPUNK CITYRAIN | Futuristic Ambiente Music",
+    id: "ZLV_qi22E40",
+    title: "Post-Apocalyptic Cyborg | Immersive Dystopian Atmosphere for Coding",
     channelTitle: "Cyber Dreams",
   },
   {
@@ -21,8 +21,8 @@ const FEATURED_VIDEOS = [
     channelTitle: "Chillout Sphere",
   },
   {
-    id: "uDbTU2pLCRs",
-    title: "Deep Focus | Calm Ambient Music for Work and Study",
+    id: "WrUw5iL2J3A",
+    title: "Deep Work Soundscape – Stay Focused for Hours with Cozy Office Vibes",
     channelTitle: "Deep Focus Sphere",
   },
   {
