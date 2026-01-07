@@ -1,7 +1,7 @@
 # Sphere Music Hub - Blog Content Database
 **Zweck:** Verhindert Wiederholungen bei neuen Artikeln  
 **Stand:** 18. Dezember 2025  
-**Artikel:** 28 (alle EN + DE)
+**Artikel:** 29 (alle EN + DE)
 
 ---
 
@@ -515,3 +515,16 @@
 - Default Mode Network (DMN) und Gedankenkarussell
 - Brown Noise als "akustische Decke"
 - Wissenschaftliche Erklärung für "Stille-Angst"
+
+---
+
+### 29. Why Silence Keeps You Awake: The Psychology of "Silence Anxiety" (Insights)
+**Slug:** `silence-anxiety-sleep`
+**Datei:** `silence-anxiety.ts`
+**Datum:** 2025-12-18
+**Tags:** sleep, anxiety, ambient, psychology, focus
+**Kernthemen:**
+- Warum das Gehirn Stille als Gefahr interpretiert (Evolution)
+- Das "Default Mode Network" und Gedankenkarussell
+- Deep Focus Ambient als "akustische Decke"
+- Verlinkung zu Deep Focus Sphere (Lake House Ambience)
