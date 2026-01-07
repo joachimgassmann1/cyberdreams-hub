@@ -27,6 +27,15 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://sphere-music-hub.de/blog/coding-in-the-matrix</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/coding-in-the-matrix" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/coding-in-the-matrix" />
+    <lastmod>2026-01-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://sphere-music-hub.de/blog/silence-anxiety-sleep</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/silence-anxiety-sleep" />
     <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/silence-anxiety-sleep" />

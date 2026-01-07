@@ -29,8 +29,13 @@ import { pianoVsGuitarAnxiety } from './piano-vs-guitar-anxiety';
 import { sunsetEffectChillout } from './sunset-effect-chillout';
 import { harvardStudyMusic } from './harvard-study-music';
 import { silenceAnxiety } from './silence-anxiety';
+import { codingInTheMatrix } from './coding-in-the-matrix';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...codingInTheMatrix,
+ featured: true
+ },
  {
  ...silenceAnxiety,
  featured: true
