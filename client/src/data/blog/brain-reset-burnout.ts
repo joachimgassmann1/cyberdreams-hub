@@ -38,7 +38,7 @@ export const brainResetBurnout: BlogPost = {
 </p>
 
 <p>
-  As we discussed in our article on <a href="/blog/why-people-relax-wrong-active-vs-passive" class="text-primary hover:underline">Why People Relax Wrong</a>, effective relaxation requires a bridge. You need a sensory input that is <strong>safe</strong>, <strong>predictable</strong>, and <strong>immersive</strong> to guide your brain down from the cliff.
+  As we discussed in our article on <a href="/blog/why-most-people-relax-wrong-how-music-can-fix-it" class="text-primary hover:underline">Why People Relax Wrong</a>, effective relaxation requires a bridge. You need a sensory input that is <strong>safe</strong>, <strong>predictable</strong>, and <strong>immersive</strong> to guide your brain down from the cliff.
 </p>
 
 <h2>The 20-Minute Reset Routine</h2>
@@ -124,7 +124,7 @@ export const brainResetBurnout: BlogPost = {
 </p>
 
 <p>
-  Wie wir in unserem Artikel über <a href="/blog/why-people-relax-wrong-active-vs-passive" class="text-primary hover:underline">Warum Menschen falsch entspannen</a> besprochen haben, erfordert effektive Entspannung eine Brücke. Du brauchst einen sensorischen Input, der <strong>sicher</strong>, <strong>vorhersehbar</strong> und <strong>immersiv</strong> ist, um dein Gehirn von der Klippe herunterzuführen.
+  Wie wir in unserem Artikel über <a href="/blog/why-most-people-relax-wrong-how-music-can-fix-it" class="text-primary hover:underline">Warum Menschen falsch entspannen</a> besprochen haben, erfordert effektive Entspannung eine Brücke. Du brauchst einen sensorischen Input, der <strong>sicher</strong>, <strong>vorhersehbar</strong> und <strong>immersiv</strong> ist, um dein Gehirn von der Klippe herunterzuführen.
 </p>
 
 <h2>Die 20-Minuten-Reset-Routine</h2>
