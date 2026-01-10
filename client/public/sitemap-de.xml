@@ -27,6 +27,15 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://sphere-music-hub.de/blog/20-minute-brain-reset-soundscapes-prevent-burnout</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/20-minute-brain-reset-soundscapes-prevent-burnout" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/20-minute-brain-reset-soundscapes-prevent-burnout" />
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://sphere-music-hub.de/blog/why-your-brain-needs-jazz-to-focus-white-noise-fails</loc>
     <xhtml:link rel="alternate" hreflang="de" href="https://sphere-music-hub.de/blog/why-your-brain-needs-jazz-to-focus-white-noise-fails" />
     <xhtml:link rel="alternate" hreflang="en" href="https://sphere-music-hub.com/blog/why-your-brain-needs-jazz-to-focus-white-noise-fails" />

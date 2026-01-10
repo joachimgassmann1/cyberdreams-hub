@@ -31,8 +31,13 @@ import { harvardStudyMusic } from './harvard-study-music';
 import { silenceAnxiety } from './silence-anxiety';
 import { codingInTheMatrix } from './coding-in-the-matrix';
 import { jazzBrainFocus } from './jazz-brain-focus';
+import { brainResetBurnout } from './brain-reset-burnout';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...brainResetBurnout,
+ featured: true
+ },
  {
  ...jazzBrainFocus,
  featured: true

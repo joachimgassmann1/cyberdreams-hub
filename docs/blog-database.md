@@ -7,7 +7,20 @@
 
 ## 📋 Alle Artikel mit Kernthemen
 
-### 1. Why Your Brain Needs Jazz to Focus (When White Noise Fails) (Jazz)
+### 1. The 20-Minute Brain Reset: Using Soundscapes to Prevent Burnout (Relax)
+**Slug:** `20-minute-brain-reset-soundscapes-prevent-burnout`
+**Datei:** `brain-reset-burnout.ts`
+**Datum:** 2026-01-08
+**Tags:** burnout, mental health, stress relief, routine, neuroscience, recovery
+**Kernthemen:**
+- "Zombie Mode" (Müde aber aufgedreht)
+- Sympathikus vs. Parasympathikus
+- Warum Stille bei Stress nicht hilft (Gedankenkarussell)
+- 3-Schritte-Routine: Wash Cycle (Pink Noise) -> Drift (Ambient) -> Return (Piano)
+
+---
+
+### 2. Why Your Brain Needs Jazz to Focus (When White Noise Fails) (Jazz)
 **Slug:** `why-your-brain-needs-jazz-to-focus-white-noise-fails`
 **Datei:** `jazz-brain-focus.ts`
 **Datum:** 2026-01-07
@@ -20,7 +33,7 @@
 
 ---
 
-### 2. Coding in the Matrix: Why Developers Love Dystopian Soundscapes (Cyberpunk)
+### 3. Coding in the Matrix: Why Developers Love Dystopian Soundscapes (Cyberpunk)
 **Slug:** `coding-in-the-matrix`
 **Datei:** `coding-in-the-matrix.ts`
 **Datum:** 2026-01-07
