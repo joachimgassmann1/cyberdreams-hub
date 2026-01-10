@@ -7,7 +7,20 @@
 
 ## 📋 Alle Artikel mit Kernthemen
 
-### 1. Coding in the Matrix: Why Developers Love Dystopian Soundscapes (Cyberpunk)
+### 1. Why Your Brain Needs Jazz to Focus (When White Noise Fails) (Jazz)
+**Slug:** `why-your-brain-needs-jazz-to-focus-white-noise-fails`
+**Datei:** `jazz-brain-focus.ts`
+**Datum:** 2026-01-07
+**Tags:** jazz, focus, neuroscience, adhd, productivity, stochastic resonance
+**Kernthemen:**
+- Yerkes-Dodson-Gesetz (Optimale Erregung)
+- Stochastische Resonanz (Warum Chaos hilft)
+- Predictive Coding (Warum Pop langweilt und Free Jazz stresst)
+- "Goldlöckchen"-Zone für ADHS-Gehirne
+
+---
+
+### 2. Coding in the Matrix: Why Developers Love Dystopian Soundscapes (Cyberpunk)
 **Slug:** `coding-in-the-matrix`
 **Datei:** `coding-in-the-matrix.ts`
 **Datum:** 2026-01-07

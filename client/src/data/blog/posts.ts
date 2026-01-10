@@ -30,8 +30,13 @@ import { sunsetEffectChillout } from './sunset-effect-chillout';
 import { harvardStudyMusic } from './harvard-study-music';
 import { silenceAnxiety } from './silence-anxiety';
 import { codingInTheMatrix } from './coding-in-the-matrix';
+import { jazzBrainFocus } from './jazz-brain-focus';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...jazzBrainFocus,
+ featured: true
+ },
  {
  ...codingInTheMatrix,
  featured: true
