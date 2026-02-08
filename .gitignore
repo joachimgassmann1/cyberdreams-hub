@@ -104,3 +104,13 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+
+# AI Trading Bot
+ai-trading-bot/__pycache__/
+ai-trading-bot/**/__pycache__/
+ai-trading-bot/*.pyc
+ai-trading-bot/.env
+ai-trading-bot/logs/
+ai-trading-bot/data/bot_state.json
+ai-trading-bot/models/saved/
+ai-trading-bot/backtest/results/

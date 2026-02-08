@@ -1,0 +1,12 @@
+ccxt
+scikit-learn
+ta-lib-bin
+websockets
+aiohttp
+python-dotenv
+joblib
+lightgbm
+xgboost
+Flask
+Flask-Cors
+Flask-SocketIO
