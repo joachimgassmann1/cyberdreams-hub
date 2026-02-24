@@ -311,9 +311,24 @@ Das Frontend ist eine statische HTML-Seite, die direkt auf Netlify deployed wird
 | Eigenschaft | Wert |
 |---|---|
 | **URL** | `https://wonderful-twilight-366241.netlify.app/` |
-| **Site ID** | `wonderful-twilight-366241` |
-| **Deployment** | Manuell per ZIP-Upload (nicht mit GitHub verbunden) |
+| **Site ID (Name)** | `wonderful-twilight-366241` |
+| **Site ID (UUID)** | `f4919cae-c5dc-409e-a55b-a4a8a3ef3d77` |
+| **Personal Access Token** | `nfp_5DjQRURDsTyDGqQpyADpg8hKnjbWvk2cc932` |
+| **Deployment** | Manuell per ZIP-Upload oder über Netlify CLI mit Token |
 | **Quellcode** | `/weinregal.html` im `cyberdreams-hub` Repo |
+
+### Deploy-Befehl (für Manus)
+
+```bash
+NETLIFY_AUTH_TOKEN="nfp_5DjQRURDsTyDGqQpyADpg8hKnjbWvk2cc932"
+SITE_ID="wonderful-twilight-366241"
+cp /home/ubuntu/cyberdreams-hub/weinregal.html /tmp/deploy/index.html
+cd /tmp/deploy && zip -j deploy.zip index.html
+curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+  -H "Content-Type: application/zip" \
+  --data-binary @deploy.zip \
+  "https://api.netlify.com/api/v1/sites/f4919cae-c5dc-409e-a55b-a4a8a3ef3d77/deploys"
+```
 
 ### Frontend-Code (`weinregal.html`)
 
