@@ -507,32 +507,133 @@ html,body{
 }
 
 /* ── 3D CELLAR ── */
-.cellar-wrap{padding:10px 14px}
-.shelf-level{display:flex;flex-direction:column;margin-bottom:2px}
-.shelf-label{font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;text-align:right;padding:3px 2px 1px}
-.shelf-slots{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:4px 0}
+.cellar-wrap{padding:6px 10px 16px}
+.shelf-level{display:flex;flex-direction:column;margin-bottom:1px}
+.shelf-label{
+  font-size:9px;font-weight:700;color:var(--text3);text-transform:uppercase;
+  letter-spacing:0.08em;text-align:left;padding:4px 2px 1px;
+  display:flex;align-items:center;gap:6px;
+}
+.shelf-label-num{
+  width:18px;height:18px;border-radius:5px;
+  background:var(--bg3);border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;font-weight:800;color:var(--text2);flex-shrink:0;
+}
+.shelf-slots{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;padding:2px 0}
 .shelf-plank{
-  height:10px;
+  height:9px;
   background:linear-gradient(180deg,#C8A882 0%,#A07850 50%,#8B6440 100%);
   border-radius:3px;
   box-shadow:0 3px 8px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.2);
 }
 .slot{
-  aspect-ratio:0.55;border-radius:8px;
+  aspect-ratio:0.52;border-radius:7px;
   display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
-  padding-bottom:5px;cursor:pointer;
+  padding-bottom:4px;cursor:pointer;
   transition:all 0.25s;position:relative;overflow:hidden;
 }
 .slot-empty{border:1.5px dashed var(--border2);background:var(--bg2)}
 .slot-empty:hover{border-color:var(--accent);background:var(--accent-light)}
+.slot-empty.slot-selectable{border-color:var(--accent);background:var(--accent-light);animation:pulse 1.5s infinite}
+.slot-empty.slot-selectable:hover{background:rgba(123,63,32,0.15);transform:scale(1.05)}
 .slot-filled{border:1px solid var(--border);background:var(--surface)}
-.slot-filled:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 8px 24px rgba(0,0,0,0.1);border-color:var(--border2)}
+.slot-filled:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 8px 24px rgba(0,0,0,0.1);border-color:var(--border2)}
 .slot-filled:active{transform:scale(0.96)}
-.slot-label{font-size:7px;font-weight:700;color:var(--text3);text-align:center;padding:0 2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
+.slot-selected-highlight{border:2px solid var(--accent)!important;box-shadow:0 0 0 3px var(--accent-glow)!important}
+.slot-label{font-size:6.5px;font-weight:700;color:var(--text3);text-align:center;padding:0 2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
 .slot-filled .slot-label{color:var(--text2)}
-.cellar-legend{display:flex;gap:12px;padding:0 14px 10px;flex-wrap:wrap}
+.slot-pos-label{
+  position:absolute;top:2px;right:2px;
+  font-size:5.5px;font-weight:800;color:rgba(0,0,0,0.25);
+  line-height:1;
+}
+.cellar-legend{display:flex;gap:10px;padding:0 10px 8px;flex-wrap:wrap}
 .legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text3);font-weight:500}
 .legend-dot{width:7px;height:7px;border-radius:50%}
+
+/* ── SLOT PICKER MODAL ── */
+.slot-picker-overlay{
+  position:fixed;inset:0;background:rgba(26,20,16,0.6);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  z-index:500;display:flex;align-items:flex-end;
+  animation:fadeIn 0.2s ease;
+}
+.slot-picker-sheet{
+  background:var(--surface);border:1px solid var(--border);
+  border-bottom:none;border-radius:var(--r-xl) var(--r-xl) 0 0;
+  padding:0 0 calc(24px + var(--safe-bottom));
+  width:100%;max-height:90vh;overflow-y:auto;
+  animation:slideUp 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.slot-picker-header{
+  padding:16px 18px 12px;
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;background:var(--surface);z-index:10;
+}
+.slot-picker-title{font-size:18px;font-weight:800;color:var(--text);letter-spacing:-0.3px}
+.slot-picker-sub{font-size:12px;color:var(--text3);margin-top:2px}
+.slot-picker-body{padding:10px 12px}
+.picker-shelf-level{margin-bottom:3px}
+.picker-shelf-header{
+  display:flex;align-items:center;gap:8px;
+  padding:5px 2px 2px;
+}
+.picker-shelf-num{
+  width:22px;height:22px;border-radius:6px;
+  background:var(--bg3);border:1px solid var(--border2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:800;color:var(--text2);flex-shrink:0;
+}
+.picker-shelf-label{font-size:11px;font-weight:600;color:var(--text3)}
+.picker-shelf-slots{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:3px 0}
+.picker-slot{
+  aspect-ratio:0.55;border-radius:8px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;transition:all 0.2s;position:relative;
+  border:1.5px solid var(--border2);background:var(--bg2);
+}
+.picker-slot-occupied{
+  background:var(--surface);border-color:var(--border);
+  cursor:not-allowed;opacity:0.5;
+}
+.picker-slot-free{
+  border-color:var(--border2);background:var(--bg2);
+}
+.picker-slot-free:hover{
+  border-color:var(--accent);background:var(--accent-light);
+  transform:scale(1.06);
+}
+.picker-slot-selected{
+  border-color:var(--accent)!important;background:var(--accent)!important;
+  box-shadow:0 4px 16px var(--accent-glow);
+  transform:scale(1.08);
+}
+.picker-slot-selected .picker-slot-num{color:#fff!important}
+.picker-slot-num{
+  font-size:8px;font-weight:800;color:var(--text3);
+  position:absolute;top:2px;right:3px;line-height:1;
+}
+.picker-slot-bottle{flex:1;display:flex;align-items:center;justify-content:center;padding-top:4px}
+.picker-shelf-plank{
+  height:7px;
+  background:linear-gradient(180deg,#C8A882 0%,#A07850 50%,#8B6440 100%);
+  border-radius:2px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.12);
+  margin-bottom:2px;
+}
+.slot-picker-confirm{
+  margin:12px 12px 0;
+  display:flex;gap:8px;
+}
+.position-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--accent-light);color:var(--accent);
+  border:1px solid rgba(123,63,32,0.2);
+  padding:4px 10px;border-radius:100px;
+  font-size:12px;font-weight:700;
+}
 
 /* ── STATS ── */
 .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 16px 0}
@@ -692,7 +793,7 @@ const { useState, useEffect, useRef, useCallback } = React;
 /* ─── SUPABASE CONFIG ─── */
 const SUPABASE_URL = "https://pwekkezezyqjmazvnjbn.supabase.co";
 const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3ZWtrZXplenlxam1henZuamJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE4NzgyMzgsImV4cCI6MjA4NzQ1NDIzOH0.SHO7LkSwj7dHUUV3A8sgtv8kp5jeShx1FiuFTp4Jj78";
-const API_BASE = "https://5050-io8cqt5lvmd5rebn90leo-9c09503b.us2.manus.computer";
+const API_BASE = "https://weinregal-backend.onrender.com";
 
 /* Supabase Client – Anon Key für Browser-Zugriff */
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
@@ -709,11 +810,11 @@ const eur = n => { const v=parseFloat(n)||0; return new Intl.NumberFormat('de-DE
 
 /* ─── DEMO DATA ─── */
 const DEMO = [
-  {name:"Château Lafite Rothschild",producer:"Château Lafite Rothschild",vintage:2015,region:"Pauillac",country:"Frankreich",type:"red",ripeness:"peak",buy_price:450,current_price:680,count:1,slot:0,grape:"Cabernet Sauvignon, Merlot",alcohol:"13.0%",description:"Ein majestätischer Bordeaux mit tiefer Rubinfarbe und einem Bouquet aus schwarzen Johannisbeeren, Zedernholz und Tabak. Am Gaumen zeigt er eine außergewöhnliche Komplexität mit seidigen Tanninen.",food_pairing:"Entrecôte, Wildgerichte, gereifter Hartkäse",serving_temp:"17–18 °C",aging_potential:"Noch 20–30 Jahre",photo_url:null},
-  {name:"Domaine de la Romanée-Conti",producer:"DRC",vintage:2018,region:"Burgund",country:"Frankreich",type:"red",ripeness:"young",buy_price:2500,current_price:3200,count:1,slot:1,grape:"Pinot Noir",alcohol:"13.5%",description:"Der heilige Gral des Burgunds. Unglaubliche Tiefe mit Aromen von roten Früchten, Rosen, feuchter Erde und Gewürzen.",food_pairing:"Trüffel, Wildgeflügel, Jakobsmuscheln",serving_temp:"16–17 °C",aging_potential:"20–40 Jahre",photo_url:null},
-  {name:"Sassicaia",producer:"Tenuta San Guido",vintage:2016,region:"Toskana",country:"Italien",type:"red",ripeness:"peak",buy_price:180,current_price:220,count:3,slot:2,grape:"Cabernet Sauvignon, Cabernet Franc",alcohol:"13.5%",description:"Der Pionier der Supertoskaner. Elegante Struktur mit Aromen von schwarzen Kirschen, Graphit und Kräutern.",food_pairing:"Bistecca alla Fiorentina, Wildschweinsalami",serving_temp:"17–18 °C",aging_potential:"15–20 Jahre",photo_url:null},
-  {name:"Chablis Grand Cru",producer:"William Fèvre",vintage:2020,region:"Chablis",country:"Frankreich",type:"white",ripeness:"peak",buy_price:85,current_price:95,count:4,slot:5,grape:"Chardonnay",alcohol:"13.0%",description:"Mineralischer Weißwein par excellence. Kieselstein-Mineralität, grüner Apfel, Zitrusfrüchte und eine charakteristische Salzigkeit.",food_pairing:"Austern, Hummer, Steinbutt",serving_temp:"10–12 °C",aging_potential:"8–12 Jahre",photo_url:null},
-  {name:"Krug Grande Cuvée",producer:"Krug",vintage:null,region:"Champagne",country:"Frankreich",type:"sparkling",ripeness:"peak",buy_price:180,current_price:190,count:2,slot:10,grape:"Pinot Noir, Chardonnay, Pinot Meunier",alcohol:"12.0%",description:"Die Ikone unter den Champagnern. Über 120 Weine aus mehr als 10 Jahrgängen vereint. Brioche, Haselnuss und eine unendliche Perlage.",food_pairing:"Kaviar, Hummer, weißer Trüffel",serving_temp:"8–10 °C",aging_potential:"15–20 Jahre",photo_url:null},
+  {name:"Château Lafite Rothschild",producer:"Château Lafite Rothschild",vintage:2015,region:"Pauillac",country:"Frankreich",type:"red",ripeness:"peak",buy_price:450,current_price:680,count:1,slot:0,slots:[0],grape:"Cabernet Sauvignon, Merlot",alcohol:"13.0%",description:"Ein majestätischer Bordeaux mit tiefer Rubinfarbe und einem Bouquet aus schwarzen Johannisbeeren, Zedernholz und Tabak. Am Gaumen zeigt er eine außergewöhnliche Komplexität mit seidigen Tanninen.",food_pairing:"Entrecôte, Wildgerichte, gereifter Hartkäse",serving_temp:"17–18 °C",aging_potential:"Noch 20–30 Jahre",photo_url:null},
+  {name:"Domaine de la Romanée-Conti",producer:"DRC",vintage:2018,region:"Burgund",country:"Frankreich",type:"red",ripeness:"young",buy_price:2500,current_price:3200,count:1,slot:1,slots:[1],grape:"Pinot Noir",alcohol:"13.5%",description:"Der heilige Gral des Burgunds. Unglaubliche Tiefe mit Aromen von roten Früchten, Rosen, feuchter Erde und Gewürzen.",food_pairing:"Trüffel, Wildgefügel, Jakobsmuscheln",serving_temp:"16–17 °C",aging_potential:"20–40 Jahre",photo_url:null},
+  {name:"Sassicaia",producer:"Tenuta San Guido",vintage:2016,region:"Toskana",country:"Italien",type:"red",ripeness:"peak",buy_price:180,current_price:220,count:3,slot:2,slots:[2,3,4],grape:"Cabernet Sauvignon, Cabernet Franc",alcohol:"13.5%",description:"Der Pionier der Supertoskaner. Elegante Struktur mit Aromen von schwarzen Kirschen, Graphit und Kräutern.",food_pairing:"Bistecca alla Fiorentina, Wildschweinsalami",serving_temp:"17–18 °C",aging_potential:"15–20 Jahre",photo_url:null},
+  {name:"Chablis Grand Cru",producer:"William Fèvre",vintage:2020,region:"Chablis",country:"Frankreich",type:"white",ripeness:"peak",buy_price:85,current_price:95,count:4,slot:5,slots:[5,6,7,8],grape:"Chardonnay",alcohol:"13.0%",description:"Mineralischer Weißwein par excellence. Kieselstein-Mineralität, grüner Apfel, Zitrusfrüchte und eine charakteristische Salzigkeit.",food_pairing:"Austern, Hummer, Steinbutt",serving_temp:"10–12 °C",aging_potential:"8–12 Jahre",photo_url:null},
+  {name:"Krug Grande Cuvée",producer:"Krug",vintage:null,region:"Champagne",country:"Frankreich",type:"sparkling",ripeness:"peak",buy_price:180,current_price:190,count:2,slot:10,slots:[10,11],grape:"Pinot Noir, Chardonnay, Pinot Meunier",alcohol:"12.0%",description:"Die Ikone unter den Champagnern. Über 120 Weine aus mehr als 10 Jahrgängen vereint. Brioche, Haselnuss und eine unendliche Perlage.",food_pairing:"Kaviar, Hummer, weißer Trüffel",serving_temp:"8–10 °C",aging_potential:"15–20 Jahre",photo_url:null},
 ];
 
 /* ─── SVG ICONS ─── */
@@ -781,12 +882,24 @@ function Bottle3D({type}) {
 async function loadWines() {
   const { data, error } = await sb.from('wines').select('*').order('created_at', { ascending: false });
   if (error) throw error;
-  return data || [];
+  // slots-Feld von JSON-String zu Array parsen
+  return (data || []).map(w => ({
+    ...w,
+    slots: typeof w.slots === 'string' ? (() => { try { return JSON.parse(w.slots); } catch { return []; } })() :
+           Array.isArray(w.slots) ? w.slots : []
+  }));
 }
 
 async function saveWine(wine) {
-  const { data, error } = await sb.from('wines').insert([wine]).select().single();
+  // slots als JSON-String für Supabase (falls Spalte TEXT ist)
+  const payload = { ...wine };
+  if (Array.isArray(payload.slots)) payload.slots = JSON.stringify(payload.slots);
+  const { data, error } = await sb.from('wines').insert([payload]).select().single();
   if (error) throw error;
+  // slots zurück zu Array parsen
+  if (data && typeof data.slots === 'string') {
+    try { data.slots = JSON.parse(data.slots); } catch { data.slots = []; }
+  }
   return data;
 }
 
@@ -1094,6 +1207,26 @@ function WineDetail({ wine, onClose, onUpdate }) {
             {wine.serving_temp && <div className="detail-row"><span className="detail-row-label">Trinktemperatur</span><span className="detail-row-value">{wine.serving_temp}</span></div>}
             {wine.aging_potential && <div className="detail-row"><span className="detail-row-label">Lagerpotenzial</span><span className="detail-row-value">{wine.aging_potential}</span></div>}
             <div className="detail-row"><span className="detail-row-label">Flaschen</span><span className="detail-row-value">{wine.count} Stück</span></div>
+            {/* Regalposition */}
+            {(Array.isArray(wine.slots) && wine.slots.length > 0) ? (
+              <div className="detail-row">
+                <span className="detail-row-label">Regalposition</span>
+                <div style={{display:'flex',flexWrap:'wrap',gap:'4px',justifyContent:'flex-end'}}>
+                  {wine.slots.map(s=>{
+                    const ebene = 10 - Math.floor(s/5);
+                    const pos = (s%5)+1;
+                    return <span key={s} className="position-badge" style={{fontSize:'11px',padding:'3px 8px'}}>E{ebene}·P{pos}</span>;
+                  })}
+                </div>
+              </div>
+            ) : wine.slot >= 0 ? (
+              <div className="detail-row">
+                <span className="detail-row-label">Regalposition</span>
+                <span className="position-badge" style={{fontSize:'11px',padding:'3px 8px'}}>
+                  E{10 - Math.floor((wine.slot||0)/5)}·P{((wine.slot||0)%5)+1}
+                </span>
+              </div>
+            ) : null}
           </div>
 
           {/* Speisenbegleitung */}
@@ -1109,13 +1242,107 @@ function WineDetail({ wine, onClose, onUpdate }) {
   );
 }
 
+/* ─── SLOT PICKER ─── */
+function SlotPicker({ wines, selectedSlots, count, onConfirm, onClose }) {
+  const ROWS=10, COLS=5, TOTAL=ROWS*COLS;
+  const [selected, setSelected] = useState(selectedSlots || []);
+
+  // Belegte Slots aus allen anderen Weinen
+  const occupiedSlots = new Set();
+  wines.forEach(w => {
+    if(Array.isArray(w.slots)) w.slots.forEach(s => occupiedSlots.add(s));
+    else for(let i=0;i<w.count;i++) occupiedSlots.add((w.slot||0)+i);
+  });
+  // Vorher gewählte Slots aus der Auswahl entfernen (damit eigene Flaschen wählbar bleiben)
+  selectedSlots.forEach(s => occupiedSlots.delete(s));
+
+  function toggleSlot(idx) {
+    if(occupiedSlots.has(idx)) return;
+    setSelected(prev => {
+      if(prev.includes(idx)) return prev.filter(s=>s!==idx);
+      if(prev.length >= count) return [...prev.slice(1), idx]; // ersetze ältesten
+      return [...prev, idx];
+    });
+  }
+
+  return (
+    <div className="slot-picker-overlay" onClick={e=>e.target===e.currentTarget&&onClose()}>
+      <div className="slot-picker-sheet">
+        <div className="slot-picker-header">
+          <div>
+            <div className="slot-picker-title">Regalposition wählen</div>
+            <div className="slot-picker-sub">
+              {selected.length} von {count} Plätzen gewählt · Tippe auf freie Felder
+            </div>
+          </div>
+          <button className="sheet-close" onClick={onClose}>×</button>
+        </div>
+        <div className="slot-picker-body">
+          {Array.from({length:ROWS},(_,row)=>{
+            const ebene = ROWS - row;
+            return (
+              <div key={row} className="picker-shelf-level">
+                <div className="picker-shelf-header">
+                  <div className="picker-shelf-num">{ebene}</div>
+                  <div className="picker-shelf-label">Ebene {ebene}</div>
+                </div>
+                <div className="picker-shelf-slots">
+                  {Array.from({length:COLS},(_,col)=>{
+                    const idx = row*COLS+col;
+                    const isOccupied = occupiedSlots.has(idx);
+                    const isSelected = selected.includes(idx);
+                    const occupyingWine = isOccupied ? wines.find(w=>{
+                      if(Array.isArray(w.slots)) return w.slots.includes(idx);
+                      for(let i=0;i<w.count;i++) if((w.slot||0)+i===idx) return true;
+                      return false;
+                    }) : null;
+                    return (
+                      <div key={col}
+                        className={`picker-slot ${isSelected?'picker-slot-selected':isOccupied?'picker-slot-occupied':'picker-slot-free'}`}
+                        title={isOccupied&&occupyingWine ? `Belegt: ${occupyingWine.name}` : isSelected ? `Ausgewählt · E${ebene}·P${col+1}` : `Frei · E${ebene}·P${col+1}`}
+                        onClick={()=>toggleSlot(idx)}>
+                        <div className="picker-slot-num">{col+1}</div>
+                        <div className="picker-slot-bottle">
+                          {isOccupied && occupyingWine
+                            ? <Bottle3D type={occupyingWine.type}/>
+                            : isSelected
+                              ? <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3" strokeLinecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+                              : <div style={{width:'8px',height:'8px',borderRadius:'50%',border:'1.5px dashed var(--border2)',opacity:0.5}}/>
+                          }
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="picker-shelf-plank"/>
+              </div>
+            );
+          })}
+        </div>
+        <div className="slot-picker-confirm">
+          <button className="btn-secondary" style={{flex:1}} onClick={onClose}>Abbrechen</button>
+          <button className="btn-primary" style={{flex:2}}
+            onClick={()=>onConfirm(selected)}
+            disabled={selected.length===0}>
+            {selected.length===count
+              ? `${count} Position${count>1?'en':''} bestätigen`
+              : `${selected.length}/${count} gewählt`}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ─── ADD WINE MODAL ─── */
-function AddWineModal({ onClose, onAdd }) {
+function AddWineModal({ onClose, onAdd, wines }) {
   const [step, setStep] = useState('choose');
   const [analyzing, setAnalyzing] = useState(false);
   const [aiResult, setAiResult] = useState(null);
   const [photo, setPhoto] = useState(null);
   const [saving, setSaving] = useState(false);
+  const [showSlotPicker, setShowSlotPicker] = useState(false);
+  const [selectedSlots, setSelectedSlots] = useState([]);
   const [form, setForm] = useState({
     name:'', producer:'', vintage:'', region:'', country:'Frankreich',
     type:'red', ripeness:'peak', buy_price:'', current_price:'', count:1,
@@ -1164,13 +1391,15 @@ function AddWineModal({ onClose, onAdd }) {
         try { photoUrl = await uploadPhoto(photo, Date.now()); }
         catch(e) { photoUrl = null; }
       }
+      const cnt = parseInt(form.count)||1;
       await onAdd({
         ...form,
         vintage: form.vintage ? parseInt(form.vintage) : null,
         buy_price: parseFloat(form.buy_price),
         current_price: parseFloat(form.current_price),
-        count: parseInt(form.count)||1,
-        slot: Math.floor(Math.random()*28),
+        count: cnt,
+        slot: selectedSlots[0] ?? -1,
+        slots: selectedSlots,
         photo_url: photoUrl,
       });
       onClose();
@@ -1179,6 +1408,7 @@ function AddWineModal({ onClose, onAdd }) {
   }
 
   return (
+    <>
     <div className="overlay" onClick={e => e.target===e.currentTarget && onClose()}>
       <div className="sheet">
         <div className="sheet-handle"/>
@@ -1282,7 +1512,43 @@ function AddWineModal({ onClose, onAdd }) {
               </div>
               <div className="form-section">
                 <label className="form-label">Anzahl Flaschen</label>
-                <input className="form-input" type="number" placeholder="1" min="1" max="100" value={form.count} onChange={e=>set('count',e.target.value)}/>
+                <input className="form-input" type="number" placeholder="1" min="1" max="100" value={form.count} onChange={e=>{
+                  set('count',e.target.value);
+                  setSelectedSlots([]); // Slots zurücksetzen bei Änderung der Anzahl
+                }}/>
+              </div>
+              {/* REGALPOSITION */}
+              <div className="form-section">
+                <label className="form-label">Regalposition</label>
+                <div
+                  onClick={() => setShowSlotPicker(true)}
+                  style={{
+                    padding:'13px 14px',
+                    background:'var(--bg)',border:'1.5px solid var(--border2)',
+                    borderRadius:'var(--r-md)',cursor:'pointer',
+                    display:'flex',alignItems:'center',justifyContent:'space-between',
+                    transition:'all 0.2s',
+                  }}
+                  onMouseEnter={e=>e.currentTarget.style.borderColor='var(--accent)'}
+                  onMouseLeave={e=>e.currentTarget.style.borderColor='var(--border2)'}
+                >
+                  <div>
+                    {selectedSlots.length > 0 ? (
+                      <div style={{display:'flex',flexWrap:'wrap',gap:'5px'}}>
+                        {selectedSlots.map(s=>{
+                          const ebene = 10 - Math.floor(s/5);
+                          const pos = (s%5)+1;
+                          return (
+                            <span key={s} className="position-badge">E{ebene}·P{pos}</span>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <span style={{fontSize:'15px',color:'var(--text3)'}}>Im Regal platzieren…</span>
+                    )}
+                  </div>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" strokeWidth="2" strokeLinecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
               </div>
               <button type="submit" className="btn-primary" disabled={analyzing||saving}>
                 {saving ? 'Wird gespeichert…' : analyzing ? 'Analyse läuft…' : 'Wein zur Sammlung hinzufügen'}
@@ -1292,6 +1558,16 @@ function AddWineModal({ onClose, onAdd }) {
         </div>
       </div>
     </div>
+    {showSlotPicker && (
+      <SlotPicker
+        wines={wines}
+        selectedSlots={selectedSlots}
+        count={parseInt(form.count)||1}
+        onConfirm={slots => { setSelectedSlots(slots); setShowSlotPicker(false); }}
+        onClose={() => setShowSlotPicker(false)}
+      />
+    )}
+    </>
   );
 }
 
@@ -1355,6 +1631,11 @@ function WineListPage({ wines, onDelete, onAdd, onUpdate, syncing }) {
                       <span className="ripeness-dot"/>{RIPENESS_LABEL[w.ripeness]}
                     </span>
                     {w.photo_url && <span style={{ fontSize:'11px', color:'var(--accent)', background:'var(--accent-light)', padding:'3px 8px', borderRadius:'100px', border:'1px solid rgba(123,63,32,0.15)', fontWeight:'600' }}>📸 Foto</span>}
+                  {(Array.isArray(w.slots)&&w.slots.length>0) && (
+                    <span className="position-badge" style={{fontSize:'10px',padding:'2px 7px'}}>
+                      📍 E{10-Math.floor(w.slots[0]/5)}·P{(w.slots[0]%5)+1}{w.slots.length>1?` +${w.slots.length-1}`:''}
+                    </span>
+                  )}
                   </div>
                   <div className="wine-value-row">
                     <span className="wine-price">{eur(w.current_price)}</span>
@@ -1377,7 +1658,7 @@ function WineListPage({ wines, onDelete, onAdd, onUpdate, syncing }) {
 
       <button className="cam-fab" onClick={()=>setShowModal(true)} title="Foto aufnehmen"><I.Camera s={21} c="currentColor"/></button>
       <button className="fab" onClick={()=>setShowModal(true)}><I.Plus s={22} c="#fff"/></button>
-      {showModal && <AddWineModal onClose={()=>setShowModal(false)} onAdd={onAdd}/>}
+      {showModal && <AddWineModal onClose={()=>setShowModal(false)} onAdd={onAdd} wines={wines}/>}
       {detailWine && <WineDetail wine={detailWine} onClose={()=>setDetail(null)} onUpdate={onUpdate}/>}
     </div>
   );
@@ -1385,16 +1666,23 @@ function WineListPage({ wines, onDelete, onAdd, onUpdate, syncing }) {
 
 /* ─── CELLAR ─── */
 function CellarPage({ wines, onWineClick }) {
-  const ROWS=6, COLS=5, TOTAL=ROWS*COLS;
+  const ROWS=10, COLS=5, TOTAL=ROWS*COLS;
+  // slotMap: slot-index -> wine (jede Flasche einzeln)
   const slotMap={};
-  wines.forEach(w => { for(let i=0;i<w.count;i++){const s=w.slot+i;if(s<TOTAL&&!slotMap[s])slotMap[s]=w;} });
+  wines.forEach(w => {
+    if(Array.isArray(w.slots)) {
+      w.slots.forEach(s => { if(s>=0&&s<TOTAL&&!slotMap[s]) slotMap[s]=w; });
+    } else {
+      for(let i=0;i<w.count;i++){const s=(w.slot||0)+i;if(s>=0&&s<TOTAL&&!slotMap[s])slotMap[s]=w;}
+    }
+  });
   const filled=Object.keys(slotMap).length;
   return (
     <div className="page">
       <div className="page-header">
         <div className="header-blur"/>
         <div className="header-inner">
-          <div className="header-title">3D-Weinkeller</div>
+          <div className="header-title">Weinkeller</div>
           <div className="header-sub">{filled} von {TOTAL} Plätzen belegt · {TOTAL-filled} frei</div>
         </div>
       </div>
@@ -1405,34 +1693,44 @@ function CellarPage({ wines, onWineClick }) {
         <div className="legend-item"><div className="legend-dot" style={{border:'1.5px dashed var(--border2)',background:'transparent'}}/> Leer</div>
       </div>
       <div className="cellar-wrap">
-        {Array.from({length:ROWS},(_,row)=>(
-          <div key={row} className="shelf-level">
-            <div className="shelf-label">Ebene {ROWS-row}</div>
-            <div className="shelf-slots">
-              {Array.from({length:COLS},(_,col)=>{
-                const idx=row*COLS+col;
-                const wine=slotMap[idx];
-                return (
-                  <div key={col} className={`slot ${wine?'slot-filled':'slot-empty'}`}
-                    style={wine?{background:TYPE_BG[wine.type],borderColor:`${TYPE_COLOR[wine.type]}25`}:{}}
-                    onClick={()=>wine&&onWineClick(wine.id)}>
-                    {wine ? (
-                      <>
-                        <div style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',paddingTop:'4px'}}>
-                          <Bottle3D type={wine.type}/>
-                        </div>
-                        <div className="slot-label">{wine.vintage||wine.name.split(' ')[0]}</div>
-                      </>
-                    ) : (
-                      <div style={{fontSize:'12px',opacity:0.2,marginBottom:'6px'}}>○</div>
-                    )}
-                  </div>
-                );
-              })}
+        {Array.from({length:ROWS},(_,row)=>{
+          const ebene = ROWS - row; // Ebene 10 oben, Ebene 1 unten
+          return (
+            <div key={row} className="shelf-level">
+              <div className="shelf-label">
+                <div className="shelf-label-num">{ebene}</div>
+                <span>Ebene {ebene}</span>
+              </div>
+              <div className="shelf-slots">
+                {Array.from({length:COLS},(_,col)=>{
+                  const idx=row*COLS+col;
+                  const wine=slotMap[idx];
+                  const posLabel = `E${ebene}·P${col+1}`;
+                  return (
+                    <div key={col}
+                      className={`slot ${wine?'slot-filled':'slot-empty'}`}
+                      style={wine?{background:TYPE_BG[wine.type],borderColor:`${TYPE_COLOR[wine.type]}30`}:{}}
+                      title={wine ? `${wine.name} (${wine.vintage||'k.J.'}) · ${posLabel}` : `Leer · ${posLabel}`}
+                      onClick={()=>wine&&onWineClick(wine.id)}>
+                      <div className="slot-pos-label">{col+1}</div>
+                      {wine ? (
+                        <>
+                          <div style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',paddingTop:'4px'}}>
+                            <Bottle3D type={wine.type}/>
+                          </div>
+                          <div className="slot-label">{wine.vintage||wine.name.split(' ')[0]}</div>
+                        </>
+                      ) : (
+                        <div style={{fontSize:'11px',opacity:0.15,marginBottom:'6px'}}>○</div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="shelf-plank"/>
             </div>
-            <div className="shelf-plank"/>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );
@@ -1531,7 +1829,8 @@ CREATE TABLE IF NOT EXISTS public.wines (
   ripeness TEXT DEFAULT 'peak',
   buy_price NUMERIC(10,2) DEFAULT 0,
   current_price NUMERIC(10,2) DEFAULT 0,
-  count INTEGER DEFAULT 1, slot INTEGER DEFAULT 0,
+  count INTEGER DEFAULT 1, slot INTEGER DEFAULT -1,
+  slots TEXT DEFAULT '[]',
   grape TEXT, alcohol TEXT, description TEXT,
   food_pairing TEXT, serving_temp TEXT,
   aging_potential TEXT, photo_url TEXT, notes TEXT
@@ -1539,7 +1838,9 @@ CREATE TABLE IF NOT EXISTS public.wines (
 ALTER TABLE public.wines DISABLE ROW LEVEL SECURITY;
 INSERT INTO storage.buckets (id,name,public)
 VALUES ('wine-photos','wine-photos',true)
-ON CONFLICT (id) DO NOTHING;`;
+ON CONFLICT (id) DO NOTHING;
+-- Spalte hinzufügen falls Tabelle bereits existiert:
+ALTER TABLE public.wines ADD COLUMN IF NOT EXISTS slots TEXT DEFAULT '[]';`;
 
   function doExport() {
     const blob=new Blob([JSON.stringify(wines,null,2)],{type:'application/json'});
@@ -1706,7 +2007,7 @@ function App() {
 
   async function handleReset() {
     try {
-      for (const w of DEMO) { await saveWine(w); }
+      for (const w of DEMO) { await saveWine({...w, slots: JSON.stringify(w.slots||[])}); }
       await fetchWines();
       showToast('✅ Demo-Daten geladen');
     } catch(e) {
