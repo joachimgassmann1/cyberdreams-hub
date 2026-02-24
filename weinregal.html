@@ -810,34 +810,41 @@ async function analyzeWineLabel(imageDataUrl) {
         role: 'user',
         content: [
           { type: 'image_url', image_url: { url: imageDataUrl } },
-          { type: 'text', text: `Analysiere dieses Weinetikett und gib die Informationen als JSON zurück. Antworte NUR mit validem JSON, kein Text davor oder danach.
+          { type: 'text', text: `Du bist ein Weinexperte mit Sommelier-Ausbildung und kennst alle Weingüter der Welt. Analysiere dieses Weinetikett sehr detailliert.
 
-Format:
+Nutze dein gesamtes Weinwissen um alle Felder so vollständig wie möglich auszufüllen - auch wenn manche Infos nicht direkt auf dem Etikett stehen (z.B. typische Rebsorten der Region, bekannte Preise, Winzer-Geschichte).
+
+Antworte NUR mit validem JSON, kein Text davor oder danach:
+
 {
-  "name": "Weinname",
-  "producer": "Produzent/Weingut",
-  "vintage": 2018,
+  "name": "Vollständiger Weinname",
+  "producer": "Weingut/Produzent",
+  "vintage": 2022,
   "region": "Region/Appellation",
-  "country": "Land auf Deutsch",
+  "country": "Land auf Deutsch (z.B. Frankreich, Italien, Australien)",
   "type": "red|white|rose|sparkling",
   "ripeness": "young|peak|mature",
-  "grape": "Rebsorte(n)",
+  "grape": "Rebsorte(n) z.B. Cabernet Sauvignon, Merlot",
   "alcohol": "13.5%",
-  "description": "Kurze Beschreibung des Weins (2-3 Sätze)",
-  "food_pairing": "Speisenempfehlung",
+  "description": "Professionelle Verkostungsnotiz: Farbe, Nase (Aromen), Gaumen (Struktur, Tannine, Säure), Abgang. Mindestens 4 Sätze.",
+  "food_pairing": "Konkrete Speisenempfehlungen, mindestens 3 Gerichte",
   "serving_temp": "16-18 °C",
-  "aging_potential": "5-10 Jahre",
-  "estimated_price": 45
+  "aging_potential": "z.B. Jetzt trinkbereit bis 2030",
+  "estimated_price": 45,
+  "price_range": "30-60 €",
+  "winery_story": "Geschichte des Weinguts in 3-4 Sätzen: Gründung, Philosophie, Besonderheiten, Auszeichnungen",
+  "vintage_notes": "Jahrgangscharakter: Wie war das Wetter, was macht diesen Jahrgang besonders?",
+  "awards": "Bekannte Auszeichnungen oder Bewertungen (z.B. 92 Punkte Parker, Falstaff Gold)",
+  "confidence": 85
 }` }
         ]
       }],
-      max_tokens: 600
+      max_tokens: 1200
     })
   });
   if (!response.ok) throw new Error(`OpenAI API Fehler: ${response.status}`);
   const data = await response.json();
   const text = data.choices[0].message.content.trim();
-  // JSON aus der Antwort extrahieren
   const jsonMatch = text.match(/\{[\s\S]*\}/);
   if (!jsonMatch) throw new Error('Kein JSON in der Antwort');
   return JSON.parse(jsonMatch[0]);
@@ -1139,6 +1146,11 @@ function WineDetail({ wine, onClose, onUpdate }) {
           ...(w.food_pairing && { food_pairing: w.food_pairing }),
           ...(w.serving_temp && { serving_temp: w.serving_temp }),
           ...(w.aging_potential && { aging_potential: w.aging_potential }),
+          ...(w.winery_story && { winery_story: w.winery_story }),
+          ...(w.vintage_notes && { vintage_notes: w.vintage_notes }),
+          ...(w.awards && { awards: w.awards }),
+          ...(w.price_range && { price_range: w.price_range }),
+          ...(w.estimated_price && !wine.current_price && { current_price: w.estimated_price }),
         };
         await onUpdate(wine.id, updates);
       } else {
@@ -1275,6 +1287,38 @@ function WineDetail({ wine, onClose, onUpdate }) {
               <div className="description-block">🍽 {wine.food_pairing}</div>
             </div>
           )}
+
+          {/* Winzer-Geschichte */}
+          {wine.winery_story && (
+            <div className="detail-card">
+              <div className="detail-card-header">🏰 Über das Weingut</div>
+              <div className="description-block">{wine.winery_story}</div>
+            </div>
+          )}
+
+          {/* Jahrgangsnoten */}
+          {wine.vintage_notes && (
+            <div className="detail-card">
+              <div className="detail-card-header">🌡 Jahrgang {wine.vintage}</div>
+              <div className="description-block">{wine.vintage_notes}</div>
+            </div>
+          )}
+
+          {/* Auszeichnungen & Bewertungen */}
+          {wine.awards && (
+            <div className="detail-card">
+              <div className="detail-card-header">🏆 Auszeichnungen & Bewertungen</div>
+              <div className="description-block">{wine.awards}</div>
+            </div>
+          )}
+
+          {/* Preisbereich */}
+          {wine.price_range && (
+            <div className="detail-card">
+              <div className="detail-card-header">💰 Marktpreis</div>
+              <div className="description-block">Aktueller Marktpreis: <strong>{wine.price_range}</strong></div>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -1385,7 +1429,8 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
   const [form, setForm] = useState({
     name:'', producer:'', vintage:'', region:'', country:'Frankreich',
     type:'red', ripeness:'peak', buy_price:'', current_price:'', count:1,
-    grape:'', alcohol:'', description:'', food_pairing:'', serving_temp:'', aging_potential:''
+    grape:'', alcohol:'', description:'', food_pairing:'', serving_temp:'', aging_potential:'',
+    winery_story:'', vintage_notes:'', awards:'', price_range:''
   });
   const set = (k,v) => setForm(f => ({...f,[k]:v}));
 
@@ -1409,6 +1454,10 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
           serving_temp: w.serving_temp||f.serving_temp,
           aging_potential: w.aging_potential||f.aging_potential,
           current_price: w.estimated_price ? String(w.estimated_price) : f.current_price,
+          winery_story: w.winery_story||f.winery_story,
+          vintage_notes: w.vintage_notes||f.vintage_notes,
+          awards: w.awards||f.awards,
+          price_range: w.price_range||f.price_range,
         }));
       }
     } catch(e) { console.error(e); }
@@ -1501,12 +1550,37 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
                 </div>
               )}
               {aiResult && !analyzing && (
+                <>
                 <div className="ai-success-banner">
                   <I.Spark s={14} c="var(--green)"/>
                   <span className="ai-success-text">KI-Analyse abgeschlossen</span>
-                  <div className="ai-conf-bar"><div className="ai-conf-fill" style={{ width:`${(aiResult.confidence||0.8)*100}%` }}/></div>
-                  <span style={{ fontSize:'12px', fontWeight:'700', color:'var(--green)' }}>{Math.round((aiResult.confidence||0.8)*100)}%</span>
+                  <div className="ai-conf-bar"><div className="ai-conf-fill" style={{ width:`${aiResult.confidence||80}%` }}/></div>
+                  <span style={{ fontSize:'12px', fontWeight:'700', color:'var(--green)' }}>{aiResult.confidence||80}%</span>
                 </div>
+                {aiResult.winery_story && (
+                  <div style={{ background:'var(--accent-light)', border:'1px solid rgba(123,63,32,0.15)', borderRadius:'var(--r-md)', padding:'12px 14px', marginBottom:'10px' }}>
+                    <div style={{ fontSize:'11px', fontWeight:'700', color:'var(--accent)', textTransform:'uppercase', letterSpacing:'0.05em', marginBottom:'6px' }}>🏰 Über das Weingut</div>
+                    <div style={{ fontSize:'13px', color:'var(--text2)', lineHeight:'1.6' }}>{aiResult.winery_story}</div>
+                  </div>
+                )}
+                {aiResult.vintage_notes && (
+                  <div style={{ background:'var(--bg2)', border:'1px solid var(--border)', borderRadius:'var(--r-md)', padding:'12px 14px', marginBottom:'10px' }}>
+                    <div style={{ fontSize:'11px', fontWeight:'700', color:'var(--text2)', textTransform:'uppercase', letterSpacing:'0.05em', marginBottom:'6px' }}>🌡 Jahrgang {aiResult.vintage}</div>
+                    <div style={{ fontSize:'13px', color:'var(--text2)', lineHeight:'1.6' }}>{aiResult.vintage_notes}</div>
+                  </div>
+                )}
+                {aiResult.awards && (
+                  <div style={{ background:'#FFFBF0', border:'1px solid #F0D060', borderRadius:'var(--r-md)', padding:'12px 14px', marginBottom:'10px' }}>
+                    <div style={{ fontSize:'11px', fontWeight:'700', color:'#B8860B', textTransform:'uppercase', letterSpacing:'0.05em', marginBottom:'6px' }}>🏆 Auszeichnungen</div>
+                    <div style={{ fontSize:'13px', color:'var(--text2)', lineHeight:'1.6' }}>{aiResult.awards}</div>
+                  </div>
+                )}
+                {aiResult.price_range && (
+                  <div style={{ background:'#F0FFF4', border:'1px solid #90EE90', borderRadius:'var(--r-md)', padding:'10px 14px', marginBottom:'10px' }}>
+                    <div style={{ fontSize:'13px', color:'#2D6A4F' }}>💰 Marktpreis: <strong>{aiResult.price_range}</strong></div>
+                  </div>
+                )}
+                </>
               )}
               {photo && !analyzing && (
                 <div style={{ marginBottom:'14px', borderRadius:'var(--r-md)', overflow:'hidden', maxHeight:'140px' }}>
@@ -1872,14 +1946,19 @@ CREATE TABLE IF NOT EXISTS public.wines (
   slots TEXT DEFAULT '[]',
   grape TEXT, alcohol TEXT, description TEXT,
   food_pairing TEXT, serving_temp TEXT,
-  aging_potential TEXT, photo_url TEXT, notes TEXT
+  aging_potential TEXT, photo_url TEXT, notes TEXT,
+  winery_story TEXT, vintage_notes TEXT, awards TEXT, price_range TEXT
 );
 ALTER TABLE public.wines DISABLE ROW LEVEL SECURITY;
 INSERT INTO storage.buckets (id,name,public)
 VALUES ('wine-photos','wine-photos',true)
 ON CONFLICT (id) DO NOTHING;
--- Spalte hinzufügen falls Tabelle bereits existiert:
-ALTER TABLE public.wines ADD COLUMN IF NOT EXISTS slots TEXT DEFAULT '[]';`;
+-- Spalten hinzufügen falls Tabelle bereits existiert:
+ALTER TABLE public.wines ADD COLUMN IF NOT EXISTS slots TEXT DEFAULT '[]';
+ALTER TABLE public.wines ADD COLUMN IF NOT EXISTS winery_story TEXT;
+ALTER TABLE public.wines ADD COLUMN IF NOT EXISTS vintage_notes TEXT;
+ALTER TABLE public.wines ADD COLUMN IF NOT EXISTS awards TEXT;
+ALTER TABLE public.wines ADD COLUMN IF NOT EXISTS price_range TEXT;`;
 
   function doExport() {
     const blob=new Blob([JSON.stringify(wines,null,2)],{type:'application/json'});
