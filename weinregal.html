@@ -938,29 +938,83 @@ async function loadWines() {
   const { data, error } = await sb.from('wines').select('*').order('created_at', { ascending: false });
   if (error) throw error;
   // slots-Feld von JSON-String zu Array parsen
-  return (data || []).map(w => ({
-    ...w,
-    slots: typeof w.slots === 'string' ? (() => { try { return JSON.parse(w.slots); } catch { return []; } })() :
-           Array.isArray(w.slots) ? w.slots : []
-  }));
+  return (data || []).map(w => {
+    const wine = {
+      ...w,
+      slots: typeof w.slots === 'string' ? (() => { try { return JSON.parse(w.slots); } catch { return []; } })() :
+             Array.isArray(w.slots) ? w.slots : []
+    };
+    // notes-JSON entpacken und Felder extrahieren
+    if (wine.notes) {
+      try {
+        const n = typeof wine.notes === 'string' ? JSON.parse(wine.notes) : wine.notes;
+        if (n.winery_story) wine.winery_story = n.winery_story;
+        if (n.vintage_notes) wine.vintage_notes = n.vintage_notes;
+        if (n.awards) wine.awards = n.awards;
+        if (n.price_range) wine.price_range = n.price_range;
+      } catch {}
+    }
+    return wine;
+  });
 }
 
 async function saveWine(wine) {
   // slots als JSON-String für Supabase (falls Spalte TEXT ist)
   const payload = { ...wine };
   if (Array.isArray(payload.slots)) payload.slots = JSON.stringify(payload.slots);
+  // Neue Felder in notes-JSON speichern falls Spalten nicht existieren
+  const extraFields = {};
+  ['winery_story','vintage_notes','awards','price_range'].forEach(f => {
+    if (payload[f]) { extraFields[f] = payload[f]; delete payload[f]; }
+  });
+  if (Object.keys(extraFields).length > 0) {
+    const existingNotes = payload.notes ? (typeof payload.notes === 'string' ? (() => { try { return JSON.parse(payload.notes); } catch { return {}; } })() : payload.notes) : {};
+    payload.notes = JSON.stringify({ ...existingNotes, ...extraFields });
+  }
   const { data, error } = await sb.from('wines').insert([payload]).select().single();
   if (error) throw error;
   // slots zurück zu Array parsen
   if (data && typeof data.slots === 'string') {
     try { data.slots = JSON.parse(data.slots); } catch { data.slots = []; }
   }
+  // notes zurück zu Objekt parsen und Felder extrahieren
+  if (data && data.notes) {
+    try {
+      const n = typeof data.notes === 'string' ? JSON.parse(data.notes) : data.notes;
+      if (n.winery_story) data.winery_story = n.winery_story;
+      if (n.vintage_notes) data.vintage_notes = n.vintage_notes;
+      if (n.awards) data.awards = n.awards;
+      if (n.price_range) data.price_range = n.price_range;
+    } catch {}
+  }
   return data;
 }
 
 async function updateWine(id, updates) {
-  const { data, error } = await sb.from('wines').update({...updates, updated_at: new Date().toISOString()}).eq('id', id).select().single();
+  const payload = { ...updates };
+  // Neue Felder in notes-JSON speichern falls Spalten nicht existieren
+  const extraFields = {};
+  ['winery_story','vintage_notes','awards','price_range'].forEach(f => {
+    if (payload[f] !== undefined) { extraFields[f] = payload[f]; delete payload[f]; }
+  });
+  if (Object.keys(extraFields).length > 0) {
+    // Bestehende notes lesen
+    const { data: existing } = await sb.from('wines').select('notes').eq('id', id).single();
+    const existingNotes = existing?.notes ? (typeof existing.notes === 'string' ? (() => { try { return JSON.parse(existing.notes); } catch { return {}; } })() : existing.notes) : {};
+    payload.notes = JSON.stringify({ ...existingNotes, ...extraFields });
+  }
+  const { data, error } = await sb.from('wines').update({...payload, updated_at: new Date().toISOString()}).eq('id', id).select().single();
   if (error) throw error;
+  // notes zurück zu Objekt parsen und Felder extrahieren
+  if (data && data.notes) {
+    try {
+      const n = typeof data.notes === 'string' ? JSON.parse(data.notes) : data.notes;
+      if (n.winery_story) data.winery_story = n.winery_story;
+      if (n.vintage_notes) data.vintage_notes = n.vintage_notes;
+      if (n.awards) data.awards = n.awards;
+      if (n.price_range) data.price_range = n.price_range;
+    } catch {}
+  }
   return data;
 }
 
