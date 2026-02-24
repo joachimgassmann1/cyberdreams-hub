@@ -978,15 +978,18 @@ function CameraCapture({ onCapture }) {
   const canvasRef = useRef(null);
   const streamRef = useRef(null);
   const fileRef = useRef(null);
-  const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
-  // Desktop startet immer im Upload-Modus, Mobile versucht Kamera
-  const [mode, setMode] = useState(isMobile ? 'camera' : 'upload');
+  // iOS/iPadOS erkennen - nutzt immer native Kamera-App
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || 
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const isMobile = isIOS || /Android/i.test(navigator.userAgent);
+  // iOS nutzt immer 'upload' (native Kamera via input file), Desktop kann WebRTC
+  const [mode, setMode] = useState(isMobile ? 'upload' : 'upload');
   const [facing, setFacing] = useState('environment');
   const [ready, setReady] = useState(false);
   const [captured, setCaptured] = useState(null);
 
   useEffect(() => {
-    if (mode === 'camera' && isMobile) {
+    if (mode === 'camera' && !isMobile) {
       startCam();
     }
     return () => stopCam();
@@ -994,7 +997,6 @@ function CameraCapture({ onCapture }) {
 
   async function startCam() {
     stopCam();
-    // Prüfe ob getUserMedia verfügbar ist
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       setMode('upload');
       return;
@@ -1052,16 +1054,28 @@ function CameraCapture({ onCapture }) {
     );
   }
 
+  // iOS/iPadOS und Android: immer native Kamera via input file
+  const cameraRef = useRef(null);
+  const galleryRef = useRef(null);
+
   if (isMobile || mode === 'upload') {
     return (
       <div>
-        {/* Auf Mobilgeräten: capture=environment öffnet direkt die Kamera */}
+        {/* iOS/iPadOS: capture="environment" öffnet die Rückseiten-Kamera direkt */}
         <input
-          ref={fileRef}
+          ref={cameraRef}
           type="file"
           accept="image/*"
-          capture={isMobile ? 'environment' : undefined}
-          style={{ display: 'none' }}
+          capture="environment"
+          style={{ display: 'none', position: 'absolute', opacity: 0 }}
+          onChange={handleFile}
+        />
+        {/* Galerie-Input ohne capture */}
+        <input
+          ref={galleryRef}
+          type="file"
+          accept="image/*"
+          style={{ display: 'none', position: 'absolute', opacity: 0 }}
           onChange={handleFile}
         />
         {/* Kamera-Button */}
@@ -1071,7 +1085,12 @@ function CameraCapture({ onCapture }) {
             padding: '32px 20px', textAlign: 'center', cursor: 'pointer',
             background: 'var(--accent-light)', transition: 'all 0.2s', marginBottom: '10px'
           }}
-          onClick={() => fileRef.current?.click()}
+          onClick={() => {
+            if (cameraRef.current) {
+              cameraRef.current.value = '';
+              cameraRef.current.click();
+            }
+          }}
         >
           <div style={{ fontSize: '48px', marginBottom: '12px' }}>📸</div>
           <div style={{ fontSize: '16px', fontWeight: '700', color: 'var(--text)' }}>
@@ -1079,8 +1098,8 @@ function CameraCapture({ onCapture }) {
           </div>
           <div style={{ fontSize: '13px', color: 'var(--text3)', marginTop: '6px', lineHeight: '1.5' }}>
             {isMobile
-              ? 'Tippe hier um das Weinetikett zu fotografieren'
-              : 'Klicke hier → Foto vom Weinetikett auswählen → KI analysiert automatisch'}
+              ? 'Tippe hier → Weinetikett fotografieren → KI analysiert'
+              : 'Klicke hier → Foto auswählen → KI analysiert automatisch'}
           </div>
         </div>
         {/* Galerie-Button nur auf Mobile */}
@@ -1092,10 +1111,10 @@ function CameraCapture({ onCapture }) {
               background: 'var(--surface)', transition: 'all 0.2s'
             }}
             onClick={() => {
-              const inp = document.createElement('input');
-              inp.type='file'; inp.accept='image/*';
-              inp.onchange = e => handleFile(e);
-              inp.click();
+              if (galleryRef.current) {
+                galleryRef.current.value = '';
+                galleryRef.current.click();
+              }
             }}
           >
             <div style={{ fontSize: '14px', fontWeight: '600', color: 'var(--text2)' }}>🖼 Aus Galerie wählen</div>
