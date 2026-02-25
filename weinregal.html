@@ -1519,7 +1519,7 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    if (e && e.preventDefault) e.preventDefault();
     if (!form.name) return;
     // buy_price und current_price auf 0 setzen falls leer
     if (!form.buy_price) form = {...form, buy_price: '0'};
@@ -1598,7 +1598,7 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
           )}
 
           {step==='form' && (
-            <form onSubmit={handleSubmit}>
+            <div>
               {analyzing && (
                 <div className="ai-loading" style={{ padding:'20px 0 14px' }}>
                   <div className="ai-spinner"/>
@@ -1718,10 +1718,10 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" strokeWidth="2" strokeLinecap="round"><polyline points="9 18 15 12 9 6"/></svg>
                 </div>
               </div>
-              <button type="submit" className="btn-primary" disabled={analyzing||saving}>
+              <button type="button" className="btn-primary" disabled={analyzing||saving} onClick={handleSubmit}>
                 {saving ? 'Wird gespeichert…' : analyzing ? 'Analyse läuft…' : 'Wein zur Sammlung hinzufügen'}
               </button>
-            </form>
+            </div>
           )}
         </div>
       </div>
