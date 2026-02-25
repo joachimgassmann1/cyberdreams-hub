@@ -921,18 +921,18 @@ async function fetchWineImageFromWikipedia(name, producer) {
   return null;
 }
 
-/* ─── DALL-E BILD-GENERIERUNG (Fallback) ─── */
-async function generateWineLabelImage(name, producer, vintage, region, country) {
+/* ─── DALL-E BILD-GENERIERUNG via Render-Backend (CORS-frei) ─── */
+const BACKEND_URL = "https://weinregal-backend.onrender.com";
+async function generateWineLabelImage(name, producer, vintage, region, country, type) {
   try {
-    const prompt = `Professional wine bottle label photograph, high quality product photo. Wine: "${name}" by ${producer||'unknown winery'}, ${vintage||''} ${region||''} ${country||''}. Clean white background, studio lighting, photorealistic, 8k quality.`;
-    const response = await fetch(`${OPENAI_BASE_URL}/images/generations`, {
+    const response = await fetch(`${BACKEND_URL}/generate-label-image`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${OPENAI_API_KEY}` },
-      body: JSON.stringify({ model: 'dall-e-3', prompt, n: 1, size: '1024x1024', quality: 'standard' })
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, producer, vintage, region, country, type: type||'red' })
     });
     if (!response.ok) return null;
     const data = await response.json();
-    return data?.data?.[0]?.url || null;
+    return data?.url || null;
   } catch(e) { console.warn('DALL-E Generierung fehlgeschlagen:', e); return null; }
 }
 
@@ -1286,7 +1286,7 @@ function WineDetail({ wine, onClose, onUpdate }) {
           if (wikiImg) {
             bestPhotoUrl = wikiImg;
           } else {
-            const dalleImg = await generateWineLabelImage(w.name || wine.name, w.producer || wine.producer, w.vintage || wine.vintage, w.region || wine.region, w.country || wine.country);
+            const dalleImg = await generateWineLabelImage(w.name || wine.name, w.producer || wine.producer, w.vintage || wine.vintage, w.region || wine.region, w.country || wine.country, w.type || wine.type);
             if (dalleImg) bestPhotoUrl = dalleImg;
           }
         } catch(imgErr) { console.warn('Bildsuche fehlgeschlagen:', imgErr); }
@@ -1641,7 +1641,7 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
             setAiResult(prev => ({...prev, _imageSource: 'wikipedia'}));
           } else {
             // Fallback: DALL-E generiert Etikettenbild
-            const dalleImg = await generateWineLabelImage(w.name, w.producer, w.vintage, w.region, w.country);
+            const dalleImg = await generateWineLabelImage(w.name, w.producer, w.vintage, w.region, w.country, w.type);
             if (dalleImg) {
               setPhoto(dalleImg);
               setAiResult(prev => ({...prev, _imageSource: 'dalle'}));
