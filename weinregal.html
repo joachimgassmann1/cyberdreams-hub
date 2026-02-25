@@ -507,35 +507,38 @@ html,body{
 }
 
 /* ── 3D CELLAR ── */
-.cellar-wrap{padding:2px 6px 4px;overflow-x:hidden}
+.cellar-wrap{
+  padding:8px 16px 16px;
+  max-width:700px;  /* Desktop: begrenzte Breite für lesbare Tiles */
+  margin:0 auto;
+}
 .shelf-level{display:flex;flex-direction:column;margin-bottom:0px}
 .shelf-label{
-  font-size:6px;font-weight:700;color:var(--text3);text-transform:uppercase;
-  letter-spacing:0.08em;text-align:left;padding:0.5px 2px 0.5px;
-  display:flex;align-items:center;gap:2px;
+  font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;
+  letter-spacing:0.08em;text-align:left;padding:2px 2px 1px;
+  display:flex;align-items:center;gap:4px;
 }
 .shelf-label-num{
-  width:10px;height:10px;border-radius:2px;
+  width:18px;height:18px;border-radius:4px;
   background:var(--bg3);border:1px solid var(--border2);
   display:flex;align-items:center;justify-content:center;
-  font-size:6px;font-weight:800;color:var(--text2);flex-shrink:0;
+  font-size:10px;font-weight:800;color:var(--text2);flex-shrink:0;
 }
-.shelf-slots{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;padding:1px 0}
+.shelf-slots{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;padding:2px 0}
 .shelf-plank{
-  height:5px;
+  height:7px;
   background:linear-gradient(180deg,#C8A882 0%,#A07850 50%,#8B6440 100%);
-  border-radius:2px;
-  box-shadow:0 2px 4px rgba(0,0,0,0.12),inset 0 1px 0 rgba(255,255,255,0.2);
-  margin-bottom:1px;
+  border-radius:3px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15),inset 0 1px 0 rgba(255,255,255,0.25);
+  margin-bottom:2px;
 }
-/* Slot: kompakt, Flasche + Weininfo - alle 10 Ebenen sichtbar */
+/* Slot: Desktop-optimiert mit lesbarer Schrift */
 .slot{
-  /* Berechne Höhe: alle 10 Ebenen auf einmal sichtbar */
   height:calc((100dvh - 280px) / 10);
-  min-height:32px;max-height:68px;
-  border-radius:4px;
+  min-height:60px;max-height:90px;
+  border-radius:6px;
   display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
-  padding-bottom:2px;cursor:pointer;
+  padding-bottom:4px;cursor:pointer;
   transition:all 0.2s;position:relative;overflow:hidden;
 }
 .slot-empty{border:1.5px dashed var(--border2);background:var(--bg2)}
@@ -547,10 +550,10 @@ html,body{
 .slot-filled:active{transform:scale(0.96)}
 .slot-selected-highlight{border:2px solid var(--accent)!important;box-shadow:0 0 0 3px var(--accent-glow)!important}
 /* Weininfo unter der Flasche */
-.slot-wine-info{width:100%;padding:0 1.5px;display:flex;flex-direction:column;align-items:center;gap:0.5px}
-.slot-wine-name{font-size:4.5px;font-weight:800;color:var(--text);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;line-height:1.2}
-.slot-wine-grape{font-size:3.8px;color:var(--text3);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;line-height:1.2}
-.slot-wine-meta{font-size:3.5px;color:var(--text3);text-align:center;line-height:1.2}
+.slot-wine-info{width:100%;padding:0 3px;display:flex;flex-direction:column;align-items:center;gap:1px}
+.slot-wine-name{font-size:8px;font-weight:800;color:var(--text);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;line-height:1.2}
+.slot-wine-grape{font-size:7px;color:var(--text3);text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;line-height:1.2}
+.slot-wine-meta{font-size:7px;color:var(--text3);text-align:center;line-height:1.2}
 /* Hover-Tooltip */
 .slot-tooltip{
   display:none;position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
@@ -566,16 +569,16 @@ html,body{
 .slot-tooltip-name{font-size:9px;font-weight:800;margin-bottom:3px;line-height:1.3}
 .slot-tooltip-row{font-size:8px;color:rgba(255,255,255,0.7);line-height:1.5}
 .slot:hover .slot-tooltip{display:block}
-.slot-label{font-size:5px;font-weight:700;color:var(--text3);text-align:center;padding:0 1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;line-height:1.2}
+.slot-label{font-size:9px;font-weight:700;color:var(--text3);text-align:center;padding:0 2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;line-height:1.2}
 .slot-filled .slot-label{color:var(--text2)}
 .slot-pos-label{
-  position:absolute;top:1px;right:1px;
-  font-size:4px;font-weight:800;color:rgba(0,0,0,0.2);
+  position:absolute;top:2px;right:2px;
+  font-size:7px;font-weight:800;color:rgba(0,0,0,0.2);
   line-height:1;
 }
-.cellar-legend{display:flex;gap:8px;padding:0 8px 6px;flex-wrap:wrap}
-.legend-item{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--text3);font-weight:500}
-.legend-dot{width:6px;height:6px;border-radius:50%}
+.cellar-legend{display:flex;gap:8px;padding:0 8px 6px;flex-wrap:wrap;max-width:700px;margin:0 auto}
+.legend-item{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--text3);font-weight:500}
+.legend-dot{width:8px;height:8px;border-radius:50%}
 
 /* ── SLOT PICKER MODAL ── */
 .slot-picker-overlay{
@@ -819,8 +822,8 @@ const { useState, useEffect, useRef, useCallback } = React;
 const SUPABASE_URL = "https://pwekkezezyqjmazvnjbn.supabase.co";
 const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3ZWtrZXplenlxam1henZuamJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE4NzgyMzgsImV4cCI6MjA4NzQ1NDIzOH0.SHO7LkSwj7dHUUV3A8sgtv8kp5jeShx1FiuFTp4Jj78";
 /* ─── KI-ANALYSE direkt via OpenAI API (kein Backend nötig) ─── */
-const OPENAI_API_KEY = "sk-D8hJEESrL4BV5nUzdCEcpL";
-const OPENAI_BASE_URL = "https://api.manus.im/api/llm-proxy/v1";
+const OPENAI_API_KEY = "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";
+const OPENAI_BASE_URL = "https://api.openai.com/v1";
 
 async function analyzeWineLabel(imageDataUrl, backImageDataUrl) {
   // Baue content-Array auf: Vorderseite + optional Rückseite
@@ -840,7 +843,7 @@ async function analyzeWineLabel(imageDataUrl, backImageDataUrl) {
       'Authorization': `Bearer ${OPENAI_API_KEY}`
     },
     body: JSON.stringify({
-      model: 'gpt-4.1-mini',
+      model: 'gpt-4o',
       messages: [{
         role: 'user',
         content: [
