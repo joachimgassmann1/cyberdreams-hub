@@ -887,6 +887,54 @@ Antworte NUR mit validem JSON, kein Text davor oder danach:
   return JSON.parse(jsonMatch[0]);
 }
 
+/* ─── WIKIPEDIA BILD-SUCHE ─── */
+async function fetchWineImageFromWikipedia(name, producer) {
+  try {
+    // Suche nach Weingut oder Wein auf Wikipedia
+    const queries = [
+      producer ? `${producer}` : null,
+      name,
+      producer ? `${producer} winery` : null,
+    ].filter(Boolean);
+
+    for (const q of queries) {
+      // Schritt 1: Wikipedia-Suche
+      const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(q)}&srlimit=5&format=json&origin=*`;
+      const searchRes = await fetch(searchUrl);
+      const searchData = await searchRes.json();
+      const results = searchData?.query?.search || [];
+
+      for (const result of results) {
+        // Schritt 2: Bild für Seite holen
+        const imgUrl = `https://en.wikipedia.org/w/api.php?action=query&titles=${encodeURIComponent(result.title)}&prop=pageimages&pithumbsize=800&format=json&origin=*`;
+        const imgRes = await fetch(imgUrl);
+        const imgData = await imgRes.json();
+        const pages = imgData?.query?.pages || {};
+        for (const pid in pages) {
+          const thumb = pages[pid]?.thumbnail?.source;
+          if (thumb) return thumb;
+        }
+      }
+    }
+  } catch(e) { console.warn('Wikipedia-Suche fehlgeschlagen:', e); }
+  return null;
+}
+
+/* ─── DALL-E BILD-GENERIERUNG (Fallback) ─── */
+async function generateWineLabelImage(name, producer, vintage, region, country) {
+  try {
+    const prompt = `Professional wine bottle label photograph, high quality product photo. Wine: "${name}" by ${producer||'unknown winery'}, ${vintage||''} ${region||''} ${country||''}. Clean white background, studio lighting, photorealistic, 8k quality.`;
+    const response = await fetch(`${OPENAI_BASE_URL}/images/generations`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${OPENAI_API_KEY}` },
+      body: JSON.stringify({ model: 'dall-e-3', prompt, n: 1, size: '1024x1024', quality: 'standard' })
+    });
+    if (!response.ok) return null;
+    const data = await response.json();
+    return data?.data?.[0]?.url || null;
+  } catch(e) { console.warn('DALL-E Generierung fehlgeschlagen:', e); return null; }
+}
+
 /* Supabase Client – Anon Key für Browser-Zugriff */
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
 
@@ -1077,6 +1125,10 @@ async function deleteWine(id) {
 }
 
 async function uploadPhoto(file, wineId) {
+  // Wenn es eine externe URL ist (Wikipedia, DALL-E), direkt zurückgeben
+  if (file && (file.startsWith('http://') || file.startsWith('https://'))) {
+    return file;
+  }
   const ext = file.split(';')[0].split('/')[1] || 'jpg';
   const path = `${wineId || Date.now()}.${ext}`;
   const blob = await fetch(file).then(r => r.blob());
@@ -1226,8 +1278,20 @@ function WineDetail({ wine, onClose, onUpdate }) {
         w = await analyzeWineLabel(frontDataUrl, backDataUrl);
       } catch(aiErr) { console.error('KI-Fehler:', aiErr); }
       if (w) {
+        // Hochwertiges Bild aus Wikipedia holen
+        let bestPhotoUrl = photoUrl;
+        try {
+          const wikiImg = await fetchWineImageFromWikipedia(w.name || wine.name, w.producer || wine.producer);
+          if (wikiImg) {
+            bestPhotoUrl = wikiImg;
+          } else {
+            const dalleImg = await generateWineLabelImage(w.name || wine.name, w.producer || wine.producer, w.vintage || wine.vintage, w.region || wine.region, w.country || wine.country);
+            if (dalleImg) bestPhotoUrl = dalleImg;
+          }
+        } catch(imgErr) { console.warn('Bildsuche fehlgeschlagen:', imgErr); }
+
         const updates = {
-          photo_url: photoUrl,
+          photo_url: bestPhotoUrl,
           ...(backPhotoUrl && { back_photo_url: backPhotoUrl }),
           ...(w.name && { name: w.name }),
           ...(w.producer && { producer: w.producer }),
@@ -1567,6 +1631,22 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
           awards: w.awards||f.awards,
           price_range: w.price_range||f.price_range,
         }));
+
+        // Hochwertiges Bild aus Wikipedia holen (im Hintergrund)
+        try {
+          const wikiImg = await fetchWineImageFromWikipedia(w.name, w.producer);
+          if (wikiImg) {
+            setPhoto(wikiImg); // Wikipedia-Bild ersetzt Kamerafoto
+            setAiResult(prev => ({...prev, _imageSource: 'wikipedia'}));
+          } else {
+            // Fallback: DALL-E generiert Etikettenbild
+            const dalleImg = await generateWineLabelImage(w.name, w.producer, w.vintage, w.region, w.country);
+            if (dalleImg) {
+              setPhoto(dalleImg);
+              setAiResult(prev => ({...prev, _imageSource: 'dalle'}));
+            }
+          }
+        } catch(imgErr) { console.warn('Bildsuche fehlgeschlagen:', imgErr); }
       }
     } catch(e) { console.error(e); }
     setAnalyzing(false);
@@ -1704,8 +1784,13 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
                 </>
               )}
               {photo && !analyzing && (
-                <div style={{ marginBottom:'14px', borderRadius:'var(--r-md)', overflow:'hidden', maxHeight:'140px' }}>
-                  <img src={photo} alt="" style={{ width:'100%', height:'140px', objectFit:'cover', display:'block' }}/>
+                <div style={{ marginBottom:'14px', borderRadius:'var(--r-md)', overflow:'hidden', position:'relative' }}>
+                  <img src={photo} alt="" style={{ width:'100%', height:'180px', objectFit:'cover', display:'block', borderRadius:'var(--r-md)' }}/>
+                  {aiResult?._imageSource && (
+                    <div style={{ position:'absolute', bottom:'8px', right:'8px', background:'rgba(0,0,0,0.65)', color:'#fff', fontSize:'10px', fontWeight:'600', padding:'3px 8px', borderRadius:'20px', backdropFilter:'blur(4px)' }}>
+                      {aiResult._imageSource === 'wikipedia' ? '📖 Wikipedia' : '🎨 KI-generiert'}
+                    </div>
+                  )}
                 </div>
               )}
 
