@@ -821,8 +821,8 @@ const { useState, useEffect, useRef, useCallback } = React;
 const SUPABASE_URL = "https://pwekkezezyqjmazvnjbn.supabase.co";
 const SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3ZWtrZXplenlxam1henZuamJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE4NzgyMzgsImV4cCI6MjA4NzQ1NDIzOH0.SHO7LkSwj7dHUUV3A8sgtv8kp5jeShx1FiuFTp4Jj78";
 /* ─── KI-ANALYSE direkt via OpenAI API (kein Backend nötig) ─── */
-const OPENAI_API_KEY = "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";
-const OPENAI_BASE_URL = "https://api.openai.com/v1";
+const OPENAI_API_KEY = "sk-D8hJEESrL4BV5nUzdCEcpL";
+const OPENAI_BASE_URL = "https://api.manus.im/api/llm-proxy/v1";
 
 async function analyzeWineLabel(imageDataUrl, backImageDataUrl) {
   // Baue content-Array auf: Vorderseite + optional Rückseite
@@ -842,7 +842,7 @@ async function analyzeWineLabel(imageDataUrl, backImageDataUrl) {
       'Authorization': `Bearer ${OPENAI_API_KEY}`
     },
     body: JSON.stringify({
-      model: 'gpt-4o',
+      model: 'gpt-4.1-mini',
       messages: [{
         role: 'user',
         content: [
@@ -876,7 +876,7 @@ Antworte NUR mit validem JSON, kein Text davor oder danach:
 }` }
         ]
       }],
-      max_tokens: 1200
+      max_tokens: 2000
     })
   });
   if (!response.ok) throw new Error(`OpenAI API Fehler: ${response.status}`);
