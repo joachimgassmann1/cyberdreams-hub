@@ -310,39 +310,47 @@ Das Frontend ist eine statische HTML-Seite. Die KI-Analyse findet direkt im Brow
 
 | Eigenschaft | Wert |
 |---|---|
-| **URL (Primär)** | `https://joachimgassmann1.github.io/cyberdreams-hub/` |
-| **URL (Netlify, alt)** | `https://wonderful-twilight-366241.netlify.app/` |
-| **Site ID** | `wonderful-twilight-366241` |
-| **Personal Access Token** | `nfp_5DjQRURDsTyDGqQpyADpg8hKnjbWvk2cc932` |
-| **Deployment** | Manuell per ZIP-Upload oder über Netlify CLI mit Token |
-| **Quellcode** | `/weinregal.html` im `cyberdreams-hub` Repo |
+| **URL (Primär – GitHub Pages)** | `https://joachimgassmann1.github.io/cyberdreams-hub/` |
+| **Branch** | `gh-pages` |
+| **Quellcode lokal** | `/home/ubuntu/cyberdreams-hub/weinregal.html` |
+| **URL (Netlify, veraltet – Credits leer)** | `https://wonderful-twilight-366241.netlify.app/` |
 
-### Deploy-Befehl (für Manus)
+### Deploy-Befehl (GitHub Pages – aktiv)
 
 ```bash
-NETLIFY_AUTH_TOKEN="nfp_5DjQRURDsTyDGqQpyADpg8hKnjbWvk2cc932"
-SITE_ID="wonderful-twilight-366241"
-cp /home/ubuntu/cyberdreams-hub/weinregal.html /tmp/deploy/index.html
-cd /tmp/deploy && zip -j deploy.zip index.html
-curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
-  -H "Content-Type: application/zip" \
-  --data-binary @deploy.zip \
-  "https://api.netlify.com/api/v1/sites/$SITE_ID/deploys"
+cd /home/ubuntu/cyberdreams-hub
+cp weinregal.html index.html
+git add index.html weinregal.html
+git commit -m "Update"
+git push origin gh-pages
+# Deploy dauert ca. 60 Sekunden
 ```
 
 ### Frontend-Code (`weinregal.html`)
 
 Die `weinregal.html` enthält den gesamten Frontend-Code (HTML, CSS, JavaScript). Die KI-Analyse wird über die `analyzeWineLabel()` Funktion direkt im Browser ausgeführt.
 
-## 2. OpenAI API (für KI-Analyse)
+## 2. KI-Analyse & Bildsuche
 
-Die KI-Analyse der Weinetiketten wird über die OpenAI API (GPT-4o Vision) durchgeführt. Der API-Key ist direkt im Frontend-Code hinterlegt.
+### OpenAI API (Etikettenanalyse)
+
+> **WICHTIG:** Der echte OpenAI-Key kann NICHT direkt aus dem Browser (GitHub Pages) genutzt werden – CORS-Block! Die App nutzt den **Manus-Proxy-Key** der CORS-kompatibel ist.
 
 | Eigenschaft | Wert |
 |---|---|
-| **API Key (echter Key)** | `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` |
-| **Base URL** | `https://api.openai.com/v1` |
-| **Modell** | `gpt-4o` |
+| **Echter API Key (nur für Backend/Scripts)** | `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` |
+| **Manus-Proxy-Key (im Frontend aktiv)** | `sk-D8hJEESrL4BV5nUzdCEcpL` |
+| **Base URL (aktiv)** | `https://api.manus.im/api/llm-proxy/v1` |
+| **Modell** | `gpt-4.1-mini` |
+| **max_tokens** | `2000` |
+
+### Automatische Bildsuche (NEU)
+
+Nach der KI-Etikettenanalyse wird automatisch ein hochwertiges Bild gesucht:
+
+1. **Wikipedia API** (kostenlos, kein Key nötig) – sucht nach Weingut/Weinname
+2. **DALL-E 3 Fallback** – generiert KI-Bild wenn Wikipedia nichts findet
+3. Badge zeigt Bildquelle: `📖 Wikipedia` oder `🎨 KI-generiert`
 
 ## 3. Supabase (Datenbank)
 
