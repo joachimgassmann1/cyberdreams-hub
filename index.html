@@ -530,9 +530,9 @@ html,body{
 }
 /* Slot: kompakt, Flasche + Weininfo - alle 10 Ebenen sichtbar */
 .slot{
-  /* Berechne Höhe: (Viewport - Header ~120px - Nav ~56px - Legend ~28px - Planks ~60px) / 10 Ebenen */
-  height:calc((100dvh - 264px) / 10);
-  min-height:36px;max-height:72px;
+  /* Berechne Höhe: alle 10 Ebenen auf einmal sichtbar */
+  height:calc((100dvh - 280px) / 10);
+  min-height:32px;max-height:68px;
   border-radius:4px;
   display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
   padding-bottom:2px;cursor:pointer;
@@ -1914,10 +1914,10 @@ function CellarPage({ wines, onWineClick, onAddAtSlot }) {
   const filled=Object.keys(slotMap).length;
   return (
     <div className="page">
-      <div className="page-header">
+      <div className="page-header" style={{paddingTop:'calc(var(--safe-top) + 44px)'}}>
         <div className="header-blur"/>
-        <div className="header-inner">
-          <div className="header-title">Weinkeller</div>
+        <div className="header-inner" style={{paddingBottom:'8px'}}>
+          <div className="header-title" style={{fontSize:'22px'}}>Weinkeller</div>
           <div className="header-sub">{filled} von {TOTAL} Plätzen belegt · {TOTAL-filled} frei</div>
         </div>
       </div>
