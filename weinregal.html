@@ -1520,30 +1520,33 @@ function AddWineModal({ onClose, onAdd, wines, preselectedSlot }) {
 
   async function handleSubmit(e) {
     if (e && e.preventDefault) e.preventDefault();
-    if (!form.name) return;
-    // buy_price und current_price auf 0 setzen falls leer
-    if (!form.buy_price) form = {...form, buy_price: '0'};
-    if (!form.current_price) form = {...form, current_price: form.buy_price || '0'};
+    if (!form.name) { alert('Bitte Weinname eingeben'); return; }
+    // buy_price und current_price auf 0 setzen falls leer - lokale Kopie!
+    const submitForm = {
+      ...form,
+      buy_price: form.buy_price || '0',
+      current_price: form.current_price || form.buy_price || '0'
+    };
     setSaving(true);
     try {
       let photoUrl = null;
       if (photo) {
         try { photoUrl = await uploadPhoto(photo, Date.now()); }
-        catch(e) { photoUrl = null; }
+        catch(uploadErr) { console.warn('Foto-Upload fehlgeschlagen:', uploadErr); photoUrl = null; }
       }
-      const cnt = parseInt(form.count)||1;
+      const cnt = parseInt(submitForm.count)||1;
       await onAdd({
-        ...form,
-        vintage: form.vintage ? parseInt(form.vintage) : null,
-        buy_price: parseFloat(form.buy_price),
-        current_price: parseFloat(form.current_price),
+        ...submitForm,
+        vintage: submitForm.vintage ? parseInt(submitForm.vintage) : null,
+        buy_price: parseFloat(submitForm.buy_price)||0,
+        current_price: parseFloat(submitForm.current_price)||0,
         count: cnt,
         slot: selectedSlots[0] ?? -1,
         slots: selectedSlots,
         photo_url: photoUrl,
       });
       onClose();
-    } catch(e) { console.error(e); }
+    } catch(err) { console.error('handleSubmit Fehler:', err); alert('Fehler beim Speichern: ' + err.message); }
     setSaving(false);
   }
 
