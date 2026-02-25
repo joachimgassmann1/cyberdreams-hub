@@ -530,11 +530,13 @@ html,body{
 }
 /* Slot: kompakt, Flasche + Weininfo - alle 10 Ebenen sichtbar */
 .slot{
-  aspect-ratio:0.38;border-radius:4px;
+  /* Berechne Höhe: (Viewport - Header ~130px - Nav ~60px - Legend ~30px) / 10 Ebenen - Plank ~6px */
+  height:calc((100dvh - 220px) / 10 - 7px);
+  min-height:44px;max-height:80px;
+  border-radius:4px;
   display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
   padding-bottom:2px;cursor:pointer;
   transition:all 0.2s;position:relative;overflow:hidden;
-  min-height:0;
 }
 .slot-empty{border:1.5px dashed var(--border2);background:var(--bg2)}
 .slot-empty:hover{border-color:var(--accent);background:var(--accent-light)}
@@ -1925,7 +1927,7 @@ function CellarPage({ wines, onWineClick, onAddAtSlot }) {
         ))}
         <div className="legend-item"><div className="legend-dot" style={{border:'1.5px dashed var(--border2)',background:'transparent'}}/> Leer</div>
       </div>
-      <div className="cellar-wrap" style={{overflowY:'auto',maxHeight:'calc(100vh - 140px - var(--nav) - var(--safe-bottom))'}}>
+      <div className="cellar-wrap">
         {Array.from({length:ROWS},(_,row)=>{
           const ebene = ROWS - row; // Ebene 10 oben, Ebene 1 unten
           return (
