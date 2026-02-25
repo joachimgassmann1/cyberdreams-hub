@@ -310,7 +310,7 @@ Das Frontend ist eine statische HTML-Seite, die direkt auf Netlify deployed wird
 
 | Eigenschaft | Wert |
 |---|---|
-| **URL** | `https://wonderful-twilight-366241.netlify.app/` |
+| **URL** | `https://joachimgassmann1.github.io/cyberdreams-hub//` |
 | **Site ID (Name)** | `wonderful-twilight-366241` |
 | **Site ID (UUID)** | `f4919cae-c5dc-409e-a55b-a4a8a3ef3d77` |
 | **Personal Access Token** | `nfp_5DjQRURDsTyDGqQpyADpg8hKnjbWvk2cc932` |
