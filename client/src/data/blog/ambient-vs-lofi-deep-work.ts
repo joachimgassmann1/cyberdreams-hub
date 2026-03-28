@@ -20,7 +20,7 @@ export const ambientVsLofiDeepWork: BlogPost = {
     "productivity",
     "concentration",
   ],
-  heroImage: "/images/blog/ambient-vs-lofi-deep-work-hero.jpg",
+  heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/ambient-vs-lofi-deep-work-hero_46dc8ad9.jpg",
   content: `
 Lofi beats are everywhere. YouTube. Spotify. Every "study with me" video. Millions of people swear by them.
 

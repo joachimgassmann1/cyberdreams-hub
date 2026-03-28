@@ -213,7 +213,7 @@ Dein Gehirn wird es dir danken. Dein Körper wird folgen. Und Schlaf wird sich e
   category: 'Jazz',
   tags: ['jazz', 'sleep music', 'smooth jazz', 'relaxation', 'white noise', 'neuroscience'],
   tagsDe: ['Jazz', 'Schlafmusik', 'Smooth Jazz', 'Entspannung', 'weißes Rauschen', 'Neurowissenschaft'],
-  heroImage: '/blog/jazz-sleep-science-hero.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/jazz-sleep-science-hero_45350841.jpg',
   author: 'Joachim Gassmann'
 };
 

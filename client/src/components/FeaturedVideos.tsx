@@ -31,8 +31,8 @@ const FEATURED_VIDEOS = [
     channelTitle: "Deep Focus Sphere",
   },
   {
-    id: "bA1JhbZD8UM",
-    title: "Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights",
+    id: "Yr5rRcGZyQI",
+    title: "Romantic Vocal Jazz – Midnight Lounge Ambience for Relaxing Nights",
     channelTitle: "JazzSphere Radio",
   },
 ];

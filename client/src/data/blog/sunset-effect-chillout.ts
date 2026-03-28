@@ -6,7 +6,7 @@ export const sunsetEffectChillout: BlogPost = {
   titleDe: 'Der Sunset-Effekt: Warum Chillout-Musik bei Sonnenuntergang besser klingt',
   description: 'Discover why chillout music hits differently during sunset. From circadian rhythms to the psychology of twilight, explore the science behind the most magical listening hour of the day.',
   descriptionDe: 'Entdecke, warum Chillout-Musik bei Sonnenuntergang anders wirkt. Von circadianen Rhythmen bis zur Psychologie der Dämmerung – die Wissenschaft hinter der magischsten Hör-Stunde des Tages.',
-  heroImage: '/blog/sunset-effect-chillout-hero.webp',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/sunset-effect-chillout-hero_d263c5da.webp',
   category: 'chillout',
   tags: ['chillout', 'psychology', 'science', 'evening music', 'circadian rhythm'],
   tagsDe: ['Chillout', 'Psychologie', 'Wissenschaft', 'Abendmusik', 'circadianer Rhythmus'],

@@ -10,7 +10,7 @@ export const jazzBrainFocus: BlogPost = {
   category: 'Jazz',
   tags: ['jazz', 'focus', 'neuroscience', 'adhd', 'productivity', 'stochastic resonance'],
   tagsDe: ['jazz', 'fokus', 'neurowissenschaft', 'adhs', 'produktivität', 'stochastische resonanz'],
-  heroImage: '/blog/jazz-brain-focus.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/jazz-brain-focus_80572861.jpg',
   author: 'Joachim',
   readingTime: 6,
   readingTimeDe: 6,

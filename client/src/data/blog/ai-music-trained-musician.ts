@@ -20,7 +20,7 @@ export const aiMusicTrainedMusician: BlogPost = {
     "music technology",
     "creator tools",
   ],
-  heroImage: "/images/blog/ai-music-trained-musician-hero.jpg",
+  heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/ai-music-trained-musician-hero_95ab7742.jpg",
   content: `
 I spent 15 years learning piano. Classical training. Scales, arpeggios, Chopin, Debussy—the whole deal. Then another 20 years playing guitar, from jazz to metal, mastering techniques that took thousands of hours to develop.
 

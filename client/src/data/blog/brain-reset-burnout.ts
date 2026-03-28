@@ -10,7 +10,7 @@ export const brainResetBurnout: BlogPost = {
   category: 'Relax',
   tags: ['burnout', 'mental health', 'stress relief', 'routine', 'neuroscience', 'recovery'],
   tagsDe: ['burnout', 'mentale gesundheit', 'stressabbau', 'routine', 'neurowissenschaft', 'erholung'],
-  heroImage: '/blog/brain-reset-burnout.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/brain-reset-burnout_1167440e.jpg',
   author: 'Joachim',
   readingTime: 5,
   readingTimeDe: 5,

@@ -11,7 +11,7 @@ export const whyPeopleRelaxWrong: BlogPost = {
   author: 'Joachim Gassmann',
   publishDate: '2025-11-30',
   readingTime: 9,
-  heroImage: '/blog/why-people-relax-wrong-hero.webp',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/why-people-relax-wrong-hero_e2166baa.webp',
   content: `You collapse on the couch, open Netflix, and think you're relaxing. Your cortisol levels disagree.
 
 I used to do this every evening. After a long day running my business, I'd grab the remote, scroll through streaming services for twenty minutes (ironically stressful), pick something I'd already seen, and zone out. Two hours later, I'd feel... nothing. Not refreshed. Not recharged. Just numb.

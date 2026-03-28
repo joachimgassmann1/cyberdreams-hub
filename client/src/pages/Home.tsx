@@ -130,12 +130,12 @@ export default function Home() {
               {
                 "@type": "VideoObject",
                 "position": 6,
-                "name": "Smooth Vocal Jazz | Midnight Lounge & Cozy City Nights",
-                "description": "Smooth jazz with vocals for sophisticated relaxation and elegant ambience",
-                "thumbnailUrl": "https://i.ytimg.com/vi/bA1JhbZD8UM/mqdefault.jpg",
-                "uploadDate": "2025-11-08T00:00:00Z",
-                "contentUrl": "https://www.youtube.com/watch?v=bA1JhbZD8UM",
-                "embedUrl": "https://www.youtube.com/embed/bA1JhbZD8UM"
+                "name": "Romantic Vocal Jazz – Midnight Lounge Ambience for Relaxing Nights",
+                "description": "Romantic vocal jazz and midnight lounge ambience for relaxing nights",
+                "thumbnailUrl": "https://i.ytimg.com/vi/Yr5rRcGZyQI/mqdefault.jpg",
+                "uploadDate": "2026-03-20T00:00:00Z",
+                "contentUrl": "https://www.youtube.com/watch?v=Yr5rRcGZyQI",
+                "embedUrl": "https://www.youtube.com/embed/Yr5rRcGZyQI"
               }
             ]
           })}

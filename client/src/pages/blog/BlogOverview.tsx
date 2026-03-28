@@ -113,7 +113,7 @@ export default function BlogOverview() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
-            src="/blog-hero-bg.webp"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/blog-hero-bg_1487858d.webp"
             alt=""
             className="w-full h-full object-cover"
           />

@@ -9,7 +9,7 @@ export const silenceAnxiety: BlogPost = {
   author: 'Sphere Music Hub',
   category: 'insights',
   readingTime: 5,
-  heroImage: '/images/blog/silence-anxiety-hero.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/silence-anxiety-hero_df1039a3.jpg',
   tags: ['sleep', 'anxiety', 'ambient', 'psychology', 'focus'],
   featured: true,
   content: `Why Silence Keeps You Awake: The Psychology of "Silence Anxiety" (And How Ambient Music Helps)

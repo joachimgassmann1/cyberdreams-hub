@@ -6,7 +6,7 @@ export const pianoVsGuitarAnxiety: BlogPost = {
   titleDe: 'Klavier vs. Gitarre gegen Angst: Was wirkt besser? (Die überraschende Antwort eines ausgebildeten Pianisten)',
   description: 'After 10 years of classical piano training and a decade producing ambient music, I discovered that the "best" instrument for anxiety relief depends on what type of anxiety you have. Here\'s what science and experience taught me about piano, guitar, and the surprising truth about musical healing.',
   descriptionDe: 'Nach 10 Jahren klassischer Klavierausbildung und einem Jahrzehnt Ambient-Musikproduktion habe ich entdeckt, dass das "beste" Instrument zur Angstlinderung davon abhängt, welche Art von Angst du hast. Hier ist, was mir Wissenschaft und Erfahrung über Klavier, Gitarre und die überraschende Wahrheit über musikalische Heilung beigebracht haben.',
-  heroImage: '/blog/piano-vs-guitar-anxiety-hero.webp',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/piano-vs-guitar-anxiety-hero_239c91be.webp',
   category: 'relax',
   tags: ['anxiety relief', 'piano', 'guitar', 'mental health', 'music therapy', 'stress relief'],
   tagsDe: ['Angstlinderung', 'Klavier', 'Gitarre', 'mentale Gesundheit', 'Musiktherapie', 'Stressbewältigung'],

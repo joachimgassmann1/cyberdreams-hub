@@ -11,7 +11,7 @@ export const lofiVsAmbientMusic: BlogPost = {
   readingTimeDe: 11,
   category: "focus",
   tags: ["lofi beats", "ambient music", "study music", "focus music", "concentration"],
-  heroImage: "/images/blog/lofi-vs-ambient-music-hero.jpg",
+  heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/lofi-vs-ambient-music-hero_d758c9e8.jpg",
   author: "Joachim Gassmann",
   content:
  `

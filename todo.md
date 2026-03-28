@@ -425,3 +425,7 @@
 ## Hero-Overlay reduzieren
 - [x] Overlay-Opazität von 80% auf 40% reduziert
 - [ ] Deployen
+
+## Update Featured Video
+- [ ] Replace the bottom-right featured video on the homepage with the new 'Romantic Vocal Jazz' video (https://youtu.be/Yr5rRcGZyQI)
+- [ ] Update Schema.org metadata in Home.tsx for the new video

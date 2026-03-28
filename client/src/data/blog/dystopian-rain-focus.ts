@@ -306,7 +306,7 @@ Kanäle wie Cyber Dreams verstehen diese Balance. Sie erschaffen Klanglandschaft
 Das nächste Mal, wenn du dich fokussieren musst, erwäge, in eine Welt einzutreten, wo es immer regnet, das Neon nie verblasst und die Zukunft sowohl schön als auch zerbrochen ist. Du wirst vielleicht feststellen, dass im Herzen des Sturms dein Geist vollkommen still wird.
 
 ---`,
-  heroImage: '/images/blog/cyberpunk-rain-hero.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/cyberpunk-rain-hero_6cd5e79f.jpg',
   category: 'cyberpunk',
   tags: ['cyberpunk', 'rain sounds', 'focus music', 'ambient music', 'deep work', 'concentration'],
   author: 'Joachim Gassmann',

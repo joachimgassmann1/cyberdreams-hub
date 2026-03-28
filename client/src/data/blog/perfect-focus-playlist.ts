@@ -12,7 +12,7 @@ export const perfectFocusPlaylist: BlogPost = {
   category: 'focus',
   tags: ['Focus Music', 'Productivity', 'Playlist Building', 'Music Science', 'Deep Work'],
   tagsDe: ['Fokusmusik', 'Produktivität', 'Playlist erstellen', 'Musikwissenschaft', 'Deep Work'],
-  heroImage: '/blog/perfect-focus-playlist-hero.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/perfect-focus-playlist-hero_45350841.jpg',
   content: `You open Spotify. You search "Deep Focus." You hit play. Twenty minutes later, you realize you've been scrolling Twitter instead of working.
 
 The problem isn't you. It's the playlist.

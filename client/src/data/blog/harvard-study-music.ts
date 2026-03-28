@@ -125,6 +125,6 @@ Der Rest des Artikels folgt der gleichen Struktur wie die englische Version, ang
   author: 'Joachim Gassmann',
   publishDate: '2025-12-16',
   readingTime: 11,
-  heroImage: '/blog/harvard-study-music-hero.webp',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/harvard-study-music-hero_17377501.webp',
   tags: ['study music', 'harvard research', 'neuroscience', 'focus', 'productivity'],
 };

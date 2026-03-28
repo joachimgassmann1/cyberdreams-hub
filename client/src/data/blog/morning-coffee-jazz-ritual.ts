@@ -20,7 +20,7 @@ export const morningCoffeeJazzRitual: BlogPost = {
     "work-life balance",
     "creator story",
   ],
-  heroImage: "/images/blog/morning-coffee-jazz-hero.jpg",
+  heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/morning-coffee-jazz-hero_75804aa2.jpg",
   content: `
 I can shred John Petrucci solos. The kind of technical metal guitar work that requires surgical precision, hours of practice, and complete focus. My fingers know every note of Dream Theater's most complex passages.
 

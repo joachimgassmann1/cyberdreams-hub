@@ -6,7 +6,7 @@ export const sleepMusicScience: BlogPost = {
   titleDe: 'Die Wissenschaft der Schlafmusik: Wie Ambient-Klanglandschaften dich in tiefen Schlaf führen',
   description: 'Discover the neuroscience behind sleep music and learn how ambient soundscapes, tempo, harmony, and instrumentation work together to guide your brain into restorative sleep cycles.',
   descriptionDe: 'Entdecke die Neurowissenschaft hinter Schlafmusik und lerne, wie Ambient-Klanglandschaften, Tempo, Harmonie und Instrumentation zusammenwirken, um dein Gehirn in erholsame Schlafzyklen zu führen.',
-  heroImage: '/images/blog/sleep-music-science-hero.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/sleep-music-science-hero_4f8a305c.jpg',
   category: 'relax',
   tags: ['sleep music', 'ambient music', 'neuroscience', 'relaxation', 'sleep science', 'deep rest'],
   tagsDe: ['Schlafmusik', 'Ambient-Musik', 'Neurowissenschaft', 'Entspannung', 'Schlafwissenschaft', 'Tiefer Schlaf'],

@@ -20,7 +20,7 @@ export const studyMusicGuide: BlogPost = {
     "productivity",
     "students",
   ],
-  heroImage: "/images/blog/study-music-guide-hero.jpg",
+  heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/study-music-guide-hero_dd76fa47.jpg",
   content: `
 It's 11 PM. Your exam is in 8 hours. You've got three chapters left to memorize, and your brain feels like mush. You open Spotify, type "study music," and get 47 million playlists. Which one actually works? And why does your roommate swear by heavy metal while you need complete silence?
 

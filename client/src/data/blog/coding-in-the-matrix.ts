@@ -8,7 +8,7 @@ export const codingInTheMatrix: BlogPost = {
   descriptionDe: 'Warum lieben Programmierer dunkle, futuristische Ambient-Musik? Ein humorvoller Blick auf das "Hackerman"-Gefühl, die Wissenschaft des Flow-States und warum Regen auf Leuchtreklamen dich schneller coden lässt.',
   publishDate: '2026-01-07',
   category: 'cyberpunk',
-  heroImage: '/blog/coding-matrix-hero.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/coding-matrix-hero_02484432.jpg',
   readingTime: 6,
   readingTimeDe: 6,
   author: 'Joachim Gassmann',
