@@ -429,3 +429,10 @@
 ## Update Featured Video
 - [ ] Replace the bottom-right featured video on the homepage with the new 'Romantic Vocal Jazz' video (https://youtu.be/Yr5rRcGZyQI)
 - [ ] Update Schema.org metadata in Home.tsx for the new video
+
+
+## Current Tasks (March 2026)
+- [ ] Check webdev status to identify the UI error
+- [ ] Fix the UI error
+- [ ] Push code to GitHub securely using the new token
+- [ ] Proceed with the next blog article

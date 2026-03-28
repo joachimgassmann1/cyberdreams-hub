@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<title>Weinregal – Deine Sammlung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#0A0A0F;
+  --bg2:#111118;
+  --bg3:#1A1A24;
+  --surface:#1E1E2A;
+  --surface2:#252535;
+  --surface3:#2E2E42;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.12);
+  --text:#F0F0F5;
+  --text2:#A0A0B8;
+  --text3:#606078;
+  --accent:#C8963E;
+  --accent2:#E8B86D;
+  --accent-glow:rgba(200,150,62,0.25);
+  --red:#C0392B;
+  --red-light:#E74C3C;
+  --red-glow:rgba(192,57,43,0.3);
+  --gold:#C8963E;
+  --gold-light:#E8B86D;
+  --gold-glow:rgba(200,150,62,0.3);
+  --pink:#C2185B;
+  --pink-light:#E91E8C;
+  --pink-glow:rgba(194,24,91,0.3);
+  --violet:#6A1B9A;
+  --violet-light:#9C27B0;
+  --violet-glow:rgba(106,27,154,0.3);
+  --green:#27AE60;
+  --green-light:#2ECC71;
+  --green-glow:rgba(39,174,96,0.3);
+  --orange:#E67E22;
+  --danger:#E74C3C;
+  --r-sm:12px;
+  --r-md:18px;
+  --r-lg:24px;
+  --r-xl:32px;
+  --nav:72px;
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+html,body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+#root{min-height:100vh}
+::-webkit-scrollbar{width:0;background:transparent}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.92)}to{opacity:1;transform:scale(1)}}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes glow{0%,100%{box-shadow:0 0 20px var(--accent-glow)}50%{box-shadow:0 0 40px var(--accent-glow),0 0 80px var(--accent-glow)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes scanline{0%{top:-100%}100%{top:100%}}
+
+.anim-fade{animation:fadeIn 0.4s ease both}
+.anim-up{animation:slideUp 0.5s cubic-bezier(0.16,1,0.3,1) both}
+.anim-scale{animation:scaleIn 0.4s cubic-bezier(0.16,1,0.3,1) both}
+
+/* ── BOTTOM NAV ── */
+.bottom-nav{
+  position:fixed;bottom:0;left:0;right:0;
+  height:calc(var(--nav) + var(--safe-bottom));
+  background:rgba(14,14,20,0.85);
+  backdrop-filter:blur(40px) saturate(200%);
+  -webkit-backdrop-filter:blur(40px) saturate(200%);
+  border-top:1px solid var(--border);
+  display:flex;align-items:flex-start;
+  padding-top:8px;
+  z-index:100;
+}
+.nav-tab{
+  flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;
+  cursor:pointer;transition:all 0.25s cubic-bezier(0.16,1,0.3,1);
+  padding:6px 0;border:none;background:none;
+}
+.nav-tab:active{transform:scale(0.88)}
+.nav-tab-icon{
+  width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+  border-radius:8px;transition:all 0.25s;
+}
+.nav-tab.active .nav-tab-icon{
+  background:rgba(200,150,62,0.15);
+}
+.nav-tab span{
+  font-size:10px;font-weight:600;letter-spacing:0.02em;
+  transition:color 0.25s;
+}
+.nav-tab.active span{color:var(--accent)}
+.nav-tab:not(.active) span{color:var(--text3)}
+
+/* ── PAGE ── */
+.page{
+  min-height:100vh;
+  padding-bottom:calc(var(--nav) + var(--safe-bottom) + 16px);
+}
+
+/* ── HEADER ── */
+.page-header{
+  padding:calc(env(safe-area-inset-top,0px) + 52px) 20px 0;
+  position:sticky;top:0;z-index:50;
+}
+.header-blur{
+  position:absolute;inset:0;
+  background:rgba(10,10,15,0.8);
+  backdrop-filter:blur(30px);
+  -webkit-backdrop-filter:blur(30px);
+  border-bottom:1px solid var(--border);
+  z-index:-1;
+}
+.header-inner{padding-bottom:16px}
+.header-title{
+  font-size:30px;font-weight:800;
+  letter-spacing:-0.8px;
+  background:linear-gradient(135deg,#F0F0F5 0%,var(--accent2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.header-sub{font-size:13px;color:var(--text3);margin-top:3px;font-weight:400}
+
+/* ── FILTER PILLS ── */
+.filter-row{
+  display:flex;gap:8px;margin-top:14px;
+  overflow-x:auto;padding-bottom:1px;
+}
+.filter-row::-webkit-scrollbar{display:none}
+.pill{
+  flex-shrink:0;padding:7px 16px;
+  border-radius:100px;border:1px solid var(--border2);
+  font-family:'Inter',sans-serif;font-size:12px;font-weight:600;
+  cursor:pointer;transition:all 0.2s;
+  background:var(--surface);color:var(--text2);
+  letter-spacing:0.02em;
+}
+.pill.active{
+  background:var(--accent);color:#0A0A0F;
+  border-color:var(--accent);
+  box-shadow:0 4px 16px var(--accent-glow);
+}
+.pill:not(.active):active{transform:scale(0.95)}
+
+/* ── WINE CARDS ── */
+.wine-list{padding:12px 16px;display:flex;flex-direction:column;gap:10px}
+
+.wine-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  padding:16px;
+  display:flex;gap:14px;align-items:flex-start;
+  transition:all 0.3s cubic-bezier(0.16,1,0.3,1);
+  position:relative;overflow:hidden;
+  cursor:pointer;
+}
+.wine-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.03) 0%,transparent 60%);
+  pointer-events:none;
+}
+.wine-card:active{transform:scale(0.98);background:var(--surface2)}
+.wine-card-accent{
+  position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;
+}
+
+/* Wine bottle visual */
+.wine-thumb{
+  width:72px;height:96px;border-radius:14px;
+  flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.wine-thumb-red{background:linear-gradient(160deg,#1a0505 0%,#5c0a0a 40%,#8B0000 70%,#6B0000 100%)}
+.wine-thumb-white{background:linear-gradient(160deg,#0d0b03 0%,#3d3000 40%,#6B5B00 70%,#4A3F00 100%)}
+.wine-thumb-rose{background:linear-gradient(160deg,#1a0510 0%,#6B0030 40%,#A01548 70%,#7B0035 100%)}
+.wine-thumb-sparkling{background:linear-gradient(160deg,#080510 0%,#2A0A4A 40%,#4A1570 70%,#350A55 100%)}
+.wine-thumb::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.08) 0%,transparent 50%);
+}
+
+.wine-info{flex:1;min-width:0}
+.wine-name{
+  font-size:15px;font-weight:700;color:var(--text);
+  line-height:1.3;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.wine-producer{font-size:12px;color:var(--text3);margin-top:3px;font-weight:400}
+.wine-tags{display:flex;align-items:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.tag{
+  font-size:10px;font-weight:700;padding:3px 8px;border-radius:100px;
+  letter-spacing:0.04em;text-transform:uppercase;
+}
+.tag-year{background:rgba(200,150,62,0.12);color:var(--accent2);border:1px solid rgba(200,150,62,0.2)}
+.tag-red{background:rgba(192,57,43,0.12);color:#E88080;border:1px solid rgba(192,57,43,0.2)}
+.tag-white{background:rgba(200,150,62,0.1);color:#D4A017;border:1px solid rgba(200,150,62,0.15)}
+.tag-rose{background:rgba(194,24,91,0.12);color:#F06292;border:1px solid rgba(194,24,91,0.2)}
+.tag-sparkling{background:rgba(106,27,154,0.12);color:#CE93D8;border:1px solid rgba(106,27,154,0.2)}
+
+.ripeness-row{margin-top:8px;display:flex;align-items:center;gap:6px}
+.ripeness-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11px;font-weight:600;padding:4px 10px;border-radius:100px;
+}
+.ripeness-peak{background:rgba(39,174,96,0.1);color:#6FCFA0;border:1px solid rgba(39,174,96,0.2)}
+.ripeness-young{background:rgba(230,126,34,0.1);color:#F0A060;border:1px solid rgba(230,126,34,0.2)}
+.ripeness-mature{background:rgba(231,76,60,0.1);color:#F08080;border:1px solid rgba(231,76,60,0.2)}
+.ripeness-dot{width:5px;height:5px;border-radius:50%}
+.ripeness-peak .ripeness-dot{background:var(--green-light)}
+.ripeness-young .ripeness-dot{background:var(--orange)}
+.ripeness-mature .ripeness-dot{background:var(--danger)}
+
+.wine-value-row{
+  display:flex;align-items:center;gap:8px;margin-top:10px;
+}
+.wine-price{font-size:17px;font-weight:800;color:var(--text);letter-spacing:-0.3px}
+.price-change{
+  display:inline-flex;align-items:center;gap:3px;
+  font-size:11px;font-weight:700;padding:3px 8px;border-radius:100px;
+}
+.price-up{background:rgba(39,174,96,0.1);color:#6FCFA0;border:1px solid rgba(39,174,96,0.2)}
+.price-down{background:rgba(231,76,60,0.1);color:#F08080;border:1px solid rgba(231,76,60,0.2)}
+.price-from{font-size:11px;color:var(--text3)}
+
+.count-badge{
+  position:absolute;top:14px;right:46px;
+  background:var(--accent);color:#0A0A0F;
+  font-size:10px;font-weight:800;
+  width:20px;height:20px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.delete-btn{
+  position:absolute;top:14px;right:14px;
+  width:28px;height:28px;border-radius:50%;
+  border:1px solid rgba(231,76,60,0.2);
+  background:rgba(231,76,60,0.08);
+  color:var(--danger);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;flex-shrink:0;
+}
+.delete-btn:hover{background:rgba(231,76,60,0.2);transform:scale(1.1)}
+.delete-btn:active{transform:scale(0.9)}
+
+/* ── FAB ── */
+.fab{
+  position:fixed;
+  bottom:calc(var(--nav) + var(--safe-bottom) + 16px);
+  right:20px;
+  width:56px;height:56px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);
+  color:#0A0A0F;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 32px var(--accent-glow),0 2px 8px rgba(0,0,0,0.4);
+  transition:all 0.3s cubic-bezier(0.16,1,0.3,1);
+  z-index:90;
+}
+.fab:hover{transform:scale(1.08);box-shadow:0 12px 40px var(--accent-glow)}
+.fab:active{transform:scale(0.94)}
+
+/* ── CAMERA FAB ── */
+.cam-fab{
+  position:fixed;
+  bottom:calc(var(--nav) + var(--safe-bottom) + 16px);
+  right:86px;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--surface2);
+  border:1px solid var(--border2);
+  color:var(--text2);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+  transition:all 0.3s cubic-bezier(0.16,1,0.3,1);
+  z-index:90;
+}
+.cam-fab:hover{background:var(--surface3);border-color:var(--accent);color:var(--accent);transform:scale(1.05)}
+.cam-fab:active{transform:scale(0.94)}
+
+/* ── MODAL / SHEET ── */
+.overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  z-index:200;display:flex;align-items:flex-end;
+  animation:fadeIn 0.25s ease;
+}
+.sheet{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-bottom:none;
+  border-radius:var(--r-xl) var(--r-xl) 0 0;
+  padding:0 0 calc(32px + var(--safe-bottom));
+  width:100%;max-height:94vh;overflow-y:auto;
+  animation:slideUp 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+.sheet-handle{
+  width:36px;height:4px;background:var(--surface3);
+  border-radius:2px;margin:14px auto 0;
+}
+.sheet-header{
+  padding:20px 20px 0;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.sheet-title{font-size:22px;font-weight:800;letter-spacing:-0.4px;color:var(--text)}
+.sheet-close{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--surface2);border:1px solid var(--border);
+  color:var(--text2);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;font-size:16px;
+}
+.sheet-close:hover{background:var(--surface3)}
+.sheet-body{padding:20px}
+
+/* ── FORM ── */
+.form-section{margin-bottom:20px}
+.form-label{
+  display:block;font-size:11px;font-weight:700;
+  color:var(--text3);text-transform:uppercase;
+  letter-spacing:0.08em;margin-bottom:8px;
+}
+.form-input,.form-select{
+  width:100%;padding:14px 16px;
+  background:var(--surface);
+  border:1px solid var(--border2);
+  border-radius:var(--r-md);
+  font-family:'Inter',sans-serif;font-size:15px;
+  color:var(--text);outline:none;
+  transition:all 0.2s;appearance:none;
+}
+.form-input::placeholder{color:var(--text3)}
+.form-input:focus,.form-select:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-glow);
+  background:var(--surface2);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-select option{background:var(--surface);color:var(--text)}
+
+.btn-primary{
+  width:100%;padding:16px;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);
+  color:#0A0A0F;border:none;border-radius:var(--r-md);
+  font-family:'Inter',sans-serif;font-size:16px;font-weight:800;
+  cursor:pointer;transition:all 0.25s;
+  letter-spacing:0.01em;
+  box-shadow:0 4px 20px var(--accent-glow);
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 28px var(--accent-glow)}
+.btn-primary:active{transform:translateY(0)}
+.btn-primary:disabled{opacity:0.5;cursor:not-allowed;transform:none}
+
+.btn-secondary{
+  width:100%;padding:14px;
+  background:var(--surface2);
+  color:var(--text2);border:1px solid var(--border2);
+  border-radius:var(--r-md);
+  font-family:'Inter',sans-serif;font-size:15px;font-weight:600;
+  cursor:pointer;transition:all 0.2s;
+}
+.btn-secondary:hover{background:var(--surface3);color:var(--text)}
+
+/* ── CAMERA UI ── */
+.camera-wrap{
+  position:relative;width:100%;
+  border-radius:var(--r-lg);overflow:hidden;
+  background:#000;
+  aspect-ratio:3/4;
+}
+.camera-video{width:100%;height:100%;object-fit:cover;display:block}
+.camera-overlay{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  pointer-events:none;
+}
+.camera-frame{
+  width:70%;aspect-ratio:2/3;
+  border:2px solid rgba(200,150,62,0.6);
+  border-radius:16px;
+  box-shadow:0 0 0 2000px rgba(0,0,0,0.4);
+  position:relative;
+}
+.camera-frame::before,.camera-frame::after{
+  content:'';position:absolute;
+  width:20px;height:20px;
+  border-color:var(--accent);border-style:solid;
+}
+.camera-frame::before{top:-2px;left:-2px;border-width:3px 0 0 3px;border-radius:4px 0 0 0}
+.camera-frame::after{bottom:-2px;right:-2px;border-width:0 3px 3px 0;border-radius:0 0 4px 0}
+.camera-scanline{
+  position:absolute;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  animation:scanline 2s linear infinite;
+  opacity:0.7;
+}
+.camera-hint{
+  margin-top:20px;font-size:13px;font-weight:500;
+  color:rgba(255,255,255,0.7);text-align:center;
+}
+.camera-actions{
+  display:flex;gap:12px;margin-top:16px;
+  align-items:center;justify-content:center;
+}
+.shutter-btn{
+  width:68px;height:68px;border-radius:50%;
+  background:white;border:4px solid rgba(255,255,255,0.3);
+  cursor:pointer;transition:all 0.2s;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+}
+.shutter-btn:active{transform:scale(0.9)}
+.shutter-inner{
+  width:52px;height:52px;border-radius:50%;
+  background:white;
+}
+.cam-side-btn{
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.2);
+  backdrop-filter:blur(10px);
+  color:white;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;font-size:20px;
+}
+.cam-side-btn:active{transform:scale(0.9)}
+
+/* ── PHOTO PREVIEW ── */
+.photo-preview{
+  width:100%;border-radius:var(--r-lg);overflow:hidden;
+  position:relative;aspect-ratio:3/4;
+}
+.photo-preview img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-preview-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,0.6) 0%,transparent 50%);
+}
+
+/* ── AI LOADING ── */
+.ai-loading{
+  display:flex;flex-direction:column;align-items:center;
+  padding:40px 20px;gap:16px;
+}
+.ai-spinner{
+  width:56px;height:56px;border-radius:50%;
+  border:3px solid var(--surface3);
+  border-top-color:var(--accent);
+  animation:spin 0.8s linear infinite;
+}
+.ai-loading-text{font-size:15px;font-weight:600;color:var(--text2)}
+.ai-loading-sub{font-size:12px;color:var(--text3);text-align:center}
+
+/* ── AI RESULT ── */
+.ai-result{padding:4px 0}
+.ai-confidence{
+  display:flex;align-items:center;gap:8px;
+  padding:12px 16px;
+  background:rgba(39,174,96,0.08);
+  border:1px solid rgba(39,174,96,0.15);
+  border-radius:var(--r-sm);
+  margin-bottom:16px;
+}
+.ai-confidence-bar{
+  flex:1;height:4px;background:var(--surface3);border-radius:2px;overflow:hidden;
+}
+.ai-confidence-fill{
+  height:100%;background:linear-gradient(90deg,var(--green),var(--green-light));
+  border-radius:2px;transition:width 0.8s ease;
+}
+.ai-confidence-label{font-size:12px;font-weight:600;color:#6FCFA0}
+
+/* ── DETAIL MODAL ── */
+.detail-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  z-index:300;
+  overflow-y:auto;
+  animation:fadeIn 0.3s ease;
+}
+.detail-page{
+  min-height:100vh;
+  animation:slideUp 0.45s cubic-bezier(0.16,1,0.3,1);
+}
+.detail-hero{
+  position:relative;
+  height:340px;overflow:hidden;
+}
+.detail-hero-bg{
+  position:absolute;inset:-20px;
+  filter:blur(30px) saturate(150%);
+  transform:scale(1.1);
+  opacity:0.4;
+}
+.detail-hero-gradient{
+  position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(10,10,15,0.2) 0%,rgba(10,10,15,0.95) 100%);
+}
+.detail-hero-content{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:24px;
+  display:flex;align-items:flex-end;gap:20px;
+}
+.detail-bottle{
+  width:80px;height:140px;
+  border-radius:16px;overflow:hidden;
+  flex-shrink:0;
+  box-shadow:0 20px 60px rgba(0,0,0,0.6);
+  display:flex;align-items:center;justify-content:center;
+}
+.detail-title-wrap{flex:1}
+.detail-wine-name{
+  font-size:24px;font-weight:900;color:var(--text);
+  letter-spacing:-0.5px;line-height:1.2;
+}
+.detail-producer{font-size:14px;color:var(--text2);margin-top:4px}
+.detail-tags{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.detail-back{
+  position:absolute;top:calc(env(safe-area-inset-top,0px) + 16px);left:16px;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(10,10,15,0.6);
+  border:1px solid var(--border2);
+  backdrop-filter:blur(20px);
+  color:var(--text);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;z-index:10;
+}
+.detail-back:hover{background:rgba(10,10,15,0.9)}
+.detail-photo-btn{
+  position:absolute;top:calc(env(safe-area-inset-top,0px) + 16px);right:16px;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(10,10,15,0.6);
+  border:1px solid var(--border2);
+  backdrop-filter:blur(20px);
+  color:var(--text);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;z-index:10;
+}
+.detail-photo-btn:hover{background:rgba(200,150,62,0.3);border-color:var(--accent);color:var(--accent)}
+
+.detail-body{
+  background:var(--bg);
+  padding:20px;
+  display:flex;flex-direction:column;gap:16px;
+}
+.detail-section{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+}
+.detail-section-header{
+  padding:14px 16px;
+  border-bottom:1px solid var(--border);
+  font-size:11px;font-weight:700;
+  color:var(--text3);text-transform:uppercase;letter-spacing:0.1em;
+}
+.detail-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:13px 16px;border-bottom:1px solid var(--border);
+}
+.detail-row:last-child{border-bottom:none}
+.detail-row-label{font-size:13px;color:var(--text3);font-weight:500}
+.detail-row-value{font-size:14px;color:var(--text);font-weight:600;text-align:right;max-width:60%}
+
+.value-hero{
+  padding:20px;
+  background:linear-gradient(135deg,rgba(39,174,96,0.1) 0%,rgba(39,174,96,0.05) 100%);
+  border:1px solid rgba(39,174,96,0.15);
+  border-radius:var(--r-lg);
+}
+.value-hero-label{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:0.1em}
+.value-hero-amount{font-size:36px;font-weight:900;color:var(--text);letter-spacing:-1px;margin-top:4px}
+.value-hero-row{display:flex;align-items:center;gap:12px;margin-top:8px}
+.value-hero-from{font-size:13px;color:var(--text3)}
+.value-hero-gain{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:13px;font-weight:700;
+  color:#6FCFA0;
+  background:rgba(39,174,96,0.1);
+  padding:4px 10px;border-radius:100px;
+  border:1px solid rgba(39,174,96,0.2);
+}
+
+.description-text{
+  padding:16px;font-size:14px;color:var(--text2);
+  line-height:1.7;font-weight:400;
+}
+
+.detail-photo-section{
+  border-radius:var(--r-lg);overflow:hidden;
+  position:relative;
+}
+.detail-photo-img{width:100%;display:block;border-radius:var(--r-lg)}
+.detail-photo-label{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:12px 16px;
+  background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
+  font-size:12px;color:rgba(255,255,255,0.7);font-weight:500;
+}
+
+/* ── 3D CELLAR ── */
+.cellar-page{background:var(--bg);min-height:100vh}
+.cellar-header{
+  padding:calc(env(safe-area-inset-top,0px) + 52px) 20px 16px;
+  position:sticky;top:0;z-index:50;
+}
+.cellar-header-blur{
+  position:absolute;inset:0;
+  background:rgba(10,10,15,0.85);
+  backdrop-filter:blur(30px);
+  -webkit-backdrop-filter:blur(30px);
+  border-bottom:1px solid var(--border);
+  z-index:-1;
+}
+.cellar-header h1{
+  font-size:30px;font-weight:800;letter-spacing:-0.8px;
+  background:linear-gradient(135deg,#F0F0F5 0%,var(--accent2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.cellar-header p{font-size:13px;color:var(--text3);margin-top:3px}
+
+.cellar-wrap{padding:12px 16px}
+.shelf-level{display:flex;flex-direction:column;margin-bottom:4px}
+.shelf-label{
+  font-size:9px;font-weight:700;color:var(--text3);
+  text-transform:uppercase;letter-spacing:0.1em;
+  text-align:right;padding:4px 2px 2px;
+}
+.shelf-slots{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:6px 0}
+.shelf-plank{
+  height:12px;
+  background:linear-gradient(180deg,#3D2B1A 0%,#2A1D10 50%,#1E1408 100%);
+  border-radius:3px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.06);
+  position:relative;
+}
+.shelf-plank::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.05),transparent);
+  border-radius:3px 3px 0 0;
+}
+
+.slot{
+  aspect-ratio:0.55;border-radius:10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  padding-bottom:6px;cursor:pointer;
+  transition:all 0.3s cubic-bezier(0.16,1,0.3,1);
+  position:relative;overflow:hidden;
+}
+.slot-empty{
+  border:1.5px dashed rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.02);
+}
+.slot-empty:hover{border-color:rgba(200,150,62,0.3);background:rgba(200,150,62,0.03)}
+.slot-filled{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
+.slot-filled:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 12px 32px rgba(0,0,0,0.5);border-color:rgba(255,255,255,0.12)}
+.slot-filled:active{transform:scale(0.96)}
+.slot-label{
+  font-size:7px;font-weight:700;color:rgba(255,255,255,0.35);
+  text-align:center;padding:0 3px;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;
+  letter-spacing:0.02em;
+}
+.slot-filled .slot-label{color:rgba(255,255,255,0.5)}
+
+.cellar-legend{
+  display:flex;gap:14px;padding:0 16px 12px;flex-wrap:wrap;
+}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);font-weight:500}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+
+/* ── STATS ── */
+.stats-page{background:var(--bg);min-height:100vh}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px 16px 0}
+.stat-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-lg);padding:18px 16px;
+  position:relative;overflow:hidden;
+}
+.stat-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,0.02) 0%,transparent 60%);
+  pointer-events:none;
+}
+.stat-icon{
+  width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:12px;font-size:18px;
+}
+.stat-value{
+  font-size:28px;font-weight:900;color:var(--text);
+  letter-spacing:-0.8px;line-height:1;
+}
+.stat-label{font-size:12px;color:var(--text3);margin-top:4px;font-weight:500}
+
+.section-block{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-lg);margin:10px 16px 0;overflow:hidden;
+}
+.section-block-title{
+  padding:14px 16px;border-bottom:1px solid var(--border);
+  font-size:13px;font-weight:700;color:var(--text);
+}
+.country-row{
+  display:flex;align-items:center;padding:12px 16px;
+  border-bottom:1px solid var(--border);gap:12px;
+}
+.country-row:last-child{border-bottom:none}
+.country-flag{font-size:20px}
+.country-name{font-size:13px;font-weight:600;color:var(--text);flex:1}
+.country-bar-wrap{flex:1;height:3px;background:var(--surface3);border-radius:2px;overflow:hidden}
+.country-bar{height:100%;border-radius:2px;transition:width 0.8s cubic-bezier(0.16,1,0.3,1)}
+.country-count{
+  font-size:12px;font-weight:700;color:var(--accent);
+  background:rgba(200,150,62,0.1);padding:3px 10px;border-radius:100px;
+  border:1px solid rgba(200,150,62,0.2);
+}
+
+.value-card-big{
+  margin:10px 16px 0;
+  border-radius:var(--r-lg);
+  background:linear-gradient(135deg,#0D2B1A 0%,#0A1F12 100%);
+  border:1px solid rgba(39,174,96,0.2);
+  padding:22px;
+  box-shadow:0 8px 40px rgba(39,174,96,0.1);
+}
+.vcb-label{font-size:11px;font-weight:700;color:rgba(111,207,160,0.6);text-transform:uppercase;letter-spacing:0.1em}
+.vcb-amount{font-size:38px;font-weight:900;color:var(--text);letter-spacing:-1.5px;margin-top:6px}
+.vcb-sub{font-size:13px;color:rgba(111,207,160,0.5);margin-top:4px}
+.vcb-gain{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(39,174,96,0.15);color:#6FCFA0;
+  font-size:13px;font-weight:700;
+  padding:6px 12px;border-radius:100px;
+  border:1px solid rgba(39,174,96,0.2);
+  margin-top:12px;
+}
+
+/* ── SETTINGS ── */
+.settings-page{background:var(--bg);min-height:100vh}
+.settings-hero{
+  padding:calc(env(safe-area-inset-top,0px) + 60px) 20px 40px;
+  text-align:center;
+  background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);
+  position:relative;overflow:hidden;
+}
+.settings-hero::before{
+  content:'';position:absolute;
+  top:-100px;left:50%;transform:translateX(-50%);
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(200,150,62,0.08) 0%,transparent 70%);
+}
+.settings-hero-icon{
+  width:80px;height:80px;border-radius:24px;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  box-shadow:0 12px 40px var(--accent-glow);
+}
+.settings-hero h1{font-size:26px;font-weight:900;color:var(--text);letter-spacing:-0.5px}
+.settings-hero p{font-size:13px;color:var(--text3);margin-top:6px}
+
+.settings-group{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-lg);margin:0 16px 12px;overflow:hidden;
+}
+.settings-group-label{
+  font-size:11px;font-weight:700;color:var(--text3);
+  text-transform:uppercase;letter-spacing:0.1em;
+  padding:14px 16px 8px;
+}
+.settings-row{
+  display:flex;align-items:center;padding:14px 16px;
+  border-bottom:1px solid var(--border);gap:14px;
+  cursor:pointer;transition:background 0.15s;
+}
+.settings-row:last-child{border-bottom:none}
+.settings-row:active{background:var(--surface2)}
+.settings-row-icon{
+  width:34px;height:34px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;flex-shrink:0;
+}
+.settings-row-text{flex:1}
+.settings-row-label{font-size:15px;font-weight:500;color:var(--text)}
+.settings-row-sub{font-size:12px;color:var(--text3);margin-top:1px}
+.settings-chevron{color:var(--text3)}
+
+/* ── EMPTY STATE ── */
+.empty{
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:80px 32px;text-align:center;
+}
+.empty-icon{font-size:64px;margin-bottom:20px;animation:float 3s ease-in-out infinite}
+.empty-title{font-size:20px;font-weight:700;color:var(--text)}
+.empty-sub{font-size:14px;color:var(--text3);margin-top:8px;line-height:1.6}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;
+  bottom:calc(var(--nav) + var(--safe-bottom) + 16px);
+  left:50%;transform:translateX(-50%);
+  background:var(--surface2);
+  border:1px solid var(--border2);
+  color:var(--text);
+  padding:12px 20px;border-radius:100px;
+  font-size:14px;font-weight:500;
+  z-index:400;white-space:nowrap;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+  animation:slideUp 0.35s cubic-bezier(0.16,1,0.3,1);
+  backdrop-filter:blur(20px);
+}
+
+/* ── CONFIRM ── */
+.confirm-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(12px);
+  z-index:350;display:flex;align-items:center;justify-content:center;
+  padding:20px;animation:fadeIn 0.2s ease;
+}
+.confirm-box{
+  background:var(--surface);border:1px solid var(--border2);
+  border-radius:var(--r-xl);padding:28px;
+  width:100%;max-width:340px;
+  animation:scaleIn 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.confirm-icon{font-size:40px;text-align:center;margin-bottom:16px}
+.confirm-title{font-size:20px;font-weight:800;color:var(--text);letter-spacing:-0.3px}
+.confirm-text{font-size:14px;color:var(--text2);line-height:1.6;margin-top:8px}
+.confirm-actions{display:flex;gap:10px;margin-top:24px}
+.btn-cancel{
+  flex:1;padding:14px;background:var(--surface2);
+  color:var(--text2);border:1px solid var(--border2);
+  border-radius:var(--r-md);font-family:'Inter',sans-serif;
+  font-size:15px;font-weight:600;cursor:pointer;transition:all 0.2s;
+}
+.btn-cancel:hover{background:var(--surface3);color:var(--text)}
+.btn-danger{
+  flex:1;padding:14px;
+  background:rgba(231,76,60,0.15);color:var(--danger);
+  border:1px solid rgba(231,76,60,0.3);
+  border-radius:var(--r-md);font-family:'Inter',sans-serif;
+  font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;
+}
+.btn-danger:hover{background:rgba(231,76,60,0.25)}
+
+/* ── PHOTO CAPTURED PREVIEW ── */
+.photo-captured{
+  width:100%;border-radius:var(--r-lg);overflow:hidden;
+  position:relative;
+}
+.photo-captured img{width:100%;display:block;max-height:280px;object-fit:cover}
+.photo-captured-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:16px;
+  background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);
+  display:flex;gap:8px;
+}
+.btn-retake{
+  flex:1;padding:10px;background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:var(--r-sm);color:white;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:600;
+  cursor:pointer;backdrop-filter:blur(10px);transition:all 0.2s;
+}
+.btn-analyze{
+  flex:2;padding:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  border:none;border-radius:var(--r-sm);color:#0A0A0F;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:800;
+  cursor:pointer;transition:all 0.2s;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.btn-analyze:active{transform:scale(0.97)}
+
+/* ── UPLOAD AREA ── */
+.upload-area{
+  border:2px dashed var(--border2);border-radius:var(--r-lg);
+  padding:32px 20px;text-align:center;cursor:pointer;
+  transition:all 0.2s;background:var(--surface);
+}
+.upload-area:hover{border-color:var(--accent);background:rgba(200,150,62,0.03)}
+.upload-icon{font-size:40px;margin-bottom:12px}
+.upload-text{font-size:14px;font-weight:600;color:var(--text2)}
+.upload-sub{font-size:12px;color:var(--text3);margin-top:4px}
+
+/* ── MISC ── */
+.divider{height:1px;background:var(--border);margin:4px 0}
+.version-text{
+  text-align:center;font-size:12px;color:var(--text3);
+  padding:20px 0 8px;
+}
+.skeleton{
+  background:linear-gradient(90deg,var(--surface) 25%,var(--surface2) 50%,var(--surface) 75%);
+  background-size:200% 100%;
+  animation:shimmer 1.5s infinite;
+  border-radius:8px;
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef, useCallback } = React;
+
+/* ─── CONFIG ─── */
+const API_BASE = "https://5050-io8cqt5lvmd5rebn90leo-9c09503b.us2.manus.computer";
+
+/* ─── DEMO DATA ─── */
+const DEMO = [
+  { id:1, name:"Château Lafite Rothschild", producer:"Château Lafite Rothschild", vintage:2015,
+    region:"Pauillac", country:"Frankreich", type:"red", ripeness:"peak",
+    buyPrice:450, currentPrice:680, count:1, slot:0,
+    grape:"Cabernet Sauvignon, Merlot", alcohol:"13.0%",
+    description:"Ein majestätischer Bordeaux mit tiefer Rubinfarbe und einem Bouquet aus schwarzen Johannisbeeren, Zedernholz und Tabak. Am Gaumen zeigt er eine außergewöhnliche Komplexität mit seidigen Tanninen und einem endlosen Abgang.",
+    food_pairing:"Entrecôte, Wildgerichte, gereifter Hartkäse",
+    serving_temp:"17–18 °C", aging_potential:"Noch 20–30 Jahre",
+    photo: null },
+  { id:2, name:"Domaine de la Romanée-Conti", producer:"DRC", vintage:2018,
+    region:"Burgund", country:"Frankreich", type:"red", ripeness:"young",
+    buyPrice:2500, currentPrice:3200, count:1, slot:1,
+    grape:"Pinot Noir", alcohol:"13.5%",
+    description:"Der heilige Gral des Burgunds. Unglaubliche Tiefe mit Aromen von roten Früchten, Rosen, feuchter Erde und Gewürzen. Ein Wein, der Zeit braucht, um sein volles Potenzial zu entfalten.",
+    food_pairing:"Trüffel, Wildgeflügel, Jakobsmuscheln",
+    serving_temp:"16–17 °C", aging_potential:"20–40 Jahre",
+    photo: null },
+  { id:3, name:"Sassicaia", producer:"Tenuta San Guido", vintage:2016,
+    region:"Toskana", country:"Italien", type:"red", ripeness:"peak",
+    buyPrice:180, currentPrice:220, count:3, slot:2,
+    grape:"Cabernet Sauvignon, Cabernet Franc", alcohol:"13.5%",
+    description:"Der Pionier der Supertoskaner. Elegante Struktur mit Aromen von schwarzen Kirschen, Graphit und Kräutern. Perfekte Balance zwischen Kraft und Finesse.",
+    food_pairing:"Bistecca alla Fiorentina, Wildschweinsalami",
+    serving_temp:"17–18 °C", aging_potential:"15–20 Jahre",
+    photo: null },
+  { id:4, name:"Chablis Grand Cru", producer:"William Fèvre", vintage:2020,
+    region:"Chablis", country:"Frankreich", type:"white", ripeness:"peak",
+    buyPrice:85, currentPrice:95, count:4, slot:5,
+    grape:"Chardonnay", alcohol:"13.0%",
+    description:"Mineralischer Weißwein par excellence. Kieselstein-Mineralität, grüner Apfel, Zitrusfrüchte und eine charakteristische Salzigkeit. Straff, präzise und lang anhaltend.",
+    food_pairing:"Austern, Hummer, Steinbutt",
+    serving_temp:"10–12 °C", aging_potential:"8–12 Jahre",
+    photo: null },
+  { id:5, name:"Krug Grande Cuvée", producer:"Krug", vintage:null,
+    region:"Champagne", country:"Frankreich", type:"sparkling", ripeness:"peak",
+    buyPrice:180, currentPrice:190, count:2, slot:10,
+    grape:"Pinot Noir, Chardonnay, Pinot Meunier", alcohol:"12.0%",
+    description:"Die Ikone unter den Champagnern. Über 120 Weine aus mehr als 10 Jahrgängen vereint in einer einzigartigen Cuvée. Brioche, Haselnuss, getrocknete Früchte und eine unendliche Perlage.",
+    food_pairing:"Kaviar, Hummer, weißer Trüffel",
+    serving_temp:"8–10 °C", aging_potential:"15–20 Jahre",
+    photo: null },
+];
+
+/* ─── HELPERS ─── */
+const TYPE_LABEL = { red:"Rotwein", white:"Weißwein", rose:"Rosé", sparkling:"Schaumwein" };
+const TYPE_COLOR = { red:"#C0392B", white:"#C8963E", rose:"#C2185B", sparkling:"#7B2FBE" };
+const TYPE_GLOW  = { red:"rgba(192,57,43,0.4)", white:"rgba(200,150,62,0.4)", rose:"rgba(194,24,91,0.4)", sparkling:"rgba(123,47,190,0.4)" };
+const RIPENESS_LABEL = { peak:"Höhepunkt", young:"Jugend", mature:"Reif" };
+const COUNTRY_FLAG = { "Frankreich":"🇫🇷","Italien":"🇮🇹","Deutschland":"🇩🇪","Spanien":"🇪🇸","Österreich":"🇦🇹","USA":"🇺🇸","Argentinien":"🇦🇷","Chile":"🇨🇱","Australien":"🇦🇺","Portugal":"🇵🇹" };
+
+const pct = (b,c) => Math.round(((c-b)/b)*100);
+const eur = n => new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
+
+function useLS(key, init) {
+  const [v, setV] = useState(() => { try { const s = localStorage.getItem(key); return s ? JSON.parse(s) : init; } catch { return init; } });
+  useEffect(() => { try { localStorage.setItem(key, JSON.stringify(v)); } catch {} }, [key,v]);
+  return [v, setV];
+}
+
+/* ─── SVG ICONS ─── */
+const Icons = {
+  Wine: ({s=24,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8 22h8M7 10h10M12 15v7M17 3H7l-1 7a5 5 0 0010 0l-1-7z"/></svg>,
+  Grid: ({s=24,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>,
+  Chart: ({s=24,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/><line x1="2" y1="20" x2="22" y2="20"/></svg>,
+  Gear: ({s=24,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>,
+  Plus: ({s=24,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2.5" strokeLinecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>,
+  Camera: ({s=24,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>,
+  Trash: ({s=16,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2"/></svg>,
+  Up: ({s=14,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>,
+  Down: ({s=14,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>,
+  Back: ({s=20,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>,
+  Chevron: ({s=16,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>,
+  Flip: ({s=22,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10M23 14l-4.64 4.36A9 9 0 013.51 15"/></svg>,
+  Star: ({s=14,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill={c} stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
+  Sparkle: ({s=16,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill={c} stroke="none"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>,
+  Image: ({s=24,c="currentColor"}) => <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>,
+};
+
+/* ─── BOTTLE SVG ─── */
+function BottleSVG({ type, h=96, glow=false }) {
+  const c = {
+    red:      { body:"#5C0A0A", mid:"#8B0000", label:"#F5E0D0", neck:"#3D0606", foil:"#2C1810" },
+    white:    { body:"#2A3D1A", mid:"#4A6B2A", label:"#FFFDE7", neck:"#1A2D0A", foil:"#8B7536" },
+    rose:     { body:"#6B0030", mid:"#A01548", label:"#FCE4EC", neck:"#4A0020", foil:"#880E4F" },
+    sparkling:{ body:"#1A0A2E", mid:"#2E1060", label:"#EDE7F6", neck:"#0D0518", foil:"#FFD700" },
+  }[type] || { body:"#5C0A0A", mid:"#8B0000", label:"#F5E0D0", neck:"#3D0606", foil:"#2C1810" };
+  const w = h * 0.38;
+  return (
+    <svg width={w} height={h} viewBox="0 0 38 100" fill="none" style={glow?{filter:`drop-shadow(0 0 12px ${TYPE_GLOW[type]})`}:{}}>
+      <rect x="15" y="1" width="8" height="7" rx="2.5" fill="#D4A574"/>
+      <rect x="13" y="7" width="12" height="14" rx="2" fill={c.neck}/>
+      <rect x="13" y="7" width="12" height="5" rx="2" fill={c.foil} opacity="0.9"/>
+      <path d="M13 21 Q7 26 6 33 L32 33 Q31 26 25 21 Z" fill={c.body}/>
+      <rect x="6" y="33" width="26" height="58" rx="4" fill={c.body}/>
+      <rect x="6" y="87" width="26" height="4" rx="2" fill={c.neck}/>
+      <path d="M13 21 Q7 26 6 33 L32 33 Q31 26 25 21 Z" fill={c.mid} opacity="0.4"/>
+      <rect x="8" y="40" width="22" height="26" rx="3" fill={c.label} opacity="0.92"/>
+      <rect x="10" y="44" width="18" height="1.5" rx="1" fill={c.body} opacity="0.2"/>
+      <rect x="10" y="48" width="14" height="1.5" rx="1" fill={c.body} opacity="0.15"/>
+      <rect x="10" y="52" width="16" height="1.5" rx="1" fill={c.body} opacity="0.15"/>
+      <rect x="10" y="56" width="10" height="1.5" rx="1" fill={c.body} opacity="0.1"/>
+      <rect x="8" y="33" width="5" height="50" rx="2.5" fill="rgba(255,255,255,0.06)"/>
+    </svg>
+  );
+}
+
+function Bottle3D({ type }) {
+  const c = {
+    red:"#8B0000", white:"#4A6B2A", rose:"#A01548", sparkling:"#2E1060"
+  }[type] || "#8B0000";
+  return (
+    <svg width="22" height="48" viewBox="0 0 22 48" fill="none">
+      <rect x="8" y="0" width="6" height="5" rx="1.5" fill="#D4A574"/>
+      <rect x="7" y="4" width="8" height="8" rx="1.5" fill={c}/>
+      <path d="M7 12 Q3 15 3 18 L19 18 Q19 15 15 12 Z" fill={c}/>
+      <rect x="3" y="18" width="16" height="26" rx="2.5" fill={c}/>
+      <rect x="3" y="41" width="16" height="3" rx="1.5" fill={c} opacity="0.7"/>
+      <rect x="4" y="21" width="10" height="14" rx="2" fill="rgba(255,255,255,0.12)"/>
+      <rect x="4" y="14" width="3" height="22" rx="1.5" fill="rgba(255,255,255,0.07)"/>
+    </svg>
+  );
+}
+
+/* ─── CAMERA COMPONENT ─── */
+function CameraCapture({ onCapture, onClose }) {
+  const videoRef = useRef(null);
+  const canvasRef = useRef(null);
+  const streamRef = useRef(null);
+  const [facing, setFacing] = useState('environment');
+  const [ready, setReady] = useState(false);
+  const [captured, setCaptured] = useState(null);
+  const [useUpload, setUseUpload] = useState(false);
+  const fileRef = useRef(null);
+
+  useEffect(() => {
+    startCamera();
+    return () => stopCamera();
+  }, [facing]);
+
+  async function startCamera() {
+    stopCamera();
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: facing, width:{ideal:1280}, height:{ideal:960} }
+      });
+      streamRef.current = stream;
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+        videoRef.current.onloadedmetadata = () => setReady(true);
+      }
+    } catch(e) {
+      setUseUpload(true);
+    }
+  }
+
+  function stopCamera() {
+    streamRef.current?.getTracks().forEach(t => t.stop());
+    setReady(false);
+  }
+
+  function shoot() {
+    const v = videoRef.current, cv = canvasRef.current;
+    if (!v || !cv) return;
+    cv.width = v.videoWidth; cv.height = v.videoHeight;
+    cv.getContext('2d').drawImage(v, 0, 0);
+    const dataUrl = cv.toDataURL('image/jpeg', 0.92);
+    stopCamera();
+    setCaptured(dataUrl);
+  }
+
+  function handleFile(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = ev => setCaptured(ev.target.result);
+    reader.readAsDataURL(file);
+  }
+
+  function retake() {
+    setCaptured(null);
+    if (!useUpload) startCamera();
+  }
+
+  if (captured) {
+    return (
+      <div>
+        <div className="photo-captured">
+          <img src={captured} alt="Aufgenommenes Foto"/>
+          <div className="photo-captured-overlay">
+            <button className="btn-retake" onClick={retake}>↩ Neu</button>
+            <button className="btn-analyze" onClick={() => onCapture(captured)}>
+              <Icons.Sparkle s={14} c="#0A0A0F"/> KI analysieren
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (useUpload) {
+    return (
+      <div>
+        <div className="upload-area" onClick={() => fileRef.current?.click()}>
+          <div className="upload-icon">📸</div>
+          <div className="upload-text">Foto auswählen</div>
+          <div className="upload-sub">Weinetikett aus Galerie oder Kamera</div>
+        </div>
+        <input ref={fileRef} type="file" accept="image/*" capture="environment"
+          style={{display:'none'}} onChange={handleFile}/>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <div className="camera-wrap">
+        <video ref={videoRef} className="camera-video" autoPlay playsInline muted/>
+        <canvas ref={canvasRef} style={{display:'none'}}/>
+        {ready && (
+          <div className="camera-overlay">
+            <div className="camera-frame">
+              <div className="camera-scanline"/>
+            </div>
+            <div className="camera-hint">Weinetikett im Rahmen zentrieren</div>
+          </div>
+        )}
+      </div>
+      <div className="camera-actions" style={{marginTop:'16px'}}>
+        <button className="cam-side-btn" onClick={() => setUseUpload(true)}>🖼</button>
+        <button className="shutter-btn" onClick={shoot} disabled={!ready}>
+          <div className="shutter-inner"/>
+        </button>
+        <button className="cam-side-btn" onClick={() => setFacing(f => f==='environment'?'user':'environment')}>
+          <Icons.Flip s={20} c="white"/>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ─── WINE DETAIL MODAL ─── */
+function WineDetail({ wine, onClose, onUpdate }) {
+  const p = pct(wine.buyPrice, wine.currentPrice);
+  const isUp = p >= 0;
+  const [showCamera, setShowCamera] = useState(false);
+  const [analyzing, setAnalyzing] = useState(false);
+
+  async function handleNewPhoto(dataUrl) {
+    setShowCamera(false);
+    setAnalyzing(true);
+    try {
+      const res = await fetch(`${API_BASE}/analyze`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ image: dataUrl })
+      });
+      const data = await res.json();
+      if (data.success) {
+        onUpdate(wine.id, { ...data.wine, photo: dataUrl, buyPrice: wine.buyPrice, currentPrice: wine.currentPrice, count: wine.count, slot: wine.slot });
+      }
+    } catch(e) {
+      console.error(e);
+    }
+    setAnalyzing(false);
+  }
+
+  return (
+    <div className="detail-overlay" onClick={e => e.target===e.currentTarget && onClose()}>
+      <div className="detail-page">
+        {/* HERO */}
+        <div className="detail-hero">
+          {wine.photo ? (
+            <img src={wine.photo} className="detail-hero-bg" alt="" style={{position:'absolute',inset:'-20px',width:'calc(100% + 40px)',height:'calc(100% + 40px)',objectFit:'cover'}}/>
+          ) : (
+            <div style={{position:'absolute',inset:0,background:`radial-gradient(ellipse at 30% 40%, ${TYPE_GLOW[wine.type]} 0%, transparent 70%)`}}/>
+          )}
+          <div className="detail-hero-gradient"/>
+          <button className="detail-back" onClick={onClose}><Icons.Back s={20} c="white"/></button>
+          <button className="detail-photo-btn" onClick={() => setShowCamera(true)} title="Foto aufnehmen / aktualisieren">
+            <Icons.Camera s={18} c="currentColor"/>
+          </button>
+          <div className="detail-hero-content">
+            <div className={`detail-bottle wine-thumb-${wine.type}`}>
+              <BottleSVG type={wine.type} h={120} glow={true}/>
+            </div>
+            <div className="detail-title-wrap">
+              <div className="detail-wine-name">{wine.name}</div>
+              <div className="detail-producer">{wine.producer} · {wine.region}</div>
+              <div className="detail-tags">
+                {wine.vintage && <span className="tag tag-year">{wine.vintage}</span>}
+                <span className={`tag tag-${wine.type}`}>{TYPE_LABEL[wine.type]}</span>
+                <span className={`ripeness-badge ripeness-${wine.ripeness}`}>
+                  <span className="ripeness-dot"/>
+                  {RIPENESS_LABEL[wine.ripeness]}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* BODY */}
+        <div className="detail-body">
+
+          {/* Foto-Kamera */}
+          {showCamera && (
+            <div className="detail-section" style={{overflow:'visible'}}>
+              <div className="detail-section-header" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+                <span>📸 Etikett fotografieren</span>
+                <button onClick={() => setShowCamera(false)} style={{background:'none',border:'none',color:'var(--text3)',cursor:'pointer',fontSize:'18px'}}>×</button>
+              </div>
+              <div style={{padding:'16px'}}>
+                <CameraCapture onCapture={handleNewPhoto} onClose={() => setShowCamera(false)}/>
+              </div>
+            </div>
+          )}
+
+          {/* KI analysiert */}
+          {analyzing && (
+            <div className="detail-section">
+              <div className="ai-loading">
+                <div className="ai-spinner"/>
+                <div className="ai-loading-text">KI analysiert Weinetikett…</div>
+                <div className="ai-loading-sub">GPT-4 Vision erkennt Produzent, Jahrgang, Region und mehr</div>
+              </div>
+            </div>
+          )}
+
+          {/* Foto */}
+          {wine.photo && !showCamera && (
+            <div className="detail-photo-section">
+              <img src={wine.photo} alt="Weinetikett" className="detail-photo-img"/>
+              <div className="detail-photo-label">📸 Aufgenommenes Etikett</div>
+            </div>
+          )}
+
+          {/* Wert */}
+          <div className="value-hero">
+            <div className="value-hero-label">Aktueller Wert</div>
+            <div className="value-hero-amount">{eur(wine.currentPrice)}</div>
+            <div className="value-hero-row">
+              <div className="value-hero-from">Kaufpreis: {eur(wine.buyPrice)}</div>
+              <div className={`value-hero-gain`}>
+                {isUp ? <Icons.Up s={12} c="#6FCFA0"/> : <Icons.Down s={12} c="#F08080"/>}
+                {isUp?'+':''}{p}%
+              </div>
+            </div>
+          </div>
+
+          {/* Beschreibung */}
+          {wine.description && (
+            <div className="detail-section">
+              <div className="detail-section-header">Charakter & Aromen</div>
+              <div className="description-text">{wine.description}</div>
+            </div>
+          )}
+
+          {/* Details */}
+          <div className="detail-section">
+            <div className="detail-section-header">Weindetails</div>
+            {wine.grape && <div className="detail-row"><span className="detail-row-label">Rebsorte</span><span className="detail-row-value">{wine.grape}</span></div>}
+            {wine.alcohol && <div className="detail-row"><span className="detail-row-label">Alkohol</span><span className="detail-row-value">{wine.alcohol}</span></div>}
+            <div className="detail-row"><span className="detail-row-label">Region</span><span className="detail-row-value">{wine.region}</span></div>
+            <div className="detail-row"><span className="detail-row-label">Land</span><span className="detail-row-value">{COUNTRY_FLAG[wine.country] || ''} {wine.country}</span></div>
+            {wine.serving_temp && <div className="detail-row"><span className="detail-row-label">Trinktemperatur</span><span className="detail-row-value">{wine.serving_temp}</span></div>}
+            {wine.aging_potential && <div className="detail-row"><span className="detail-row-label">Lagerpotenzial</span><span className="detail-row-value">{wine.aging_potential}</span></div>}
+            <div className="detail-row"><span className="detail-row-label">Flaschen</span><span className="detail-row-value">{wine.count} Stück</span></div>
+          </div>
+
+          {/* Speisenbegleitung */}
+          {wine.food_pairing && (
+            <div className="detail-section">
+              <div className="detail-section-header">Speisenbegleitung</div>
+              <div className="description-text" style={{paddingTop:'12px'}}>🍽 {wine.food_pairing}</div>
+            </div>
+          )}
+
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─── ADD WINE MODAL ─── */
+function AddWineModal({ onClose, onAdd }) {
+  const [step, setStep] = useState('choose'); // choose | camera | form
+  const [analyzing, setAnalyzing] = useState(false);
+  const [aiResult, setAiResult] = useState(null);
+  const [capturedPhoto, setCapturedPhoto] = useState(null);
+  const [form, setForm] = useState({
+    name:'', producer:'', vintage:'', region:'', country:'Frankreich',
+    type:'red', ripeness:'peak', buyPrice:'', currentPrice:'', count:1,
+    grape:'', alcohol:'', description:'', food_pairing:'', serving_temp:'', aging_potential:''
+  });
+  const set = (k,v) => setForm(f => ({...f,[k]:v}));
+
+  async function handleCapture(dataUrl) {
+    setCapturedPhoto(dataUrl);
+    setStep('form');
+    setAnalyzing(true);
+    try {
+      const res = await fetch(`${API_BASE}/analyze`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ image: dataUrl })
+      });
+      const data = await res.json();
+      if (data.success && data.wine) {
+        const w = data.wine;
+        setAiResult(w);
+        setForm(f => ({
+          ...f,
+          name: w.name || f.name,
+          producer: w.producer || f.producer,
+          vintage: w.vintage ? String(w.vintage) : f.vintage,
+          region: w.region || f.region,
+          country: w.country || f.country,
+          type: w.type || f.type,
+          ripeness: w.ripeness || f.ripeness,
+          grape: w.grape || f.grape,
+          alcohol: w.alcohol || f.alcohol,
+          description: w.description || f.description,
+          food_pairing: w.food_pairing || f.food_pairing,
+          serving_temp: w.serving_temp || f.serving_temp,
+          aging_potential: w.aging_potential || f.aging_potential,
+          currentPrice: w.estimated_price ? String(w.estimated_price) : f.currentPrice,
+        }));
+      }
+    } catch(e) { console.error(e); }
+    setAnalyzing(false);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!form.name || !form.buyPrice || !form.currentPrice) return;
+    onAdd({
+      ...form,
+      vintage: form.vintage ? parseInt(form.vintage) : null,
+      buyPrice: parseFloat(form.buyPrice),
+      currentPrice: parseFloat(form.currentPrice),
+      count: parseInt(form.count)||1,
+      photo: capturedPhoto || null,
+    });
+    onClose();
+  }
+
+  return (
+    <div className="overlay" onClick={e => e.target===e.currentTarget && onClose()}>
+      <div className="sheet">
+        <div className="sheet-handle"/>
+        <div className="sheet-header">
+          <div className="sheet-title">
+            {step==='choose' && 'Wein hinzufügen'}
+            {step==='camera' && 'Etikett scannen'}
+            {step==='form'   && (analyzing ? 'KI analysiert…' : 'Weindetails')}
+          </div>
+          <button className="sheet-close" onClick={onClose}>×</button>
+        </div>
+        <div className="sheet-body">
+
+          {/* CHOOSE */}
+          {step==='choose' && (
+            <div style={{display:'flex',flexDirection:'column',gap:'12px'}}>
+              <button onClick={() => setStep('camera')} style={{
+                padding:'20px',background:'var(--surface)',border:'1px solid var(--border2)',
+                borderRadius:'var(--r-lg)',cursor:'pointer',textAlign:'left',
+                display:'flex',alignItems:'center',gap:'16px',transition:'all 0.2s',
+              }}
+              onMouseEnter={e=>e.currentTarget.style.borderColor='var(--accent)'}
+              onMouseLeave={e=>e.currentTarget.style.borderColor='var(--border2)'}>
+                <div style={{width:'48px',height:'48px',borderRadius:'14px',background:'linear-gradient(135deg,var(--accent),var(--accent2))',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+                  <Icons.Camera s={22} c="#0A0A0F"/>
+                </div>
+                <div>
+                  <div style={{fontSize:'16px',fontWeight:'700',color:'var(--text)'}}>KI-Etikett-Scan</div>
+                  <div style={{fontSize:'13px',color:'var(--text3)',marginTop:'3px'}}>Foto aufnehmen → GPT-4 Vision analysiert automatisch</div>
+                </div>
+              </button>
+              <button onClick={() => setStep('form')} style={{
+                padding:'20px',background:'var(--surface)',border:'1px solid var(--border)',
+                borderRadius:'var(--r-lg)',cursor:'pointer',textAlign:'left',
+                display:'flex',alignItems:'center',gap:'16px',transition:'all 0.2s',
+              }}
+              onMouseEnter={e=>e.currentTarget.style.borderColor='var(--border2)'}
+              onMouseLeave={e=>e.currentTarget.style.borderColor='var(--border)'}>
+                <div style={{width:'48px',height:'48px',borderRadius:'14px',background:'var(--surface2)',border:'1px solid var(--border2)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0}}>
+                  <Icons.Plus s={22} c="var(--text2)"/>
+                </div>
+                <div>
+                  <div style={{fontSize:'16px',fontWeight:'700',color:'var(--text)'}}>Manuell eingeben</div>
+                  <div style={{fontSize:'13px',color:'var(--text3)',marginTop:'3px'}}>Alle Felder selbst ausfüllen</div>
+                </div>
+              </button>
+            </div>
+          )}
+
+          {/* CAMERA */}
+          {step==='camera' && (
+            <div>
+              <CameraCapture onCapture={handleCapture} onClose={() => setStep('choose')}/>
+              <button className="btn-secondary" style={{marginTop:'12px'}} onClick={() => setStep('choose')}>← Zurück</button>
+            </div>
+          )}
+
+          {/* FORM */}
+          {step==='form' && (
+            <form onSubmit={handleSubmit}>
+              {/* KI-Lade-Spinner */}
+              {analyzing && (
+                <div className="ai-loading" style={{padding:'24px 0 16px'}}>
+                  <div className="ai-spinner"/>
+                  <div className="ai-loading-text">GPT-4 Vision analysiert Etikett…</div>
+                  <div className="ai-loading-sub">Erkennt Produzent, Jahrgang, Region, Rebsorte und mehr</div>
+                </div>
+              )}
+
+              {/* KI-Ergebnis-Banner */}
+              {aiResult && !analyzing && (
+                <div className="ai-confidence" style={{marginBottom:'16px'}}>
+                  <Icons.Sparkle s={16} c="#6FCFA0"/>
+                  <span style={{fontSize:'12px',fontWeight:'600',color:'#6FCFA0'}}>KI-Analyse abgeschlossen</span>
+                  <div className="ai-confidence-bar">
+                    <div className="ai-confidence-fill" style={{width:`${(aiResult.confidence||0.8)*100}%`}}/>
+                  </div>
+                  <span className="ai-confidence-label">{Math.round((aiResult.confidence||0.8)*100)}%</span>
+                </div>
+              )}
+
+              {/* Foto-Vorschau */}
+              {capturedPhoto && !analyzing && (
+                <div style={{marginBottom:'16px',borderRadius:'var(--r-md)',overflow:'hidden',maxHeight:'160px'}}>
+                  <img src={capturedPhoto} alt="Etikett" style={{width:'100%',height:'160px',objectFit:'cover',display:'block'}}/>
+                </div>
+              )}
+
+              <div className="form-section">
+                <label className="form-label">Weinname *</label>
+                <input className="form-input" placeholder="z.B. Château Margaux" value={form.name} onChange={e=>set('name',e.target.value)} required/>
+              </div>
+              <div className="form-row" style={{marginBottom:'16px'}}>
+                <div>
+                  <label className="form-label">Produzent</label>
+                  <input className="form-input" placeholder="Weingut" value={form.producer} onChange={e=>set('producer',e.target.value)}/>
+                </div>
+                <div>
+                  <label className="form-label">Jahrgang</label>
+                  <input className="form-input" type="number" placeholder="2020" min="1900" max="2030" value={form.vintage} onChange={e=>set('vintage',e.target.value)}/>
+                </div>
+              </div>
+              <div className="form-row" style={{marginBottom:'16px'}}>
+                <div>
+                  <label className="form-label">Region</label>
+                  <input className="form-input" placeholder="Bordeaux" value={form.region} onChange={e=>set('region',e.target.value)}/>
+                </div>
+                <div>
+                  <label className="form-label">Land</label>
+                  <select className="form-select" value={form.country} onChange={e=>set('country',e.target.value)}>
+                    {["Frankreich","Italien","Deutschland","Spanien","Österreich","USA","Argentinien","Chile","Australien","Portugal"].map(c=><option key={c}>{c}</option>)}
+                  </select>
+                </div>
+              </div>
+              <div className="form-row" style={{marginBottom:'16px'}}>
+                <div>
+                  <label className="form-label">Weinart</label>
+                  <select className="form-select" value={form.type} onChange={e=>set('type',e.target.value)}>
+                    <option value="red">Rotwein</option><option value="white">Weißwein</option>
+                    <option value="rose">Rosé</option><option value="sparkling">Schaumwein</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="form-label">Trinkreife</label>
+                  <select className="form-select" value={form.ripeness} onChange={e=>set('ripeness',e.target.value)}>
+                    <option value="peak">Höhepunkt</option><option value="young">Jugend</option><option value="mature">Reif</option>
+                  </select>
+                </div>
+              </div>
+              <div className="form-row" style={{marginBottom:'16px'}}>
+                <div>
+                  <label className="form-label">Rebsorte</label>
+                  <input className="form-input" placeholder="Cabernet Sauvignon" value={form.grape} onChange={e=>set('grape',e.target.value)}/>
+                </div>
+                <div>
+                  <label className="form-label">Alkohol</label>
+                  <input className="form-input" placeholder="13.5%" value={form.alcohol} onChange={e=>set('alcohol',e.target.value)}/>
+                </div>
+              </div>
+              <div className="form-row" style={{marginBottom:'16px'}}>
+                <div>
+                  <label className="form-label">Kaufpreis (€) *</label>
+                  <input className="form-input" type="number" placeholder="0" min="0" step="0.01" value={form.buyPrice} onChange={e=>set('buyPrice',e.target.value)} required/>
+                </div>
+                <div>
+                  <label className="form-label">Akt. Wert (€) *</label>
+                  <input className="form-input" type="number" placeholder="0" min="0" step="0.01" value={form.currentPrice} onChange={e=>set('currentPrice',e.target.value)} required/>
+                </div>
+              </div>
+              <div className="form-section">
+                <label className="form-label">Anzahl Flaschen</label>
+                <input className="form-input" type="number" placeholder="1" min="1" max="100" value={form.count} onChange={e=>set('count',e.target.value)}/>
+              </div>
+              {form.description && (
+                <div className="form-section">
+                  <label className="form-label">Beschreibung (KI)</label>
+                  <textarea className="form-input" rows="3" value={form.description} onChange={e=>set('description',e.target.value)} style={{resize:'none',lineHeight:'1.5'}}/>
+                </div>
+              )}
+              <button type="submit" className="btn-primary" disabled={analyzing}>
+                {analyzing ? 'Analyse läuft…' : 'Wein zur Sammlung hinzufügen'}
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─── WINE LIST PAGE ─── */
+function WineListPage({ wines, onDelete, onAdd, onUpdate }) {
+  const [showModal, setShowModal] = useState(false);
+  const [filter, setFilter] = useState('all');
+  const [detail, setDetail] = useState(null);
+  const total = wines.reduce((s,w) => s+w.count, 0);
+  const filtered = filter==='all' ? wines : wines.filter(w=>w.type===filter);
+
+  const detailWine = detail ? wines.find(w=>w.id===detail) : null;
+
+  return (
+    <div className="page">
+      <div className="page-header">
+        <div className="header-blur"/>
+        <div className="header-inner">
+          <div className="header-title">Meine Weine</div>
+          <div className="header-sub">{total} Flaschen · {wines.length} verschiedene Weine</div>
+          <div className="filter-row">
+            {[{k:'all',l:'Alle'},{k:'red',l:'Rotwein'},{k:'white',l:'Weißwein'},{k:'rose',l:'Rosé'},{k:'sparkling',l:'Schaumwein'}].map(f=>(
+              <button key={f.k} className={`pill ${filter===f.k?'active':''}`} onClick={()=>setFilter(f.k)}>
+                {f.l}{f.k!=='all' && <span style={{marginLeft:'4px',opacity:0.6}}>{wines.filter(w=>w.type===f.k).length}</span>}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {filtered.length===0 ? (
+        <div className="empty">
+          <div className="empty-icon">🍷</div>
+          <div className="empty-title">Noch keine Weine</div>
+          <div className="empty-sub">Fotografiere ein Weinetikett oder füge deinen ersten Wein manuell hinzu.</div>
+        </div>
+      ) : (
+        <div className="wine-list">
+          {filtered.map((w,i) => {
+            const p = pct(w.buyPrice, w.currentPrice);
+            const isUp = p>=0;
+            return (
+              <div key={w.id} className={`wine-card anim-up`} style={{animationDelay:`${i*40}ms`}} onClick={()=>setDetail(w.id)}>
+                <div className="wine-card-accent" style={{background:TYPE_COLOR[w.type]}}/>
+                <div className={`wine-thumb wine-thumb-${w.type}`}>
+                  <BottleSVG type={w.type} h={88}/>
+                </div>
+                <div className="wine-info">
+                  <div className="wine-name">{w.name}</div>
+                  <div className="wine-producer">{w.producer}{w.region ? ` · ${w.region}` : ''}</div>
+                  <div className="wine-tags">
+                    {w.vintage && <span className="tag tag-year">{w.vintage}</span>}
+                    <span className={`tag tag-${w.type}`}>{TYPE_LABEL[w.type]}</span>
+                  </div>
+                  <div className="ripeness-row">
+                    <span className={`ripeness-badge ripeness-${w.ripeness}`}>
+                      <span className="ripeness-dot"/>
+                      {RIPENESS_LABEL[w.ripeness]}
+                    </span>
+                    {w.photo && <span style={{fontSize:'11px',color:'var(--accent)',background:'rgba(200,150,62,0.1)',padding:'3px 8px',borderRadius:'100px',border:'1px solid rgba(200,150,62,0.2)',fontWeight:'600'}}>📸 Foto</span>}
+                  </div>
+                  <div className="wine-value-row">
+                    <span className="wine-price">{eur(w.currentPrice)}</span>
+                    <span className={`price-change ${isUp?'price-up':'price-down'}`}>
+                      {isUp?<Icons.Up s={11} c="#6FCFA0"/>:<Icons.Down s={11} c="#F08080"/>}
+                      {isUp?'+':''}{p}%
+                    </span>
+                    <span className="price-from">von {eur(w.buyPrice)}</span>
+                  </div>
+                </div>
+                {w.count>1 && <div className="count-badge">×{w.count}</div>}
+                <button className="delete-btn" onClick={e=>{e.stopPropagation();onDelete(w.id);}}>
+                  <Icons.Trash s={13} c="var(--danger)"/>
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      <button className="cam-fab" onClick={() => setShowModal(true)} title="Etikett scannen">
+        <Icons.Camera s={22} c="currentColor"/>
+      </button>
+      <button className="fab" onClick={() => setShowModal(true)}>
+        <Icons.Plus s={24} c="#0A0A0F"/>
+      </button>
+
+      {showModal && <AddWineModal onClose={()=>setShowModal(false)} onAdd={onAdd}/>}
+      {detailWine && <WineDetail wine={detailWine} onClose={()=>setDetail(null)} onUpdate={onUpdate}/>}
+    </div>
+  );
+}
+
+/* ─── 3D CELLAR PAGE ─── */
+function CellarPage({ wines, onWineClick }) {
+  const ROWS=6, COLS=5, TOTAL=ROWS*COLS;
+  const slotMap = {};
+  wines.forEach(w => {
+    for(let i=0;i<w.count;i++){
+      const s=w.slot+i;
+      if(s<TOTAL && !slotMap[s]) slotMap[s]=w;
+    }
+  });
+  const filled = Object.keys(slotMap).length;
+
+  return (
+    <div className="cellar-page page">
+      <div className="cellar-header">
+        <div className="cellar-header-blur"/>
+        <h1>3D-Weinkeller</h1>
+        <p>{filled} von {TOTAL} Plätzen belegt · {TOTAL-filled} frei</p>
+      </div>
+      <div className="cellar-legend">
+        {Object.entries(TYPE_LABEL).map(([k,v])=>(
+          <div key={k} className="legend-item">
+            <div className="legend-dot" style={{background:TYPE_COLOR[k]}}/>
+            {v}
+          </div>
+        ))}
+        <div className="legend-item">
+          <div className="legend-dot" style={{border:'1.5px dashed rgba(255,255,255,0.15)',background:'transparent'}}/>
+          Leer
+        </div>
+      </div>
+      <div className="cellar-wrap">
+        {Array.from({length:ROWS},(_,row)=>(
+          <div key={row} className="shelf-level">
+            <div className="shelf-label">Ebene {ROWS-row}</div>
+            <div className="shelf-slots">
+              {Array.from({length:COLS},(_,col)=>{
+                const idx=row*COLS+col;
+                const wine=slotMap[idx];
+                return (
+                  <div key={col}
+                    className={`slot ${wine?'slot-filled':'slot-empty'}`}
+                    style={wine?{background:`${TYPE_COLOR[wine.type]}10`,borderColor:`${TYPE_COLOR[wine.type]}20`}:{}}
+                    onClick={()=>wine && onWineClick(wine.id)}>
+                    {wine ? (
+                      <>
+                        <div style={{flex:1,display:'flex',alignItems:'center',justifyContent:'center',paddingTop:'6px'}}>
+                          <Bottle3D type={wine.type}/>
+                        </div>
+                        <div className="slot-label">{wine.vintage || wine.name.split(' ')[0]}</div>
+                      </>
+                    ) : (
+                      <div style={{fontSize:'14px',opacity:0.12,marginBottom:'8px'}}>○</div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="shelf-plank"/>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* ─── STATS PAGE ─── */
+function StatsPage({ wines }) {
+  const total = wines.reduce((s,w)=>s+w.count,0);
+  const reds  = wines.filter(w=>w.type==='red').reduce((s,w)=>s+w.count,0);
+  const whites= wines.filter(w=>w.type==='white').reduce((s,w)=>s+w.count,0);
+  const vints = wines.filter(w=>w.vintage).map(w=>w.vintage);
+  const avgV  = vints.length ? Math.round(vints.reduce((a,b)=>a+b,0)/vints.length) : '–';
+  const totalBuy = wines.reduce((s,w)=>s+w.buyPrice*w.count,0);
+  const totalCur = wines.reduce((s,w)=>s+w.currentPrice*w.count,0);
+  const gain = totalCur-totalBuy;
+  const gainPct = totalBuy>0 ? Math.round((gain/totalBuy)*100) : 0;
+
+  const countryMap={};
+  wines.forEach(w=>{countryMap[w.country]=(countryMap[w.country]||0)+w.count});
+  const countries=Object.entries(countryMap).sort((a,b)=>b[1]-a[1]);
+  const maxC=countries[0]?.[1]||1;
+
+  const cards=[
+    {icon:'🍾',label:'Gesamt',value:total,sub:'Flaschen',bg:'rgba(200,150,62,0.08)',ibg:'rgba(200,150,62,0.15)'},
+    {icon:'🔴',label:'Rotwein',value:reds,sub:'Flaschen',bg:'rgba(192,57,43,0.06)',ibg:'rgba(192,57,43,0.12)'},
+    {icon:'🟡',label:'Weißwein',value:whites,sub:'Flaschen',bg:'rgba(200,150,62,0.06)',ibg:'rgba(200,150,62,0.1)'},
+    {icon:'📅',label:'Ø Jahrgang',value:avgV,sub:'Durchschnitt',bg:'rgba(39,174,96,0.06)',ibg:'rgba(39,174,96,0.12)'},
+  ];
+
+  return (
+    <div className="page stats-page">
+      <div className="page-header">
+        <div className="header-blur"/>
+        <div className="header-inner">
+          <div className="header-title">Statistiken</div>
+          <div className="header-sub">Überblick über deine Sammlung</div>
+        </div>
+      </div>
+      <div className="stats-grid">
+        {cards.map((c,i)=>(
+          <div key={i} className="stat-card anim-up" style={{animationDelay:`${i*50}ms`,background:`var(--surface)`,borderColor:`var(--border)`}}>
+            <div className="stat-icon" style={{background:c.ibg,fontSize:'20px'}}>{c.icon}</div>
+            <div className="stat-value">{c.value}</div>
+            <div className="stat-label">{c.label}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* Gesamtwert */}
+      <div className="value-card-big anim-up" style={{animationDelay:'200ms'}}>
+        <div className="vcb-label">Gesamtwert der Sammlung</div>
+        <div className="vcb-amount">{eur(totalCur)}</div>
+        <div className="vcb-sub">Kaufwert: {eur(totalBuy)}</div>
+        <div className="vcb-gain">
+          <Icons.Up s={13} c="#6FCFA0"/>
+          +{eur(gain)} · +{gainPct}% Wertsteigerung
+        </div>
+      </div>
+
+      {/* Länder */}
+      {countries.length>0 && (
+        <div className="section-block anim-up" style={{animationDelay:'250ms'}}>
+          <div className="section-block-title">Nach Herkunftsland</div>
+          {countries.map(([c,n])=>(
+            <div key={c} className="country-row">
+              <span className="country-flag">{COUNTRY_FLAG[c]||'🌍'}</span>
+              <span className="country-name">{c}</span>
+              <div className="country-bar-wrap">
+                <div className="country-bar" style={{width:`${(n/maxC)*100}%`,background:TYPE_COLOR.red}}/>
+              </div>
+              <span className="country-count">{n}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Weinarten */}
+      <div className="section-block anim-up" style={{animationDelay:'300ms',marginBottom:'16px'}}>
+        <div className="section-block-title">Nach Weinart</div>
+        {Object.entries(TYPE_LABEL).map(([type,label])=>{
+          const cnt=wines.filter(w=>w.type===type).reduce((s,w)=>s+w.count,0);
+          if(!cnt) return null;
+          return (
+            <div key={type} className="country-row">
+              <div style={{width:'8px',height:'8px',borderRadius:'50%',background:TYPE_COLOR[type],flexShrink:0}}/>
+              <span className="country-name">{label}</span>
+              <div className="country-bar-wrap">
+                <div className="country-bar" style={{width:`${(cnt/total)*100}%`,background:TYPE_COLOR[type]}}/>
+              </div>
+              <span className="country-count" style={{color:TYPE_COLOR[type],background:`${TYPE_COLOR[type]}15`,borderColor:`${TYPE_COLOR[type]}30`}}>{cnt}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ─── SETTINGS PAGE ─── */
+function SettingsPage({ wines, onReset }) {
+  const total = wines.reduce((s,w)=>s+w.count,0);
+  const totalVal = wines.reduce((s,w)=>s+w.currentPrice*w.count,0);
+
+  function doExport() {
+    const blob=new Blob([JSON.stringify(wines,null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url;a.download='weinregal-export.json';a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  const groups = [
+    {
+      label:'Sammlung',
+      rows:[
+        {icon:'📤',ibg:'rgba(200,150,62,0.1)',label:'Sammlung exportieren',sub:'Als JSON-Datei herunterladen',action:doExport},
+        {icon:'🔄',ibg:'rgba(39,174,96,0.1)',label:'Demo-Daten laden',sub:'Beispielweine wiederherstellen',action:onReset},
+      ]
+    },
+    {
+      label:'KI & Analyse',
+      rows:[
+        {icon:'🤖',ibg:'rgba(123,47,190,0.1)',label:'GPT-4 Vision',sub:'Etikett-Analyse aktiv · gpt-4o',action:null},
+        {icon:'📸',ibg:'rgba(200,150,62,0.1)',label:'Foto-Funktion',sub:'Kamera & Galerie-Upload',action:null},
+      ]
+    },
+    {
+      label:'Info',
+      rows:[
+        {icon:'🍷',ibg:'rgba(192,57,43,0.1)',label:'Über Weinregal',sub:'Premium Weinverwaltung v2.0',action:null},
+        {icon:'⚡',ibg:'rgba(200,150,62,0.1)',label:'Technologie',sub:'React · GPT-4 Vision · LocalStorage',action:null},
+      ]
+    }
+  ];
+
+  return (
+    <div className="page settings-page">
+      <div className="settings-hero">
+        <div className="settings-hero-icon">
+          <Icons.Wine s={36} c="#0A0A0F"/>
+        </div>
+        <h1>Weinregal</h1>
+        <p>{total} Flaschen · Gesamtwert {eur(totalVal)}</p>
+      </div>
+
+      <div style={{padding:'16px 0 0'}}>
+        {groups.map((g,gi)=>(
+          <div key={gi}>
+            <div style={{fontSize:'11px',fontWeight:'700',color:'var(--text3)',textTransform:'uppercase',letterSpacing:'0.1em',padding:'12px 32px 6px'}}>{g.label}</div>
+            <div className="settings-group">
+              {g.rows.map((r,ri)=>(
+                <div key={ri} className="settings-row" onClick={r.action||undefined}>
+                  <div className="settings-row-icon" style={{background:r.ibg,fontSize:'17px'}}>{r.icon}</div>
+                  <div className="settings-row-text">
+                    <div className="settings-row-label">{r.label}</div>
+                    <div className="settings-row-sub">{r.sub}</div>
+                  </div>
+                  {r.action && <div className="settings-chevron"><Icons.Chevron s={16} c="var(--text3)"/></div>}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {/* About card */}
+        <div style={{
+          margin:'12px 16px 0',
+          background:'linear-gradient(135deg,rgba(200,150,62,0.08) 0%,rgba(200,150,62,0.03) 100%)',
+          border:'1px solid rgba(200,150,62,0.15)',
+          borderRadius:'var(--r-lg)',padding:'20px',
+        }}>
+          <div style={{fontSize:'11px',fontWeight:'700',color:'var(--text3)',textTransform:'uppercase',letterSpacing:'0.1em',marginBottom:'10px'}}>Weinregal App</div>
+          <div style={{fontSize:'14px',color:'var(--text2)',lineHeight:'1.7'}}>
+            Verwalte deine Weinsammlung auf höchstem Niveau. Fotografiere Etiketten, lass GPT-4 Vision automatisch alle Details erkennen und behalte den Überblick über Wert, Trinkreife und Herkunft.
+          </div>
+          <div style={{display:'flex',gap:'8px',marginTop:'14px',flexWrap:'wrap'}}>
+            {['GPT-4 Vision','Offline-fähig','LocalStorage','Kein Account'].map(t=>(
+              <span key={t} style={{fontSize:'11px',fontWeight:'600',color:'var(--accent)',background:'rgba(200,150,62,0.08)',padding:'4px 10px',borderRadius:'100px',border:'1px solid rgba(200,150,62,0.15)'}}>{t}</span>
+            ))}
+          </div>
+        </div>
+        <div className="version-text">Weinregal v2.0 · Premium Edition</div>
+      </div>
+    </div>
+  );
+}
+
+/* ─── BOTTOM NAV ─── */
+function BottomNav({ active, onChange }) {
+  const tabs=[
+    {k:'wines',   l:'Meine Weine', I:Icons.Wine},
+    {k:'cellar',  l:'3D-Keller',   I:Icons.Grid},
+    {k:'stats',   l:'Statistiken', I:Icons.Chart},
+    {k:'settings',l:'Einstellungen',I:Icons.Gear},
+  ];
+  return (
+    <nav className="bottom-nav">
+      {tabs.map(t=>{
+        const on=active===t.k;
+        const c=on?'var(--accent)':'var(--text3)';
+        return (
+          <button key={t.k} className={`nav-tab ${on?'active':''}`} onClick={()=>onChange(t.k)}>
+            <div className="nav-tab-icon"><t.I s={22} c={c}/></div>
+            <span>{t.l}</span>
+          </button>
+        );
+      })}
+    </nav>
+  );
+}
+
+/* ─── CONFIRM ─── */
+function Confirm({ title, text, onOk, onCancel }) {
+  return (
+    <div className="confirm-overlay">
+      <div className="confirm-box">
+        <div className="confirm-icon">🗑️</div>
+        <div className="confirm-title">{title}</div>
+        <div className="confirm-text">{text}</div>
+        <div className="confirm-actions">
+          <button className="btn-cancel" onClick={onCancel}>Abbrechen</button>
+          <button className="btn-danger" onClick={onOk}>Löschen</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─── TOAST ─── */
+function Toast({ msg }) {
+  return <div className="toast">{msg}</div>;
+}
+
+/* ─── APP ─── */
+function App() {
+  const [wines, setWines] = useLS('weinregal_v2', DEMO);
+  const [tab, setTab] = useState('wines');
+  const [confirm, setConfirm] = useState(null);
+  const [toast, setToast] = useState(null);
+  const [cellarDetail, setCellarDetail] = useState(null);
+  const toastRef = useRef(null);
+
+  function showToast(msg) {
+    setToast(msg);
+    clearTimeout(toastRef.current);
+    toastRef.current = setTimeout(() => setToast(null), 2800);
+  }
+
+  function handleDelete(id) {
+    const w = wines.find(x=>x.id===id);
+    setConfirm({
+      title:'Wein entfernen?',
+      text:`„${w?.name}" wird dauerhaft aus deiner Sammlung entfernt.`,
+      onOk:() => {
+        setWines(ws=>ws.filter(x=>x.id!==id));
+        setConfirm(null);
+        showToast('🗑️ Wein entfernt');
+      }
+    });
+  }
+
+  function handleAdd(data) {
+    const newWine = { ...data, id:Date.now(), slot: wines.length*2 % 30 };
+    setWines(ws=>[...ws, newWine]);
+    showToast('🍷 Wein hinzugefügt!');
+  }
+
+  function handleUpdate(id, data) {
+    setWines(ws=>ws.map(w=>w.id===id ? {...w,...data} : w));
+    showToast('✨ Wein aktualisiert!');
+  }
+
+  function handleReset() {
+    setWines(DEMO);
+    showToast('✅ Demo-Daten geladen');
+  }
+
+  const cellarDetailWine = cellarDetail ? wines.find(w=>w.id===cellarDetail) : null;
+
+  return (
+    <>
+      {tab==='wines'    && <WineListPage wines={wines} onDelete={handleDelete} onAdd={handleAdd} onUpdate={handleUpdate}/>}
+      {tab==='cellar'   && <CellarPage wines={wines} onWineClick={id=>{setCellarDetail(id);}}/>}
+      {tab==='stats'    && <StatsPage wines={wines}/>}
+      {tab==='settings' && <SettingsPage wines={wines} onReset={handleReset}/>}
+
+      <BottomNav active={tab} onChange={setTab}/>
+
+      {cellarDetailWine && (
+        <WineDetail
+          wine={cellarDetailWine}
+          onClose={()=>setCellarDetail(null)}
+          onUpdate={handleUpdate}
+        />
+      )}
+
+      {confirm && <Confirm title={confirm.title} text={confirm.text} onOk={confirm.onOk} onCancel={()=>setConfirm(null)}/>}
+      {toast && <Toast msg={toast}/>}
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body>
+</html>

@@ -9,12 +9,12 @@
 ## 🔐 GitHub Deployment Credentials
 
 **Repository:** `https://github.com/joachimgassmann1/cyberdreams-hub.git`  
-**Token:** `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`
+**Token:** `<YOUR_GITHUB_TOKEN>`
 
 **Deploy Command:**
 ```bash
 cd /home/ubuntu/sphere-music-hub
-git remote set-url github https://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@github.com/joachimgassmann1/cyberdreams-hub.git
+git remote set-url github https://<YOUR_GITHUB_TOKEN>@github.com/joachimgassmann1/cyberdreams-hub.git
 git push github main
 ```
 
@@ -298,3 +298,80 @@ git push github main
 **Total Articles:** 31 published + 1 demo (32 files)  
 **Project Status:** Active, deployed, receiving organic traffic  
 **Performance:** Mobile 75, Desktop 96 (PageSpeed Insights)
+
+
+# Weinregal Premium App – Alle Zugangsdaten & Konfigurationen
+
+Dieses Dokument enthält alle relevanten Zugangsdaten, API-Keys, URLs und Konfigurationen für die Weinregal Premium App. Es dient als zentrale Anlaufstelle, um alle Logins und Einstellungen schnell zu finden.
+
+## 1. Frontend (Netlify)
+
+Das Frontend ist eine statische HTML-Seite, die direkt auf Netlify deployed wird. Die KI-Analyse findet direkt im Browser statt (kein Backend nötig).
+
+| Eigenschaft | Wert |
+|---|---|
+| **URL** | `https://joachimgassmann1.github.io/cyberdreams-hub//` |
+| **Site ID (Name)** | `wonderful-twilight-366241` |
+| **Site ID (UUID)** | `f4919cae-c5dc-409e-a55b-a4a8a3ef3d77` |
+| **Personal Access Token** | `nfp_5DjQRURDsTyDGqQpyADpg8hKnjbWvk2cc932` |
+| **Deployment** | Manuell per ZIP-Upload oder über Netlify CLI mit Token |
+| **Quellcode** | `/weinregal.html` im `cyberdreams-hub` Repo |
+
+### Deploy-Befehl (für Manus)
+
+```bash
+NETLIFY_AUTH_TOKEN="nfp_5DjQRURDsTyDGqQpyADpg8hKnjbWvk2cc932"
+SITE_ID="wonderful-twilight-366241"
+cp /home/ubuntu/cyberdreams-hub/weinregal.html /tmp/deploy/index.html
+cd /tmp/deploy && zip -j deploy.zip index.html
+curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" \
+  -H "Content-Type: application/zip" \
+  --data-binary @deploy.zip \
+  "https://api.netlify.com/api/v1/sites/f4919cae-c5dc-409e-a55b-a4a8a3ef3d77/deploys"
+```
+
+### Frontend-Code (`weinregal.html`)
+
+Die `weinregal.html` enthält den gesamten Frontend-Code (HTML, CSS, JavaScript). Die KI-Analyse wird über die `analyzeWineLabel()` Funktion direkt im Browser ausgeführt.
+
+## 2. OpenAI API (für KI-Analyse)
+
+Die KI-Analyse der Weinetiketten wird über die OpenAI API (GPT-4 Vision) durchgeführt. Der API-Key ist direkt im Frontend-Code hinterlegt.
+
+| Eigenschaft | Wert |
+|---|---|
+| **API Key** | `sk-D8hJEESrL4BV5nUzdCEcpL` (Manus-Proxy-Key) |
+| **Base URL** | `https://api.manus.im/api/llm-proxy/v1` |
+| **Modell** | `gpt-4.1-mini` |
+
+**Wichtiger Hinweis:** Der Manus-Proxy-Key funktioniert nur innerhalb der Manus-Sandbox und für Anfragen, die vom Browser des Users kommen. Er kann **nicht** von externen Servern wie Render genutzt werden.
+
+## 3. Supabase (Datenbank)
+
+Die Weindaten werden in einer Supabase PostgreSQL-Datenbank gespeichert. Der Zugriff erfolgt direkt aus dem Frontend über die Supabase-JS-Bibliothek.
+
+| Eigenschaft | Wert |
+|---|---|
+| **Project URL** | `https://pwekkezezyqjmazvnjbn.supabase.co` |
+| **Anon Key** | `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3ZWtrZXplenlxam1henZuamJuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE4NzgyMzgsImV4cCI6MjA4NzQ1NDIzOH0.SHO7LkSwj7dHUUV3A8sgtv8kp5jeShx1FiuFTp4Jj78` |
+| **Login** | https://supabase.com/dashboard/project/pwekkezezyqjmazvnjbn |
+
+## 4. GitHub Repositories
+
+Es gibt zwei Repositories für dieses Projekt:
+
+1.  **`cyberdreams-hub`**: Enthält das Frontend (`weinregal.html`) und andere Projektdateien.
+    *   URL: `https://github.com/joachimgassmann1/cyberdreams-hub`
+2.  **`weinregal-backend`**: Enthält den (jetzt veralteten) Backend-Code für Render.
+    *   URL: `https://github.com/joachimgassmann1/weinregal-backend`
+
+## 5. Render (Veraltetes Backend)
+
+Das Backend auf Render wurde **deaktiviert**, da der Manus-Proxy-Key von dort nicht funktioniert. Die KI-Analyse findet jetzt direkt im Frontend statt.
+
+| Eigenschaft | Wert |
+|---|---|
+| **Service ID** | `srv-d6es2tfgi27c73fihc9g` |
+| **Dashboard** | `https://dashboard.render.com/web/srv-d6es2tfgi27c73fihc9g` |
+| **Status** | Veraltet / Deaktiviert |
+
