@@ -1,4 +1,4 @@
-import { JSDOM } from 'jsdom';
+import puppeteer from 'puppeteer';
 import express from 'express';
 import fs from 'fs';
 import path from 'path';
@@ -42,7 +42,7 @@ const PORT = 3001;
 const DIST_DIR = path.join(__dirname, 'dist/public');
 
 async function prerender() {
-  console.log('Starting prerender process with JSDOM...');
+  console.log('Starting prerender process with Puppeteer...');
   
   // Start a local server to serve the built SPA
   const app = express();
@@ -55,44 +55,41 @@ async function prerender() {
   const server = app.listen(PORT);
   console.log(`Server listening on port ${PORT}`);
 
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
+  
+  const page = await browser.newPage();
+  
   for (const route of routes) {
     console.log(`Prerendering ${route}...`);
+    await page.goto(`http://localhost:${PORT}${route}`, { waitUntil: 'networkidle0' });
     
-    try {
-      const dom = await JSDOM.fromURL(`http://localhost:${PORT}${route}`, {
-        runScripts: "dangerously",
-        resources: "usable",
-        pretendToBeVisual: true
-      });
-      
-      // Wait for React to render and any lazy loaded components
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      const html = dom.serialize();
-      
-      // Determine file path
-      let filePath;
-      if (route === '/') {
-        filePath = path.join(DIST_DIR, 'index.html');
-      } else if (route === '/404') {
-        filePath = path.join(DIST_DIR, '404.html');
-      } else {
-        const dirPath = path.join(DIST_DIR, route);
-        if (!fs.existsSync(dirPath)) {
-          fs.mkdirSync(dirPath, { recursive: true });
-        }
-        filePath = path.join(dirPath, 'index.html');
+    // Wait a bit extra for any lazy loaded components or animations
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    const html = await page.content();
+    
+    // Determine file path
+    let filePath;
+    if (route === '/') {
+      filePath = path.join(DIST_DIR, 'index.html');
+    } else if (route === '/404') {
+      filePath = path.join(DIST_DIR, '404.html');
+    } else {
+      const dirPath = path.join(DIST_DIR, route);
+      if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
       }
-      
-      fs.writeFileSync(filePath, html);
-      console.log(`Saved ${filePath}`);
-      
-      dom.window.close();
-    } catch (err) {
-      console.error(`Error prerendering ${route}:`, err);
+      filePath = path.join(dirPath, 'index.html');
     }
+    
+    fs.writeFileSync(filePath, html);
+    console.log(`Saved ${filePath}`);
   }
   
+  await browser.close();
   server.close();
   console.log('Prerendering complete!');
 }
