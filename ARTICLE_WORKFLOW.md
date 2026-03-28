@@ -23,7 +23,7 @@
 
 ### 3. Generate Hero Image
 - [ ] Use `generate` tool to create vibrant hero image
-- [ ] Colors: cyan/purple/pink/blue lighting (matches existing blog aesthetic)
+- [ ] **CRITICAL STYLE RULE:** Colors MUST be cyan/purple/pink/blue lighting (Dark/Moody/Cyberpunk/Neon aesthetic). NEVER use bright, daylight, or generic stock photo styles. All images must strictly match the existing dark/neon vibe.
 - [ ] Aspect ratio: 4:3 or 16:9 (NO black bars!)
 - [ ] Save as WebP format
 - [ ] Optimize to <100 KB file size
@@ -165,6 +165,7 @@
 - ❌ **Forgetting to update blog database** (most common mistake!)
 - ❌ Writing academic-style bullet-list articles
 - ❌ Using unoptimized images (>100 KB)
+- ❌ **Using unmatching image styles** (e.g., bright daylight photos instead of dark/neon/cyberpunk)
 - ❌ Case mismatch in category (e.g., "Focus" vs. "focus")
 - ❌ Forgetting to update sitemaps
 - ❌ Not including personal stories

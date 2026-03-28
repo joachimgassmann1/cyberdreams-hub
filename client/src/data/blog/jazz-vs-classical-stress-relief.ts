@@ -6,7 +6,7 @@ export const jazzVsClassicalStressRelief: BlogPost = {
   titleDe: 'Warum Jazz besser als Klassik für Stressabbau funktioniert (laut einem ausgebildeten Pianisten)',
   description: 'After 10 years of classical piano training, I discovered that jazz works better for stress relief than the music I was taught to play. Learn why improvisation, swing rhythm, and harmonic ambiguity help your brain relax in ways classical structure cannot.',
   descriptionDe: 'Nach 10 Jahren klassischer Klavierausbildung entdeckte ich, dass Jazz besser für Stressabbau funktioniert als die Musik, die ich spielen gelernt habe. Erfahre, warum Improvisation, Swing-Rhythmus und harmonische Mehrdeutigkeit deinem Gehirn helfen, sich auf Weisen zu entspannen, die klassische Struktur nicht kann.',
-  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/jazz-vs-classical-stress-relief-hero_36756620.webp',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/jazz-vs-classical-hero-Bq7RMje6WgX6UqBnQhRpzs.webp',
   category: 'jazz',
   tags: ['jazz', 'classical music', 'stress relief', 'piano', 'relaxation', 'improvisation'],
   tagsDe: ['Jazz', 'Klassische Musik', 'Stressabbau', 'Klavier', 'Entspannung', 'Improvisation'],

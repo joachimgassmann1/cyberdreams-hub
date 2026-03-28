@@ -436,3 +436,28 @@
 - [ ] Fix the UI error
 - [ ] Push code to GitHub securely using the new token
 - [ ] Proceed with the next blog article
+
+## Dokumentation & SEO Check
+- [x] robots.txt überprüfen und aktualisieren
+- [x] Schema.org Implementierungen überprüfen (Organization, WebSite, MusicGroup, BlogPosting)
+- [x] README.md mit allen aktuellen Projektinformationen, Deployment-Details und SEO-Status aktualisieren
+- [x] Änderungen zu GitHub pushen
+
+## Bugfixes
+- [x] Fehlende Blog-Bilder reparieren (Pfade überprüfen, Bilder wiederherstellen)
+
+## Image Replacement
+- [x] Generate new, dark/moody/cyberpunk style images for the 8 articles with broken links
+- [x] Update the blog article files with the new image paths
+- [ ] Push the changes to GitHub
+
+## Documentation Updates (Preventing Future Errors)
+- [x] Update ARTICLE_WORKFLOW.md with strict image design rules (Cyberpunk/Neon style only)
+- [x] Update README.md with strict image design rules
+- [ ] Push documentation updates to GitHub
+
+## Bugfixes
+- [x] Fix broken "Start Your Reset" link in the 20-Minute Brain Reset blog article
+
+## Build Error Fix
+- [ ] Reproduce and fix the Render.com build error (Exited with status 1)

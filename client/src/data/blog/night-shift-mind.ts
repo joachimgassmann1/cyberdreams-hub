@@ -15,7 +15,7 @@ export const nightShiftMind: BlogPost = {
  tagsDe: ["Fokusmusik", "Produktivität", "Kreativität", "Nachtarbeit", "Deep Focus", "Konzentration"],
  readingTime: 7,
  readingTimeDe: 7,
- heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/blog-night-shift-mind_36756620.webp",
+ heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/night-shift-mind-hero-ens2rBNDVqBBjbEQCDjQsh.webp',
  content: nightShiftMindContent,
  contentDe: nightShiftMindContentDe
 };

@@ -10,7 +10,7 @@ export const jazzBrainFocus: BlogPost = {
   category: 'Jazz',
   tags: ['jazz', 'focus', 'neuroscience', 'adhd', 'productivity', 'stochastic resonance'],
   tagsDe: ['jazz', 'fokus', 'neurowissenschaft', 'adhs', 'produktivität', 'stochastische resonanz'],
-  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/jazz-brain-focus_80572861.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/jazz-brain-focus-hero-DotRzbgWQu5yvNApPCfzpm.webp',
   author: 'Joachim',
   readingTime: 6,
   readingTimeDe: 6,
@@ -101,7 +101,7 @@ export const jazzBrainFocus: BlogPost = {
   <p class="mb-4">
     We have a dedicated channel for exactly this kind of "focus-optimized" jazz. It's warm, instrumental, and it's designed to keep you in the zone.
   </p>
-  <a href="/channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+  <a href="/#music-channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
     Listen to JazzSphere Radio
   </a>
 </div>
@@ -193,7 +193,7 @@ export const jazzBrainFocus: BlogPost = {
   <p class="mb-4">
     Wir haben einen dedizierten Kanal für genau diese Art von "fokus-optimiertem" Jazz. Er ist warm, instrumental und darauf ausgelegt, dich im Flow zu halten.
   </p>
-  <a href="/channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+  <a href="/#music-channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
     Hör rein bei JazzSphere Radio
   </a>
 </div>

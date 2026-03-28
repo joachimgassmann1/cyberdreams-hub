@@ -10,7 +10,7 @@ export const brainResetBurnout: BlogPost = {
   category: 'Relax',
   tags: ['burnout', 'mental health', 'stress relief', 'routine', 'neuroscience', 'recovery'],
   tagsDe: ['burnout', 'mentale gesundheit', 'stressabbau', 'routine', 'neurowissenschaft', 'erholung'],
-  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/brain-reset-burnout_1167440e.jpg',
+  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/brain-reset-burnout-hero-oJaZyU49vgquHqktYJVCpJ.webp',
   author: 'Joachim',
   readingTime: 5,
   readingTimeDe: 5,
@@ -55,7 +55,7 @@ export const brainResetBurnout: BlogPost = {
   <br>
   <strong>Why:</strong> You need a broad-spectrum sound that occupies the full frequency range. This acts like a "sonic shower," masking distracting thoughts and creating a boundary between "work time" and "me time."
   <br>
-  <strong>Recommended Channel:</strong> <a href="/channels/deep-focus" class="text-primary hover:underline">Deep Focus</a> (yes, it works for relaxing too).
+  <strong>Recommended Channel:</strong> <a href="/#music-channels" class="text-primary hover:underline">Deep Focus</a> (yes, it works for relaxing too).
 </p>
 
 <h3>Step 2: The "Drift" (Minutes 5-15)</h3>
@@ -66,7 +66,7 @@ export const brainResetBurnout: BlogPost = {
   <br>
   <strong>Why:</strong> Now that the noise in your head has quieted, you need to signal safety to your body. Long, sustained musical notes (drones) mimic the human breath. If the music breathes slowly, you breathe slowly.
   <br>
-  <strong>Recommended Channel:</strong> <a href="/channels/chillout-sphere" class="text-primary hover:underline">Chillout Sphere</a>.
+  <strong>Recommended Channel:</strong> <a href="/#music-channels" class="text-primary hover:underline">Chillout Sphere</a>.
 </p>
 
 <h3>Step 3: The "Return" (Minutes 15-20)</h3>
@@ -77,7 +77,7 @@ export const brainResetBurnout: BlogPost = {
   <br>
   <strong>Why:</strong> You don't want to stay in a trance forever. Introducing a gentle melody wakes up your emotional center and prepares you to interact with your family or make dinner, feeling refreshed rather than drained.
   <br>
-  <strong>Recommended Channel:</strong> <a href="/channels/pianosphere" class="text-primary hover:underline">Pianosphere</a>.
+  <strong>Recommended Channel:</strong> <a href="/#music-channels" class="text-primary hover:underline">Pianosphere</a>.
 </p>
 
 <h2>The Science of the "Switch"</h2>
@@ -95,7 +95,7 @@ export const brainResetBurnout: BlogPost = {
   <p class="mb-4">
     Don't wait until you're burned out. Make this 20-minute sonic bath a ritual. Put on your headphones, close your eyes, and let the sound do the heavy lifting.
   </p>
-  <a href="/channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+  <a href="/#music-channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
     Start Your Reset
   </a>
 </div>
@@ -141,7 +141,7 @@ export const brainResetBurnout: BlogPost = {
   <br>
   <strong>Warum:</strong> Du brauchst einen Breitband-Sound, der den vollen Frequenzbereich abdeckt. Das wirkt wie eine "klangliche Dusche", die ablenkende Gedanken maskiert und eine Grenze zwischen "Arbeitszeit" und "Ich-Zeit" zieht.
   <br>
-  <strong>Empfohlener Kanal:</strong> <a href="/channels/deep-focus" class="text-primary hover:underline">Deep Focus</a> (ja, das funktioniert auch zum Entspannen).
+  <strong>Empfohlener Kanal:</strong> <a href="/#music-channels" class="text-primary hover:underline">Deep Focus</a> (ja, das funktioniert auch zum Entspannen).
 </p>
 
 <h3>Schritt 2: Das "Treiben" (Minuten 5-15)</h3>
@@ -152,7 +152,7 @@ export const brainResetBurnout: BlogPost = {
   <br>
   <strong>Warum:</strong> Jetzt, wo der Lärm in deinem Kopf leiser geworden ist, musst du deinem Körper Sicherheit signalisieren. Lange, anhaltende musikalische Noten (Drones) ahmen den menschlichen Atem nach. Wenn die Musik langsam atmet, atmest du langsam.
   <br>
-  <strong>Empfohlener Kanal:</strong> <a href="/channels/chillout-sphere" class="text-primary hover:underline">Chillout Sphere</a>.
+  <strong>Empfohlener Kanal:</strong> <a href="/#music-channels" class="text-primary hover:underline">Chillout Sphere</a>.
 </p>
 
 <h3>Schritt 3: Die "Rückkehr" (Minuten 15-20)</h3>
@@ -163,7 +163,7 @@ export const brainResetBurnout: BlogPost = {
   <br>
   <strong>Warum:</strong> Du willst nicht ewig in Trance bleiben. Das Einführen einer sanften Melodie weckt dein emotionales Zentrum und bereitet dich darauf vor, mit deiner Familie zu interagieren oder Abendessen zu machen – erfrischt statt ausgelaugt.
   <br>
-  <strong>Empfohlener Kanal:</strong> <a href="/channels/pianosphere" class="text-primary hover:underline">Pianosphere</a>.
+  <strong>Empfohlener Kanal:</strong> <a href="/#music-channels" class="text-primary hover:underline">Pianosphere</a>.
 </p>
 
 <h2>Die Wissenschaft des "Schalters"</h2>
@@ -181,7 +181,7 @@ export const brainResetBurnout: BlogPost = {
   <p class="mb-4">
     Warte nicht, bis du ausgebrannt bist. Mach dieses 20-minütige Klangbad zu einem Ritual. Setz deine Kopfhörer auf, schließ die Augen und lass den Sound die schwere Arbeit machen.
   </p>
-  <a href="/channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+  <a href="/#music-channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
     Starte deinen Reset
   </a>
 </div>

@@ -28,7 +28,7 @@ git push github main
 **Location:** `/home/ubuntu/sphere-music-hub/docs/blog-database.md`  
 **Purpose:** Tracks all blog articles and prevents topic repetition  
 **MUST UPDATE:** After every new article!  
-**Current Count:** 32 articles (as of Jan 08, 2026)
+**Current Count:** 34 articles (as of Mar 28, 2026)
 
 ### 📋 Article Workflow Checklist
 **Location:** `/home/ubuntu/sphere-music-hub/ARTICLE_WORKFLOW.md`  
@@ -66,7 +66,7 @@ sphere-music-hub/
 
 ---
 
-## 📚 All Blog Articles (28 Total)
+## 📚 All Blog Articles (34 Total)
 
 ### Focus Category (6 articles)
 1. `focus-music-guide.ts` - How to Build the Perfect Focus Music Playlist
@@ -150,7 +150,7 @@ sphere-music-hub/
 - ❌ **NO academic tone** - not a research paper!
 
 ### Image Guidelines:
-- ✅ **Vibrant colors** - cyan, purple, pink, blue lighting
+- ✅ **CRITICAL STYLE RULE:** Colors MUST be cyan/purple/pink/blue lighting (Dark/Moody/Cyberpunk/Neon aesthetic). NEVER use bright, daylight, or generic stock photo styles. All images must strictly match the existing dark/neon vibe.
 - ✅ **Consistent aesthetic** - matches existing blog images
 - ✅ **Optimized** - WebP format, <100 KB file size
 - ✅ **4:3 or 16:9 aspect ratio** - no black bars!
@@ -284,6 +284,7 @@ git push github main
 - Forget to update blog-database.md after new articles
 - Skip sitemap updates (both .com and .de!)
 - Use unoptimized images (>100 KB)
+- **Use unmatching image styles** (e.g., bright daylight photos instead of dark/neon/cyberpunk)
 - Suggest features that already exist (check code first!)
 
 **Schema.org is ALREADY IMPLEMENTED:**
@@ -295,7 +296,7 @@ git push github main
 ---
 
 **Last Updated:** December 18, 2025  
-**Total Articles:** 31 published + 1 demo (32 files)  
+**Total Articles:** 34 published  
 **Project Status:** Active, deployed, receiving organic traffic  
 **Performance:** Mobile 75, Desktop 96 (PageSpeed Insights)
 
