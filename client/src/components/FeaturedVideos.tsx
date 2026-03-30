@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
 import { detectLanguage } from "@/lib/i18n";
 import { useMusicPlayer } from "@/contexts/MusicPlayerContext";
+import { useState, useEffect } from "react";
 
 // Static featured videos (updated manually as needed - last update: Nov 26, 2025)
 const FEATURED_VIDEOS = [
@@ -42,8 +43,16 @@ export default function FeaturedVideos() {
   const { playVideo } = useMusicPlayer();
   
   // Detect if user is on mobile device (including iPad/iPadOS)
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS 13+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof navigator !== 'undefined') {
+      setIsMobile(
+        /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || 
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+      );
+    }
+  }, []);
   
   const handleVideoClick = (video: typeof FEATURED_VIDEOS[0]) => {
     if (isMobile) {
