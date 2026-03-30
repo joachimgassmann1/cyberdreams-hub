@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ReactPage from '@/components/ReactPage';
+
+const title = 'Datenschutzerklärung - Sphere Music Hub';
+const description = 'Datenschutzerklärung von Sphere Music Hub. Informationen über die Erhebung, Verarbeitung und Nutzung personenbezogener Daten auf unserer Website.';
+---
+
+<Layout title={title} description={description}>
+  <ReactPage page="Datenschutz" client:load />
+</Layout>

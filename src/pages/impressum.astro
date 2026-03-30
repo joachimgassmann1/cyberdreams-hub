@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ReactPage from '@/components/ReactPage';
+
+const title = 'Impressum - Sphere Music Hub';
+const description = 'Impressum von Sphere Music Hub. Angaben gemäß § 5 TMG: Joachim Gassmann – Musik- & Medienproduktion, Niederkassel.';
+---
+
+<Layout title={title} description={description}>
+  <ReactPage page="Impressum" client:load />
+</Layout>

@@ -461,3 +461,14 @@
 
 ## Build Error Fix
 - [ ] Reproduce and fix the Render.com build error (Exited with status 1)
+
+
+## Astro Migration
+- [ ] Initialize Astro in a temporary directory
+- [ ] Copy Astro files to the main project directory
+- [ ] Configure Astro to use React, Tailwind, and shadcn/ui
+- [ ] Migrate `index.html` to Astro layout
+- [ ] Migrate React pages to Astro pages (file-based routing)
+- [ ] Update `package.json` scripts to use Astro
+- [ ] Test the build process
+- [ ] Verify SSG output

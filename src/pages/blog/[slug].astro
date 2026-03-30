@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ReactPage from '@/components/ReactPage';
+import { getAllPosts } from '@/data/blog/posts';
+
+export async function getStaticPaths() {
+  const posts = getAllPosts();
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { slug } = Astro.params;
+const { post } = Astro.props;
+
+const displayTitle = post.title; // We can handle lang dynamically in the component or just pass it
+const displayDescription = post.description;
+---
+
+<Layout title={`${displayTitle} | Sphere Music Hub Blog`} description={displayDescription}>
+  <ReactPage page="BlogArticle" slug={slug} client:load />
+</Layout>

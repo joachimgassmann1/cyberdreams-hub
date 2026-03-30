@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ReactPage from '@/components/ReactPage';
+
+const title = 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes';
+const description = 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation.';
+---
+
+<Layout title={title} description={description}>
+  <ReactPage page="BlogOverview" client:load />
+</Layout>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'wouter';
+// Removed wouter
 import { Calendar, Clock, ArrowRight, Tag, Search, X } from 'lucide-react';
 import { getAllPosts, getPostsByCategory } from '@/data/blog/posts';
 import { blogCategories } from '@/data/blog/categories';
@@ -8,7 +8,7 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import OptimizedImage from '@/components/OptimizedImage';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
-import { Helmet } from 'react-helmet-async';
+
 import { detectLanguage } from '@/lib/i18n';
 
 const POSTS_PER_PAGE = 12;
@@ -73,40 +73,6 @@ export default function BlogOverview() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
-      <Helmet>
-        <html lang={lang} />
-        <title>{lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'}</title>
-        <meta name="description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären. Experteneinblicke für Arbeit und Entspannung.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation.'} />
-        <meta httpEquiv="content-language" content={lang} />
-        <meta property="og:title" content={lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'} />
-        <meta property="og:description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres.'} />
-        <meta property="og:url" content={`https://${baseDomain}/blog`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content={`https://${baseDomain}/og-image.jpg`} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={`https://${baseDomain}/og-image.jpg`} />
-        <meta name="twitter:title" content={lang === 'de' ? 'Blog - Sphere Music Hub | Fokusmusik, Produktivität & Ambient-Soundscapes' : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes'} />
-        <meta name="twitter:description" content={lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität, Ambient-Soundscapes, Chillout-Musik, Jazz, Piano und Cyberpunk-Atmosphären.' : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres.'} />
-        <link rel="canonical" href={`https://${baseDomain}/blog`} />
-        <link rel="alternate" hrefLang="en" href="https://sphere-music-hub.com/blog" />
-        <link rel="alternate" hrefLang="de" href="https://sphere-music-hub.de/blog" />
-        <link rel="alternate" hrefLang="x-default" href="https://sphere-music-hub.com/blog" />
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
-            "name": lang === 'de' ? 'Blog - Sphere Music Hub' : 'Blog - Sphere Music Hub',
-            "description": lang === 'de' ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Produktivität und Ambient-Soundscapes.' : 'Discover tips, guides, and stories about focus music, productivity, and ambient soundscapes.',
-            "url": `https://${baseDomain}/blog`,
-            "inLanguage": lang,
-            "isPartOf": {
-              "@type": "WebSite",
-              "name": "Sphere Music Hub",
-              "url": `https://${baseDomain}/`
-            }
-          })}
-        </script>
-      </Helmet>
       <Navigation />
       {/* Hero Section */}
       <section className="relative py-20 md:py-24 px-4 overflow-hidden">
@@ -222,7 +188,7 @@ export default function BlogOverview() {
               const dynamicReadTime = calculateReadTime(post.content);
               
               return (
-                <Link key={post.slug} href={`/blog/${post.slug}`}>
+                <a key={post.slug} href={`/blog/${post.slug}`}>
                   <article className="group h-full bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 flex flex-col">
                     {/* Hero Image */}
                     <div className="relative h-56 overflow-hidden bg-muted">
@@ -284,7 +250,7 @@ export default function BlogOverview() {
                       </div>
                     </div>
                   </article>
-                </Link>
+                </a>
               );
             })}
           </div>

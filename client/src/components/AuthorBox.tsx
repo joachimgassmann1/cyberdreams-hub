@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+// Removed wouter
 import { detectLanguage } from "@/lib/i18n";
 
 export default function AuthorBox() {
@@ -25,14 +25,14 @@ export default function AuthorBox() {
                 ? 'Creator von Sphere Music Hub. Von klassischem Klavier über Rock-Gitarre zu Ambient-Welten — kreiert atmosphärische Soundscapes für Fokus, Entspannung und Kreativität.'
                 : 'Creator of Sphere Music Hub. From classical piano to rock guitar to ambient worlds — crafting atmospheric soundscapes for focus, relaxation, and creativity.'}
             </p>
-            <Link href="/blog/mind-behind-atmospheres-joachim-creator-sphere-music-hub">
+            <a href="/blog/mind-behind-atmospheres-joachim-creator-sphere-music-hub">
               <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors text-sm font-medium">
                 {lang === 'de' ? 'Joachims Geschichte lesen' : "Read Joachim's Story"}
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

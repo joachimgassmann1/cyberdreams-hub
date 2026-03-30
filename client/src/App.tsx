@@ -3,7 +3,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import { HelmetProvider } from "react-helmet-async";
+
 import ScrollRestoration from "./components/ScrollRestoration";
 import { MusicPlayerProvider } from "./contexts/MusicPlayerContext";
 import { detectLanguage } from "./lib/i18n";
@@ -60,7 +60,6 @@ function App() {
 
   return (
     <ErrorBoundary>
-      <HelmetProvider>
         <ThemeProvider
           defaultTheme="dark"
           switchable
@@ -76,7 +75,6 @@ function App() {
             </TooltipProvider>
           </MusicPlayerProvider>
         </ThemeProvider>
-      </HelmetProvider>
     </ErrorBoundary>
   );
 }

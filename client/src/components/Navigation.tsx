@@ -1,14 +1,18 @@
 import { APP_LOGO } from "@/const";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+// Removed wouter dependencies
 import { useTheme } from "@/contexts/ThemeContext";
 import { Button } from "@/components/ui/button";
 import { detectLanguage } from "@/lib/i18n";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [location] = useLocation();
+  const [location, setLocation] = useState("");
+  
+  useEffect(() => {
+    setLocation(window.location.pathname);
+  }, []);
   const { theme, toggleTheme, switchable } = useTheme();
   const lang = detectLanguage();
 
@@ -73,7 +77,7 @@ export default function Navigation() {
       <div className="container">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link 
+          <a 
             href="/" 
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
@@ -89,7 +93,7 @@ export default function Navigation() {
             <span className="font-bold text-lg md:text-xl bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Sphere Music Hub
             </span>
-          </Link>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
@@ -110,14 +114,14 @@ export default function Navigation() {
             {navLinks.map((link) => {
               // Use Link component for all routes, but add click handler
               return (
-                <Link key={link.href} href={link.href.startsWith('/#') ? '/' : link.href}>
-                  <a
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer"
-                  >
-                    {link.label}
-                  </a>
-                </Link>
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="text-foreground/80 hover:text-primary transition-colors font-medium cursor-pointer"
+                >
+                  {link.label}
+                </a>
               );
             })}
             </div>
@@ -153,14 +157,14 @@ export default function Navigation() {
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => {
                 return (
-                  <Link key={link.href} href={link.href.startsWith('/#') ? '/' : link.href}>
-                    <a
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className="text-foreground/80 hover:text-primary transition-colors font-medium py-2 cursor-pointer block"
-                    >
-                      {link.label}
-                    </a>
-                  </Link>
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                    className="text-foreground/80 hover:text-primary transition-colors font-medium py-2 cursor-pointer block"
+                  >
+                    {link.label}
+                  </a>
                 );
               })}
             </div>

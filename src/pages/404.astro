@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ReactPage from '@/components/ReactPage';
+---
+
+<Layout title="404 - Page Not Found" description="The page you are looking for doesn't exist.">
+  <ReactPage page="NotFound" client:load />
+</Layout>

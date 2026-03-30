@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ReactPage from '@/components/ReactPage';
+
+const title = 'Sphere Music Hub – Focus, Chill & Ambient Music | Relaxation & Study Music';
+const description = 'Discover relaxing chillout beats, ambient vibes, and deep focus soundscapes. Perfect for studying, working, and unwinding. Free music channels for focus, concentration, and productivity.';
+---
+
+<Layout title={title} description={description}>
+  <ReactPage page="Home" client:load />
+</Layout>

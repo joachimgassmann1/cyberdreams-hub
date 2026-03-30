@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, useParams, useLocation } from "wouter";
+// Removed wouter
 import { ArrowLeft, Calendar, Clock, Tag, Share2, ChevronRight } from "lucide-react";
 import {
   Breadcrumb,
@@ -11,7 +11,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import OptimizedImage from "@/components/OptimizedImage";
 import SocialShare from "@/components/SocialShare";
-import { Streamdown } from 'streamdown';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { getPostBySlug, getRelatedPosts } from '@/data/blog/posts';
 import { blogCategories } from '@/data/blog/categories';
 import { Button } from '@/components/ui/button';
@@ -22,14 +23,13 @@ import ReadingProgressBar from '@/components/ReadingProgressBar';
 import ScrollToTop from '@/components/ScrollToTop';
 import AuthorBox from '@/components/AuthorBox';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
-import { Helmet } from 'react-helmet-async';
+// Removed Helmet
 import { detectLanguage } from '@/lib/i18n';
 
-export default function BlogArticle() {
+export default function BlogArticle({ slug, params }: { slug?: string, params?: { slug: string } }) {
   const lang = detectLanguage();
-  const params = useParams<{ slug: string }>();
-  const [, setLocation] = useLocation();
-  const post = getPostBySlug(params.slug || '');
+  const actualSlug = slug || params?.slug || '';
+  const post = getPostBySlug(actualSlug);
 
   if (!post) {
     return <NotFound />;
@@ -126,37 +126,6 @@ export default function BlogArticle() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
-      <Helmet>
-        <html lang={lang} />
-        <title>{displayTitle} | Sphere Music Hub Blog</title>
-        <meta name="description" content={displayDescription} />
-        <meta httpEquiv="content-language" content={lang} />
-        <meta property="og:title" content={displayTitle} />
-        <meta property="og:description" content={displayDescription} />
-        <meta property="og:image" content={`https://${baseDomain}${post.heroImage}`} />
-        <meta property="og:url" content={articleUrl} />
-        <meta property="og:type" content="article" />
-        <meta property="article:published_time" content={post.publishDate} />
-        <meta property="article:author" content={post.author} />
-        <meta property="article:section" content={category?.name || 'Music'} />
-        {displayTags.map(tag => (
-          <meta key={tag} property="article:tag" content={tag} />
-        ))}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={displayTitle} />
-        <meta name="twitter:description" content={displayDescription} />
-        <meta name="twitter:image" content={`https://${baseDomain}${post.heroImage}`} />
-        <link rel="canonical" href={articleUrl} />
-        <link rel="alternate" hrefLang="en" href={`https://sphere-music-hub.com/blog/${post.slug}`} />
-        <link rel="alternate" hrefLang="de" href={`https://sphere-music-hub.de/blog/${post.slug}`} />
-        <link rel="alternate" hrefLang="x-default" href={`https://sphere-music-hub.com/blog/${post.slug}`} />
-        <script type="application/ld+json">
-          {JSON.stringify(schemaData)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(breadcrumbSchema)}
-        </script>
-      </Helmet>
       <Navigation />
       <ReadingProgressBar />
       <ScrollToTop />
@@ -173,12 +142,12 @@ export default function BlogArticle() {
         
         {/* Back Button */}
         <div className="absolute top-8 left-4 md:left-8">
-          <Link href="/blog">
+          <a href="/blog">
             <Button variant="outline" className="bg-background/80 backdrop-blur-sm">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Blog
             </Button>
-          </Link>
+          </a>
         </div>
 
         {/* Article Header */}
@@ -229,7 +198,7 @@ export default function BlogArticle() {
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/">{lang === 'de' ? 'Startseite' : 'Home'}</Link>
+                <a href="/">{lang === 'de' ? 'Startseite' : 'Home'}</a>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator>
@@ -237,7 +206,7 @@ export default function BlogArticle() {
             </BreadcrumbSeparator>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/blog">Blog</Link>
+                <a href="/blog">Blog</a>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator>
@@ -245,7 +214,7 @@ export default function BlogArticle() {
             </BreadcrumbSeparator>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link href="/blog">{category?.name || 'Article'}</Link>
+                <a href="/blog">{category?.name || 'Article'}</a>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator>
@@ -277,7 +246,7 @@ export default function BlogArticle() {
           prose-img:rounded-xl prose-img:my-8
           prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic
         ">
-          <Streamdown>{displayContent}</Streamdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{displayContent}</ReactMarkdown>
         </div>
 
         {/* Tags */}
@@ -318,7 +287,7 @@ export default function BlogArticle() {
               const relatedCategory = blogCategories.find(c => c.id === relatedPost.category);
               
               return (
-                <Link key={relatedPost.slug} href={`/blog/${relatedPost.slug}`}>
+                <a key={relatedPost.slug} href={`/blog/${relatedPost.slug}`}>
                   <article className="group h-full bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1">
                     <div className="relative h-48 overflow-hidden bg-muted">
                       <OptimizedImage
@@ -345,7 +314,7 @@ export default function BlogArticle() {
                       </div>
                     </div>
                   </article>
-                </Link>
+                </a>
               );
             })}
           </div>
@@ -361,11 +330,11 @@ export default function BlogArticle() {
               ? 'Entdecke unsere kuratierte Sammlung von Fokusmusik, Ambient-Soundscapes und entspannenden Beats, die deine Produktivität und dein Wohlbefinden steigern.'
               : 'Discover our curated collection of focus music, ambient soundscapes, and relaxing beats designed to enhance your productivity and well-being.'}
           </p>
-          <Link href="/">
+          <a href="/">
             <Button size="lg" className="rounded-full">
               {lang === 'de' ? 'Kanäle entdecken' : 'Explore Channels'}
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
       
