@@ -10,10 +10,15 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwindcss(),
-
     ],
     ssr: {
       noExternal: ['katex', 'streamdown'],
+    },
+    server: {
+      allowedHosts: true
+    },
+    preview: {
+      allowedHosts: true
     }
   },
   srcDir: './src',

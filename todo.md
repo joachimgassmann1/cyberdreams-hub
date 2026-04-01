@@ -489,3 +489,6 @@
 ## Astro Migration Fixes
 - [ ] Fix broken CSS styling (Tailwind not loading in Astro build)
 - [ ] Verify styling locally before publishing
+
+## Astro Migration Fixes
+- [ ] Fix Vite preview allowedHosts issue in astro.config.mjs
