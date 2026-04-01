@@ -11,8 +11,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import OptimizedImage from "@/components/OptimizedImage";
 import SocialShare from "@/components/SocialShare";
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+
+
 import { getPostBySlug, getRelatedPosts } from '@/data/blog/posts';
 import { blogCategories } from '@/data/blog/categories';
 import { Button } from '@/components/ui/button';
@@ -108,14 +108,14 @@ export default function BlogArticle({ slug, params }: { slug?: string, params?: 
     "author": {
       "@type": "Person",
       "name": post.author,
-      "url": "https://sphere-music-hub.com"
+      "url": `https://${baseDomain}`
     },
     "publisher": {
       "@type": "Organization",
       "name": "Sphere Music Hub",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://sphere-music-hub.com/logo.png"
+        "url": `https://${baseDomain}/logo.png`
       }
     },
     "keywords": displayTags.join(', '),
@@ -126,6 +126,14 @@ export default function BlogArticle({ slug, params }: { slug?: string, params?: 
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Navigation />
       <ReadingProgressBar />
       <ScrollToTop />
@@ -214,7 +222,7 @@ export default function BlogArticle({ slug, params }: { slug?: string, params?: 
             </BreadcrumbSeparator>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <a href="/blog">{category?.name || 'Article'}</a>
+                <a href={`/blog?category=${category?.id || 'all'}`}>{category?.name || 'Article'}</a>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator>
@@ -235,19 +243,19 @@ export default function BlogArticle({ slug, params }: { slug?: string, params?: 
         </div>
 
         {/* Main Content */}
-        <div className="prose prose-lg prose-invert max-w-none
-          prose-headings:font-bold prose-headings:text-foreground
-          prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-          prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-          prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
-          prose-a:text-primary prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-foreground prose-strong:font-semibold
-          prose-ul:my-6 prose-ul:pl-0 prose-li:text-muted-foreground prose-li:ml-0
-          prose-img:rounded-xl prose-img:my-8
-          prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic
-        ">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{displayContent}</ReactMarkdown>
-        </div>
+        <div 
+          className="prose prose-lg prose-invert max-w-none
+            prose-headings:font-bold prose-headings:text-foreground
+            prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+            prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+            prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-6
+            prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+            prose-strong:text-foreground prose-strong:font-semibold
+            prose-ul:my-6 prose-ul:pl-0 prose-li:text-muted-foreground prose-li:ml-0
+            prose-img:rounded-xl prose-img:my-8
+            prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic"
+          dangerouslySetInnerHTML={{ __html: displayContent }}
+        />
 
         {/* Tags */}
         {displayTags.length > 0 && (

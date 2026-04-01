@@ -95,7 +95,7 @@ export const brainResetBurnout: BlogPost = {
   <p class="mb-4">
     Don't wait until you're burned out. Make this 20-minute sonic bath a ritual. Put on your headphones, close your eyes, and let the sound do the heavy lifting.
   </p>
-  <a href="/#music-channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+  <a href="/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
     Start Your Reset
   </a>
 </div>
@@ -181,7 +181,7 @@ export const brainResetBurnout: BlogPost = {
   <p class="mb-4">
     Warte nicht, bis du ausgebrannt bist. Mach dieses 20-minütige Klangbad zu einem Ritual. Setz deine Kopfhörer auf, schließ die Augen und lass den Sound die schwere Arbeit machen.
   </p>
-  <a href="/#music-channels" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+  <a href="/" class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
     Starte deinen Reset
   </a>
 </div>

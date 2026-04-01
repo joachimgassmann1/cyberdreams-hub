@@ -71,8 +71,28 @@ export default function BlogOverview() {
     setCurrentPage(1);
   };
 
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Sphere Music Hub Blog",
+    "description": "Tips, guides, and stories about focus music, productivity, ambient soundscapes, and the art of the perfect atmosphere.",
+    "url": `https://${baseDomain}/blog`,
+    "publisher": {
+      "@type": "Organization",
+      "name": "Sphere Music Hub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `https://${baseDomain}/logo.png`
+      }
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <Navigation />
       {/* Hero Section */}
       <section className="relative py-20 md:py-24 px-4 overflow-hidden">

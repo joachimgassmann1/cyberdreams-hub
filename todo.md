@@ -496,3 +496,27 @@
 - [ ] Diagnose and fix missing CSS on live deployment (spherehub-nbg9ea9t.manus.space)
 
 - [ ] Diagnose and fix missing CSS on live domain (www.sphere-music-hub.com)
+
+- [ ] Push CSS fix to GitHub remote "github" for Render deployment
+
+## SEO Optimization Tasks (from Claude Analysis)
+- [ ] Create `public/sitemap.xml` with all 36+ blog URLs
+- [ ] Create `public/robots.txt` with sitemap reference
+- [ ] Add Schema.org `Article` markup to all blog articles
+- [ ] Add 3-5 blog article teasers to the homepage
+- [ ] Create category pages as real URLs (`/blog/category/jazz`)
+- [ ] Migrate blog images to own domain
+- [ ] Create dedicated subpages for each YouTube channel
+
+- [ ] Fix broken HTML rendering in blog articles (use dangerouslySetInnerHTML instead of ReactMarkdown)
+
+## Comprehensive Quality and SEO Check
+- [ ] Verify HTML rendering in all blog articles (no visible tags)
+- [ ] Verify all image links and loading across all pages
+- [ ] Verify SEO tags (Title, Meta Description, Canonical) on all pages
+- [ ] Verify Schema.org data on all pages
+- [ ] Verify all internal links (no dead links or broken anchors)
+
+- [ ] Fix missing canonical URLs on all pages
+- [ ] Fix missing Schema.org data on blog/index.html
+- [ ] Fix missing title and meta description on googledcd29f49d2e3645a.html
