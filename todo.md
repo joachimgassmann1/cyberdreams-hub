@@ -492,3 +492,7 @@
 
 ## Astro Migration Fixes
 - [ ] Fix Vite preview allowedHosts issue in astro.config.mjs
+
+- [ ] Diagnose and fix missing CSS on live deployment (spherehub-nbg9ea9t.manus.space)
+
+- [ ] Diagnose and fix missing CSS on live domain (www.sphere-music-hub.com)
