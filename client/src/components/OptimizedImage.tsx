@@ -15,7 +15,9 @@ export default function OptimizedImage({
   loading = 'lazy',
   fetchPriority = 'auto'
 }: OptimizedImageProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
+  // In Astro SSR, we want images to be visible immediately if they are eager loaded
+  // or if JS is disabled. We'll default to true for eager loading.
+  const [isLoaded, setIsLoaded] = useState(loading === 'eager');
 
   return (
     <div className="relative w-full h-full">
