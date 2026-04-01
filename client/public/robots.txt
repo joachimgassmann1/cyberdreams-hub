@@ -5,8 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap locations
-Sitemap: https://sphere-music-hub.com/sitemap.xml
-Sitemap: https://sphere-music-hub.de/sitemap-de.xml
+Sitemap: https://www.sphere-music-hub.com/sitemap-index.xml
 
 # Crawl-delay for polite bots
 Crawl-delay: 1
