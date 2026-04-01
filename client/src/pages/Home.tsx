@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Channels from "@/components/Channels";
 import FeaturedVideos from "@/components/FeaturedVideos";
 import About from "@/components/About";
+import BlogTeaser from "@/components/BlogTeaser";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       <Hero />
       <Channels />
       <FeaturedVideos />
+      <BlogTeaser />
       <About />
       <Footer />
     </div>
