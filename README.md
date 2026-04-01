@@ -1,7 +1,7 @@
 # Sphere Music Hub - Project Documentation
 
 **Website:** https://sphere-music-hub.com / https://sphere-music-hub.de  
-**Tech Stack:** React 19 + Tailwind 4 + Wouter (Static Frontend)  
+**Tech Stack:** Astro + React 19 + Tailwind 4 (Static Site Generation)  
 **Deployment:** Render.com (Auto-deploy from GitHub)
 
 ---
@@ -295,9 +295,9 @@ git push github main
 
 ---
 
-**Last Updated:** December 18, 2025  
-**Total Articles:** 34 published  
-**Project Status:** Active, deployed, receiving organic traffic  
+**Last Updated:** April 1, 2026  
+**Total Articles:** 38 published  
+**Project Status:** Active, deployed on Render via GitHub, fully SEO optimized (Astro SSG)  
 **Performance:** Mobile 75, Desktop 96 (PageSpeed Insights)
 
 
