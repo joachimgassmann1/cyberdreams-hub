@@ -472,3 +472,20 @@
 - [ ] Update `package.json` scripts to use Astro
 - [ ] Test the build process
 - [ ] Verify SSG output
+
+
+## SEO Optimization Tasks (Astro Migration Follow-up)
+- [ ] Generate `sitemap.xml` with all blog URLs
+- [ ] Create `robots.txt` with sitemap reference
+- [ ] Migrate blog images from CloudFront to own domain (or S3 bucket with custom domain)
+- [ ] Add Schema.org `Article` markup to blog posts
+- [ ] Add Schema.org `WebSite` markup to homepage
+- [ ] Add 3-5 blog article teasers to the homepage to improve internal linking
+- [ ] Create dedicated subpages for each YouTube channel (e.g., `/channels/deep-focus-sphere`)
+- [ ] Optimize homepage Page Title (move primary keyword to front)
+- [ ] Improve H1/H2 structure on homepage (add keywords like "Focus Music", "Ambient Music Channels")
+- [ ] Review and potentially remove/replace contextless statistics on homepage
+
+## Astro Migration Fixes
+- [ ] Fix broken CSS styling (Tailwind not loading in Astro build)
+- [ ] Verify styling locally before publishing
