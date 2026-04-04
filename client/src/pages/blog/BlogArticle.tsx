@@ -25,6 +25,8 @@ import AuthorBox from '@/components/AuthorBox';
 import { calculateReadTime, formatReadTime } from '@/lib/readTime';
 // Removed Helmet
 import { detectLanguage } from '@/lib/i18n';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function BlogArticle({ slug, params }: { slug?: string, params?: { slug: string } }) {
   const lang = detectLanguage();
@@ -254,8 +256,9 @@ export default function BlogArticle({ slug, params }: { slug?: string, params?: 
             prose-ul:my-6 prose-ul:pl-0 prose-li:text-muted-foreground prose-li:ml-0
             prose-img:rounded-xl prose-img:my-8
             prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic"
-          dangerouslySetInnerHTML={{ __html: displayContent }}
-        />
+        >
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{displayContent}</ReactMarkdown>
+        </div>
 
         {/* Tags */}
         {displayTags.length > 0 && (

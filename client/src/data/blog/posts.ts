@@ -1,5 +1,7 @@
 import { BlogPost } from './types';
 import { focusMusicGuide } from './focus-music-guide';
+import { cinematicAmbientFocus } from './cinematic-ambient-focus';
+import { pomodoroPlaylistMusic } from './pomodoro-playlist-music';
 import { chilloutPsychology } from './chillout-psychology';
 import { cyberpunkSoundscapes } from './cyberpunk-soundscapes';
 import { jazzAtmosphere } from './jazz-atmosphere';
@@ -165,6 +167,14 @@ export const blogPosts: BlogPost[] = [
  {
  ...focusMusicGuide,
  featured: true
+ },
+ {
+ ...cinematicAmbientFocus,
+ featured: true
+ },
+ {
+ ...pomodoroPlaylistMusic,
+ featured: false
  }
 ];
 
