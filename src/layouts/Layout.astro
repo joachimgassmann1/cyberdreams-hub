@@ -1,6 +1,7 @@
 ---
 import '@/index.css';
 import AppProviders from "@/components/AppProviders";
+import CookieBanner from "@/components/CookieBanner";
 
 
 interface Props {
@@ -63,9 +64,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.sphe
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
 		<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" /></noscript>
 	</head>
-		<body>
-			<AppProviders client:load>
-				<slot />
-			</AppProviders>
-		</body>
+			<body>
+				<AppProviders client:load>
+					<slot />
+				</AppProviders>
+				<CookieBanner client:load />
+			</body>
 </html>
