@@ -89,6 +89,7 @@ const getChannels = (lang: 'en' | 'de') => [
     url: "https://www.youtube.com/@GuitarsphereRadio",
     icon: Guitar,
     color: "from-chart-4 to-chart-4/70",
+    comingSoon: true,
   },
   {
     id: "piano-sphere",
@@ -153,6 +154,12 @@ export default function Channels() {
                   <div className="absolute top-4 right-4 p-3 rounded-full bg-background/80 backdrop-blur-sm">
                     <Icon className="w-6 h-6 text-primary" />
                   </div>
+                  {/* Coming Soon Badge */}
+                  {channel.comingSoon && (
+                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold tracking-wide bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-orange-500/30 border border-orange-400/40">
+                      Community Soon
+                    </div>
+                  )}
                 </div>
                 
                 <CardHeader>
