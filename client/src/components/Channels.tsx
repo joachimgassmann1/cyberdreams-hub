@@ -157,7 +157,7 @@ export default function Channels() {
                   {/* Coming Soon Badge */}
                   {channel.comingSoon && (
                     <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold tracking-wide bg-gradient-to-r from-amber-500 to-orange-500 text-white shadow-lg shadow-orange-500/30 border border-orange-400/40">
-                      Community Soon
+                      Coming Soon
                     </div>
                   )}
                 </div>
