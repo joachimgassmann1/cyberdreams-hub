@@ -257,7 +257,11 @@ export default function BlogArticle({ slug, params }: { slug?: string, params?: 
             prose-img:rounded-xl prose-img:my-8
             prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-6 prose-blockquote:italic"
         >
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{displayContent}</ReactMarkdown>
+          {displayContent && displayContent.trimStart().startsWith('<') ? (
+            <div dangerouslySetInnerHTML={{ __html: displayContent }} />
+          ) : (
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{displayContent}</ReactMarkdown>
+          )}
         </div>
 
         {/* Tags */}

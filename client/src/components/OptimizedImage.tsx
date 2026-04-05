@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 interface OptimizedImageProps {
   src: string;
   alt: string;
@@ -15,27 +13,16 @@ export default function OptimizedImage({
   loading = 'lazy',
   fetchPriority = 'auto'
 }: OptimizedImageProps) {
-  // In Astro SSR, we want images to be visible immediately if they are eager loaded
-  // or if JS is disabled. We'll default to true for eager loading.
-  const [isLoaded, setIsLoaded] = useState(loading === 'eager');
-
+  // Simple, stateless image component — no hydration mismatch, no flicker.
+  // The browser handles lazy loading natively; no JS state needed.
   return (
-    <div className="relative w-full h-full">
-      {/* Blur placeholder background */}
-      {!isLoaded && (
-        <div className="absolute inset-0 bg-gradient-to-br from-muted via-muted/80 to-muted/60 animate-pulse" />
-      )}
-      
-      {/* Actual image */}
+    <div className="relative w-full h-full bg-muted">
       <img
         src={src}
         alt={alt}
         loading={loading}
         fetchPriority={fetchPriority}
-        onLoad={() => setIsLoaded(true)}
-        className={`${className} ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        } transition-opacity duration-500`}
+        className={`${className} w-full h-full object-cover`}
       />
     </div>
   );
