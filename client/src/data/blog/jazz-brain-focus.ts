@@ -7,7 +7,7 @@ export const jazzBrainFocus: BlogPost = {
   description: 'Struggling to focus with silence or white noise? Discover why the "controlled chaos" of jazz might be the missing key for your brain, backed by the science of stochastic resonance.',
   descriptionDe: 'Probleme mit Stille oder White Noise? Entdecke, warum das "kontrollierte Chaos" des Jazz der fehlende Schlüssel für dein Gehirn sein könnte – wissenschaftlich belegt.',
   publishDate: '2026-01-07',
-  category: 'Jazz',
+  category: 'jazz',
   tags: ['jazz', 'focus', 'neuroscience', 'adhd', 'productivity', 'stochastic resonance'],
   tagsDe: ['jazz', 'fokus', 'neurowissenschaft', 'adhs', 'produktivität', 'stochastische resonanz'],
   heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/jazz-brain-focus-hero-DotRzbgWQu5yvNApPCfzpm.webp',

@@ -104,7 +104,8 @@ export default function BlogOverview() {
             className="w-full h-full object-cover"
           />
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/40 to-background/90" />
+          <div className="absolute inset-0 bg-background/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
         </div>
         <div className="container relative z-10 flex flex-col items-center justify-center min-h-[320px] md:min-h-[380px]">
           {/* Icon */}

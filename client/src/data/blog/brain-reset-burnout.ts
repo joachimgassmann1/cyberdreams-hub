@@ -7,7 +7,7 @@ export const brainResetBurnout: BlogPost = {
   description: 'Feeling like a zombie after work? Silence might not be the answer. Discover the "20-Minute Brain Reset" routine that uses specific sound frequencies to flush cortisol and restore your mental energy.',
   descriptionDe: 'Fühlst du dich nach der Arbeit wie ein Zombie? Stille ist vielleicht nicht die Antwort. Entdecke die "20-Minuten-Gehirn-Reset"-Routine, die spezielle Klangfrequenzen nutzt, um Cortisol abzubauen.',
   publishDate: '2026-01-08',
-  category: 'Relax',
+  category: 'relax',
   tags: ['burnout', 'mental health', 'stress relief', 'routine', 'neuroscience', 'recovery'],
   tagsDe: ['burnout', 'mentale gesundheit', 'stressabbau', 'routine', 'neurowissenschaft', 'erholung'],
   heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/brain-reset-burnout-hero-oJaZyU49vgquHqktYJVCpJ.webp',
