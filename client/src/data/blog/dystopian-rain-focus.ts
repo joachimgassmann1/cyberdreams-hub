@@ -313,4 +313,7 @@ Das nächste Mal, wenn du dich fokussieren musst, erwäge, in eine Welt einzutre
   publishDate: '2025-11-27',
   readingTime: 9,
   featured: false,
+  videoId: 'cre-smGaoEs',
+  videoTitle: 'Rainy Neon Nights - Dystopian Ambient Soundscape for Relaxation',
+  videoChannel: 'Cyber Dreams',
 };

@@ -15,6 +15,9 @@ export interface BlogPost {
  readingTime: number; // in minutes
  readingTimeDe?: number; // German reading time (may differ)
  featured?: boolean;
+ videoId?: string; // YouTube video ID for embedded video
+ videoTitle?: string; // YouTube video title
+ videoChannel?: string; // YouTube channel name
 }
 
 export interface BlogCategory {

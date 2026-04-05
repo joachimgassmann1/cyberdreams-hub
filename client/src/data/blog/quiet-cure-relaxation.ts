@@ -269,5 +269,8 @@ Und in dieser Stille finden wir uns selbst wieder.
 
 ---
 *Erkunde die beruhigenden Soundscapes von [Sphere Music Hub](/) — wo Ambient-Musik auf intentionales Design trifft, um Räume für tiefe Entspannung, fokussierte Arbeit und achtsames Leben zu schaffen.*
-`
+`,
+  videoId: 'nZzteuCoYn0',
+  videoTitle: 'Relaxing Chillout Music – Ocean Terrace at Sunset - Deep Lounge for Evening Escape',
+  videoChannel: 'Chillout Sphere',
 };

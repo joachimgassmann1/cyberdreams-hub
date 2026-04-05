@@ -296,4 +296,7 @@ Das Wichtigste? Achte darauf, was tatsächlich für dich funktioniert, nicht was
 
 Nun, wenn du mich entschuldigst, ich habe etwas Musik zu erstellen. Und ja, ich werde Ambient Music dabei nutzen.
 `,
+  videoId: 'xPjrkMmZElw',
+  videoTitle: 'Deep Focus Vibes: The Ultimate Study Music Mix',
+  videoChannel: 'Deep Focus Sphere',
 };

@@ -281,5 +281,8 @@ Wenn du dich wirklich von deinem Tag erholen willst, musst du deinem Nervensyste
 
 Versuch es heute Abend. Klappe deinen Laptop zu. Setz Kopfhörer auf. Drück Play bei etwas Langsamem und Ambient. Sitz zwanzig Minuten. Check nicht dein Handy. Plan nicht morgen. Atme einfach.
 
-Dein Cortisol-Spiegel wird es dir danken.`
+Dein Cortisol-Spiegel wird es dir danken.`,
+  videoId: 'Tw_odHzPML0',
+  videoTitle: 'Ocean Lounge Escape - 2 Hours of Soothing Chillout Music to Unwind & Breathe',
+  videoChannel: 'Chillout Sphere',
 };

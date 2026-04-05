@@ -17,5 +17,8 @@ export const nightShiftMind: BlogPost = {
  readingTimeDe: 7,
  heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/night-shift-mind-hero-ens2rBNDVqBBjbEQCDjQsh.webp',
  content: nightShiftMindContent,
- contentDe: nightShiftMindContentDe
+ contentDe: nightShiftMindContentDe,
+  videoId: 'jBkCFxaKxGw',
+  videoTitle: 'Deep Work – Focus Mode - Night Study Ambient (2H20)',
+  videoChannel: 'Deep Focus Sphere',
 };

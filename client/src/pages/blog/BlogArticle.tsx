@@ -264,6 +264,33 @@ export default function BlogArticle({ slug, params }: { slug?: string, params?: 
           )}
         </div>
 
+        {/* YouTube Video Embed */}
+        {post.videoId && (
+          <div className="mt-12 pt-8 border-t border-border">
+            <h3 className="text-2xl font-bold mb-2">
+              {lang === 'de' ? '🎧 Passende Musik zum Artikel' : '🎧 Listen While You Read'}
+            </h3>
+            {post.videoChannel && (
+              <p className="text-sm text-muted-foreground mb-4">
+                {lang === 'de' ? 'Von unserem Kanal:' : 'From our channel:'} <span className="text-primary font-medium">{post.videoChannel}</span>
+              </p>
+            )}
+            <div className="relative w-full rounded-2xl overflow-hidden border border-border shadow-xl" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${post.videoId}?rel=0&modestbranding=1`}
+                title={post.videoTitle || 'Sphere Music Hub'}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+            {post.videoTitle && (
+              <p className="text-sm text-muted-foreground mt-3 text-center italic">{post.videoTitle}</p>
+            )}
+          </div>
+        )}
+
         {/* Tags */}
         {displayTags.length > 0 && (
           <div className="mt-12 pt-8 border-t border-border">

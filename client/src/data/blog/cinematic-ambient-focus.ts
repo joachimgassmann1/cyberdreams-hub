@@ -108,4 +108,7 @@ Also, das nächste Mal, wenn das Nachmittagstief zuschlägt: Kaltgewordenen Kaff
     "https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/cinematic-ambient-blog-v3_8250b3b5.jpg",
   featured: true,
   readingTime: 4,
+  videoId: 'TKgSbDoaB9I',
+  videoTitle: 'Futuristic Megacity Rain - Cyberpunk Deep Work Ambient',
+  videoChannel: 'Cyber Dreams',
 };

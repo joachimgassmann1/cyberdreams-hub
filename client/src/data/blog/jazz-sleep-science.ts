@@ -214,7 +214,10 @@ Dein Gehirn wird es dir danken. Dein Körper wird folgen. Und Schlaf wird sich e
   tags: ['jazz', 'sleep music', 'smooth jazz', 'relaxation', 'white noise', 'neuroscience'],
   tagsDe: ['Jazz', 'Schlafmusik', 'Smooth Jazz', 'Entspannung', 'weißes Rauschen', 'Neurowissenschaft'],
   heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/jazz-sleep-science-hero-J7L7hBDBkgJ7T2KWbNe7HA.webp',
-  author: 'Joachim Gassmann'
+  author: 'Joachim Gassmann',
+  videoId: 'Q3as1J9PXg0',
+  videoTitle: 'Midnight Serenade – Smooth Vocal Jazz for Quiet Hours',
+  videoChannel: 'JazzSphere Radio',
 };
 
 export default jazzSleepScience;

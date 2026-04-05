@@ -295,5 +295,8 @@ Und wenn du das hier liest, weil du gerade mit Angst kämpfst, möchte ich, dass
 
 Dein Gehirn tut sein Bestes, um dich zu schützen, selbst wenn dieser Schutz sich als Angst manifestiert. Manchmal ist das Freundlichste, was du tun kannst, ihm etwas schöne Musik zu geben, auf die es sich konzentrieren kann, anstatt auf seine eigenen besorgten Narrative. Ob diese Musik von einem Klavier, einer Gitarre oder etwas ganz anderem kommt, ist nicht annähernd so wichtig wie die Tatsache, dass du für dich selbst sorgst.
 
-Das ist es, was wirklich zählt.`
+Das ist es, was wirklich zählt.`,
+  videoId: 'cV3fm4Mi5qg',
+  videoTitle: 'Moody Piano Ballads – Atmospheric Background Music for Unwinding',
+  videoChannel: 'Pianosphere Radio',
 };

@@ -250,5 +250,8 @@ Und in dieser Pause finden wir uns selbst wieder.
 ---
 
 *Erlebe die stille Schönheit von [Pianosphere Radio](https://www.youtube.com/@PianosphereRadio) — wo sanfte Klavier-Ambience auf kinematografische Visuals trifft, um intime Räume für Reflexion, Heilung und emotionale Stille zu schaffen.*
-`
+`,
+  videoId: 'Tx6LKwnhHUQ',
+  videoTitle: 'Piano Nights – Smooth Piano Ballads for Heartfelt Moments',
+  videoChannel: 'Pianosphere Radio',
 };

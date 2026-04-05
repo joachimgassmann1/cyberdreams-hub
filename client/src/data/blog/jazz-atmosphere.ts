@@ -327,5 +327,8 @@ Und diese Einladung ist heute wertvoller denn je.
 ---
 
 *Tritt ein in die warme akustische Welt von [JazzSphere Radio](https://www.youtube.com/@JazzSphereRadio) — wo sanfter Jazz auf kinematografische Visuals trifft, um intime Räume für Entspannung, Reflexion und fokussierte Kreativität zu schaffen.*
-`
+`,
+  videoId: 'nVgywnu7znI',
+  videoTitle: 'Intimate Vocal Jazz Lounge – Unwind & Relax Completely',
+  videoChannel: 'JazzSphere Radio',
 };

@@ -219,4 +219,7 @@ Ich denke, du wirst den Unterschied bemerken. Und sobald du es tust, wirst du ve
 
 Dein Gehirn wird es dir danken.
 `,
+  videoId: '37apvxW6nh8',
+  videoTitle: 'Deep Work Soundscape – Elegant Ambient Music for Uninterrupted Productivity',
+  videoChannel: 'Deep Focus Sphere',
 };

@@ -141,5 +141,8 @@ Manchmal ist der beste Weg zur Stille, es einfach ein bisschen lauter zu machen.
 ---
 *Lust bekommen, es auszuprobieren? Hör dir unsere neueste [Deep Focus Ambient Playlist](https://youtube.com/playlist?list=PL1nVMfXe7BHpZWkqtug3e-bPvzUrz72gi&si=xEa9Lt1afiqt5lRQ) an oder besuche unseren [Deep Focus Sphere YouTube-Kanal](https://www.youtube.com/@DeepFocusSphere67) für 8 Stunden Deep Focus Sounds.*
 
-*Wenn du das interessant fandest, gefällt dir vielleicht auch unser Artikel über [Die beste Lernmusik laut Harvard-Neurowissenschaft](/blog/best-study-music-harvard-neuroscience).*`
+*Wenn du das interessant fandest, gefällt dir vielleicht auch unser Artikel über [Die beste Lernmusik laut Harvard-Neurowissenschaft](/blog/best-study-music-harvard-neuroscience).*`,
+  videoId: 'XLm9OxhczEg',
+  videoTitle: 'Piano Melodies in the Rain - 2 Hours of Dreamy Soft Music for Peace & Sleep',
+  videoChannel: 'Pianosphere Radio',
 };

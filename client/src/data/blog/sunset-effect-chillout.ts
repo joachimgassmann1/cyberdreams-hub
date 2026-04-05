@@ -170,5 +170,8 @@ Aber noch wichtiger, er ist schön.
 
 ---
 
-Willst du den Sunset-Effekt selbst erleben? Schau dir [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) für kuratierte Chillout-Musik an, die für dein Abendhören entworfen wurde. Und wenn das nächste Mal die Sonne untergeht, kämpfe nicht gegen den Drang an, langsamer zu werden und zuzuhören. Deine Biologie versucht dir etwas zu sagen.`
+Willst du den Sunset-Effekt selbst erleben? Schau dir [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) für kuratierte Chillout-Musik an, die für dein Abendhören entworfen wurde. Und wenn das nächste Mal die Sonne untergeht, kämpfe nicht gegen den Drang an, langsamer zu werden und zuzuhören. Deine Biologie versucht dir etwas zu sagen.`,
+  videoId: 'sI3pGdr2dmk',
+  videoTitle: 'Sunset Beach Vibes - Smooth Chillout Tunes & Ocean Ambient',
+  videoChannel: 'Chillout Sphere',
 };

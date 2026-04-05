@@ -223,5 +223,8 @@ Ambient-Schlafmusik bietet ein wissenschaftlich fundiertes, zugängliches und ni
 
 Der Schlüssel ist Intentionalität. Nicht alle Musik ist gleich, wenn es um Schlaf geht. Das Verständnis der hier dargelegten Prinzipien ermöglicht es dir, eine Schlaf-Klanglandschaft zu kuratieren, die mit deiner Biologie arbeitet, anstatt gegen sie. Ob du dich kuratierten Playlists, Naturgeräuschen oder Ambient-Kompositionen wie denen von [Deep Focus Sphere](https://www.youtube.com/@DeepFocusSphere67) zuwendest, die richtige Musik kann deine Nächte transformieren und damit auch deine Tage.
 
-Schlaf ist kein Luxus; er ist eine Notwendigkeit. Und in der stillen Umarmung von Ambient-Klanglandschaften findet das Gehirn die Erlaubnis, die es braucht, um loszulassen, zu ruhen und sich zu erholen.`
+Schlaf ist kein Luxus; er ist eine Notwendigkeit. Und in der stillen Umarmung von Ambient-Klanglandschaften findet das Gehirn die Erlaubnis, die es braucht, um loszulassen, zu ruhen und sich zu erholen.`,
+  videoId: 'dRc4Fi1YKUM',
+  videoTitle: 'Moonlit Ocean Piano - Relaxing Piano Music with Fireplace for Deep Sleep & Focus',
+  videoChannel: 'Pianosphere Radio',
 };

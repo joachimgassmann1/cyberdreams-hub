@@ -127,4 +127,7 @@ Der Rest des Artikels folgt der gleichen Struktur wie die englische Version, ang
   readingTime: 11,
   heroImage: 'https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/harvard-study-music-hero-BCQaNkP3qVDoNbpBpssNio.webp',
   tags: ['study music', 'harvard research', 'neuroscience', 'focus', 'productivity'],
+  videoId: 'eAiDX4hSThE',
+  videoTitle: 'Deep Focus Music – Ambient Soundscapes to Supercharge Your Study',
+  videoChannel: 'Deep Focus Sphere',
 };

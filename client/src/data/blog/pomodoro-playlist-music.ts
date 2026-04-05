@@ -131,4 +131,7 @@ Lass die Musik dir sagen, wie spät es ist. Du wirst vielleicht feststellen, das
     "https://d2xsxph8kpxj0f.cloudfront.net/100777620/nbg9ea9tCT3T5YUgNvKDXF/pomodoro-playlist-blog-v3_13cf4c9c.jpg",
   featured: false,
   readingTime: 4,
+  videoId: 'Si2N3kzW-w8',
+  videoTitle: 'Work Music for Focus & Productivity - Minimal Soundscape for Intense Concentration',
+  videoChannel: 'Deep Focus Sphere',
 };

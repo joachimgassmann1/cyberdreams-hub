@@ -287,5 +287,8 @@ Jetzt, mit 35, ein Unternehmen führend und mit echtem Stress umgehend, weiß ic
 
 Wenn du diese Art von Klaviermusik erleben möchtest, schau dir [Pianosphere Radio](https://www.youtube.com/@pianosphereradio) an. Ich erstelle stundenlange Ambient- und neo-klassische Klaviermusik speziell für Stressbewältigung, Fokus und Entspannung.
 
-Denn manchmal ist die kraftvollste Musik die einfachste. Und manchmal ist die beste Nutzung von 10 Jahren klassischer Ausbildung zu wissen, wann man alles ignorieren sollte, was man gelernt hat.`
+Denn manchmal ist die kraftvollste Musik die einfachste. Und manchmal ist die beste Nutzung von 10 Jahren klassischer Ausbildung zu wissen, wann man alles ignorieren sollte, was man gelernt hat.`,
+  videoId: '0T4XDHO7pfA',
+  videoTitle: 'Sophisticated Fireplace Piano - Relaxing Piano Music with Ocean Sounds for Focus',
+  videoChannel: 'Pianosphere Radio',
 };

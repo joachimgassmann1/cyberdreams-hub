@@ -306,5 +306,8 @@ Sie schärfen den Geist, während sie die Emotionen beruhigen. Sie erweitern die
 ---
 
 *Tritt ein in die neonbeleuchtete Welt von [Cyber Dreams](https://www.youtube.com/@CyberDreams-x9p) — wo futuristische Soundscapes auf kinematografische Visuals treffen, um die ultimative Umgebung für nächtliche Kreativität und fokussierte Produktivität zu schaffen.*
-`
+`,
+  videoId: 'cdbdqx60K2Y',
+  videoTitle: 'Cyborg\'s Last Dream – Dystopian Soundscape for Creative Minds',
+  videoChannel: 'Cyber Dreams',
 };

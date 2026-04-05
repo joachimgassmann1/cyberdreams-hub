@@ -187,5 +187,8 @@ Es hat lange gedauert, bis ich akzeptierte, dass die Musik, die ich spielen gele
 
 Also wenn du versucht hast, mit klassischer Musik zu entspannen und es funktioniert nicht—du machst nichts falsch. Du brauchst vielleicht einfach eine andere Art von Schönheit. Die Art, die dich nicht bittet mitzukommen. Die Art, die dich einfach sein lässt.
 
-Das ist es, was Jazz tut. Und deshalb habe ich nach zehn Jahren klassischer Ausbildung endlich Frieden in einem verrauchten Jazzclub gefunden, statt in einem Konzertsaal.`
+Das ist es, was Jazz tut. Und deshalb habe ich nach zehn Jahren klassischer Ausbildung endlich Frieden in einem verrauchten Jazzclub gefunden, statt in einem Konzertsaal.`,
+  videoId: 'EnL1AHG09wY',
+  videoTitle: 'Smooth Vocal Jazz - Relaxing Jazz Music for Calm & Chill Out',
+  videoChannel: 'JazzSphere Radio',
 };

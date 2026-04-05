@@ -387,4 +387,7 @@ Das Ziel ist nicht, die "perfekte" Study Music zu finden. Es ist, zu finden, was
 
 Jetzt geh und rocke diese Prüfung. Und ja, ich werde Ambient-Musik nutzen, während ich das mache.
 `,
+  videoId: 'uw6H-ZpniqA',
+  videoTitle: '2+ Hours of Deep Focus Music for Study, Work & Maximum Concentration',
+  videoChannel: 'Deep Focus Sphere',
 };

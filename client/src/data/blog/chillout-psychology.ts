@@ -274,5 +274,8 @@ Und in diesem Raum passiert etwas Wichtiges:
 ---
 
 *Erkunde kuratierte Chillout-Sessions auf [Chillout Sphere](https://www.youtube.com/@chilloutsphere67) — wo warme Soundscapes auf kinematografische Visuals treffen, um die perfekte Atmosphäre für Entspannung und emotionale Balance zu schaffen.*
-`
+`,
+  videoId: 'xX_6Afj7LKE',
+  videoTitle: 'Moonlit Lounge – Soothing Chillout Vibes for Ultimate Peace & Tranquility',
+  videoChannel: 'Chillout Sphere',
 };

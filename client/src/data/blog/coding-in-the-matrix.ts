@@ -105,5 +105,8 @@ Wenn dich also das nächste Mal jemand fragt, warum du "deprimierende Roboterger
 Wenn du es ausprobieren willst, schau dir das neue Video auf meinem Kanal an. Setz deine Noise-Cancelling-Kopfhörer auf, schalte deine IDE in den High-Contrast-Modus und betritt die Matrix.
 
 Happy Coding. 🕶️
-`
+`,
+  videoId: 'HTg3cwUZjGY',
+  videoTitle: 'Megacity Rain Mode - Cyberpunk Ambient for Coding Nights & Focus',
+  videoChannel: 'Cyber Dreams',
 };

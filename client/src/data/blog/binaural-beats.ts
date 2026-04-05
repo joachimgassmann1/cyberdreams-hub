@@ -224,5 +224,8 @@ Binaurale Beats sind ein faszinierendes Beispiel dafür, wie einfache auditive R
 
 Das Verständnis der Wissenschaft hinter binauralen Beats—wie sie funktionieren, welche Frequenzen welchen mentalen Zuständen entsprechen und wie man sie effektiv nutzt—befähigt Einzelpersonen, dieses Werkzeug mit Absicht und Präzision zu nutzen. Während sie kein Allheilmittel sind, bieten binaurale Beats eine wertvolle Ergänzung zu Meditation, Produktivitätspraktiken und Stressmanagement-Strategien.
 
-Wie bei jedem Werkzeug zur kognitiven Verbesserung liegt der Schlüssel in informierter, beständiger und achtsamer Nutzung. Wenn sie durchdacht in eine breitere Praxis der Selbstfürsorge und des mentalen Trainings integriert werden, können binaurale Beats als Tor zu tieferen Bewusstseinszuständen, schärferem Fokus und größerem Wohlbefinden dienen.`
+Wie bei jedem Werkzeug zur kognitiven Verbesserung liegt der Schlüssel in informierter, beständiger und achtsamer Nutzung. Wenn sie durchdacht in eine breitere Praxis der Selbstfürsorge und des mentalen Trainings integriert werden, können binaurale Beats als Tor zu tieferen Bewusstseinszuständen, schärferem Fokus und größerem Wohlbefinden dienen.`,
+  videoId: 'bobz8Xt8Ua0',
+  videoTitle: 'Ambient Music for Deep Work – Stay Focused & Relaxed for 3 Hours of Pure Concentration',
+  videoChannel: 'Deep Focus Sphere',
 };

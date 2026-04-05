@@ -289,5 +289,8 @@ Deep Focus Sphere und ähnliche Kanäle helfen Menschen, tiefere Konzentration, 
 
 Wenn du besser arbeiten, klarer denken und öfter in den Flow kommen möchtest, beginne damit, den Sound um dich herum zu gestalten.
 
-`
+`,
+  videoId: 'P6trWTSjOTQ',
+  videoTitle: 'Focus Architecture - Ambient Music for Deep Work, Study & Sustained Attention',
+  videoChannel: 'Deep Focus Sphere',
 };

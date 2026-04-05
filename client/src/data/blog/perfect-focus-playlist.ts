@@ -202,5 +202,8 @@ Du brauchst keinen Doktortitel in Musiktheorie. Du brauchst keine teure Software
 
 Dann teste es. Nutze deine Playlist eine ganze Woche lang. Bemerke, wann dein Fokus abbricht. Identifiziere, welcher Track deine Aufmerksamkeit gezogen hat. Entferne ihn. Passe an. Verfeinere. Das Ziel ist keine "perfekte" Playlist—es ist eine Playlist, die verschwindet. Wenn du eine Deep-Work-Session beendest und merkst, dass du keinen einzigen Song bewusst gehört hast, hast du gewonnen. Das ist der Moment, in dem Musik aufhört, eine Ablenkung zu sein, und zu einem Werkzeug wird.
 
-Jetzt geh und baue deine Playlist. Deine beste Arbeit wartet auf der anderen Seite des richtigen Soundtracks.`
+Jetzt geh und baue deine Playlist. Deine beste Arbeit wartet auf der anderen Seite des richtigen Soundtracks.`,
+  videoId: 'ADZvL5c3ME8',
+  videoTitle: 'Focus Music - Deep Work & Study Beats for Productivity',
+  videoChannel: 'Deep Focus Sphere',
 };

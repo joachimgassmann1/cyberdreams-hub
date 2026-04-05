@@ -197,5 +197,8 @@ export const jazzBrainFocus: BlogPost = {
     Hör rein bei JazzSphere Radio
   </a>
 </div>
-  `
+  `,
+  videoId: 'QrphP6lfD7Y',
+  videoTitle: 'Vintage Stereo Jazz - Warm Lounge Vibes for Late-Night Productivity & Rest',
+  videoChannel: 'JazzSphere Radio',
 };

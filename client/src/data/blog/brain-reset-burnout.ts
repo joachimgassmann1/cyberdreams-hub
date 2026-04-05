@@ -185,5 +185,8 @@ export const brainResetBurnout: BlogPost = {
     Starte deinen Reset
   </a>
 </div>
-  `
+  `,
+  videoId: 'mrYA_C4mRIg',
+  videoTitle: 'Rooftop Serenity - 3 Hours of Smooth Chillout & Lounge Music for Unwinding',
+  videoChannel: 'Chillout Sphere',
 };

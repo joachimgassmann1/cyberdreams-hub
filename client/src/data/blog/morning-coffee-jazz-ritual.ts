@@ -401,4 +401,7 @@ Du könntest überrascht sein, was 30 Minuten Ruhe für die nächsten 23,5 Stund
 
 Jetzt entschuldige mich bitte, ich habe einen Kaffee zu machen und etwas Jazz aufzulegen. Es ist 6 Uhr morgens, und mein Morgen-Ritual ruft.
 `,
+  videoId: 'ZaxoVb4Y9h8',
+  videoTitle: 'The Perfect Coffee Jazz for a Cozy Morning',
+  videoChannel: 'JazzSphere Radio',
 };
