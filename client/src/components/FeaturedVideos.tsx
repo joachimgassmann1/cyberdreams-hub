@@ -32,8 +32,8 @@ const FEATURED_VIDEOS = [
     channelTitle: "Deep Focus Sphere",
   },
   {
-    id: "Yr5rRcGZyQI",
-    title: "Romantic Vocal Jazz – Midnight Lounge Ambience for Relaxing Nights",
+    id: "P1TYNvGsFeY",
+    title: "Soulful Jazz in a Midnight Palace | A Candlelit Performance",
     channelTitle: "JazzSphere Radio",
   },
 ];
