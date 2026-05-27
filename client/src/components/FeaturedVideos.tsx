@@ -17,8 +17,8 @@ const FEATURED_VIDEOS = [
     channelTitle: "Pianosphere Radio",
   },
   {
-    id: "Gu9dNvn5hfU",
-    title: "Chill Beats for Sunset Vibes | Lounge & Relax Music",
+    id: "0SoN3A2wi8Q",
+    title: "Beach Bar Chillout Music | Smooth Tropical Lounge Music for Sunset Vibes",
     channelTitle: "Chillout Sphere",
   },
   {
