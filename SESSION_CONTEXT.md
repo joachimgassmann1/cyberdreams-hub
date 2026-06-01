@@ -1,279 +1,419 @@
 # SESSION_CONTEXT.md — Sphere Music Hub
-**Letzte Aktualisierung:** 05. April 2026  
+**Letzte Aktualisierung:** 27. Mai 2026  
 **Repository:** `https://github.com/joachimgassmann1/cyberdreams-hub.git`  
-**Live-Website:** `https://www.sphere-music-hub.com` (COM) + `https://www.sphere-music-hub.de` (DE)
+**Live-Website:** `https://www.sphere-music-hub.com` (EN) + `https://www.sphere-music-hub.de` (DE)
 
 ---
 
-## 1. Erste Schritte für jede neue Session
+## ⚡ SOFORT-SETUP FÜR JEDE NEUE SESSION
 
 ```bash
-# 1. Repository klonen (falls nicht vorhanden)
+# 1. Repository klonen
 gh repo clone joachimgassmann1/cyberdreams-hub
 cd cyberdreams-hub
-
-# 2. Auf neuesten Stand bringen
 git pull origin main
 
-# 3. .env Datei erstellen (Credentials aus CREDENTIALS_BACKUP.md lesen)
-# VITE_YOUTUBE_API_KEY, VITE_ANALYTICS_WEBSITE_ID, VITE_APP_ID, etc.
+# 2. .env Datei erstellen (IMMER nötig — steht nicht im Repo!)
+cat > .env << 'EOF'
+VITE_YOUTUBE_API_KEY=AIzaSyCqPitQCen49c6soCnEwYMni9gA3G9aYWc
+VITE_ANALYTICS_WEBSITE_ID=5fe939ca-a3f9-403d-b1d1-6d358c008cac
+VITE_ANALYTICS_ENDPOINT=https://analytics.manus.im
+VITE_APP_ID=nbg9ea9tCT3T5YUgNvKDXF
+VITE_FRONTEND_FORGE_API_KEY=MaSdVVw8PZVsweQB8BcmWX
+VITE_FRONTEND_FORGE_API_URL=https://forge.butterfly-effect.dev
+VITE_APP_TITLE=Sphere Music Hub
+EOF
 
-# 4. Abhängigkeiten installieren
+# 3. Abhängigkeiten installieren
 pnpm install
 
-# 5. Dokumentation lesen
-# README.md, docs/blog-database.md, ARTICLE_WORKFLOW.md, SESSION_CONTEXT.md (diese Datei)
+# 4. Dokumentation lesen
+# README.md → Übersicht
+# SESSION_CONTEXT.md → Diese Datei (vollständiger Projektstand)
+# ARTICLE_WORKFLOW.md → Nur wenn neue Artikel erstellt werden
+# docs/blog-database.md → Nur wenn neue Artikel erstellt werden
 ```
 
 ---
 
-## 2. Tech Stack
+## 🚨 ABSOLUTE VERBOTE — NIEMALS MACHEN
 
-| Bereich | Technologie |
-|---|---|
-| Framework | **Astro 5** (SSG — Static Site Generation) |
-| Frontend | **React 19** + TypeScript |
-| Styling | **Tailwind CSS v4** + shadcn/ui |
-| Build Tool | Vite |
-| Package Manager | pnpm |
-| Deployment | **Render.com** (Auto-deploy bei Push auf `main`) |
-| Hosting | Render.com (Static Site) |
-
-**WICHTIG:** Die Website ist eine **vollständige SSG** — kein Server-Side Rendering, kein CMS, kein Keystatic. Jeder Versuch ein CMS einzurichten hat die Website zerstört. Niemals ein CMS einrichten!
+1. **NIEMALS ein CMS einrichten** (Keystatic, Contentlayer, Sanity, Strapi etc.) — hat die Website bereits einmal komplett zerstört!
+2. **NIEMALS SSR aktivieren** — nur SSG (`output: 'static'` in astro.config.mjs). Niemals ändern!
+3. **NIEMALS den Astro output mode ändern** in astro.config.mjs
+4. **NIEMALS force-push** (`git push --force`) ohne vorherige Absprache
+5. **NIEMALS CookieBanner in AppProviders.tsx oder App.tsx** — nur in `src/layouts/Layout.astro`
+6. **NIEMALS `pnpm run build` überspringen** — immer vor dem Push testen!
+7. **NIEMALS neue npm/pnpm Pakete ohne Absprache installieren** — kann Build brechen
 
 ---
 
-## 3. Projektstruktur
+## 🏗️ Tech Stack & Architektur
+
+| Bereich | Technologie | Version |
+|---|---|---|
+| Framework | Astro (SSG) | 5.x |
+| Frontend | React + TypeScript | 19.x |
+| Styling | Tailwind CSS v4 + shadcn/ui | 4.x |
+| Build Tool | Vite | — |
+| Package Manager | pnpm | — |
+| Deployment | Render.com (Auto-deploy bei Push auf `main`) | — |
+| Fonts | Inter + Poppins (Google Fonts, lazy loaded) | — |
+
+**Deployment-Flow:** Push auf `main` → GitHub → Render.com baut automatisch → Live in 2-3 Min.
+
+**Build-Befehl auf Render:** `pnpm run build`  
+**Publish Directory:** `dist`
+
+---
+
+## 📂 Projektstruktur (vollständig)
 
 ```
 cyberdreams-hub/
-├── src/                          # Astro-Seiten und Layouts
-│   ├── layouts/Layout.astro      # Globales Layout (enthält CookieBanner!)
-│   ├── pages/                    # Astro-Seiten (.astro Dateien)
-│   └── components/               # Astro-Komponenten
-├── client/                       # React-Anwendung
+├── src/                              # Astro-Seiten und Layouts
+│   ├── layouts/
+│   │   └── Layout.astro              # ⚠️ CookieBanner NUR HIER! Globales Layout.
+│   └── pages/
+│       ├── index.astro               # Homepage
+│       ├── blog/
+│       │   └── [slug].astro          # Dynamische Blog-Artikel-Seiten
+│       ├── impressum.astro           # Impressum (URL: /impressum — NICHT /imprint!)
+│       └── datenschutz.astro         # Datenschutz (URL: /datenschutz — NICHT /privacy!)
+├── client/                           # React-Anwendung
 │   ├── src/
-│   │   ├── components/           # React-Komponenten
-│   │   ├── pages/                # React-Seiten-Komponenten
+│   │   ├── components/               # React-Komponenten
+│   │   │   ├── Navigation.tsx        # Navbar mit Theme-Toggle
+│   │   │   ├── Hero.tsx              # Homepage Hero-Section
+│   │   │   ├── Channels.tsx          # Kanal-Karten (inkl. "Coming Soon" Badge)
+│   │   │   ├── FeaturedVideos.tsx    # 6 Featured Videos auf Homepage
+│   │   │   ├── BlogTeaser.tsx        # Blog-Vorschau auf Homepage
+│   │   │   ├── Footer.tsx            # Footer
+│   │   │   ├── CookieBanner.tsx      # Cookie-Banner (wird in Layout.astro eingebunden)
+│   │   │   ├── AppProviders.tsx      # ⚠️ Theme + Analytics — KEIN CookieBanner hier!
+│   │   │   └── OptimizedImage.tsx    # ⚠️ Stateless! Kein useState/useEffect!
+│   │   ├── pages/
 │   │   │   └── blog/
-│   │   │       ├── BlogArticle.tsx   # Einzelner Blog-Artikel
-│   │   │       └── BlogOverview.tsx  # Blog-Übersicht
+│   │   │       ├── BlogArticle.tsx   # Einzelner Artikel (HTML+Markdown, Video-Embed)
+│   │   │       └── BlogOverview.tsx  # Blog-Übersicht mit Suche + Kategorie-Filter
 │   │   ├── data/
 │   │   │   └── blog/
 │   │   │       ├── types.ts          # BlogPost Interface
-│   │   │       ├── posts.ts          # Alle Blog-Posts importiert
-│   │   │       └── *.ts              # Einzelne Blog-Artikel-Dateien
-│   │   ├── contexts/             # React Contexts (ThemeContext etc.)
-│   │   ├── index.css             # Globales CSS + Tailwind + Typography Plugin
-│   │   └── AppProviders.tsx      # React Provider (KEIN CookieBanner hier!)
+│   │   │       ├── categories.ts     # Kategorien (IDs IMMER kleingeschrieben!)
+│   │   │       ├── posts.ts          # Alle Artikel importiert + exportiert
+│   │   │       └── *.ts              # Einzelne Artikel-Dateien (35 Stück)
+│   │   ├── contexts/                 # React Contexts (Theme, MusicPlayer)
+│   │   └── index.css                 # ⚠️ Tailwind + Typography Plugin (@plugin "@tailwindcss/typography")
 │   └── public/
-│       ├── sitemap.xml           # COM Sitemap (39 URLs)
-│       ├── sitemap-de.xml        # DE Sitemap (39 URLs)
-│       ├── robots.txt            # Verweist auf sitemap-v2.xml
-│       └── blog-images/          # Lokale Blog-Bilder
-├── public/                       # Astro Public Assets
-│   └── hero-bg.webp              # Homepage Hero-Bild
-├── astro.config.mjs              # Astro-Konfiguration
-├── render.yaml                   # Render.com Deployment-Konfiguration
-├── CREDENTIALS_BACKUP.md         # API-Keys (NICHT auf GitHub!)
-├── ARTICLE_WORKFLOW.md           # Workflow für neue Blog-Artikel
+│       ├── sitemap.xml               # EN Sitemap (.com) — 39 URLs
+│       ├── sitemap-v2.xml            # EN Sitemap v2 (identisch, für GSC eingereicht)
+│       ├── sitemap-de.xml            # DE Sitemap (.de) — 39 URLs
+│       ├── sitemap-de-v2.xml         # DE Sitemap v2 (identisch, für GSC eingereicht)
+│       ├── robots.txt                # Verweist auf sitemap-v2.xml + sitemap-de-v2.xml
+│       ├── blog-images/              # Lokale Blog-Hero-Bilder (WebP)
+│       ├── channel-*.webp            # Kanal-Bilder (400w + 700w Varianten)
+│       ├── hero-bg.webp              # Homepage Hero-Hintergrundbild
+│       ├── logo-48.webp              # Logo
+│       └── favicon.ico + *.png       # Favicons
+├── public/                           # Astro Public Assets (root-level)
+├── astro.config.mjs                  # ⚠️ NIEMALS output mode ändern!
+├── render.yaml                       # Render.com Deployment-Konfiguration
+├── .env                              # ⚠️ NICHT im Repo! Muss jede Session neu erstellt werden
+├── CREDENTIALS_BACKUP.md             # ⚠️ NICHT im Repo! Lokal in Sandbox
+├── SESSION_CONTEXT.md                # Diese Datei
+├── ARTICLE_WORKFLOW.md               # Workflow für neue Blog-Artikel
+├── README.md                         # Projekt-Übersicht
 └── docs/
-    └── blog-database.md          # Blog-Datenbank-Dokumentation
+    └── blog-database.md              # ⚠️ KRITISCH: Blog-Datenbank (bei neuen Artikeln updaten!)
 ```
 
 ---
 
-## 4. Kritische Architektur-Entscheidungen
+## 🔑 Credentials & API-Keys
 
-### CookieBanner — NUR in Layout.astro!
+**.env Inhalt (muss jede Session neu erstellt werden):**
 ```
-Layout.astro → CookieBanner (einzige Instanz)
-AppProviders.tsx → KEIN CookieBanner (wurde entfernt, da es sonst doppelt erscheint)
-```
-
-### Blog-Content-Rendering
-Blog-Artikel können HTML oder Markdown enthalten. `BlogArticle.tsx` erkennt das automatisch:
-```tsx
-{displayContent.trimStart().startsWith('<') ? (
-  <div dangerouslySetInnerHTML={{ __html: displayContent }} />
-) : (
-  <ReactMarkdown remarkPlugins={[remarkGfm]}>{displayContent}</ReactMarkdown>
-)}
+VITE_YOUTUBE_API_KEY=AIzaSyCqPitQCen49c6soCnEwYMni9gA3G9aYWc
+VITE_ANALYTICS_WEBSITE_ID=5fe939ca-a3f9-403d-b1d1-6d358c008cac
+VITE_ANALYTICS_ENDPOINT=https://analytics.manus.im
+VITE_APP_ID=nbg9ea9tCT3T5YUgNvKDXF
+VITE_FRONTEND_FORGE_API_KEY=MaSdVVw8PZVsweQB8BcmWX
+VITE_FRONTEND_FORGE_API_URL=https://forge.butterfly-effect.dev
+VITE_APP_TITLE=Sphere Music Hub
 ```
 
-### Tailwind Typography Plugin
-Aktiviert in `client/src/index.css`:
-```css
-@plugin "@tailwindcss/typography";
-```
-Ohne diesen Eintrag haben Überschriften und Absätze in Blog-Artikeln keine Abstände!
-
-### Dark Mode
-- Standard: Dark Mode (Klasse `dark` auf `<html>`)
-- `--primary-foreground` im Dark Mode: `oklch(0.98 0 0)` (Weiss) — für lesbare Button-Texte
-- Theme-Toggle in der Navigation
+**Google Analytics:** `G-JJXK61KJNE` (in Layout.astro, lazy loaded)  
+**Google Search Console Verification:** `q1xeuuYyjgx3E35Apdhy2uqvTixkPHzKN97sYpE0X7M`  
+**Kontakt-E-Mail:** `stillcybervisions@gmail.com`
 
 ---
 
-## 5. Blog-System
+## 🎬 YouTube-Kanäle (vollständig)
 
-### BlogPost Interface (types.ts)
+| Kanal | Handle | Channel-ID | Abonnenten | Status |
+|---|---|---|---|---|
+| Deep Focus Sphere | @DeepFocusSphere67 | UCWJCgh3eJ_mILLwZ4--snpA | 2.7K | ✅ Aktiv |
+| Chillout Sphere | @ChilloutSphere67 | UCuQPvy0FcB8EG5kKpvZfUjw | 869 | ✅ Aktiv |
+| Cyber Dreams | @CyberDreams-x9p | UCnLlBi5GoE7YFQHB-KmKe2Q | 173 | ✅ Aktiv |
+| JazzSphere Radio | @JazzSphereRadio | UC7JVkI8IrHqYxg4LB9jPVhg | 1.2K | ✅ Aktiv |
+| Pianosphere Radio | @PianosphereRadio | UCZlHnzC_oYrU9zJGxJQYbSw | 2 | ✅ Aktiv |
+| Guitarsphere Radio | @GuitarsphereRadio | UCiN4bH-VKz1YMvvYnRJXwOw | 0 | ⚠️ Leer — "Coming Soon" Badge |
+
+**Guitarsphere Radio:** Hat noch keine Videos. Zeigt "Coming Soon" Badge auf der Channels-Seite. Badge entfernen wenn Kanal live geht: `comingSoon: true` in `Channels.tsx` löschen.
+
+---
+
+## 🎥 Featured Videos auf der Homepage (FeaturedVideos.tsx)
+
+Aktueller Stand (27. Mai 2026):
+
+| Video-ID | Titel | Kanal |
+|---|---|---|
+| `ZLV_qi22E40` | Post-Apocalyptic Cyborg \| Immersive Dystopian Atmosphere for Coding | Cyber Dreams |
+| `XCh88UzbssA` | Chill Piano Escapes – Cozy Melodies to Unwind | Pianosphere Radio |
+| `0SoN3A2wi8Q` | Beach Bar Chillout Music \| Smooth Tropical Lounge Music for Sunset Vibes | Chillout Sphere |
+| `WrUw5iL2J3A` | Deep Work Soundscape – Stay Focused for Hours with Cozy Office Vibes | Deep Focus Sphere |
+| `xPjrkMmZElw` | Deep Focus Vibes: The Ultimate Study Music Mix | Deep Focus Sphere |
+| `P1TYNvGsFeY` | Soulful Jazz in a Midnight Palace \| A Candlelit Performance | JazzSphere Radio |
+
+**Videos tauschen:** In `client/src/components/FeaturedVideos.tsx` die `id` und `title` im `FEATURED_VIDEOS`-Array ändern.
+
+---
+
+## 📚 Blog-Artikel (35 Stück — Stand 27. Mai 2026)
+
+### Kategorien-Übersicht
+| Kategorie | Anzahl | Status |
+|---|---|---|
+| focus | 9 | ✅ |
+| insights | 8 | ✅ |
+| jazz | 4 | ✅ |
+| relax | 5 | ✅ |
+| cyberpunk | 3 | ✅ |
+| chillout | 2 | ⚠️ Braucht mehr Content |
+| piano | 2 | ⚠️ Braucht mehr Content |
+
+### Vollständige Artikel-Liste
+
+| Datei | Kategorie | Video-ID | Kanal |
+|---|---|---|---|
+| ai-music-trained-musician | insights | — | — |
+| ambient-vs-lofi-deep-work | focus | 37apvxW6nh8 | Deep Focus Sphere |
+| audio-mastering-fairlight-youtube | insights | — | — |
+| binaural-beats | focus | bobz8Xt8Ua0 | Deep Focus Sphere |
+| brain-reset-burnout | relax | mrYA_C4mRIg | Chillout Sphere |
+| chillout-psychology | chillout | xX_6Afj7LKE | Chillout Sphere |
+| cinematic-ambient-focus | focus | TKgSbDoaB9I | Cyber Dreams |
+| coding-in-the-matrix | cyberpunk | HTg3cwUZjGY | Cyber Dreams |
+| cyberpunk-soundscapes | cyberpunk | cdbdqx60K2Y | Cyber Dreams |
+| dystopian-rain-focus | cyberpunk | cre-smGaoEs | Cyber Dreams |
+| fast-4k-rendering | insights | — | — |
+| focus-music-guide | focus | P6trWTSjOTQ | Deep Focus Sphere |
+| harvard-study-music | focus | eAiDX4hSThE | Deep Focus Sphere |
+| inside-atmosphere-creative-process | insights | — | — |
+| jazz-atmosphere | jazz | nVgywnu7znI | JazzSphere Radio |
+| jazz-brain-focus | jazz | QrphP6lfD7Y | JazzSphere Radio |
+| jazz-sleep-science | jazz | Q3as1J9PXg0 | JazzSphere Radio |
+| jazz-vs-classical-stress-relief | jazz | EnL1AHG09wY | JazzSphere Radio |
+| joachim-creator-story | insights | — | — |
+| lofi-vs-ambient-music | focus | xPjrkMmZElw | Deep Focus Sphere |
+| morning-coffee-jazz-ritual | insights | ZaxoVb4Y9h8 | JazzSphere Radio |
+| night-shift-mind | focus | jBkCFxaKxGw | Deep Focus Sphere |
+| perfect-focus-playlist | focus | ADZvL5c3ME8 | Deep Focus Sphere |
+| piano-soul | piano | Tx6LKwnhHUQ | Pianosphere Radio |
+| piano-stress-relief | piano | 0T4XDHO7pfA | Pianosphere Radio |
+| piano-vs-guitar-anxiety | relax | cV3fm4Mi5qg | Pianosphere Radio |
+| pomodoro-playlist-music | focus | Si2N3kzW-w8 | Deep Focus Sphere |
+| quiet-cure-relaxation | relax | nZzteuCoYn0 | Chillout Sphere |
+| seamless-loops-davinci-resolve | insights | — | — |
+| silence-anxiety | insights | XLm9OxhczEg | Pianosphere Radio |
+| sleep-music-science | relax | dRc4Fi1YKUM | Pianosphere Radio |
+| study-music-guide | focus | uw6H-ZpniqA | Deep Focus Sphere |
+| sunset-effect-chillout | chillout | sI3pGdr2dmk | Chillout Sphere |
+| video-production-journey | insights | — | — |
+| why-people-relax-wrong | relax | Tw_odHzPML0 | Chillout Sphere |
+
+---
+
+## 🖼️ Bilder & Design-Richtlinien
+
+### Hero-Bilder für Blog-Artikel
+- **Format:** WebP
+- **Größe:** UNTER 100 KB (kritisch!)
+- **Farben:** Cyan / Purple / Pink / Blue Lighting
+- **Stil:** Dark / Moody / Cyberpunk / Neon
+- **NIEMALS:** Helles Tageslicht, generische Stock-Fotos, bunte Farben
+- **Seitenverhältnis:** 4:3 oder 16:9 (keine schwarzen Balken!)
+- **Speicherort:** `client/public/blog-images/[slug]-hero.webp`
+
+### Lokale Blog-Bilder (in /blog-images/)
+```
+ambient-soundscapes-hero.webp         (Blog-Hero-Hintergrund)
+cyberpunk-futuristic-soundscapes-hero.webp
+fast-4k-rendering-davinci-resolve-hero.webp
+focus-music-productivity-hero.webp
+inside-atmosphere-creative-process-hero.webp
+jazz-atmosphere-warm-acoustic-hero.webp
+joachim-creator-story-hero.webp
+productivity-hacks-hero.webp
+psychology-chillout-music-hero.webp
+quiet-cure-relaxation-essential-skill-hero.webp
+soul-of-piano-ambience-hero.webp
+ultimate-guide-focus-music-hero.webp
+```
+
+### Kanal-Bilder (in /public/)
+Jeder Kanal hat 3 Varianten: `channel-[name]-new.webp`, `channel-[name]-new-400.webp`, `channel-[name]-new-700.webp`
+
+---
+
+## 🔍 SEO-Konfiguration
+
+### Sitemaps
+| Datei | Domain | URLs | Status |
+|---|---|---|---|
+| `sitemap.xml` | sphere-music-hub.com | 39 | ✅ Live |
+| `sitemap-v2.xml` | sphere-music-hub.com | 39 | ✅ Live (in GSC eingereicht) |
+| `sitemap-de.xml` | sphere-music-hub.de | 39 | ✅ Live |
+| `sitemap-de-v2.xml` | sphere-music-hub.de | 39 | ✅ Live (in GSC eingereicht) |
+
+**robots.txt** verweist auf `sitemap-v2.xml` und `sitemap-de-v2.xml` — diese sind live und erreichbar.
+
+### Wichtige URLs
+- `/impressum` (NICHT `/imprint`)
+- `/datenschutz` (NICHT `/privacy`)
+
+### Schema.org
+Implementiert: `BlogPosting`, `BreadcrumbList`, `Organization`, `WebSite`, `VideoObject`
+
+### Open Graph & Twitter Cards
+Implementiert in `Layout.astro` und `BlogArticle.tsx`
+
+### Google Analytics
+ID: `G-JJXK61KJNE` — lazy loaded nach `window.load` Event (Performance-Optimierung)
+
+### hreflang
+Implementiert in Sitemaps. `.com` = EN, `.de` = DE.
+
+---
+
+## 🎨 Design-System
+
+### Farben (Dark Mode Standard)
+- **Primary:** Cyan/Teal (`--primary`)
+- **Accent:** Lila/Purple (`--accent`)
+- **Background:** Sehr dunkles Blau-Schwarz
+- **Foreground:** Fast Weiß
+- **⚠️ `--primary-foreground` im Dark Mode = Weiß** — nicht ändern! (Button-Text)
+
+### Fonts
+- **Headings:** Poppins (600, 700, 800)
+- **Body:** Inter (300, 400, 500, 600, 700, 800)
+
+### Blog-Hero Overlay (BlogOverview.tsx)
+- Primärer Overlay: `bg-background/50` (50% — aufgehellt am 5. April 2026)
+- Gradient: `from-background/20 via-transparent to-background`
+
+---
+
+## 📝 Blog-Artikel erstellen (Kurzanleitung)
+
+1. `docs/blog-database.md` lesen — Themen-Überschneidungen prüfen
+2. `ARTICLE_WORKFLOW.md` lesen — vollständige Checkliste
+3. Artikel-Datei erstellen: `client/src/data/blog/[slug].ts`
+4. In `client/src/data/blog/posts.ts` importieren
+5. Beide Sitemaps updaten: `sitemap.xml` + `sitemap-de.xml` (und v2-Versionen!)
+6. `docs/blog-database.md` updaten
+7. `README.md` Artikel-Zähler updaten
+8. `pnpm run build` testen
+9. Pushen
+
+**BlogPost Interface (types.ts):**
 ```typescript
-interface BlogPost {
-  slug: string;
-  title: string;
-  titleDe?: string;
-  description: string;
-  descriptionDe?: string;
-  content: string;           // HTML oder Markdown
+{
+  slug: string;           // lowercase-with-dashes
+  title: string;          // EN
+  titleDe?: string;       // DE
+  description: string;    // EN (max 155 Zeichen für SEO!)
+  descriptionDe?: string; // DE
+  content: string;        // HTML oder Markdown (automatisch erkannt)
   contentDe?: string;
-  heroImage: string;         // URL (CloudFront oder /blog-images/...)
-  category: string;          // KLEINBUCHSTABEN: 'focus', 'relax', 'jazz', 'piano', 'cyberpunk', 'insights'
+  heroImage: string;      // URL oder /blog-images/...
+  category: string;       // ⚠️ IMMER kleingeschrieben: 'focus','relax','jazz','piano','cyberpunk','chillout','insights'
   tags: string[];
   tagsDe?: string[];
   author: string;
-  publishDate: string;       // 'YYYY-MM-DD'
+  publishDate: string;    // 'YYYY-MM-DD'
   readingTime: number;
   featured?: boolean;
-  videoId?: string;          // YouTube Video-ID (optional)
+  videoId?: string;       // YouTube Video-ID (optional)
   videoTitle?: string;
   videoChannel?: string;
 }
 ```
 
-**WICHTIG:** `category` muss **kleingeschrieben** sein! Falsche Schreibweise (`'Jazz'` statt `'jazz'`) führt dazu dass der Kategorie-Badge nicht angezeigt wird.
-
-### Neuen Artikel hinzufügen
-1. Neue Datei in `client/src/data/blog/mein-artikel.ts` erstellen
-2. In `client/src/data/blog/posts.ts` importieren und zum `blogPosts`-Array hinzufügen
-3. In `client/public/sitemap.xml` und `client/public/sitemap-de.xml` eintragen
-4. Build testen: `pnpm run build`
-5. Pushen: `git add -A && git commit -m "feat: add blog article" && git push origin main`
-
 ---
 
-## 6. YouTube-Videos
-
-### Kanal-Übersicht
-| Kanal | Handle | Thema |
-|---|---|---|
-| Deep Focus Sphere | @DeepFocusSphere | Fokusmusik, Ambient für Arbeit/Studium |
-| Chillout Sphere | @ChilloutSphere | Entspannung, Lounge, Relax |
-| Cyber Dreams | @CyberDreams | Cyberpunk, Dark Ambient, Coding |
-| JazzSphere Radio | @JazzSphereRadio | Jazz, Soul, Smooth Jazz |
-| Pianosphere Radio | @PianosphereRadio | Piano, Klassik, Akustik |
-
-### Video-Embed in Blog-Artikeln
-Videos werden am Ende des Artikels (vor den Tags) als "🎧 Listen While You Read"-Sektion eingebettet.
-
-**Format in der Artikel-Datei:**
-```typescript
-videoId: 'VIDEO_ID_HIER',
-videoTitle: 'Vollständiger Video-Titel',
-videoChannel: 'Kanal-Name',
-```
-
-### Artikel mit Video (28 von 40)
-| Slug | Video-ID | Kanal |
-|---|---|---|
-| ultimate-guide-focus-music-productivity | P6trWTSjOTQ | Deep Focus Sphere |
-| best-study-music-harvard-neuroscience | eAiDX4hSThE | Deep Focus Sphere |
-| study-music-guide-what-science-says-works | uw6H-ZpniqA | Deep Focus Sphere |
-| how-to-build-perfect-focus-music-playlist-science-backed-method | ADZvL5c3ME8 | Deep Focus Sphere |
-| lofi-vs-ambient-music-focus-study | xPjrkMmZElw | Deep Focus Sphere |
-| binaural-beats-science-focus-meditation | bobz8Xt8Ua0 | Deep Focus Sphere |
-| night-shift-mind-late-evening-focus-creativity | jBkCFxaKxGw | Deep Focus Sphere |
-| why-ambient-music-works-better-than-lofi-for-deep-work | 37apvxW6nh8 | Deep Focus Sphere |
-| pomodoro-playlist-music-focus | Si2N3kzW-w8 | Deep Focus Sphere |
-| 20-minute-brain-reset-soundscapes-prevent-burnout | mrYA_C4mRIg | Chillout Sphere |
-| psychology-chillout-music-calm-soundscapes-stress-reduction | xX_6Afj7LKE | Chillout Sphere |
-| quiet-cure-why-relaxation-essential-skill-modern-life | nZzteuCoYn0 | Chillout Sphere |
-| sunset-effect-why-chillout-music-feels-better-at-dusk | sI3pGdr2dmk | Chillout Sphere |
-| why-most-people-relax-wrong-how-music-can-fix-it | Tw_odHzPML0 | Chillout Sphere |
-| soul-of-piano-soft-ambience-heals-mind-mood | Tx6LKwnhHUQ | Pianosphere Radio |
-| why-piano-music-ultimate-stress-relief-trained-pianist | 0T4XDHO7pfA | Pianosphere Radio |
-| piano-vs-guitar-anxiety-relief-trained-pianist-verdict | cV3fm4Mi5qg | Pianosphere Radio |
-| silence-anxiety-sleep | XLm9OxhczEg | Pianosphere Radio |
-| sleep-music-science-ambient-soundscapes-deep-rest | dRc4Fi1YKUM | Pianosphere Radio |
-| jazz-atmosphere-warm-acoustic-spaces-calm-mind | nVgywnu7znI | JazzSphere Radio |
-| why-your-brain-needs-jazz-to-focus-white-noise-fails | QrphP6lfD7Y | JazzSphere Radio |
-| science-jazz-sleep-smooth-jazz-better-white-noise | Q3as1J9PXg0 | JazzSphere Radio |
-| why-jazz-works-better-than-classical-stress-relief-trained-pianist | EnL1AHG09wY | JazzSphere Radio |
-| morning-coffee-jazz-ritual-metal-guitarist-stress-relief | ZaxoVb4Y9h8 | JazzSphere Radio |
-| coding-in-the-matrix | HTg3cwUZjGY | Cyber Dreams |
-| cyberpunk-futuristic-soundscapes-creativity-focus-flow | cdbdqx60K2Y | Cyber Dreams |
-| dystopian-rain-sounds-deep-focus-cyberpunk | cre-smGaoEs | Cyber Dreams |
-| cinematic-ambient-focus | TKgSbDoaB9I | Cyber Dreams |
-
-### Artikel OHNE Video (bewusst)
-- ai-music-trained-pianist-guitarist-suno-udio-topmedi
-- audio-mastering-davinci-resolve-fairlight-youtube-lufs
-- fast-4k-rendering-davinci-resolve-studio-workflow
-- inside-atmosphere-how-joachim-creates-emotional-worlds-sphere-music-hub
-- mind-behind-atmospheres-joachim-creator-sphere-music-hub
-- perfect-seamless-loops-davinci-resolve-long-form-videos
-- video-production-journey-10-hour-workflow
-- jazz-brain-focus (kein passendes Video gefunden)
-
----
-
-## 7. SEO-Status
-
-### Sitemaps
-- `client/public/sitemap.xml` → COM-Version (39 URLs, `https://www.sphere-music-hub.com/...`)
-- `client/public/sitemap-de.xml` → DE-Version (39 URLs, `https://www.sphere-music-hub.de/...`)
-- `robots.txt` verweist auf `sitemap-v2.xml` (in GSC eingereicht)
-- In Google Search Console eingereicht: `https://www.sphere-music-hub.com/sitemap-v2.xml`
-
-### Legal-URLs (korrekt!)
-- `/impressum` (NICHT `/imprint`)
-- `/datenschutz` (NICHT `/privacy`)
-
-### Bekannte SEO-Situation
-- Google hat bisher nur ~2 Seiten indexiert (Stand 05.04.2026)
-- Die Astro SSG-Migration wurde am 30. März 2026 abgeschlossen
-- Google braucht Zeit — die Sitemap ist korrekt eingereicht
-
----
-
-## 8. Bekannte Probleme & Lösungen
-
-| Problem | Lösung |
-|---|---|
-| Blog-Bilder flackern | `OptimizedImage.tsx` ist stateless (kein useState) — nicht ändern! |
-| Blog-Content zeigt HTML-Tags | Automatische Erkennung in BlogArticle.tsx — HTML → dangerouslySetInnerHTML, Markdown → ReactMarkdown |
-| Kategorie-Badge fehlt | `category`-Feld muss kleingeschrieben sein: `'jazz'` nicht `'Jazz'` |
-| Button-Text unsichtbar | `--primary-foreground` im Dark Mode ist Weiss — nicht ändern! |
-| Doppeltes Cookie-Banner | CookieBanner NUR in Layout.astro, NICHT in AppProviders.tsx |
-| Videos nicht auf Live-Site | Render.com-Deployment abwarten (3-5 Min) oder leeren Commit pushen |
-
----
-
-## 9. Deployment-Workflow
+## 🚀 Deployment-Workflow
 
 ```bash
-# Standard-Workflow für Änderungen:
-pnpm run build          # Build testen (muss ohne Fehler durchlaufen)
+# Standard
+pnpm run build          # IMMER zuerst testen!
 git add -A
 git commit -m "feat/fix/chore: Beschreibung"
-git push origin main    # Render.com deployed automatisch
+git push origin main    # Render deployed automatisch in 2-3 Min
 
-# Deployment erzwingen (falls Render hängt):
-git commit --allow-empty -m "chore: trigger deployment"
+# Deployment erzwingen (falls Render hängt)
+git commit --allow-empty -m "chore: trigger redeploy"
 git push origin main
 ```
 
-**Render.com Build-Befehl:** `pnpm run build`  
-**Publish Directory:** `dist`
+---
+
+## 👤 Über Joachim (für Blog-Artikel-Stil)
+
+- **Piano:** 10 Jahre klassisches Training
+- **Gitarre:** 20 Jahre (Metal, Rock, Technical)
+- **Aktuell:** KI-generierte Ambient-Musik für YouTube-Kanäle
+- **Schreibstil:** Konversationell — wie mit einem Freund reden, NICHT akademisch
+- **Persönliche Geschichten:** Immer einbauen (Piano-Hintergrund, Gitarren-Erfahrung, Creator-Journey)
+- **Keine Bullet-Listen** im Haupttext — fließende Absätze
 
 ---
 
-## 10. Wichtige Regeln
+## 📊 Performance-Werte (Stand April 2026)
 
-1. **NIEMALS ein CMS einrichten** — die Website ist SSG, kein CMS nötig
-2. **NIEMALS SSR aktivieren** — nur SSG (`output: 'static'` in astro.config.mjs)
-3. **NIEMALS force-push** ohne vorherigen Backup-Commit
-4. **IMMER** `pnpm run build` testen vor dem Push
-5. **IMMER** beide Sitemaps aktualisieren wenn neue Artikel hinzugefügt werden
-6. **IMMER** `category` kleingeschrieben in Blog-Artikeln
-7. **CookieBanner** nur in `Layout.astro` — nicht in `AppProviders.tsx`
+| Metrik | Score |
+|---|---|
+| Mobile PageSpeed | 75/100 |
+| Desktop PageSpeed | 96/100 |
+| SEO Score | 92/100 |
+| Accessibility | 93/100 |
+
+---
+
+## 🔗 Wichtige Links
+
+| Link | URL |
+|---|---|
+| Live-Website EN | https://www.sphere-music-hub.com |
+| Live-Website DE | https://www.sphere-music-hub.de |
+| GitHub Repository | https://github.com/joachimgassmann1/cyberdreams-hub |
+| Render Dashboard | https://dashboard.render.com |
+| Google Search Console | https://search.google.com/search-console |
+| Google Analytics | https://analytics.google.com |
+
+---
+
+## 📋 Bekannte Probleme & Lösungen
+
+| Problem | Ursache | Lösung |
+|---|---|---|
+| Blog-Bilder flackern | useState in OptimizedImage | `OptimizedImage.tsx` ist stateless — NICHT ändern! |
+| HTML-Tags im Blog sichtbar | Falsches Rendering | BlogArticle.tsx erkennt automatisch HTML vs Markdown |
+| Kategorie-Badge fehlt | Großschreibung in `category` | `category` IMMER kleingeschrieben: `'jazz'` nicht `'Jazz'` |
+| Button-Text unsichtbar | Dark Mode CSS | `--primary-foreground` = Weiß im Dark Mode — nicht ändern! |
+| Doppeltes Cookie-Banner | CookieBanner in AppProviders | CookieBanner NUR in `Layout.astro` |
+| Render deployed nicht | Push ohne Änderung | Leeren Commit pushen: `git commit --allow-empty` |
+| Build schlägt fehl | Fehlende .env | `.env` Datei neu erstellen (Credentials oben) |
+
