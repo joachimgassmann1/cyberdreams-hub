@@ -1,11 +1,24 @@
 # Sphere Music Hub - Blog Content Database
 **Zweck:** Verhindert Wiederholungen bei neuen Artikeln  
-**Stand:** 18. Dezember 2025  
-**Artikel:** 29 (alle EN + DE)
+**Stand:** 2. Juni 2026
+**Artikel:** 36 (alle EN + DE)
 
 ---
 
 ## 📋 Alle Artikel mit Kernthemen
+
+### 36. The Evening Wind-Down Routine: How to Tell Your Brain the Workday Is Over (Relax)
+**Slug:** `evening-wind-down-routine-brain-workday-over`
+**Datei:** `evening-wind-down-routine.ts`
+**Datum:** 2026-06-02
+**Tags:** evening routine, relaxation music, stress relief, chillout music, nervous system, sleep preparation, wind down
+**Kernthemen:**
+- Praktische 20-Minuten-Abendroutine als Übergang von Arbeitsmodus zu Ruhemodus
+- Musik als sanfte Klangbrücke statt abruptem Abschalten nach Laptop/Screen-Time
+- Konkrete Kanal-Verbindung: Chillout Sphere für den Einstieg, Pianosphere Radio für emotionale Erdung, JazzSphere Radio für warme Abendatmosphäre
+- Humorvoller Alltagston: Sofa-Falle, Handy-Regel, Stressreaktion ohne trockene Faktenliste
+
+---
 
 ### 1. The 20-Minute Brain Reset: Using Soundscapes to Prevent Burnout (Relax)
 **Slug:** `20-minute-brain-reset-soundscapes-prevent-burnout`

@@ -101,13 +101,13 @@ cyberdreams-hub/
 │   │   │       ├── types.ts          # BlogPost Interface
 │   │   │       ├── categories.ts     # Kategorien (IDs IMMER kleingeschrieben!)
 │   │   │       ├── posts.ts          # Alle Artikel importiert + exportiert
-│   │   │       └── *.ts              # Einzelne Artikel-Dateien (35 Stück)
+│   │   │       └── *.ts              # Einzelne Artikel-Dateien (36 Stück)
 │   │   ├── contexts/                 # React Contexts (Theme, MusicPlayer)
 │   │   └── index.css                 # ⚠️ Tailwind + Typography Plugin (@plugin "@tailwindcss/typography")
 │   └── public/
-│       ├── sitemap.xml               # EN Sitemap (.com) — 39 URLs
+│       ├── sitemap.xml               # EN Sitemap (.com) — 40 URLs
 │       ├── sitemap-v2.xml            # EN Sitemap v2 (identisch, für GSC eingereicht)
-│       ├── sitemap-de.xml            # DE Sitemap (.de) — 39 URLs
+│       ├── sitemap-de.xml            # DE Sitemap (.de) — 40 URLs
 │       ├── sitemap-de-v2.xml         # DE Sitemap v2 (identisch, für GSC eingereicht)
 │       ├── robots.txt                # Verweist auf sitemap-v2.xml + sitemap-de-v2.xml
 │       ├── blog-images/              # Lokale Blog-Hero-Bilder (WebP)
@@ -180,7 +180,14 @@ Aktueller Stand (27. Mai 2026):
 
 ---
 
-## 📚 Blog-Artikel (35 Stück — Stand 27. Mai 2026)
+## 📚 Blog-Artikel (36 Stück — Stand 2. Juni 2026)
+
+### 36. The Evening Wind-Down Routine: How to Tell Your Brain the Workday Is Over (Relax)
+- **Slug:** `evening-wind-down-routine-brain-workday-over`
+- **Datei:** `client/src/data/blog/evening-wind-down-routine.ts`
+- **Datum:** 2026-06-02
+- **Fokus:** Praktische Abendroutine zum Herunterfahren nach der Arbeit mit Chillout Sphere, optional Pianosphere Radio und JazzSphere Radio.
+- **Stil:** Nützlich, humorvoll, alltagsnah; keine reine Faktenliste, sondern konkrete Relax-Anwendung mit natürlicher Kanal-Verbindung.
 
 ### Kategorien-Übersicht
 | Kategorie | Anzahl | Status |
@@ -272,10 +279,10 @@ Jeder Kanal hat 3 Varianten: `channel-[name]-new.webp`, `channel-[name]-new-400.
 ### Sitemaps
 | Datei | Domain | URLs | Status |
 |---|---|---|---|
-| `sitemap.xml` | sphere-music-hub.com | 39 | ✅ Live |
-| `sitemap-v2.xml` | sphere-music-hub.com | 39 | ✅ Live (in GSC eingereicht) |
-| `sitemap-de.xml` | sphere-music-hub.de | 39 | ✅ Live |
-| `sitemap-de-v2.xml` | sphere-music-hub.de | 39 | ✅ Live (in GSC eingereicht) |
+| `sitemap.xml` | sphere-music-hub.com | 40 | ✅ Live |
+| `sitemap-v2.xml` | sphere-music-hub.com | 40 | ✅ Live (in GSC eingereicht) |
+| `sitemap-de.xml` | sphere-music-hub.de | 40 | ✅ Live |
+| `sitemap-de-v2.xml` | sphere-music-hub.de | 40 | ✅ Live (in GSC eingereicht) |
 
 **robots.txt** verweist auf `sitemap-v2.xml` und `sitemap-de-v2.xml` — diese sind live und erreichbar.
 

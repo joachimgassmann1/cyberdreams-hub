@@ -34,8 +34,13 @@ import { silenceAnxiety } from './silence-anxiety';
 import { codingInTheMatrix } from './coding-in-the-matrix';
 import { jazzBrainFocus } from './jazz-brain-focus';
 import { brainResetBurnout } from './brain-reset-burnout';
+import { eveningWindDownRoutine } from './evening-wind-down-routine';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...eveningWindDownRoutine,
+ featured: true
+ },
  {
  ...brainResetBurnout,
  featured: true
