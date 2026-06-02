@@ -69,6 +69,21 @@ export default function BlogArticle({ slug, params }: { slug?: string, params?: 
   const displayTags = lang === 'de' && post.tagsDe ? post.tagsDe : post.tags;
   const displayContent = lang === 'de' && post.contentDe ? post.contentDe : post.content;
 
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.title = `${displayTitle} | Sphere Music Hub Blog`;
+
+    const descriptionMeta = document.querySelector('meta[name="description"]');
+    if (descriptionMeta) {
+      descriptionMeta.setAttribute('content', displayDescription);
+    }
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      canonicalLink.setAttribute('href', `${window.location.origin}${window.location.pathname}`);
+    }
+  }, [lang, displayTitle, displayDescription]);
+
   // Use current domain for canonical URL
   const currentDomain = typeof window !== 'undefined' ? window.location.hostname : 'sphere-music-hub.com';
   const baseDomain = currentDomain.includes('sphere-music-hub.de') ? 'sphere-music-hub.de' : 'sphere-music-hub.com';
