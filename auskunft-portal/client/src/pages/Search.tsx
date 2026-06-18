@@ -1,4 +1,5 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { BotLoader } from "@/components/BotLoader";
 import { useLocation } from "wouter";
 import { SlidersHorizontal, Grid3X3, List, MapPin, ChevronDown, X, Star, Filter } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -20,6 +21,14 @@ export default function Search() {
   const [minRating, setMinRating] = useState(0);
   const [onlyOpen, setOnlyOpen] = useState(false);
   const [onlyVerified, setOnlyVerified] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Bot-Ladeanimation beim ersten Laden und bei neuen Suchen
+  useEffect(() => {
+    setIsLoading(true);
+    const timer = setTimeout(() => setIsLoading(false), 1800);
+    return () => clearTimeout(timer);
+  }, [wasParam, woParam]);
 
   const filtered = useMemo(() => {
     let results = [...featuredBusinesses];
@@ -59,6 +68,7 @@ export default function Search() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
+      <BotLoader open={isLoading} />
       <Navbar />
 
       {/* Search header */}
