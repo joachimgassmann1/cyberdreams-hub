@@ -36,7 +36,7 @@ pnpm install
 
 | Metrik | Wert |
 |---|---|
-| Blog-Artikel | **36** veröffentlicht |
+| Blog-Artikel | **37** veröffentlicht |
 | YouTube-Kanäle | **6** (5 aktiv, 1 Coming Soon) |
 | Featured Videos | **6** auf der Homepage |
 | Sitemaps | 4 Dateien (v1 + v2, COM + DE) |

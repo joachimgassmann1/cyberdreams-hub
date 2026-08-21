@@ -4,7 +4,7 @@ import { detectLanguage } from "@/lib/i18n";
 import { useMusicPlayer } from "@/contexts/MusicPlayerContext";
 import { useState, useEffect } from "react";
 
-// Static featured videos (updated manually as needed - last update: Nov 26, 2025)
+// Static featured videos (updated manually as needed - last update: Aug 21, 2026)
 const FEATURED_VIDEOS = [
   {
     id: "ZLV_qi22E40",
@@ -12,8 +12,8 @@ const FEATURED_VIDEOS = [
     channelTitle: "Cyber Dreams",
   },
   {
-    id: "XCh88UzbssA",
-    title: "Chill Piano Escapes – Cozy Melodies to Unwind",
+    id: "wPz3QF2FH2s",
+    title: "Seaside Evening Piano Ambience | Romantic Dinner Music, Relaxation & Calm",
     channelTitle: "Pianosphere Radio",
   },
   {

@@ -105,9 +105,9 @@ cyberdreams-hub/
 │   │   ├── contexts/                 # React Contexts (Theme, MusicPlayer)
 │   │   └── index.css                 # ⚠️ Tailwind + Typography Plugin (@plugin "@tailwindcss/typography")
 │   └── public/
-│       ├── sitemap.xml               # EN Sitemap (.com) — 40 URLs
+│       ├── sitemap.xml               # EN Sitemap (.com) — 41 URLs
 │       ├── sitemap-v2.xml            # EN Sitemap v2 (identisch, für GSC eingereicht)
-│       ├── sitemap-de.xml            # DE Sitemap (.de) — 40 URLs
+│       ├── sitemap-de.xml            # DE Sitemap (.de) — 41 URLs
 │       ├── sitemap-de-v2.xml         # DE Sitemap v2 (identisch, für GSC eingereicht)
 │       ├── robots.txt                # Verweist auf sitemap-v2.xml + sitemap-de-v2.xml
 │       ├── blog-images/              # Lokale Blog-Hero-Bilder (WebP)

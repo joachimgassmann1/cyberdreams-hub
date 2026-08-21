@@ -1,12 +1,24 @@
 # Sphere Music Hub - Blog Content Database
 **Zweck:** Verhindert Wiederholungen bei neuen Artikeln  
-**Stand:** 2. Juni 2026
-**Artikel:** 36 (alle EN + DE)
+**Stand:** 21. August 2026
+**Artikel:** 37 (alle EN + DE)
 
 ---
 
 ## 📋 Alle Artikel mit Kernthemen
 
+### 37. The 30-Minute Romantic Dinner Reset: How Piano Music Helps You Leave the Day Behind (Piano)
+**Slug:** `romantic-dinner-piano-routine`
+**Datei:** `romantic-dinner-piano-routine.ts`
+**Datum:** 2026-08-21
+**Tags:** romantic dinner music, piano ambience, relaxation music, evening routine, calm at home, dinner ambience, Pianosphere Radio
+**Kernthemen:**
+- Praktische 30-Minuten-Routine für einen ruhigeren gemeinsamen Abend oder ein bewusstes Solo-Dinner
+- Fokus auf Lautstärke, weniger Bildschirmkonkurrenz und eine wiederholbare Übergangssequenz statt Perfektionsdruck
+- Faktengrundlage: 2024er Feldexperiment zu Musiktempo und Aufenthaltsdauer beim Essen; bewusst als Restaurantbefund eingeordnet, nicht als Heilsversprechen für zu Hause
+- Direkte Video-Verbindung: `Seaside Evening Piano Ambience | Romantic Dinner Music, Relaxation & Calm` von Pianosphere Radio (`wPz3QF2FH2s`)
+- Humorvoller Alltagston: keine Playlist-Castingshow, kein Restaurant-Rollenspiel und kein Fernseher, der aufs Kartoffelpüree gerichtet ist
+---
 ### 36. The Evening Wind-Down Routine: How to Tell Your Brain the Workday Is Over (Relax)
 **Slug:** `evening-wind-down-routine-brain-workday-over`
 **Datei:** `evening-wind-down-routine.ts`
@@ -435,7 +447,7 @@
 - ✅ Chillout
 - ✅ Cyberpunk Soundscapes (2 Artikel)
 - ✅ Jazz Atmosphere
-- ✅ Piano Ambience (2 Artikel)
+- ✅ Piano Ambience (3 Artikel)
 - ✅ Binaural Beats
 - ✅ Rain Sounds
 - ✅ Dystopian Ambience
@@ -497,15 +509,15 @@
 
 ## 📊 Kategorie-Verteilung (Stand: 30. Nov. 2025)
 
-- **Focus:** 6 Artikel ✅ (gut abgedeckt)
-- **Insights:** 8 Artikel ✅ (sehr gut)
-- **Relax:** 3 Artikel ✅ (besser!)
-- **Piano:** 2 Artikel ⚠️ (braucht mehr!)
-- **Jazz:** 2 Artikel ⚠️ (besser, aber braucht noch mehr!)
-- **Cyberpunk:** 2 Artikel ✅
-- **Chillout:** 1 Artikel ⚠️
+- **Focus:** 10 Artikel ✅ (gut abgedeckt)
+- **Insights:** 9 Artikel ✅ (sehr gut abgedeckt)
+- **Relax:** 6 Artikel ✅
+- **Piano:** 3 Artikel ⚠️ (weiter ausbauen)
+- **Jazz:** 4 Artikel ⚠️ (weiter ausbauen)
+- **Cyberpunk:** 3 Artikel ✅
+- **Chillout:** 2 Artikel ⚠️
 
-**Empfehlung:** Fokus auf Piano, Jazz, Chillout in den nächsten Artikeln!
+**Empfehlung:** Weiterer Fokus auf Piano, Jazz und Chillout; der neue Dinner-Reset stärkt Pianosphere Radio.
 
 ---
 
@@ -537,8 +549,8 @@
 
 ---
 
-**Letzte Aktualisierung:** 30. November 2025, 23:59 Uhr  
-**Nächster Artikel:** TBD (Empfehlung: "Evening Wind-Down Routine" für Relax-Kategorie)
+**Letzte Aktualisierung:** 21. August 2026
+**Nächster Artikel:** TBD (Empfehlung: weiterer Piano-, Jazz- oder Chillout-Artikel)
 
 ### 26. The Science of Jazz for Sleep: Why Smooth Jazz Works Better Than White Noise (Jazz)
 **Slug:** `science-jazz-sleep-smooth-jazz-better-white-noise`  

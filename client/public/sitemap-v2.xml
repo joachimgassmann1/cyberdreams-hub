@@ -349,6 +349,15 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Blog Article: 37 -->
+  <url>
+    <loc>https://www.sphere-music-hub.com/blog/romantic-dinner-piano-routine</loc>
+    <lastmod>2026-08-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.sphere-music-hub.com/blog/romantic-dinner-piano-routine" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.sphere-music-hub.de/blog/romantic-dinner-piano-routine" />
+  </url>
   <!-- Legal Pages -->
   <url>
     <loc>https://www.sphere-music-hub.com/datenschutz</loc>

@@ -35,8 +35,13 @@ import { codingInTheMatrix } from './coding-in-the-matrix';
 import { jazzBrainFocus } from './jazz-brain-focus';
 import { brainResetBurnout } from './brain-reset-burnout';
 import { eveningWindDownRoutine } from './evening-wind-down-routine';
+import { romanticDinnerPianoRoutine } from './romantic-dinner-piano-routine';
 
 export const blogPosts: BlogPost[] = [
+ {
+ ...romanticDinnerPianoRoutine,
+ featured: true
+ },
  {
  ...eveningWindDownRoutine,
  featured: true
