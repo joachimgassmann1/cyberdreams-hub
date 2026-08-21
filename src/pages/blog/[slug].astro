@@ -14,8 +14,9 @@ export async function getStaticPaths() {
 const { slug } = Astro.params;
 const { post } = Astro.props;
 
-const displayTitle = post.title; // We can handle lang dynamically in the component or just pass it
-const displayDescription = post.description;
+const isGerman = import.meta.env.VITE_SITE_LOCALE === 'de';
+const displayTitle = isGerman ? post.titleDe : post.title;
+const displayDescription = isGerman ? post.descriptionDe : post.description;
 ---
 
 <Layout title={`${displayTitle} | Sphere Music Hub Blog`} description={displayDescription}>

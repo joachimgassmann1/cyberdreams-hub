@@ -2,8 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import ReactPage from '@/components/ReactPage';
 
-const title = 'Sphere Music Hub – Focus, Chill & Ambient Music | Relaxation & Study Music';
-const description = 'Discover relaxing chillout beats, ambient vibes, and deep focus soundscapes. Perfect for studying, working, and unwinding. Free music channels for focus, concentration, and productivity.';
+const isGerman = import.meta.env.VITE_SITE_LOCALE === 'de';
+const title = isGerman
+  ? 'Sphere Music Hub – Fokus-, Chillout- & Ambient-Musik | Entspannung & Konzentration'
+  : 'Sphere Music Hub – Focus, Chill & Ambient Music | Relaxation & Study Music';
+const description = isGerman
+  ? 'Entdecke entspannte Chillout-Beats, Ambient-Vibes und Fokus-Soundscapes. Kostenlose Musikkanäle für Konzentration, Arbeit, Lernen und Erholung.'
+  : 'Discover relaxing chillout beats, ambient vibes, and deep focus soundscapes. Perfect for studying, working, and unwinding. Free music channels for focus, concentration, and productivity.';
 ---
 
 <Layout title={title} description={description}>

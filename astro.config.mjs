@@ -4,8 +4,12 @@ import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
+// The project creates one static output for each public domain. SITE_URL is set
+// by the build script so canonical URLs and generated sitemaps stay host-correct.
+const siteUrl = process.env.SITE_URL || 'https://www.sphere-music-hub.com';
+
 export default defineConfig({
-  site: 'https://www.sphere-music-hub.com',
+  site: siteUrl,
   integrations: [
     react(),
     sitemap(),

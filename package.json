@@ -8,9 +8,9 @@
   },
   "scripts": {
     "dev": "astro dev --host",
-    "build": "astro build",
-    "start": "sirv dist --port 3000 --host 0.0.0.0 --single",
-    "preview": "astro preview --host",
+    "build": "rm -rf dist dist-de && SITE_URL=https://www.sphere-music-hub.com VITE_SITE_LOCALE=en astro build --outDir dist && SITE_URL=https://www.sphere-music-hub.de VITE_SITE_LOCALE=de astro build --outDir dist-de",
+    "start": "node static-server.mjs",
+    "preview": "node static-server.mjs",
     "check": "astro check && tsc --noEmit",
     "format": "prettier --write ."
   },

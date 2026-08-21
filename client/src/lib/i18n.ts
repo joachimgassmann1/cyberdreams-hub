@@ -11,7 +11,11 @@ export type Language = 'en' | 'de';
  * Detects the current language based on the hostname
  */
 export function detectLanguage(): Language {
-  if (typeof window === 'undefined') return 'en';
+  // During Astro's static build, use the locale selected for the current
+  // domain output. In the browser, the hostname remains the source of truth.
+  if (typeof window === 'undefined') {
+    return import.meta.env.VITE_SITE_LOCALE === 'de' ? 'de' : 'en';
+  }
   
   const hostname = window.location.hostname;
   

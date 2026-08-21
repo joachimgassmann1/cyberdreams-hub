@@ -2,8 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import ReactPage from '@/components/ReactPage';
 
-const title = 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes';
-const description = 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation.';
+const isGerman = import.meta.env.VITE_SITE_LOCALE === 'de';
+const title = isGerman
+  ? 'Blog – Sphere Music Hub | Fokusmusik, Entspannung & Ambient-Soundscapes'
+  : 'Blog - Sphere Music Hub | Focus Music, Productivity & Ambient Soundscapes';
+const description = isGerman
+  ? 'Entdecke Tipps, Guides und Geschichten über Fokusmusik, Ambient-Soundscapes, Chillout, Jazz, Piano und Cyberpunk-Atmosphären – für Arbeit, Konzentration und Erholung.'
+  : 'Discover tips, guides, and stories about focus music, productivity, ambient soundscapes, chillout music, jazz, piano, and cyberpunk atmospheres. Expert insights for work and relaxation.';
 ---
 
 <Layout title={title} description={description}>
